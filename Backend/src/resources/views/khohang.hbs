@@ -1,0 +1,67 @@
+<div class="trangchinh">
+  <div class="trangchinh-container">
+    <h1>Sản phẩm chính hãng đạt tiêu chuẩn</h1>
+    <div class="sapxep">
+      <div>Sắp xếp theo:</div>
+      <div class="desc box-ss">Giá tăng dần</div>
+      <div class="asc box-ss">Giá giảm dần</div>
+    </div>
+    <div class="chuasanpham">
+      {{#each good}}
+        <div class="buy-box diff">
+          <img src="/img/{{this.hinhanh}}" alt="Ảnh sản phẩm" />
+          <span class="sandeal-box-tieude">{{this.tensp}}</span>
+          {{#if (equal this.giagoc thisgiaban)}}
+            <span class="sandeal-box-giamgia"><s></s></span>
+          {{else}}
+            <span class="sandeal-box-giamgia"><s>{{formatNumber this.giagoc}}
+                ₫</s></span>
+          {{/if}}
+          <span class="sandeal-box-gia">{{formatNumber this.giaban}}
+            ₫/{{this.donvi}}</span>
+          <div class="sandeal-box-like">
+            <i class="fa-solid fa-heart"></i>
+            <span class="sandeal-box-like-like">15.9k |</span>
+            <span class="sandeal-box-like-bought">Đã Bán 9.2k</span>
+          </div>
+          {{#if this.banchay}}
+            <div class="banchay">Đang bán chạy</div>
+          {{else}}
+            <div class="banchay banchaytrang"></div>
+          {{/if}}
+          <button class="sandeal-box-buy">Chọn sản phẩm</button>
+        </div>
+      {{/each}}
+    </div>
+  </div>
+  <div class="muahang">
+    <div class="muahang-nth1">
+      <h1>Chọn sản phẩm</h1>
+      <i class="fa-solid fa-circle-xmark"></i>
+    </div>
+    <div class="muahang-container">
+      <img src="/img/siro.webp" alt="" />
+      <div class="muahang-right">
+        <h1>Miễn phí vận chuyển cho mọi đơn hàng 0đ</h1>
+        <div class="muahang-tieude"></div>
+        <div class="muahang-giamgia"></div>
+        <div class="muahang-gia"></div>
+        <div>Tích lũy từ 1.200 P-Xu vàng</div>
+        <div></div>
+        <div>Số lượng</div>
+        <div>
+          <i class="fa-solid fa-minus trumuahang"></i>
+          <div class="soluongmuahang">1</div>
+          <i class="fa-solid fa-plus congmuahang"></i>
+        </div>
+        <div>
+          <button>Mua hàng</button>
+          <button class="themvaogio">Thêm vào giỏ hàng</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="mauxanhtieuchuan"></div>
+<script src="/js/chondonhang.js"></script>

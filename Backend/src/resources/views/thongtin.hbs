@@ -1,0 +1,87 @@
+<div class="container-user">
+  <div class="hienthi-user">
+    <div class="bangchon-user">
+      <div class="bangchon-user-top">
+        <div class="bangchon-user-ten">
+          <img src="/img/actidem.avif" alt="" />
+          <h1>{{username.hoten}}</h1>
+        </div>
+        <img src="/img/thevang.png" alt="" />
+      </div>
+      <div class="bangchon-user-bot">
+        <div class="thanhchon-user">
+          <i class="fa-solid fa-user"></i>
+          <div>Thông tin cá nhân</div>
+        </div>
+        <div class="thanhchon-user">
+          <i class="fa-solid fa-location-dot"></i>
+          <div>Địa chỉ nhận hàng</div>
+        </div>
+        <div class="thanhchon-user">
+          <i class="fa-solid fa-notes-medical"></i>
+          <div>Lịch sử đơn hàng</div>
+        </div>
+      </div>
+    </div>
+    <div class="ctnthongtin-user">
+      <h1 class="title-thongtincanhan">Thông tin cá nhân</h1>
+      <div class="thongtin-user">
+        <div class="container-thongtinuser">
+          <div class="anhdaidien">Ảnh đại diện</div>
+          <div class="anhdaidien-cc">
+            <img class="anhdaidienmoi" src="/img/actidem.avif" alt="" />
+            <div class="daidienoi">
+              <button class="btn-capnhatanhmoi">Cập nhật ảnh mới</button>
+              <div>Dung lượng file tối đa 5 MB.</div>
+              <div>Định dạng: .JPEG, .PNG</div>
+            </div>
+          </div>
+          <div class="dienthongtin">
+            <div class="container-dienthongtin">
+              <label for="hoten">Họ và tên</label>
+              <input
+                type="text"
+                name="hoten"
+                id=""
+                placeholder="Họ và tên"
+                value="{{user.hoten}}"
+              />
+              <label for="ngaysinh">Ngày sinh</label>
+              <input
+                type="date"
+                name="ngaysinh"
+                id=""
+                value="{{user.ngaysinh}}"
+              />
+              <label for="gioitinh">Giới tính</label>
+              <select class="gioitinhchon" name="gioitinh" id="">
+                <option value="" disabled selected>
+                  -- Chọn giới tính --
+                </option>
+                <option value="nam" {{#if (equal user.gioitinh "nam")}}selected{{/if}}>Nam</option>
+                 <option value="nu" {{#if (equal user.gioitinh "nu")}}selected{{/if}}>Nữ</option>
+                <option value="khac" {{#if (equal user.gioitinh "khac")}}selected{{/if}}>Khác</option>
+              </select>
+            </div>
+            <div class="thongtinphu">
+              <div>Số điện thoại</div>
+              <div>{{user.sdt}}</div>
+              <div>
+                <div>Email</div>
+                <button>Cập nhật</button>
+              </div>
+              <div>
+                <div>Mật khẩu</div>
+                <button>Đổi mật khẩu</button>
+              </div>
+            </div>
+          </div>
+          <div class="chuabtnthaydoi">
+            <button class="btn-thaydoi">Lưu thay đổi</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="mauxanhtieuchuan"></div>

@@ -1,0 +1,120 @@
+<main class="main">
+  <div class="header headeradd">
+    <h2 class="ql">Sửa thông tin sản phẩm</h2>
+  </div>
+  <form
+    class="form"
+    method="POST"
+    action="/admin/{{good._id}}/update"
+    enctype="multipart/form-data"
+  >
+    <div class="form-row">
+      <input
+        type="text"
+        class="btn-edit"
+        placeholder="Tên sản phẩm"
+        name="tensp"
+        value="{{good.tensp}}"
+      />
+      <input type="hidden" name="oldImage" value="{{good.hinhanh}}" />
+      <input
+        type="number"
+        class="btn-edit"
+        placeholder="Số lượng"
+        name="soluong"
+        value="{{good.soluong}}"
+      />
+      <input
+        type="number"
+        name="giamgia"
+        class="btn-edit"
+        placeholder="Giảm giá (%)"
+        value="{{good.giamgia}}"
+      />
+      <div class="container-banchay">
+        <input type="checkbox" name="banchay" id="banchay" {{#if good.banchay}}checked{{/if}} />
+        <label for="banchay" class="banchay">Đang bán chạy</label>
+      </div>
+    </div>
+    <div class="form-row">
+      <select name="danhmuc">
+        <option value="">-- Chọn danh mục --</option>
+        <option value="Kho Hàng" {{#if (equal good.danhmuc "Kho Hàng")}}selected{{/if}}>Kho Hàng</option>
+        <option value="Săn Deal" {{#if (equal good.danhmuc "Săn Deal")}}selected{{/if}}>Săn Deal</option>
+        <option value="Ngàn Deal Hot Tặng Nàng" {{#if ( equal good.danhmuc "Ngàn Deal Hot Tặng Nàng")}}selected{{/if}}>Ngàn Deal Hot Tặng Nàng</option>
+        <option value="Top bán chạy toàn quốc" {{#if (equal good.danhmuc "Top bán chạy toàn quốc")}}selected{{/if}}>Top bán chạy toàn quốc</option>
+        <option value="Thương hiệu Nhật Bản" {{#if (equal good.danhmuc "Thương hiệu Nhật Bản")}}selected{{/if}}>Thương hiệu Nhật Bản</option>
+      </select>
+      <select name="nhacungcap">
+        <option value="">-- Chọn nhà cung cấp --</option>
+        <option value="Công ty CP Dược Hậu Giang" {{#if (equal good.nhacungcap "Công ty CP Dược Hậu Giang")}}selected{{/if}}>Công ty CP Dược Hậu Giang</option>
+        <option value="Công ty Dược phẩm Traphaco" {{#if (equal good.nhacungcap "Công ty Dược phẩm Traphaco")}}selected{{/if}}>Công ty Dược phẩm Traphaco</option>
+        <option value="Công ty Dược phẩm Sanofi" {{#if (equal good.nhacungcap "Công ty Dược phẩm Sanofi")}}selected{{/if}}>Công ty Dược phẩm Sanofi</option>
+        <option value="Công ty cổ phần Dược Pymepharco" {{#if (equal good.nhacungcap "Công ty cổ phần Dược Pymepharco")}}selected{{/if}}>Công ty cổ phần Dược
+          Pymepharco</option>
+        <option value="Công ty Cổ phần Dược phẩm TV.Pharm">Công ty Cổ phần Dược
+          phẩm TV.Pharm</option>
+      </select>
+      <input
+        type="number"
+        class="btn-edit"
+        placeholder="Giá gốc (VND)"
+        name="giagoc"
+        value="{{good.giagoc}}"
+      />
+      <select name="donvi">
+        <option value="">-- Chọn đơn vị --</option>
+        <option value="Hộp" {{#if (equal good.donvi "Hộp")}}selected{{/if}}>Hộp</option>
+        <option value="Cái" {{#if (equal good.donvi "Cái")}}selected{{/if}}>Cái</option>
+        <option value="Tuýt" {{#if (equal good.donvi "Tuýt")}}selected{{/if}}>Tuýt</option>
+        <option value="Thùng" {{#if (equal good.donvi "Thùng")}}selected{{/if}}>Thùng</option>
+        <option value="Chai" {{#if (equal good.donvi "Chai")}}selected{{/if}}>Chai</option>
+      </select>
+    </div>
+    <div class="form-row">
+      <label>Ảnh sản phẩm: </label>
+      <div class="upload-wrapper">
+        <img class="anhhientai" id="preview" src="/img/{{good.hinhanh}}" />
+        <i class="fa-solid fa-cloud-arrow-up" ></i>
+        <input class="file" type="file" name="hinhanh" id="hinhanh" accept="image/*"/>
+      </div>
+    </div>
+    <div class="form-row">
+      <label>Mô tả sản phẩm:</label>
+      <textarea rows="8" name="mota">{{good.mota}}</textarea>
+    </div>
+    <button class="btn primary" type="submit">Xác nhận</button>
+  </form>
+</main>
+<script>
+  document.getElementById("hinhanh").addEventListener("change", function (event) {
+  const file = event.target.files[0];
+  const preview = document.getElementById("preview");
+
+  if (file) {
+    const reader = new FileReader();
+
+    reader.onload = function (e) {
+      preview.src = e.target.result;
+      preview.style.display = "block";
+    };
+
+    reader.readAsDataURL(file); // Đọc file thành URL để hiển thị
+  } else {
+    preview.src = "#";
+    preview.style.display = "none";
+  }
+  });
+  /* const fileInput = document.querySelector(".file");
+  const uploadBox = document.querySelector(".upload-wrapper");
+  const iupload = document.querySelector(".fa-cloud-arrow-up");
+  fileInput.addEventListener("change", () => {
+  if (fileInput.files.length > 0) {
+    uploadBox.classList.add("active");
+    iupload.classList.add("active");
+  } else {
+    iupload.classList.add("active");
+    uploadBox.classList.remove("active");
+  } --}}
+});*/
+</script>

@@ -1,0 +1,389 @@
+html {
+  font-size: 62.5%;
+  font-family: "Inter", serif;
+}
+body {
+  margin: 0;
+  display: flex;
+  background-color: #f4f6f8;
+}
+.logo {
+  width: 20rem;
+  margin-bottom: 1rem;
+}
+.sidebar {
+  width: 24rem;
+  background-color: rgb(26, 81, 162);
+  color: #fff;
+  height: 100vh;
+  padding: 2rem;
+  position: fixed;
+  top: 0;
+}
+
+.sidebar .user-info {
+  text-align: center;
+  margin-bottom: 3rem;
+  font-size: 1.6rem;
+}
+
+.sidebar .avatar {
+  border-radius: 50%;
+  width: 6rem;
+  height: 6rem;
+}
+
+.sidebar nav ul {
+  list-style: none;
+  padding: 0;
+  font-size: 1.6rem;
+}
+
+.sidebar nav ul a {
+  width: 22rem;
+  height: 2rem;
+  padding: 1.5rem 0;
+  color: white;
+  font-size: 1.8rem;
+  text-decoration: none;
+  font-weight: 600;
+  display: block;
+  margin: 1rem 0;
+  border-radius: 1rem;
+  padding-left: 3rem;
+}
+.sidebar nav ul li {
+  border-radius: 1rem;
+}
+.sidebar nav ul li.active,
+.sidebar nav ul li:hover {
+  background-color: #1e3d70;
+  border-left: 1rem solid white;
+}
+
+.main {
+  flex-grow: 1;
+  padding: 0rem 2rem;
+  background-color: #fff;
+  width: calc(100% - 28rem);
+  margin-left: 28rem;
+  height: 100vh;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4rem;
+}
+
+.header-actions .btn {
+  margin-left: 1rem;
+  background-color: rgb(52, 106, 188);
+  border: 0.1rem solid #ffffff;
+  padding: 0.8rem 1.2rem;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  border-radius: 1rem;
+  color: white;
+  font-weight: 600;
+  &:hover {
+    background-color: rgb(6, 64, 153);
+  }
+}
+
+.form {
+  margin-top: 2rem;
+  font-size: 1.6rem;
+}
+
+.form-row {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+input[type=\"text\"],
+input[type=\"number\"],
+select,
+textarea {
+  flex: 1;
+  padding: 1rem;
+  border: 0.1rem solid #ccc;
+  border-radius: 0.4rem;
+  min-width: 20rem;
+  border-radius: 1rem;
+  font-size: 1.5rem;
+  font-weight: 550;
+}
+.btn-edit {
+  border-radius: 1rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  padding: 1rem;
+  border: 0.1rem solid #ccc;
+  width: 23.5rem;
+}
+textarea {
+  width: 100%;
+}
+
+.btn.primary {
+  background-color: #28a745;
+  color: #fff;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 1rem;
+  cursor: pointer;
+  margin-top: 2rem;
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-left: 33vw;
+}
+.btn-green {
+  font-size: 1.6rem;
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+  background-color: rgb(52, 106, 188);
+  padding: 1rem 1rem;
+  border-radius: 1rem;
+  cursor: pointer;
+  &:hover {
+    background-color: rgb(30, 63, 112);
+  }
+  height: 2rem;
+}
+.ql {
+  font-size: 3rem;
+}
+
+.upload-wrapper {
+  position: relative;
+  width: 10rem;
+  height: 10rem;
+  border: 0.2rem dashed #ccc;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background-color: #f9f9f9;
+}
+.anhhientai {
+  width: 10rem;
+  height: 10rem;
+  border-radius: 1rem;
+  pointer-events: none;
+  z-index: 2;
+}
+.upload-wrapper i {
+  position: absolute;
+  font-size: 1.5rem;
+  color: #007bff;
+  pointer-events: none;
+}
+.upload-wrapper.active i {
+  color: white;
+}
+.upload-wrapper .file {
+  opacity: 0;
+  position: absolute;
+  cursor: pointer;
+  width: 10rem;
+  height: 10rem;
+}
+.container-banchay {
+  display: flex;
+  align-items: center;
+  margin-left: 7rem;
+}
+.banchay {
+  font-weight: 600;
+}
+.filter-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  margin-bottom: 3rem;
+  font-size: 1.4rem;
+}
+
+.filter-form select {
+  padding: 1rem 1.5rem;
+  border: 0.1rem solid #ccc;
+  border-radius: 1rem;
+}
+.filter-form input {
+  width: 50rem;
+  padding: 1rem 1.5rem;
+  border: 0.1rem solid #ccc;
+  border-radius: 1rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+.product-table {
+  width: 100%;
+  border-collapse: collapse;
+  height: 10rem;
+  overflow-y: auto;
+}
+.product-table th,
+.product-table td {
+  padding: 1rem;
+  border: 0.1rem solid #ccc;
+  text-align: center;
+  font-size: 1.4rem;
+}
+.thumb {
+  width: 6rem;
+  height: 6rem;
+  object-fit: cover;
+}
+.btn-blue {
+  padding: 0.6rem 0.5rem;
+  font-size: 1.5rem;
+  background-color: rgb(9, 86, 202);
+  border-radius: 1rem;
+  font-weight: 600;
+  width: 9rem;
+  border: none;
+  color: white;
+  text-decoration: none;
+  &:hover {
+    background-color: rgb(23, 61, 118);
+  }
+}
+.btn-sm {
+  padding: 0.6rem 3.5rem;
+  font-size: 1.6rem;
+  border-radius: 1rem;
+  background-color: #b22b27;
+  border: none;
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+  &:hover {
+    background-color: rgb(112, 0, 0);
+  }
+}
+.hanhdong {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  width: 7.2vw;
+  height: 10vh;
+}
+.product-table thead th {
+  position: sticky;
+  top: 0;
+  background-color: #f9f9f9;
+  z-index: 1;
+}
+.table-wrapper {
+  max-height: 67vh;
+  overflow-y: auto;
+  border: 1px solid #ccc;
+}
+.fa-square-check {
+  color: #45c437;
+  font-size: 2rem;
+}
+.fa-square-xmark {
+  color: #b22b27;
+  font-size: 2rem;
+}
+table {
+  table-layout: auto;
+  width: 100%;
+}
+
+td {
+  word-break: break-word;
+  white-space: normal;
+  max-width: 15rem;
+}
+
+.xoasp.active {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.287);
+  z-index: 1;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: visible;
+  opacity: 1;
+}
+
+.xoasp {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+}
+.thongbaochacchan {
+  width: 34%;
+  height: 34%;
+  background-color: white;
+  border-radius: 1rem;
+}
+.tbcc {
+  width: 34%;
+  height: 30%;
+  background-color: white;
+  border-radius: 1rem;
+}
+.thongbaochacchan :nth-child(1) {
+  font-size: 2.5rem;
+  font-weight: 550;
+  margin: 3vh 1.5vw;
+}
+.thongbaochacchan :nth-child(2) {
+  font-size: 1.6rem;
+  margin: 2.5vh 1.5vw;
+}
+.luu-y {
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin: 2.5vh 1.5vw;
+}
+.thongbao-quaylai {
+  margin-top: 3vh;
+  margin-left: 16vw;
+  width: 8vw;
+  height: 8vh;
+  font-size: 1.6rem;
+  font-weight: 600;
+  border-radius: 1.5rem;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  &:hover {
+    background-color: rgb(193, 193, 193);
+  }
+}
+.qlai,
+.tt {
+  margin-top: 5vh;
+}
+.thongbao-tieptuc {
+  margin-top: 3vh;
+  margin-left: 1vw;
+  width: 8vw;
+  height: 8vh;
+  background-color: #005a8e;
+  color: white;
+  font-size: 1.6rem;
+  font-weight: 600;
+  border-radius: 1.5rem;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  &:hover {
+    background-color: #003250;
+  }
+}

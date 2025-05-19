@@ -1,0 +1,88 @@
+<main class="main">
+  <div class="header">
+    <div>
+      <h1 class="ql">Thùng rác</h1>
+      <a href="/admin/quanlysanpham" class="btn btn-green thungrac">Quản lý sản
+        phẩm</a>
+    </div>
+  </div>
+  <form method="GET" action="/admin/products" class="filter-form">
+    <input type="text" name="keyword" placeholder="Tìm theo tên sản phẩm..." />
+    <select name="danhmuc" class="danhmuc">
+      <option value="">-- Tất cả danh mục --</option>
+      <option value="1">Săn Deal</option>
+      <option value="2">Ngàn Deal Hot Tặng Nàng</option>
+      <option value="3">Top bán chạy toàn quốc</option>
+      <option value="4">Mẹ khỏe bé vui</option>
+      <option value="5">Kho Hàng</option>
+    </select>
+    <select name="banchay">
+      <option value="">-- Bán chạy --</option>
+      <option value="true">Đang bán chạy</option>
+      <option value="false">Không bán chạy</option>
+    </select>
+    <button type="submit" class="btn btn-blue">Lọc</button>
+  </form>
+  <div class="table-wrapper">
+    <table class="product-table">
+      <thead>
+        <tr>
+          <th>STT</th>
+          <th>Ảnh</th>
+          <th>Tên sản phẩm</th>
+          <th>Danh mục</th>
+          <th>Giá gốc</th>
+          <th>Giá bán</th>
+          <th>Giảm giá(%)</th>
+          <th>SL</th>
+          <th>BC</th>
+          <th>Hành động</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each good}}
+          <tr>
+            <td style="width: 2.5vw;">{{sum @index 1}}</td>
+            <td style="width: 5vw;"><img
+                src="/img/{{this.hinhanh}}"
+                alt="Ảnh sản phẩm"
+                class="thumb"
+              /></td>
+            <td>{{this.tensp}}</td>
+            <td style="width: 8vw">{{this.danhmuc}}</td>
+            <td style="width: 7vw">{{formatNumber this.giagoc}} ₫</td>
+            <td style="width: 7vw">{{formatNumber this.giaban}} ₫</td>
+            <td style="width: 6vw;">{{this.giamgia}}</td>
+            <td>{{this.soluong}}</td>
+            <td style="width: 1vw;">{{#if this.banchay}}<i
+                  class="fa-solid fa-square-check"
+                ></i>{{else}}<i
+                  class="fa-solid fa-square-xmark"
+                ></i>{{/if}}</td>
+            <td style="width: 6vw;">
+              <div class="hanhdong">
+                <a href="/admin/{{this._id}}/restore" class="btn btn-blue">Khôi
+                  phục</a>
+                <div class="btn btn-red btn-sm" data-id="{{this._id}}">Xoá</div>
+              </div>
+            </td>
+          </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+</main>
+<form method="POST" style="display:inline" class="formxoa">
+</form><div class="xoasp">
+  <div class="thongbaochacchan">
+    <h1>Xoá sản phẩm vĩnh viễn
+    </h1>
+    <div>Bạn có chắc chắn muốn xóa sản phẩm này?
+    </div>
+    <div style="color:red" class="luu-y">Lưu ý : khi đã xoá sẽ không khôi phục
+      được nữa !!!</div>
+    <button class="thongbao-quaylai">Quay lại</button>
+    <button class="thongbao-tieptuc" style="background-color: red;">Đồng ý</button>
+  </div>
+</div>
+<script src="/js/xoadonhang-trash.js"></script>
