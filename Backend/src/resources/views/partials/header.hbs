@@ -20,12 +20,15 @@
           <div>Thành tiền</div>
         </div>
         <div class="sanpham-all">
+          {{#each user.cart}}
+          <div class="sanpham-all-box"><div class="gachchan-to"></div><div class="box-sanphamthem"><img class="box-sanphamthem-img" src="/img/{{this.hinhanh}}"><div class="box-sanphamthem-mota">{{this.tensp}}</div><div class="dongia"><div><s>{{formatNumber this.giagoc}} ₫</s></div><div class="dg">{{ formatNumber this.giaban}} ₫</div></div><div class="soluong"><i class="fa-solid fa-minus"></i><div class="slgiohang">{{this.soluong}}</div><i class="fa-solid fa-plus"></i></div><div class="thanhtien"><div>{{formatNumber (nhan this.giaban this.soluong) }} ₫</div><i class="fa-solid fa-trash"></i></div></div></div>
+          {{/each}}
         </div>
       </div>
       <div class="giohang-tongtien">
         <div class="giohang-tongtien__tamtinh">
           <div class="giohang-tongtien__tamtinh-mota">Tạm tính</div>
-          <div class="giohang-tongtien__tamtinh-tt">0 ₫</div>
+          <div class="giohang-tongtien__tamtinh-tt">{{formatNumber (totalGiagoc user.cart)}} ₫</div>
         </div>
         <div class="giohang-tongtien__tamtinh">
           <div class="giohang-tongtien__tamtinh-mota">Giảm giá ưu đãi
@@ -35,12 +38,12 @@
         <div class="giohang-tongtien__tamtinh">
           <div class="giohang-tongtien__tamtinh-mota">Giảm giá sản phẩm
           </div>
-          <div class="giamgiatong">0 ₫</div>
+          <div class="giamgiatong">{{ formatNumber (minus (totalGiagoc user.cart) (totalGiaban user.cart))}} ₫</div>
         </div>
         <div class="gachchan"></div>
         <div class="giohang-tongtien__tongtien">
           <div class="giohang-tongtien__tongtien-mota">Tổng tiền</div>
-          <div class="giohang-tongtien__tongtien-tt">0 ₫</div>
+          <div class="giohang-tongtien__tongtien-tt">{{ formatNumber (totalGiaban user.cart)}} ₫</div>
         </div>
         <div class="giohang-tongtien__btn">Mua Hàng</div>
       </div>

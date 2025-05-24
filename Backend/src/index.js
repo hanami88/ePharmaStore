@@ -22,6 +22,17 @@ app.engine(
       },
       equal: (a, b) => a === b,
       sum: (a, b) => a + b,
+      nhan: (a, b) => a * b,
+      chia: (a, b) => a / b,
+      totalGiaban: (cart) =>
+        Array.isArray(cart)
+          ? cart.reduce((sum, item) => sum + item.giaban * item.soluong, 0)
+          : 0,
+      totalGiagoc: (cart) =>
+        Array.isArray(cart)
+          ? cart.reduce((sum, item) => sum + item.giagoc * item.soluong, 0)
+          : 0,
+      minus: (a, b) => a - b,
     },
   })
 );

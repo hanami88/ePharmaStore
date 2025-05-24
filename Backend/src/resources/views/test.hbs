@@ -1,57 +1,9 @@
 <div class="datthanhcong">
-        <div class="datthanhcong-container">
-          <i class="fa-solid fa-check checker"></i>
-          <div >Sản phẩm đã được thêm vào Giỏ hàng.</div>
-        </div>
-      </div>
-      <section class="giohang">
-        <div class="giohang-container" >
-          <div class="xoasp">
-            <div class="thongbaochacchan">
-              <h1>Xoá sản phẩm
-              </h1>
-              <div>Bạn có chắc chắn muốn xóa sản phẩm này?
-              </div>
-              <button class="thongbao-quaylai">Quay lại</button>
-              <button  class="thongbao-tieptuc">Đồng ý</button>
-            </div>
+          <div class="datthanhcong-container">
+            <i class="fa-solid fa-check checker"></i>
+            <div >Sản phẩm đã được thêm vào Giỏ hàng.</div>
           </div>
-          <div class="giohang-sanpham">
-            <h1>Giỏ hàng</h1>
-            <div class="giohang-mota">
-              <div>Sản phẩm</div>
-              <div>Đơn giá</div>
-              <div>Số lượng</div>
-              <div>Thành tiền</div>
-            </div>
-            <div class="sanpham-all">
-            </div>
-          </div>
-          <div class="giohang-tongtien">
-            <div class="giohang-tongtien__tamtinh">
-              <div class="giohang-tongtien__tamtinh-mota">Tạm tính</div>
-              <div class="giohang-tongtien__tamtinh-tt">0 ₫</div>
-            </div>
-            <div class="giohang-tongtien__tamtinh">
-              <div class="giohang-tongtien__tamtinh-mota">Giảm giá ưu đãi
-              </div>
-              <div class="giohang-tongtien__tamtinh-tt ">-</div>
-            </div>
-            <div class="giohang-tongtien__tamtinh">
-              <div class="giohang-tongtien__tamtinh-mota">Giảm giá sản phẩm
-              </div>
-              <div class="giamgiatong">0 ₫</div>
-            </div>
-            <div class="gachchan"></div>
-            <div class="giohang-tongtien__tongtien">
-              <div class="giohang-tongtien__tongtien-mota">Tổng tiền</div>
-              <div class="giohang-tongtien__tongtien-tt">0 ₫</div>
-            </div>
-            <div class="giohang-tongtien__btn">Mua Hàng</div>
-          </div>
-          <i class="fa-solid fa-rectangle-xmark"></i>
-        </div>
-      </section>
+</div>
       <section class="menu">
         <div class="ad">
           <div class="ad1">
@@ -184,6 +136,7 @@
                     <div class="banchay banchaytrang"></div>
                     {{/if}}
                     <button class="sandeal-box-buy">Chọn sản phẩm</button>
+                     <input type="hidden" class="boxlayid" value="{{this._id}}">
                 </div>
             {{/each}}
           </div>
@@ -214,6 +167,7 @@
             <div>
               <button>Mua hàng</button>
               <button class="themvaogio">Thêm vào giỏ hàng</button>
+              <input type="hidden" class="boxlayid1">
             </div>
           </div>
         </div>
@@ -562,6 +516,5 @@
     </section>
     <div class="mauxanhtieuchuan"></div>
 </div>
-
 <script src="/js/home.js"></script>
 <script src="/js/chondonhang.js"></script>

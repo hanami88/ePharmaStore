@@ -173,7 +173,6 @@ const tamtinh = document.querySelector(".giohang-tongtien__tamtinh-tt");
 const giamgiatong = document.querySelector(".giamgiatong");
 const tongthanhtien = document.querySelector(".giohang-tongtien__tongtien-tt");
 const hienthiso = document.querySelector(".hienthiso");
-
 const tatmuahang = document.querySelector(".fa-circle-xmark");
 const trumuahang = document.querySelector(".trumuahang");
 const congmuahang = document.querySelector(".congmuahang");

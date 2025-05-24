@@ -20,6 +20,10 @@ const check = async (req, res, next) => {
   }
 };
 router.use(check);
+router.post("/xoadonhang", UserController.xoadonhang);
+router.post("/trudonhang", UserController.trudonhang);
+router.post("/congdonhang", UserController.congdonhang);
+router.post("/themvaogiohang", UserController.themvaogiohang);
 router.get("/logout", UserController.logout);
 router.get("/thongtin", UserController.thongtin);
 module.exports = router;
