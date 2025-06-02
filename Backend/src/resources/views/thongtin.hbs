@@ -1,3 +1,15 @@
+{{#if message}}
+  <div class="datthanhcong active">
+    <div class="datthanhcong-container">
+      <i class="fa-solid fa-check checker"></i>
+      <div>{{message}}</div>
+    </div>
+  </div>
+  <script>
+    const datthanhcong = document.querySelector(".datthanhcong");
+    setTimeout(() => { datthanhcong.classList.remove("active"); }, 1500);
+  </script>
+{{/if}}
 <div class="container-user">
   <div class="hienthi-user">
     <div class="bangchon-user">
@@ -9,18 +21,18 @@
         <img src="/img/thevang.png" alt="" />
       </div>
       <div class="bangchon-user-bot">
-        <div class="thanhchon-user">
+        <a href="/user/thongtin" class="thanhchon-user">
           <i class="fa-solid fa-user"></i>
           <div>Thông tin cá nhân</div>
-        </div>
-        <div class="thanhchon-user">
+        </a>
+        <a href="/user/diachinhanhang" class="thanhchon-user">
           <i class="fa-solid fa-location-dot"></i>
           <div>Địa chỉ nhận hàng</div>
-        </div>
-        <div class="thanhchon-user">
+        </a>
+        <a href="/user/lichsudonhang" class="thanhchon-user">
           <i class="fa-solid fa-notes-medical"></i>
           <div>Lịch sử đơn hàng</div>
-        </div>
+        </a>
       </div>
     </div>
     <div class="ctnthongtin-user">
@@ -42,7 +54,7 @@
               <input
                 type="text"
                 name="hoten"
-                id=""
+                id="hoten"
                 placeholder="Họ và tên"
                 value="{{user.hoten}}"
               />
@@ -50,11 +62,11 @@
               <input
                 type="date"
                 name="ngaysinh"
-                id=""
+                id="ngaysinh"
                 value="{{user.ngaysinh}}"
               />
               <label for="gioitinh">Giới tính</label>
-              <select class="gioitinhchon" name="gioitinh" id="">
+              <select class="gioitinhchon" name="gioitinh" id="gioitinh">
                 <option value="" disabled selected>
                   -- Chọn giới tính --
                 </option>
@@ -67,12 +79,15 @@
               <div>Số điện thoại</div>
               <div>{{user.sdt}}</div>
               <div>
-                <div>Email</div>
-                <button>Cập nhật</button>
+                <div>
+                  <div>Email</div>
+                  <div>{{user.email}}</div>
+                </div>
+                <a href="/user/capnhatemail">Cập nhật</a>
               </div>
               <div>
                 <div>Mật khẩu</div>
-                <button>Đổi mật khẩu</button>
+                <a href="/user/doimatkhau">Đổi mật khẩu</a>
               </div>
             </div>
           </div>

@@ -1,3 +1,9 @@
+<div class="datthanhcong">
+  <div class="datthanhcong-container">
+    <i class="fa-solid fa-check checker"></i>
+    <div>Thêm sản phẩm thành công</div>
+  </div>
+</div>
 <main class="main">
   <div class="header headeradd">
     <h2 class="ql">Tạo mới sản phẩm</h2>
@@ -7,12 +13,7 @@
       <button class="btn">+ Thêm tình trạng</button>
     </div>
   </div>
-  <form
-    class="form"
-    method="POST"
-    action="/admin/create"
-    enctype="multipart/form-data"
-  >
+  <form class="form" enctype="multipart/form-data">
     <div class="form-row">
       <input
         type="text"
@@ -92,13 +93,4 @@
     <button class="btn primary" type="submit">Thêm sản phẩm</button>
   </form>
 </main>
-<script>
-  document.addEventListener("DOMContentLoaded", function () { const fileInput =
-  document.getElementById("hinhanh"); const preview =
-  document.getElementById("preview"); fileInput.addEventListener("change",
-  function (event) { const file = event.target.files[0]; if (file) { const
-  reader = new FileReader(); reader.onload = function (e) { preview.src =
-  e.target.result; preview.style.display = "block"; };
-  reader.readAsDataURL(file); } else { preview.src = ""; preview.style.display =
-  "none"; } }); });
-</script>
+<script src="/js/admin.js"></script>

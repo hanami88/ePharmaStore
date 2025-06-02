@@ -27,13 +27,9 @@
     <title>Trang Chủ</title>
   </head>
 <body>
-    <div class="app">
-        <header>{{>header}}</header>
-        <div class="container">
-            {{{body}}}
-        </div>
-        <footer>{{>footer}}</footer>
-    </div>
+  {{>header}}
+  {{{body}}}
+  {{>footer}}
 </body>
 <script src="/js/header-footer.js"></script>
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>

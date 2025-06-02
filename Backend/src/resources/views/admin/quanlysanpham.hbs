@@ -1,8 +1,19 @@
+{{#if message}}
+  <div class="datthanhcong active">
+    <div class="datthanhcong-container">
+      <i class="fa-solid fa-check checker"></i>
+      <div>{{message}}</div>
+    </div>
+  </div>
+  <script>
+    setTimeout(() => { datthanhcong.classList.remove("active"); }, 1500);
+  </script>
+{{/if}}
 <main class="main">
   <div class="header">
     <div>
       <h1 class="ql">Quản lý sản phẩm</h1>
-      <a href="/admin/trash" class="btn btn-green thungrac">Thùng rác ({{count}})</a>
+      <a href="/admin/trashsanpham" class="btn btn-green thungrac">Thùng rác ({{count}})</a>
     </div>
     <a href="/admin/add" class="btn btn-green">+ Thêm sản phẩm mới</a>
   </div>
@@ -87,4 +98,4 @@
   </div>
 </div>
 
-<script src="/js/xoadonhang-qldh.js"></script>
+<script src="/js/xoasanpham-qlsp.js"></script>

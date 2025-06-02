@@ -1,0 +1,113 @@
+<div class="container-user">
+  <div class="hienthi-user">
+    <div class="bangchon-user">
+      <div class="bangchon-user-top">
+        <div class="bangchon-user-ten">
+          <img src="/img/actidem.avif" alt="" />
+          <h1>{{user.hoten}}</h1>
+        </div>
+        <img src="/img/thevang.png" alt="" />
+      </div>
+      <div class="bangchon-user-bot">
+        <a href="/user/thongtin" class="thanhchon-user">
+          <i class="fa-solid fa-user"></i>
+          <div>Thông tin cá nhân</div>
+        </a>
+        <a href="/user/diachinhanhang" class="thanhchon-user">
+          <i class="fa-solid fa-location-dot"></i>
+          <div>Địa chỉ nhận hàng</div>
+        </a>
+        <a href="/user/lichsudonhang" class="thanhchon-user">
+          <i class="fa-solid fa-notes-medical"></i>
+          <div>Lịch sử đơn hàng</div>
+        </a>
+      </div>
+    </div>
+     <div class="ctnthongtin-doimk">
+          <div class="doimk">
+            <div class="doimkcc">
+              <a href="/user/thongtin"><i class="fa-solid fa-arrow-left"></i></a>
+              <h1 class="title-doimk">Đổi mật khẩu</h1>
+            </div>
+          </div>
+          <div class="thongtin-doimk">
+            <form action="/user/doimatkhau" method="post" class="container-doimk">
+              <div>
+                Để bảo mật tài khoản, vui lòng không chia sẻ mật khẩu cho người
+                khác.Bạn có thể tạo mật khẩu từ 8 - 16 kí tự
+              </div>
+              <label for="mkht">Mật khẩu hiện tại</label>
+              <input
+                type="password"
+                name="mkht"
+                id="mkht"
+                class="mkht"
+                placeholder="Mật khẩu hiện tại"
+              />
+              <label for="mkm">Mật khẩu mới</label>
+              <input
+                type="password"
+                name="mkm"
+                id="mkm"
+                class="mkm"
+                placeholder="Mật khẩu mới"
+              />
+              <label for="nlmkm">Nhập lại mật khẩu mới</label>
+              <input
+                type="password"
+                name="nlmkm"
+                id="nlmkm"
+                class="nlmkm"
+                placeholder="Nhập lại mật khẩu mới "
+              />
+              <div id="error-message">.</div>
+              <button>Hoàn thành</button>
+            </form>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
+<div class="mauxanhtieuchuan"></div>
+
+<script>
+  document.querySelector(".container-doimk").addEventListener("submit", async function (e) {
+  e.preventDefault(); // Ngăn submit mặc định
+  const currentPassword = document.querySelector(".mkht").value;
+  const newPassword = document.querySelector(".mkm").value;
+  const confirmPassword = document.querySelector(".nlmkm").value;
+
+  const errorBox = document.getElementById("error-message");
+  errorBox.textContent = "";
+
+  // Kiểm tra mật khẩu mới có trùng nhau không
+  if (newPassword !== confirmPassword) {
+    errorBox.textContent = "Mật khẩu mới không khớp";
+    errorBox.style="color:red";
+    return;
+  }
+
+  // Gửi mật khẩu hiện tại lên server để kiểm tra
+  const response = await fetch("/user/kiemtramatkhau", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({ currentPassword })
+  });
+
+  const result = await response.json();
+
+  if (!result.valid) {
+    errorBox.textContent = "Mật khẩu hiện tại không đúng";
+    errorBox.style="color:red";
+    return;
+  }
+  await fetch("/user/doimatkhau", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ newPassword })
+  });
+  window.location.href = "/user/thongtin";
+});
+</script>

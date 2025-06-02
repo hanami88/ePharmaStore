@@ -1,0 +1,79 @@
+{{#if message}}
+  <div class="datthanhcong active">
+    <div class="datthanhcong-container">
+      <i class="fa-solid fa-check checker"></i>
+      <div>{{message}}</div>
+    </div>
+  </div>
+  <script>
+    setTimeout(() => { datthanhcong.classList.remove("active"); }, 1500);
+  </script>
+{{/if}}
+<main class="main">
+  <div class="header">
+    <div>
+      <h1 class="ql">Quản lý đơn hàng</h1>
+      <a href="/admin/trashdonhang" class="btn btn-green thungrac">Thùng rác ({{count}})</a>
+    </div>
+  </div>
+  <form method="GET" action="/admin/products" class="filter-form">
+    <input
+      type="text"
+      name="keyword"
+      class="lookingfor"
+      placeholder="Tìm theo tên sản phẩm..."
+    />
+    <input type="date" name="" id="" class="formtime" />
+    <button type="submit" class="btn btn-blue">Lọc</button>
+  </form>
+  <div class="table-wrapper">
+    <table class="product-table">
+      <thead>
+        <tr>
+          <th>STT</th>
+          <th>Mã đơn</th>
+          <th>Tên TK</th>
+          <th>Khách hàng</th>
+          <th>Ngày đặt</th>
+          <th>Tổng tiền</th>
+          <th>Trạng thái</th>
+          <th>Thanh Toán</th>
+          <th>Hành động</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each order}}
+          <tr>
+            <td style="width: 2vw">{{sum @index 1}}</td>
+            <td style="width: 4vw">abc{{sum @index 1}}</td>
+            <td style="width: 6vw">{{this.userid.username}}</td>
+            <td style="width: 8vw">{{this.userid.hoten}}</td>
+            <td style="width: 6vw;">{{formatDate this.createdAt}}</td>
+            <td style="width: 7vw;">{{formatNumber this.tongtien}} ₫</td>
+            <td style="width: 6vw;">{{this.trangthai}}</td>
+            <td style="width: 6vw;">{{this.thanhtoan}}</td>
+            <td style="width: 1vw;">
+              <div class="hanhdong">
+                <div class="btn btn-red btn-sc" data-id="{{this._id}}">Chi tiết</div>
+                <div class="btn btn-red btn-sm" data-id="{{this._id}}">Xoá</div>
+              </div>
+            </td>
+          </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+</main>
+<form method="POST" style="display:inline" class="formxoadonhang">
+</form>
+<div class="xoasp">
+  <div class="thongbaochacchan tbcc">
+    <h1>Xoá sản phẩm
+    </h1>
+    <div>Bạn có chắc chắn muốn xóa sản phẩm này?
+    </div>
+    <button class="thongbao-quaylai qlai">Quay lại</button>
+    <button class="thongbao-tieptuc tt">Đồng ý</button>
+  </div>
+</div>
+<script src="/js/xoadonhang-qldh.js"></script>

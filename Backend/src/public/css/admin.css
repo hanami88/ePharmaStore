@@ -221,10 +221,22 @@ textarea {
 
 .filter-form {
   display: flex;
-  flex-wrap: wrap;
   gap: 1.2rem;
   margin-bottom: 3rem;
   font-size: 1.4rem;
+}
+
+input[type=text].lookingfor {
+  width: 80rem;
+}
+
+input[type=date].formtime {
+  width: 15rem;
+  padding: 0 0.5rem;
+  font-size: 1.4rem;
+  box-sizing: border-box;
+  font-family: "Inter", serif;
+  padding-left: 2rem;
 }
 
 .filter-form select {
@@ -290,6 +302,67 @@ textarea {
 }
 .btn-sm:hover {
   background-color: rgb(112, 0, 0);
+}
+
+.btn-sc {
+  padding: 0.6rem 0.5rem;
+  font-size: 1.5rem;
+  background-color: rgb(9, 86, 202);
+  border-radius: 1rem;
+  font-weight: 600;
+  width: 9rem;
+  border: none;
+  color: white;
+  text-decoration: none;
+}
+.btn-sc:hover {
+  background-color: rgb(23, 61, 118);
+}
+
+.datthanhcong.active {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  opacity: 1;
+  visibility: visible;
+}
+
+.datthanhcong {
+  opacity: 0;
+  visibility: hidden;
+  position: fixed;
+}
+
+.datthanhcong-container {
+  width: 27vw;
+  height: 25vh;
+  background-color: rgba(0, 0, 0, 0.852);
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.datthanhcong-container > :nth-child(1) {
+  color: white;
+  font-size: 3rem;
+  background-color: #1a51a2;
+  padding: 0.65rem 0.9rem;
+  border-radius: 50%;
+}
+
+.datthanhcong-container > :nth-child(2) {
+  margin-top: 3rem;
+  color: white;
+  font-size: 1.8rem;
+  width: 30rem;
+  text-align: center;
 }
 
 .hanhdong {

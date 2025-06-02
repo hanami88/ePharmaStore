@@ -224,3 +224,28 @@ themvaogio.addEventListener("click", (e) => {
     body: JSON.stringify({ id: boxlayid1.value, soluong: soluong }),
   });
 });
+const datdonhangthanhcong = document.querySelector(".datdonhangthanhcong");
+const xacnhandathang = document.querySelector(".xacnhandathang");
+const quaylaidathang = document.querySelector(".thongbao-quaylaidathang");
+const tieptucdathang = document.querySelector(".thongbao-tieptucdathang");
+const dathang = document.querySelector(".giohang-tongtien__btn");
+dathang.addEventListener("click", function () {
+  xacnhandathang.classList.add("active");
+  tieptucdathang.addEventListener("click", function () {
+    fetch("/user/dathang", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    tranggiohang.classList.remove("active");
+    xacnhandathang.classList.remove("active");
+    datdonhangthanhcong.classList.add("active");
+    setTimeout(() => {
+      datdonhangthanhcong.classList.remove("active");
+    }, 1500);
+  });
+  quaylaidathang.addEventListener("click", function () {
+    xacnhandathang.classList.remove("active");
+  });
+});

@@ -9,6 +9,8 @@ app.use(express.static(path.join(__dirname, "public")));
 const db = require("./config/db");
 const multer = require("multer");
 var cookieParser = require("cookie-parser");
+const dayjs = require("dayjs");
+
 app.use(cookieParser());
 // app.use(morgan("combined"));
 db.connect();
@@ -33,9 +35,14 @@ app.engine(
           ? cart.reduce((sum, item) => sum + item.giagoc * item.soluong, 0)
           : 0,
       minus: (a, b) => a - b,
+      formatDate: (datetime) => {
+        const dayjs = require("dayjs");
+        return dayjs(datetime).format("DD/MM/YYYY");
+      },
     },
   })
 );
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.set("view engine", "hbs");

@@ -1682,6 +1682,27 @@ body {
   position: absolute;
 }
 
+.xacnhandathang {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+}
+
+.xacnhandathang.active {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.287);
+  z-index: 1;
+  position: absolute;
+  top: -3.5rem;
+  left: -10.8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: visible;
+  opacity: 1;
+}
+
 .thongbaochacchan {
   width: 48rem;
   height: 22rem;
@@ -1700,6 +1721,22 @@ body {
   margin: 2rem 2.5rem;
 }
 
+.thongbao-quaylaidathang {
+  margin-top: 3.5rem;
+  margin-left: 22rem;
+  width: 11rem;
+  height: 5.5rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+  border-radius: 1.5rem;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+.thongbao-quaylaidathang:hover {
+  background-color: rgb(193, 193, 193);
+}
+
 .thongbao-quaylai {
   margin-top: 3.5rem;
   margin-left: 22rem;
@@ -1714,6 +1751,24 @@ body {
 }
 .thongbao-quaylai:hover {
   background-color: rgb(193, 193, 193);
+}
+
+.thongbao-tieptucdathang {
+  margin-top: 3.5rem;
+  margin-left: 2rem;
+  width: 11rem;
+  height: 5.5rem;
+  background-color: #005a8e;
+  color: white;
+  font-size: 1.6rem;
+  font-weight: 600;
+  border-radius: 1.5rem;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+.thongbao-tieptucdathang:hover {
+  background-color: #003250;
 }
 
 .thongbao-tieptuc {
@@ -1944,6 +1999,25 @@ body {
   z-index: 1;
   opacity: 1;
   visibility: visible;
+}
+
+.datdonhangthanhcong.active {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  opacity: 1;
+  visibility: visible;
+}
+
+.datdonhangthanhcong {
+  opacity: 0;
+  visibility: hidden;
+  position: fixed;
 }
 
 .datthanhcong {
@@ -2470,6 +2544,8 @@ body {
   align-items: center;
   cursor: pointer;
   width: 100%;
+  text-decoration: none;
+  color: black;
 }
 .thanhchon-user:hover {
   background-color: rgb(231, 231, 231);
@@ -2653,6 +2729,11 @@ input[type=date] {
 .thongtinphu > :nth-child(3) > :nth-child(1) {
   font-size: 1.5rem;
   font-weight: 600;
+  line-height: 2.5rem;
+}
+
+.thongtinphu > :nth-child(3) > :nth-child(1) > :nth-child(2) {
+  color: #979797;
 }
 
 .thongtinphu > :nth-child(4) > :nth-child(1) {
@@ -2661,7 +2742,7 @@ input[type=date] {
 }
 
 .thongtinphu > :nth-child(3) > :nth-child(2) {
-  padding: 1rem 2rem;
+  padding: 1rem 3.4rem;
   font-size: 1.5rem;
   font-weight: 600;
   color: white;
@@ -2669,7 +2750,7 @@ input[type=date] {
   border: none;
   background-color: #0093e9;
   cursor: pointer;
-  width: 14rem;
+  text-decoration: none;
 }
 .thongtinphu > :nth-child(3) > :nth-child(2):hover {
   background-color: #0070b1;
@@ -2679,12 +2760,12 @@ input[type=date] {
   padding: 1rem 2rem;
   font-size: 1.5rem;
   font-weight: 600;
-  width: 14rem;
   color: white;
   border-radius: 1rem;
   border: none;
   background-color: #0093e9;
   cursor: pointer;
+  text-decoration: none;
 }
 .thongtinphu > :nth-child(4) > :nth-child(2):hover {
   background-color: #0070b1;
@@ -2789,6 +2870,449 @@ input[type=date] {
   padding: 4px 8px;
   border: 1px solid #ccc;
   border-radius: 4px;
+}
+
+.diachicc {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.diachicc > :nth-child(2) {
+  padding: 1rem 2rem;
+  border: 0.1rem solid rgb(26, 81, 162);
+  border-radius: 1rem;
+  color: rgb(26, 81, 162);
+  font-weight: 600;
+  font-size: 1.5rem;
+  cursor: pointer;
+  margin-bottom: 1rem;
+}
+.diachicc > :nth-child(2):hover {
+  opacity: 0.7;
+}
+
+.ctnthongtin-diachi {
+  margin-left: 1.7rem;
+  width: 63.8vw;
+  height: 85vh;
+  color: #2b2b2b;
+}
+
+.title-diachi {
+  font-size: 2.2rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  margin-top: 0.5rem;
+}
+
+.thongtin-diachi {
+  width: 63.8vw;
+  background-color: white;
+  border-radius: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-diachi {
+  width: 95%;
+  max-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.chuadiachi {
+  margin-top: 2rem;
+  width: 100%;
+  border-bottom: 0.1rem solid rgb(226, 232, 240);
+  height: 9rem;
+  display: flex;
+  flex-shrink: 0;
+  padding-bottom: 2rem;
+}
+
+.bac1 {
+  color: rgb(212, 212, 212);
+}
+
+.chuaten--diachi {
+  font-weight: 600;
+}
+
+.chuadiachi > :nth-child(1) {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: 9rem;
+}
+
+.chuadiachi > :nth-child(1) > :nth-child(3) {
+  display: flex;
+}
+
+.chuadiachi > :nth-child(2) {
+  display: flex;
+  width: 11rem;
+  align-items: center;
+  height: 2rem;
+  cursor: pointer;
+}
+.chuadiachi > :nth-child(2):hover {
+  opacity: 0.7;
+}
+
+.dactrungdiachi {
+  margin-bottom: 1rem;
+  padding: 0.4rem 0.7rem;
+  color: #ce4712;
+  background-color: #ffe0c7;
+  font-size: 1.2rem;
+  border-radius: 0.4rem;
+  font-weight: 500;
+  margin-top: -0.5rem;
+  margin-right: 1rem;
+}
+
+.dactrungmacdinh {
+  margin-bottom: 1rem;
+  padding: 0.4rem 0.8rem;
+  color: #1a51a2;
+  background-color: #ebf3fa;
+  width: 7rem;
+  font-size: 1.2rem;
+  border-radius: 0.4rem;
+  font-weight: 500;
+  margin-top: -0.5rem;
+}
+
+.capnhatthungrac {
+  color: #0070e0;
+  font-size: 1.6rem;
+}
+
+.container-themdiachi.active {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  opacity: 1;
+  visibility: visible;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.container-themdiachi {
+  opacity: 0;
+  visibility: hidden;
+  position: fixed;
+}
+
+.themdiachi {
+  width: 33vw;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  border-radius: 0.8rem;
+  align-items: center;
+  height: 98vh;
+}
+
+.text-themdiachi {
+  color: #2b2b2b;
+  font-size: 2rem;
+  font-weight: 600;
+  width: 40.6rem;
+  margin-right: 2rem;
+  height: 4rem;
+  margin-top: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.themdiachi-box {
+  width: 42.2rem;
+  height: 75%;
+}
+
+.themdiachi-box-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  overflow: scroll;
+  height: 78%;
+}
+
+.loaidiachi {
+  font-weight: 600;
+  font-size: 1.7rem;
+}
+
+.themdiachi-box input[type=text] {
+  width: 100%;
+  height: 4.8rem;
+  border-radius: 0.8rem;
+  border: 0.1rem solid rgb(196, 196, 196);
+  font-size: 1.7rem;
+  font-weight: 600;
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+.themdiachi-box label {
+  font-weight: 600;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+.tuychondiachi {
+  display: flex;
+  margin-bottom: 2rem;
+}
+
+.option input[type=radio] {
+  display: none;
+}
+
+.option input[type=radio]:checked + span {
+  color: #1a51a2;
+  border: 0.12rem solid rgb(26, 81, 162);
+}
+
+.option span {
+  display: inline-block;
+  padding: 1rem 1.5rem;
+  border: 0.12rem solid rgb(196, 196, 196);
+  border-radius: 0.8rem;
+  cursor: pointer;
+  font-weight: 600;
+  color: #333;
+  font-size: 1.4rem;
+  margin-top: 1rem;
+  margin-right: 1rem;
+}
+
+.diachimacdinh {
+  display: flex;
+  align-items: center;
+  padding-bottom: 2rem;
+}
+
+.diachimacdinh > :nth-child(1) {
+  width: 2rem;
+  height: 2rem;
+  margin-right: 1rem;
+}
+
+.diachimacdinh > :nth-child(2) {
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+
+.diachimacdinh {
+  display: flex;
+}
+
+.themdiachi-box select {
+  width: 100%;
+  height: 4.8rem;
+  border-radius: 0.8rem;
+  border: 0.1rem solid rgb(196, 196, 196);
+  font-size: 1.7rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+#secon {
+  margin-top: -0.5rem;
+}
+
+.themdiachi-box input::placeholder {
+  color: rgb(175, 175, 175);
+}
+
+.thaotac-diachi > :nth-child(1) {
+  margin-top: 1rem;
+  margin-left: 20rem;
+  width: 11rem;
+  height: 5rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+  border-radius: 0.8rem;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+.thaotac-diachi > :nth-child(1):hover {
+  background-color: rgb(193, 193, 193);
+}
+
+.thaotac-diachi > :nth-child(2) {
+  margin-top: 1rem;
+  margin-left: 2rem;
+  width: 11rem;
+  height: 5rem;
+  background-color: #005a8e;
+  color: white;
+  font-size: 1.6rem;
+  font-weight: 600;
+  border-radius: 0.8rem;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+.thaotac-diachi > :nth-child(2):hover {
+  background-color: #003250;
+}
+
+.diachinull {
+  width: 40rem;
+  height: 35rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 7rem;
+}
+
+.diachinull > :nth-child(2) {
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+
+.diachinull > :nth-child(3) {
+  font-size: 1.5rem;
+  font-weight: 400;
+  text-align: center;
+}
+
+.diachinull > :nth-child(4) {
+  margin-top: 2rem;
+  width: 13rem;
+  height: 4rem;
+  padding: 1rem 1.5rem;
+  background-color: #005a8e;
+  color: white;
+  font-size: 1.6rem;
+  font-weight: 600;
+  border-radius: 0.8rem;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+.diachinull > :nth-child(4):hover {
+  background-color: #003250;
+}
+
+.ctnthongtin-doimk {
+  margin-left: 1.7rem;
+  width: 63.8vw;
+  height: 85vh;
+  color: #2b2b2b;
+}
+
+.doimk {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.doimkcc {
+  display: flex;
+  align-items: center;
+}
+
+.doimkcc :nth-child(1) {
+  margin-bottom: 0.7rem;
+  margin-right: 1rem;
+  font-size: 3rem;
+  cursor: pointer;
+  color: black;
+  text-decoration: none;
+}
+.doimkcc :nth-child(1):hover {
+  color: #1a51a2;
+}
+
+.thongtin-doimk {
+  width: 63.8vw;
+  height: 43rem;
+  background-color: white;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.container-doimk {
+  width: 95%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  color: #2b2b2b;
+  margin-left: 3rem;
+  margin-top: 5rem;
+}
+
+.container-doimk > :nth-child(1) {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 3rem;
+}
+
+.title-doimk {
+  font-size: 2.2rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.container-doimk label {
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.container-doimk input {
+  width: 41.6rem;
+  height: 4.8rem;
+  padding-left: 1.4rem;
+  font-size: 1.6rem;
+  border: 0.1rem solid rgb(196, 196, 196);
+  border-radius: 0.8rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+
+.container-doimk input::placeholder {
+  color: rgb(160, 160, 160);
+}
+
+.container-doimk button {
+  background-color: #1a51a2;
+  width: 13rem;
+  height: 5rem;
+  padding: 1rem 1.5rem;
+  color: white;
+  font-size: 1.6rem;
+  font-weight: 600;
+  border-radius: 0.8rem;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+.container-doimk button:hover {
+  background-color: #00436c;
+}
+
+#error-message {
+  margin-top: -1rem;
+  font-weight: 500;
+  color: white;
+  height: 1.5rem;
 }
 
 /*# sourceMappingURL=app.css.map */

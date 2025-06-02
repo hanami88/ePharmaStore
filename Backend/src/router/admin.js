@@ -7,7 +7,9 @@ const check = (req, res, next) => {
   try {
     const token = req.cookies.token;
     var result = jwt.verify(token, "1");
-    if (result) {
+    if (result.role != "admin") {
+      res.redirect("/");
+    } else {
       next();
     }
   } catch (err) {
@@ -16,13 +18,18 @@ const check = (req, res, next) => {
 };
 router.use(check);
 router.get("/add", AdminController.home);
-router.post("/create", upload.single("hinhanh"), AdminController.create);
+router.get("/quanlydonhang", AdminController.quanlydonhang);
+router.post("/add", upload.single("hinhanh"), AdminController.create);
 router.get("/quanlysanpham", AdminController.quanlysanpham);
-router.get("/trash", AdminController.trash);
+router.get("/trashsanpham", AdminController.trashsanpham);
+router.get("/trashdonhang", AdminController.trashdonhang);
 router.post("/:id/update", upload.single("hinhanh"), AdminController.update);
 router.get("/:id/suasanpham", AdminController.suasanpham);
-router.post("/:id/softdelete", AdminController.softdelete);
-router.post("/:id/delete", AdminController.delete);
-router.get("/:id/restore", AdminController.restore);
+router.post("/:id/softdeletesanpham", AdminController.softdeletesanpham);
+router.post("/:id/softdeletedonhang", AdminController.softdeletedonhang);
+router.post("/:id/deletesanpham", AdminController.deletesanpham);
+router.post("/:id/deletedonhang", AdminController.deletedonhang);
+router.get("/:id/restoredonhang", AdminController.restoredonhang);
+router.get("/:id/restoresanpham", AdminController.restoresanpham);
 
 module.exports = router;

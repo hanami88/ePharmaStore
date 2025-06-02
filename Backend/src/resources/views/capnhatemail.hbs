@@ -1,0 +1,47 @@
+<div class="container-user">
+  <div class="hienthi-user">
+    <div class="bangchon-user">
+      <div class="bangchon-user-top">
+        <div class="bangchon-user-ten">
+          <img src="/img/actidem.avif" alt="" />
+          <h1>{{user.hoten}}</h1>
+        </div>
+        <img src="/img/thevang.png" alt="" />
+      </div>
+      <div class="bangchon-user-bot">
+        <a href="/user/thongtin" class="thanhchon-user">
+          <i class="fa-solid fa-user"></i>
+          <div>Thông tin cá nhân</div>
+        </a>
+        <a href="/user/diachinhanhang" class="thanhchon-user">
+          <i class="fa-solid fa-location-dot"></i>
+          <div>Địa chỉ nhận hàng</div>
+        </a>
+        <a href="/user/lichsudonhang" class="thanhchon-user">
+          <i class="fa-solid fa-notes-medical"></i>
+          <div>Lịch sử đơn hàng</div>
+        </a>
+      </div>
+    </div>
+    <div class="ctnthongtin-doimk">
+      <div class="doimk">
+        <div class="doimkcc">
+          <a href="/user/thongtin"><i class="fa-solid fa-arrow-left"></i></a>
+          <h1 class="title-doimk">Cập nhật email</h1>
+        </div>
+      </div>
+      <div class="thongtin-doimk">
+        <form action="/user/capnhatemail" method="post" class="container-doimk">
+          <div>
+            Mã xác thực (OTP) sẽ được gửi đến email này để xác minh email là của
+            bạn
+          </div>
+          <label for="email">Email mới</label>
+          <input type="email" name="email" id="" placeholder="Email mới" />
+          <button>Tiếp tục</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="mauxanhtieuchuan"></div>

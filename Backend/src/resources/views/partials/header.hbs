@@ -1,3 +1,9 @@
+<div class="datdonhangthanhcong">
+          <div class="datthanhcong-container">
+            <i class="fa-solid fa-check checker"></i>
+            <div >Đặt đơn hàng thành công</div>
+          </div>
+</div>
 <header class="headertrang">
   <section class="giohang">
     <div class="giohang-container">
@@ -20,15 +26,25 @@
           <div>Thành tiền</div>
         </div>
         <div class="sanpham-all">
-          {{#each user.cart}}
+          {{#each user.giohang}}
           <div class="sanpham-all-box"><div class="gachchan-to"></div><div class="box-sanphamthem"><img class="box-sanphamthem-img" src="/img/{{this.hinhanh}}"><div class="box-sanphamthem-mota">{{this.tensp}}</div><div class="dongia"><div><s>{{formatNumber this.giagoc}} ₫</s></div><div class="dg">{{ formatNumber this.giaban}} ₫</div></div><div class="soluong"><i class="fa-solid fa-minus"></i><div class="slgiohang">{{this.soluong}}</div><i class="fa-solid fa-plus"></i></div><div class="thanhtien"><div>{{formatNumber (nhan this.giaban this.soluong) }} ₫</div><i class="fa-solid fa-trash"></i></div></div></div>
           {{/each}}
+        </div>
+      </div>
+      <div class="xacnhandathang">
+        <div class="thongbaochacchan">
+          <h1>Đặt hàng
+          </h1>
+          <div>Bạn có xác nhận muốn đặt hàng?
+          </div>
+          <button class="thongbao-quaylaidathang">Quay lại</button>
+          <button class="thongbao-tieptucdathang">Đồng ý</button>
         </div>
       </div>
       <div class="giohang-tongtien">
         <div class="giohang-tongtien__tamtinh">
           <div class="giohang-tongtien__tamtinh-mota">Tạm tính</div>
-          <div class="giohang-tongtien__tamtinh-tt">{{formatNumber (totalGiagoc user.cart)}} ₫</div>
+          <div class="giohang-tongtien__tamtinh-tt">{{formatNumber (totalGiagoc user.giohang)}} ₫</div>
         </div>
         <div class="giohang-tongtien__tamtinh">
           <div class="giohang-tongtien__tamtinh-mota">Giảm giá ưu đãi
@@ -38,14 +54,14 @@
         <div class="giohang-tongtien__tamtinh">
           <div class="giohang-tongtien__tamtinh-mota">Giảm giá sản phẩm
           </div>
-          <div class="giamgiatong">{{ formatNumber (minus (totalGiagoc user.cart) (totalGiaban user.cart))}} ₫</div>
+          <div class="giamgiatong">{{ formatNumber (minus (totalGiagoc user.giohang) (totalGiaban user.giohang))}} ₫</div>
         </div>
         <div class="gachchan"></div>
         <div class="giohang-tongtien__tongtien">
           <div class="giohang-tongtien__tongtien-mota">Tổng tiền</div>
-          <div class="giohang-tongtien__tongtien-tt">{{ formatNumber (totalGiaban user.cart)}} ₫</div>
+          <div class="giohang-tongtien__tongtien-tt">{{ formatNumber (totalGiaban user.giohang)}} ₫</div>
         </div>
-        <div class="giohang-tongtien__btn">Mua Hàng</div>
+        <div class="giohang-tongtien__btn">Đặt Hàng</div>
       </div>
       <i class="fa-solid fa-rectangle-xmark"></i>
     </div>
@@ -62,7 +78,7 @@
           <a href="">Đăng ký</a>
         </div>
         <form action="/" class="trang-login-form" method="post">
-          <label for="" class="trang-login__tenname">Tên đăng nhập</label><br />
+          <label for="username" class="trang-login__tenname">Tên đăng nhập</label><br />
           <input
             type="text"
             name="username"
@@ -148,8 +164,7 @@
         <div class="chua__search">
           <input
             type="text"
-            name=""
-            id=""
+            name="thuoc"
             class="header-line2__search"
             placeholder="Tên thuốc, triệu chứng, vitamin và thực phẩm chức năng"
           />

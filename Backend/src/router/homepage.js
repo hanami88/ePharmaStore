@@ -8,6 +8,9 @@ const check = async (req, res, next) => {
     const token = req.cookies.token;
     const decoded = jwt.verify(token, "1");
     const user = await Users.findById(decoded.id).lean();
+    if (decoded.role == "admin") {
+      res.redirect("/admin/add");
+    }
     if (!user) {
       res.locals.user = null;
       return next();

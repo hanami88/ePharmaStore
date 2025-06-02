@@ -40,7 +40,7 @@ class HomePageController {
         password: req.body.password,
       }).lean();
       if (user) {
-        var token = jwt.sign({ id: user._id }, "1");
+        var token = jwt.sign({ id: user._id, role: user.role }, "1");
         res.cookie("token", token, {
           httpOnly: true,
           maxAge: 24 * 60 * 60 * 1000,
