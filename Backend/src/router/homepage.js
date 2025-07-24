@@ -8,6 +8,7 @@ const check = async (req, res, next) => {
     const token = req.cookies.token;
     const decoded = jwt.verify(token, "1");
     const user = await Users.findById(decoded.id).lean();
+    res.locals.count = user.giohang.length;
     if (decoded.role == "admin") {
       res.redirect("/admin/add");
     }
@@ -26,6 +27,6 @@ const check = async (req, res, next) => {
 router.use(check);
 router.get("/", HomePageController.home);
 router.post("/", HomePageController.login);
+router.post("/dangky", HomePageController.dangky);
 router.get("/khohang", HomePageController.khohang);
-
 module.exports = router;

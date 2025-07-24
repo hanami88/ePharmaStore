@@ -10,6 +10,16 @@
     => { datthanhcong.classList.remove("active"); }, 1500);
   </script>
 {{/if}}
+<div class="xoadc">
+  <div class="thongbaochacchan tbcc">
+    <h1>Xoá địa chỉ
+    </h1>
+    <div>Bạn có chắc chắn muốn xóa địa chỉ này?
+    </div>
+    <button class="thongbao-quaylai qlai">Quay lại</button>
+    <button class="thongbao-tieptuc tt">Đồng ý</button>
+  </div>
+</div>
 <div class="container-themdiachi">
   <div class="themdiachi">
     <div class="text-themdiachi">Địa chỉ mới</div>
@@ -74,6 +84,7 @@
         </div>
         <img src="/img/thevang.png" alt="" />
       </div>
+
       <div class="bangchon-user-bot">
         <a href="/user/thongtin" class="thanhchon-user">
           <i class="fa-solid fa-user"></i>
@@ -131,8 +142,8 @@
                 </div>
               </div>
               <div>
-                <div class="capnhatthungrac">Cập nhật</div>
-                <i class="fa-solid fa-trash"></i>
+                <i class="fa-solid fa-trash trashdc"></i>
+                <div class="chuasttdiachi">{{@index}}</div>
               </div>
             </div>
           {{/each}}

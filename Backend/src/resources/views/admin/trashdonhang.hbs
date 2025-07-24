@@ -45,21 +45,25 @@
       <tbody>
         {{#each order}}
           <tr>
-            <td style="width: 2vw">{{sum @index 1}}</td>
-            <td style="width: 4vw">abc{{sum @index 1}}</td>
+            <td style="width: 1vw">{{sum @index 1}}</td>
+            <td style="width: 6vw">{{this.userid._id}}</td>
             <td style="width: 6vw">{{this.userid.username}}</td>
-            <td style="width: 8vw">{{this.userid.hoten}}</td>
-            <td style="width: 6vw;">{{formatDate this.createdAt}}</td>
-            <td style="width: 7vw;">{{formatNumber this.tongtien}} ₫</td>
-            <td style="width: 6vw;">{{this.trangthai}}</td>
-            <td style="width: 6vw;">{{this.thanhtoan}}</td>
+            <td style="width: 7vw">{{this.userid.hoten}}</td>
+            <td style="width: 7vw;">{{formatDate this.createdAt}}</td>
+            <td style="width: 6vw;">{{formatNumber this.tongtien}} ₫</td>
+            <td style="width: 5vw;">{{this.trangthai}}</td>
+            <td style="width: 5vw;">{{this.thanhtoan}}</td>
             <td style="width: 1vw;">
               <div class="hanhdong">
                 <a
                   href="/admin/{{this._id}}/restoredonhang"
                   class="btn btn-blue"
                 >Khôi phục</a>
-                <div class="btn btn-red btn-sm" data-id="{{this._id}}">Xoá</div>
+                <div
+                  class="btn btn-red btn-sm"
+                  data-id="{{this._id}}"
+                  id="btn-do"
+                >Xoá</div>
               </div>
             </td>
           </tr>
@@ -68,9 +72,8 @@
     </table>
   </div>
 </main>
-<form method="POST" style="display:inline" class="formxoadonhang">
-</form>
-</form><div class="xoasp">
+<form method="POST" style="display:inline" class="formxoadonhang"></form>
+<div class="xoasp">
   <div class="thongbaochacchan">
     <h1>Xoá đơn hàng vĩnh viễn
     </h1>

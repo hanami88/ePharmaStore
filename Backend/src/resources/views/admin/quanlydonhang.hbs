@@ -43,19 +43,18 @@
       </thead>
       <tbody>
         {{#each order}}
-          <tr>
-            <td style="width: 2vw">{{sum @index 1}}</td>
-            <td style="width: 4vw">abc{{sum @index 1}}</td>
+          <tr class="chuaorder">
+            <td style="width: 1vw">{{sum @index 1}}</td>
+            <td class="idorder" style="width: 6vw">{{this._id}}</td>
             <td style="width: 6vw">{{this.userid.username}}</td>
-            <td style="width: 8vw">{{this.userid.hoten}}</td>
-            <td style="width: 6vw;">{{formatDate this.createdAt}}</td>
-            <td style="width: 7vw;">{{formatNumber this.tongtien}} ₫</td>
-            <td style="width: 6vw;">{{this.trangthai}}</td>
-            <td style="width: 6vw;">{{this.thanhtoan}}</td>
+            <td style="width: 7vw">{{this.userid.hoten}}</td>
+            <td style="width: 7vw;">{{formatDate this.createdAt}}</td>
+            <td style="width: 6vw;">{{formatNumber this.tongtien}} ₫</td>
+            <td style="width: 5vw;">{{this.trangthai}}</td>
+            <td style="width: 5vw;">{{this.thanhtoan}}</td>
             <td style="width: 1vw;">
               <div class="hanhdong">
                 <div class="btn btn-red btn-sc" data-id="{{this._id}}">Chi tiết</div>
-                <div class="btn btn-red btn-sm" data-id="{{this._id}}">Xoá</div>
               </div>
             </td>
           </tr>
@@ -68,12 +67,83 @@
 </form>
 <div class="xoasp">
   <div class="thongbaochacchan tbcc">
-    <h1>Xoá sản phẩm
+    <h1>Xoá đơn hàng
     </h1>
-    <div>Bạn có chắc chắn muốn xóa sản phẩm này?
+    <div>Bạn có chắc chắn muốn xóa đơn hàng này?
     </div>
     <button class="thongbao-quaylai qlai">Quay lại</button>
     <button class="thongbao-tieptuc tt">Đồng ý</button>
   </div>
 </div>
-<script src="/js/xoadonhang-qldh.js"></script>
+<div class="container-chitietdonhang">
+  <div class="chuachitietdonhang">
+    <i class="fa-solid fa-circle-xmark"></i>
+    <div class="hienthilichsu-thongtin1">
+      <div>
+        <div class="indamthongtin">Thông tin người nhận</div>
+        <div id="tentk"></div>
+        <div>
+          <span class="indamthongtin gach" id="hoten"></span>
+          <span id="sdt"></span>
+        </div>
+        <div class="botthongtin" id="diachi"></div>
+      </div>
+      <div>
+        <div class="indamthongtin">Mã đơn hàng</div>
+        <div id="madonhang"></div>
+        <div class="trangthaidonhang1" id="trangthaidonhang1"></div>
+        <div
+          class="trangthaidonhang-xacnhan"
+          id="trangthaidonhang-xacnhan"
+        ></div>
+        <div class="botthongtin">
+          <div class="indamthongtin">Thời gian đặt hàng</div>
+          <div id="time"></div>
+        </div>
+      </div>
+    </div>
+    <div class="sanphamdamua">Sản phẩm </div>
+    <div class="lichsu-hienthidonhang1">
+    </div>
+    <div class="gachchan-to1"></div>
+    <div class="container-thanhtoan">
+      <div>
+        <div class="btn btn-red btn-sk" data-id="{{this._id}}">Xác nhận </div>
+        <div class="btn btn-red btn-sm" data-id="{{this._id}}">Xoá đơn hàng</div>
+      </div>
+      <div class="lichsu-hienthitongtien1">
+        <div>Chi tiết thanh toán</div>
+        <div class="hienthitongtien">
+          <div>Tiền hàng</div>
+          <div class="tongtienindam" id="tienhang"></div>
+        </div>
+        <div class="hienthitongtien">
+          <div>Phí vận chuyển</div>
+          <div class="tongtienindam"></div>
+        </div>
+        <div class="hienthitongtien">
+          <div>Giảm giá sản phẩm</div>
+          <div class="tongtienindam" id="giamgia"></div>
+        </div>
+        <div class="gachchan-to3"></div>
+        <div class="hienthitongtien boxtt1">
+          <div>
+            <span class="tongtienindam">Tổng tiền </span><span
+              class="spnho"
+              id="spnho"
+            >(1 sản phẩm)</span>
+          </div>
+          <div class="tongtienindamdb" id="tongtien"></div>
+        </div>
+        <div class="hienthitongtien boxtt2">
+          <div class="tongtienindam">Phương thức thanh toán</div>
+          <div>
+            <div class="COD">COD</div>
+            <div class="tongtienindam">Tiền mặt</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="/js/temp.js"></script>

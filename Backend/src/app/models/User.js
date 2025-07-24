@@ -24,6 +24,7 @@ const AddressSchema = new Schema(
     sonha: String,
     loai: String,
     macdinh: Boolean,
+    duocchon: Boolean,
   },
   { _id: false }
 );

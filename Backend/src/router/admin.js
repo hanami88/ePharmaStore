@@ -18,6 +18,7 @@ const check = (req, res, next) => {
 };
 router.use(check);
 router.get("/add", AdminController.home);
+router.get("/dangxuat", AdminController.dangxuat);
 router.get("/quanlydonhang", AdminController.quanlydonhang);
 router.post("/add", upload.single("hinhanh"), AdminController.create);
 router.get("/quanlysanpham", AdminController.quanlysanpham);
@@ -29,7 +30,8 @@ router.post("/:id/softdeletesanpham", AdminController.softdeletesanpham);
 router.post("/:id/softdeletedonhang", AdminController.softdeletedonhang);
 router.post("/:id/deletesanpham", AdminController.deletesanpham);
 router.post("/:id/deletedonhang", AdminController.deletedonhang);
+router.post("/:id/xacnhandonhang", AdminController.xacnhandonhang);
 router.get("/:id/restoredonhang", AdminController.restoredonhang);
 router.get("/:id/restoresanpham", AdminController.restoresanpham);
-
+router.post("/chitietdonhang", AdminController.chitietdonhang);
 module.exports = router;

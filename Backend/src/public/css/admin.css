@@ -1,12 +1,14 @@
 html {
   font-size: 62.5%;
   font-family: "Inter", serif;
+  box-sizing: border-box;
 }
 
 body {
   margin: 0;
   display: flex;
   background-color: #f4f6f8;
+  box-sizing: border-box;
 }
 
 .logo {
@@ -22,6 +24,23 @@ body {
   padding: 2rem;
   position: fixed;
   top: 0;
+}
+
+.ten {
+  font-weight: 600;
+  font-size: 2rem;
+}
+
+.dangxuat {
+  padding: 1rem 2rem;
+  background-color: white;
+  text-decoration: none;
+  color: #1a51a2;
+  font-weight: 600;
+  border-radius: 0.8rem;
+}
+.dangxuat:hover {
+  opacity: 0.8;
 }
 
 .sidebar .user-info {
@@ -257,13 +276,17 @@ input[type=date].formtime {
 .product-table {
   width: 100%;
   border-collapse: collapse;
-  height: 10rem;
   overflow-y: auto;
 }
 
-.product-table th,
+.product-table th {
+  padding: 0.6rem;
+  border: 0.1rem solid #ccc;
+  text-align: center;
+  font-size: 1.4rem;
+}
+
 .product-table td {
-  padding: 1rem;
   border: 0.1rem solid #ccc;
   text-align: center;
   font-size: 1.4rem;
@@ -304,8 +327,23 @@ input[type=date].formtime {
   background-color: rgb(112, 0, 0);
 }
 
-.btn-sc {
+#btn-do {
   padding: 0.6rem 0.5rem;
+  font-size: 1.5rem;
+  border-radius: 1rem;
+  background-color: #b22b27;
+  border: none;
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+  width: 9rem;
+}
+#btn-do:hover {
+  background-color: rgb(112, 0, 0);
+}
+
+.btn-sc {
+  padding: 1rem 0.6rem;
   font-size: 1.5rem;
   background-color: rgb(9, 86, 202);
   border-radius: 1rem;
@@ -314,6 +352,8 @@ input[type=date].formtime {
   border: none;
   color: white;
   text-decoration: none;
+  margin-top: 1.5rem;
+  cursor: pointer;
 }
 .btn-sc:hover {
   background-color: rgb(23, 61, 118);
@@ -412,7 +452,7 @@ td {
   width: 100vw;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.287);
-  z-index: 1;
+  z-index: 2;
   position: absolute;
   display: flex;
   justify-content: center;
@@ -495,6 +535,310 @@ td {
 }
 .thongbao-tieptuc:hover {
   background-color: #003250;
+}
+
+.container-chitietdonhang {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+}
+
+.container-chitietdonhang.active {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+  visibility: visible;
+  opacity: 1;
+}
+
+.fa-circle-xmark {
+  position: absolute;
+  top: 1rem;
+  font-size: 3rem;
+  right: 1.3rem;
+  cursor: pointer;
+}
+.fa-circle-xmark:hover {
+  opacity: 0.8;
+}
+
+.chuachitietdonhang {
+  width: 63.8vw;
+  height: 95vh;
+  background-color: #ffffff;
+  border-radius: 1rem;
+  font-size: 1.6rem;
+  position: relative;
+}
+
+.spnho {
+  font-size: 1.4rem;
+}
+
+.hienthilichsu-thongtin1 > :nth-child(2) > :nth-child(5) {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 43rem;
+}
+
+.hienthilichsu-thongtin1 > :nth-child(1) {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 11rem;
+  margin-left: 1.5rem;
+  width: 47%;
+}
+
+.hienthilichsu-thongtin1 > :nth-child(2) {
+  border-left: 0.15rem solid rgb(210, 210, 210);
+  padding-left: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 11rem;
+  width: 49%;
+}
+
+.hienthilichsu-thongtin1 {
+  display: flex;
+  margin-top: 2rem;
+  height: 11rem;
+}
+
+.lichsu-hienthidonhang1 {
+  height: 38%;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.sanphamdamua {
+  margin-left: 1.8rem;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.lichsu-hienthitongtien1 {
+  display: flex;
+  flex-direction: column;
+  width: 45%;
+  height: 20rem;
+  justify-content: space-between;
+}
+
+.lichsu-hienthitongtien1 > :nth-child(1) {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.hienthitongtien {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.6rem;
+}
+
+.container-thanhtoan {
+  display: flex;
+  align-items: center;
+  width: 60vw;
+  justify-content: space-between;
+  margin-left: 3rem;
+}
+
+.btn-sm {
+  padding: 1.7rem 3.3rem 1.7rem 3.5rem;
+  font-size: 1.8rem;
+  border-radius: 1rem;
+  background-color: #b22b27;
+  border: none;
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+  width: 12rem;
+}
+.btn-sm:hover {
+  background-color: rgb(112, 0, 0);
+}
+
+.tongtienindamdb {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: red;
+}
+
+.boxtt2 > :nth-child(2) {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 12rem;
+}
+
+.COD {
+  font-size: 1.4rem;
+  padding: 0.3rem 0.5rem;
+  background-color: white;
+  color: #1a51a2;
+  font-weight: 600;
+  border-radius: 0.5rem;
+  border: 0.1rem solid rgb(194, 194, 194);
+}
+
+.btn-sk {
+  padding: 1.7rem 3.3rem 1.7rem 5.5rem;
+  font-size: 1.8rem;
+  border-radius: 1rem;
+  background-color: #1a51a2;
+  border: none;
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+  width: 10rem;
+}
+.btn-sk:hover {
+  background-color: #092c61;
+}
+
+.container-thanhtoan > :nth-child(1) {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 14rem;
+  margin-left: 14rem;
+  width: 18rem;
+}
+
+.trangthaidonhang-xacnhan {
+  padding: 0.5rem 0.1rem 0.5rem 1.5rem;
+  background-color: #1a51a2;
+  font-size: 1.5rem;
+  border-radius: 0.4rem;
+  font-weight: 500;
+  width: 10.3rem;
+  color: white;
+}
+
+.trangthaidonhang1 {
+  padding: 0.48rem 1.5rem 0.22rem;
+  color: #ce4712;
+  background-color: #ffe0c7;
+  font-size: 1.5rem;
+  border-radius: 0.4rem;
+  font-weight: 500;
+  width: 10rem;
+  height: 2rem;
+}
+
+.gachchan-to3 {
+  width: 39.5rem;
+  background-color: rgba(158, 158, 158, 0.493);
+  height: 0.1rem;
+}
+
+.indamthongtin {
+  font-weight: 600;
+}
+
+.botthongtin {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.indamthongtin.gach {
+  border-right: 0.15rem solid rgb(215, 215, 215);
+  padding-right: 1.5rem;
+}
+
+.gachchan-to1 {
+  width: 88rem;
+  background-color: rgba(158, 158, 158, 0.493);
+  height: 0.1rem;
+  margin-top: 2rem;
+  margin-left: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.box-sanphamthem-img {
+  width: 8rem;
+  height: 8rem;
+  border-radius: 2rem;
+  margin-top: 0.5rem;
+}
+
+.box-sanphamthem {
+  width: 92rem;
+  height: 9rem;
+  display: flex;
+  justify-content: start;
+  margin-left: 2rem;
+}
+
+.dongia {
+  margin-left: 5rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+  width: 10.5rem;
+  margin-top: 0.7rem;
+  text-align: center;
+}
+
+.dongia > :nth-child(1) {
+  color: rgb(160, 160, 160);
+  font-size: 1.3rem;
+}
+
+.soluong {
+  margin-top: 1.5rem;
+  margin-left: 8rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+  width: 10rem;
+  text-align: center;
+}
+
+.box-sanphamthem-mota {
+  width: 25rem;
+  font-size: 1.35rem;
+  font-weight: 600;
+  line-height: 1.8rem;
+  margin-left: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+.soluong > :nth-child(2) {
+  display: inline-block;
+  width: 1rem;
+  user-select: none;
+}
+
+.thanhtien {
+  font-size: 1.4rem;
+  font-weight: 600;
+  width: 15rem;
+  margin-left: 8rem;
+  margin-top: 1.5rem;
+  display: flex;
+  text-align: center;
+}
+
+.thanhtien > :nth-child(1) {
+  width: 11rem;
+  display: inline-block;
+}
+
+.thanhtien > :nth-child(1) {
+  width: 10rem;
+  display: inline-block;
+}
+
+.tongtienindam {
+  font-weight: 600;
 }
 
 /*# sourceMappingURL=admin.css.map */

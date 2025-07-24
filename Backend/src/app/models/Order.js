@@ -27,6 +27,20 @@ const User = new Schema({
   sdt: { type: String },
   giohang: [Good],
 });
+const AddressSchema = new Schema(
+  {
+    hoten: String,
+    sdt: String,
+    tinhthanh: String,
+    quanhuyen: String,
+    phuongxa: String,
+    sonha: String,
+    loai: String,
+    macdinh: Boolean,
+    duocchon: Boolean,
+  },
+  { _id: false }
+);
 const Order = new Schema(
   {
     userid: {
@@ -37,6 +51,8 @@ const Order = new Schema(
     tongtien: Number, // Tổng tiền đơn
     trangthai: { type: String, default: "Chờ xác nhận" }, // Trạng thái đơn
     thanhtoan: String,
+    ghichu: String,
+    diachi: AddressSchema,
   },
   {
     timestamps: true,

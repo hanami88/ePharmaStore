@@ -1,0 +1,287 @@
+<section class="thanhtoandonhang">
+  <div class="thanhtoangiohang-container">
+    <div>
+      <div class="thanhtoan-sanpham">
+        <div>Thanh toán</div>
+        <div class="thanhtoan-all">
+          {{#each user.giohang}}
+            <div class="sanpham-all-box">
+              <div class="box-sanphamthem-thanhtoan">
+                <img class="box-sanphamthem-img" src="/img/{{this.hinhanh}}" />
+                <div class="box-sanphamthem-motathanhtoan">
+                  {{this.tensp}}
+                </div>
+                <div class="soluong-thanhtoan">x{{this.soluong}}</div>
+                <div class="thanhtien-thanhtoan">
+                  {{formatNumber this.giaban}}
+                  ₫</div>
+              </div>
+              <div class="gachchan-to"></div>
+            </div>
+          {{/each}}
+        </div>
+        <form class="thanhtoan-ghichu">
+          <label for="ghichu">Ghi chú</label>
+          <input type="text" id="ghichu" placeholder="Nhập ghi chú ở đây" />
+        </form>
+      </div>
+      <div class="hinhthucnhanhang-thanhtoan">
+        <h1 class="hinhthucnhanhang">Hình thức nhận hàng</h1>
+        <div>Giao hàng tận nơi</div>
+        <div>
+          <div>Thông tin người nhận</div>
+          <div class="thaydoi">Thay đổi</div>
+        </div>
+        <div>
+          <div class="chuadiachi thanhtoan-diachi">
+            {{#each user.diachi}}
+              {{#if this.duocchon}}
+                <div>
+                  <div>
+                    <span class="chuaten--diachi">{{this.hoten}}</span>
+                    <span class="bac1">|</span>
+                    {{this.sdt}}
+                  </div>
+                  <div>
+                    {{this.sonha}},
+                    {{this.phuongxa}},
+                    {{this.quanhuyen}},
+                    {{this.tinhthanh}}
+                  </div>
+                  <div>
+                    <div class="dactrungdiachi-thanhtoan">{{this.loai}}</div>
+                    {{#if this.macdinh}}
+                      <div class="dactrungmacdinh-thanhtoan">Mặc định</div>
+                    {{/if}}
+                  </div>
+                </div>
+              {{/if}}
+            {{/each}}
+            <div>
+              <div class="chuasttdiachi">{{@index}}</div>
+            </div>
+          </div>
+        </div>
+        <div class="gach-thanhtoan">.</div>
+        <div class="donvivanchuyen-thanhtoan">
+          <div>
+            <div class="indamthongtin">Đơn vị vận chuyển</div>
+            <div class="indamthongtin">19.000 ₫</div>
+          </div>
+          <div class="indamthongtin">Viettel Post</div>
+          <div>
+            Dự kiến giao hàng: 4-7 ngày không bao gồm thứ 7, chủ nhật
+          </div>
+        </div>
+      </div>
+      <div class="phuongthucthanhtoan">
+        <div>Phương thức thanh toán</div>
+        <form action="" class="formphuongthuc">
+          <div class="boxpt">
+            <input type="radio" name="PT" value="COD" id="COD" />
+            <label for="COD"><img
+                src="/img/CODMOI.png"
+                alt=""
+                class="ppttimg"
+              />
+              <div>Tiền mặt</div></label>
+          </div>
+          <div class="boxpt">
+            <input type="radio" name="PT" value="MOMO" id="MOMO" />
+            <label for="MOMO">
+              <img src="/img/MOMOMOI.png" alt="" class="ppttimg" />
+              <div>Momo</div></label>
+          </div>
+          <div class="boxpt">
+            <input type="radio" name="PT" value="ZALOPAY" id="ZALOPAY" />
+            <label for="ZALOPAY">
+              <img src="/img/ZALOPAY.png" alt="" class="ppttimg" />
+              <div>ZaloPay</div></label>
+          </div>
+          <div class="boxpt">
+            <input type="radio" name="PT" value="THETINDUNG" id="THETINDUNG" />
+            <label for="THETINDUNG"><img
+                src="/img/THETINDUNG.png"
+                alt=""
+                class="ppttimg"
+              />
+              <div>Thẻ tín dụng</div></label>
+          </div>
+          <div class="boxpt">
+            <input type="radio" name="PT" value="ATM" id="ATM" />
+
+            <label for="ATM">
+              <img src="/img/ATM.png" alt="" class="ppttimg" />
+              <div>Thẻ ATM</div></label>
+          </div>
+          <div class="boxpt">
+            <input type="radio" name="PT" value="APPLEPAY" id="APPLEPAY" />
+            <label for="APPLEPAY">
+              <img src="/img/APPLEPAY.png" alt="" class="ppttimg" />
+              <div>Apple Pay</div>
+            </label>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="thanhtoan-dungcot">
+      <div class="thanhtoan-tongtien">
+        <div class="cttt">Chi tiết thanh toán</div>
+        <div class="thanhtoan-tt">
+          <div>Tạm tính</div>
+          <div>{{formatNumber (totalGiaban user.giohang)}} ₫</div>
+        </div>
+        <div class="thanhtoan-tt">
+          <div>Phí vận chuyển</div>
+          <div>19.000 ₫</div>
+        </div>
+        <div class="thanhtoan-tt">
+          <div>Giảm giá vận chuyển</div>
+          <div>-19.000 ₫</div>
+        </div>
+        <div class="thanhtoan-tt">
+          <div class="giohang-tongtien__tamtinh-mota">
+            Giảm giá sản phẩm
+          </div>
+          <div class="giamgiatong">-{{formatNumber
+              (minus (totalGiagoc user.giohang) (totalGiaban user.giohang))
+            }}
+            ₫</div>
+        </div>
+        <div class="gachchan-tt"></div>
+        <div class="thanhtoan-tongtien__tongtien">
+          <div class="thanhtoan-tongtien__tongtien-mota">
+            <div>Tổng tiền</div>
+            <div>{{user.giohang.length}} sản phẩm</div>
+          </div>
+          <div class="thanhtoan-tongtien__tongtien-tt">{{formatNumber
+              (totalGiaban user.giohang)
+            }}
+            ₫</div>
+        </div>
+        <form class="thanhtoan-dieukhoan">
+          <input
+            type="checkbox"
+            name=""
+            id="dieukhoan"
+            class="checkdieukiendathang"
+          />
+          <label for="dieukhoan">Bằng cách tích vào ô chọn, bạn đã đồng ý với
+            <a href="">Điều khoản Pharmacity</a></label>
+        </form>
+        <div class="thanhtoan-tongtien__btn">Đặt Hàng</div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="doidiachi">
+  <div class="container-doidiachi">
+    <div>Địa chỉ giao hàng</div>
+    <form
+      class="chuadiachi-hienthi"
+      action="/user/doidiachinhanhang"
+      method="post"
+    >
+      {{#each user.diachi}}
+        <div class="diachithanhtoan">
+          <input
+            type="radio"
+            value="{{@index}}"
+            name="diachi"
+            id="{{@index}}"
+            class="radio"
+          />
+          <label for="{{@index}}">
+            <div>
+              <span class="chuaten--diachi">{{this.hoten}}</span>
+              <span class="bac1">|</span>
+              {{this.sdt}}
+            </div>
+            <div>{{this.sonha}},
+              {{this.phuongxa}},
+              {{this.quanhuyen}},
+              {{this.tinhthanh}}
+            </div>
+            <div>
+              <div class="dactrungdiachi">{{this.loai}}</div>
+              {{#if this.macdinh}}
+                <div class="dactrungmacdinh-thanhtoan">Mặc định</div>
+              {{/if}}
+            </div>
+          </label>
+        </div>
+      {{/each}}
+    </form>
+    <div class="btnthemdiachi">+ Thêm địa chỉ</div>
+    <div class="chua2btn">
+      <div class="modori">Quay lại</div>
+      <div class="apuru">Áp dụng</div>
+    </div>
+  </div>
+</div>
+<div class="container-themdiachi">
+  <div class="themdiachi">
+    <div class="text-themdiachi">Địa chỉ mới</div>
+    <div class="themdiachi-box-container">
+      <div class="themdiachi-box">
+        <form action="/user/themdiachi" method="post" class="formdiachi">
+          <label for="hoten">Họ và tên</label>
+          <input
+            type="text"
+            name="hoten"
+            placeholder="Nhập họ và tên"
+            id="hoten"
+          />
+          <label for="sdt">Số điện thoại</label>
+          <input
+            type="text"
+            name="sdt"
+            placeholder="Nhập số điện thoại"
+            id="sdt"
+          />
+          <label for="tinhthanh">Địa chỉ</label>
+          <select name="tinhthanh" id="tinhthanh">
+            <option value="" class="maubac">--Chọn Tỉnh/Thành phố--</option>
+            <option value="Quảng Trị">Quảng Trị</option>
+            <option value="Đà Nẵng">Đà Nẵng</option>
+            <option value="Huế">Huế</option>
+          </select>
+          <input type="text" name="quanhuyen" placeholder="Nhập Quận/Huyện" />
+          <input
+            type="text"
+            id="secon"
+            name="phuongxa"
+            placeholder="Nhập Phường/Xã"
+          />
+          <input
+            type="text"
+            id="ll"
+            name="sonha"
+            placeholder="Nhập số nhà,tên đường"
+          />
+          <div class="loaidiachi">Loại địa chỉ</div>
+          <div class="tuychondiachi">
+            <label class="option">
+              <input type="radio" name="loai" value="Nhà riêng" required />
+              <span>Nhà riêng</span>
+            </label>
+            <label class="option">
+              <input type="radio" name="loai" value="Công ty" />
+              <span>Công ty</span>
+            </label>
+          </div>
+          <div class="diachimacdinh">
+            <input type="checkbox" name="macdinh" id="" />
+            <div>Đặt làm địa chỉ mặc định</div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="thaotac-diachi">
+      <button class="btn-diachi-quaylai">Quay lại</button>
+      <button class="luudiachi">Lưu lại</button>
+    </div>
+  </div>
+</div>
+<div class="mauxanhtieuchuan"></div>
+<script src="/js/temp1.js"></script>

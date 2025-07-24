@@ -15,7 +15,7 @@
     <div class="bangchon-user">
       <div class="bangchon-user-top">
         <div class="bangchon-user-ten">
-          <img src="/img/actidem.avif" alt="" />
+          <img src="/img/{{user.hinhanh}}" alt="" />
           <h1>{{user.hoten}}</h1>
         </div>
         <img src="/img/thevang.png" alt="" />
@@ -38,12 +38,20 @@
     <div class="ctnthongtin-user">
       <h1 class="title-thongtincanhan">Thông tin cá nhân</h1>
       <div class="thongtin-user">
-        <div class="container-thongtinuser">
+        <form method="post" action="/user/capnhatthongtin" class="container-thongtinuser" enctype="multipart/form-data">
           <div class="anhdaidien">Ảnh đại diện</div>
           <div class="anhdaidien-cc">
-            <img class="anhdaidienmoi" src="/img/actidem.avif" alt="" />
+            <img class="anhdaidienmoi" id="preview" src="/img/{{user.hinhanh}}"/>
+            <input
+             class="file"
+             id="hinhanh"
+             accept="image/*"
+             type="file"
+             name="hinhanh"
+             style="display: none;"
+            />
             <div class="daidienoi">
-              <button class="btn-capnhatanhmoi">Cập nhật ảnh mới</button>
+             <label for="hinhanh" class="btn-capnhatanhmoi">Cập nhật ảnh mới</label>
               <div>Dung lượng file tối đa 5 MB.</div>
               <div>Định dạng: .JPEG, .PNG</div>
             </div>
@@ -92,11 +100,12 @@
             </div>
           </div>
           <div class="chuabtnthaydoi">
-            <button class="btn-thaydoi">Lưu thay đổi</button>
+            <button type="submit" class="btn-thaydoi">Lưu thay đổi</button>
           </div>
-        </div>
+        </form>
       </div>
     </div>
   </div>
 </div>
 <div class="mauxanhtieuchuan"></div>
+<script src="/js/thongtin.js"></script>

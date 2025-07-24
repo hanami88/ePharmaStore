@@ -1,71 +1,11 @@
-<div class="datdonhangthanhcong">
+
+<div class="dangkythanhcong">
           <div class="datthanhcong-container">
             <i class="fa-solid fa-check checker"></i>
-            <div >Đặt đơn hàng thành công</div>
+            <div >Đăng ký thành công</div>
           </div>
 </div>
 <header class="headertrang">
-  <section class="giohang">
-    <div class="giohang-container">
-      <div class="xoasp">
-        <div class="thongbaochacchan">
-          <h1>Xoá sản phẩm
-          </h1>
-          <div>Bạn có chắc chắn muốn xóa sản phẩm này?
-          </div>
-          <button class="thongbao-quaylai">Quay lại</button>
-          <button class="thongbao-tieptuc">Đồng ý</button>
-        </div>
-      </div>
-      <div class="giohang-sanpham">
-        <h1>Giỏ hàng</h1>
-        <div class="giohang-mota">
-          <div>Sản phẩm</div>
-          <div>Đơn giá</div>
-          <div>Số lượng</div>
-          <div>Thành tiền</div>
-        </div>
-        <div class="sanpham-all">
-          {{#each user.giohang}}
-          <div class="sanpham-all-box"><div class="gachchan-to"></div><div class="box-sanphamthem"><img class="box-sanphamthem-img" src="/img/{{this.hinhanh}}"><div class="box-sanphamthem-mota">{{this.tensp}}</div><div class="dongia"><div><s>{{formatNumber this.giagoc}} ₫</s></div><div class="dg">{{ formatNumber this.giaban}} ₫</div></div><div class="soluong"><i class="fa-solid fa-minus"></i><div class="slgiohang">{{this.soluong}}</div><i class="fa-solid fa-plus"></i></div><div class="thanhtien"><div>{{formatNumber (nhan this.giaban this.soluong) }} ₫</div><i class="fa-solid fa-trash"></i></div></div></div>
-          {{/each}}
-        </div>
-      </div>
-      <div class="xacnhandathang">
-        <div class="thongbaochacchan">
-          <h1>Đặt hàng
-          </h1>
-          <div>Bạn có xác nhận muốn đặt hàng?
-          </div>
-          <button class="thongbao-quaylaidathang">Quay lại</button>
-          <button class="thongbao-tieptucdathang">Đồng ý</button>
-        </div>
-      </div>
-      <div class="giohang-tongtien">
-        <div class="giohang-tongtien__tamtinh">
-          <div class="giohang-tongtien__tamtinh-mota">Tạm tính</div>
-          <div class="giohang-tongtien__tamtinh-tt">{{formatNumber (totalGiagoc user.giohang)}} ₫</div>
-        </div>
-        <div class="giohang-tongtien__tamtinh">
-          <div class="giohang-tongtien__tamtinh-mota">Giảm giá ưu đãi
-          </div>
-          <div class="giohang-tongtien__tamtinh-tt">-</div>
-        </div>
-        <div class="giohang-tongtien__tamtinh">
-          <div class="giohang-tongtien__tamtinh-mota">Giảm giá sản phẩm
-          </div>
-          <div class="giamgiatong">{{ formatNumber (minus (totalGiagoc user.giohang) (totalGiaban user.giohang))}} ₫</div>
-        </div>
-        <div class="gachchan"></div>
-        <div class="giohang-tongtien__tongtien">
-          <div class="giohang-tongtien__tongtien-mota">Tổng tiền</div>
-          <div class="giohang-tongtien__tongtien-tt">{{ formatNumber (totalGiaban user.giohang)}} ₫</div>
-        </div>
-        <div class="giohang-tongtien__btn">Đặt Hàng</div>
-      </div>
-      <i class="fa-solid fa-rectangle-xmark"></i>
-    </div>
-  </section>
   <div class="trangdangnhap">
     <div class="trang-login">
       <div class="trang-login-container">
@@ -75,7 +15,7 @@
         />
         <div class="trang-login-title">
           <div>Nếu chưa có thì bạn có thể đăng ký tại : </div>
-          <a href="">Đăng ký</a>
+          <div class="btn-dangky">Đăng ký</div>
         </div>
         <form action="/" class="trang-login-form" method="post">
           <label for="username" class="trang-login__tenname">Tên đăng nhập</label><br />
@@ -96,12 +36,56 @@
             class="trang-login__name"
             placeholder="Nhập mật khẩu"
           /><br />
+           <div class="trang-login-error">{{error}}</div>
           <button type="submit" class="trang-login__enter">
             Đăng nhập
           </button>
         </form>
       </div>
     </div>
+    <div class="trang-login dky">
+            <div class="trang-login-container">
+              <h1 class="trang-login__hello">ĐĂNG KÝ</h1>
+              <h1 class="x x1"><i class="fa-solid fa-xmark"></i></h1>
+              <div class="trang-login-title">
+                <div >Nếu đã có tài khoản đăng nhập tại : </div>
+                <div class="btn-dangnhap">Đăng nhập</div>
+              </div>
+              <form action="/" class="trang-dky-form" method="post">
+                <label for="username" class="trang-login__tenname">Tên đăng nhập</label><br />
+                <input
+                  type="text"
+                  name="username"
+                  id="username1"
+                  class="trang-login__name"
+                  placeholder="Nhập tên đăng nhập"
+                />
+                <br />
+                <label for="password" class="trang-login__tenname">Mật khẩu</label><br
+                />
+                <input
+                  type="text"
+                  name="password"
+                  id="password1"
+                  class="trang-login__name"
+                  placeholder="Nhập mật khẩu"
+                /><br />
+                <label for="repassword" class="trang-login__tenname">Xác nhận mật khẩu</label><br
+                />
+                <input
+                  type="text"
+                  name="repassword"
+                  id="repassword"
+                  class="trang-login__name"
+                  placeholder="Nhập lại mật khẩu"
+                /><br />
+                <div class="trang-dky-error">{{error}}</div>
+                <button type="submit" class="trang-login__enter">
+                  Đăng ký
+                </button>
+              </form>
+            </div>
+     </div>
   </div>
   <div class="boc">
     <img src="/img/header.png" alt="" class="pcheader" />
@@ -173,8 +157,8 @@
         <i class="fa-solid fa-bell">
         </i>
         <i class="fa-solid fa-cart-plus">
-          <div class="hienthiso">
-            <div class="hienthiso-so">0</div>
+          <div class="hienthiso active">
+            <div class="hienthiso-so">{{count}}</div>
           </div>
         </i>
         <div class="bocline2 {{#if user}} active{{/if}}" >
@@ -195,11 +179,11 @@
               <i class="fa-solid fa-user"></i>
               <div>Thông tin cá nhân</div>
             </a>
-            <a href="" class="bangchon-thanhphan">
+            <a href="/user/lichsudonhang" class="bangchon-thanhphan">
               <i class="fa-solid fa-notes-medical"></i>
               <div>Lịch sử đơn hàng</div>
             </a>
-            <a href="" class="bangchon-thanhphan">
+            <a href="/user/diachinhanhang" class="bangchon-thanhphan">
               <i class="fa-solid fa-location-dot"></i>
               <div>Địa chỉ nhận hàng</div>
             </a>

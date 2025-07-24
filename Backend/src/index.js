@@ -23,6 +23,8 @@ app.engine(
         return Number(value).toLocaleString("vi-VN");
       },
       equal: (a, b) => a === b,
+      nequal: (a, b) => a !== b,
+      length: (a) => a.length,
       sum: (a, b) => a + b,
       nhan: (a, b) => a * b,
       chia: (a, b) => a / b,
@@ -37,7 +39,7 @@ app.engine(
       minus: (a, b) => a - b,
       formatDate: (datetime) => {
         const dayjs = require("dayjs");
-        return dayjs(datetime).format("DD/MM/YYYY");
+        return dayjs(datetime).format("HH:mm DD/MM/YYYY");
       },
     },
   })

@@ -5,6 +5,10 @@ class AdminController {
   home(req, res, next) {
     res.render("admin/adhome", { layout: "admin" });
   }
+  dangxuat(req, res, next) {
+    res.clearCookie("token", { httpOnly: true });
+    res.redirect("/");
+  }
   async create(req, res) {
     let form = new Goods(req.body);
     form.banchay = form.banchay === "on";
@@ -37,10 +41,13 @@ class AdminController {
       res.status(400).json({ error: "ERROR!" });
     }
   }
+
   async quanlydonhang(req, res) {
     try {
       let [order, count] = await Promise.all([
-        Orders.find({}).populate("userid", "username hoten").lean(),
+        Orders.find({ trangthai: { $ne: "Đã huỷ" } })
+          .populate("userid", "username hoten")
+          .lean(),
         Orders.countDocumentsWithDeleted({ deleted: true }),
       ]);
       const message = req.cookies.message || null;
@@ -59,6 +66,17 @@ class AdminController {
     try {
       let good = await Goods.findById(req.params.id).lean();
       res.render("admin/suasanpham", { layout: "admin", good });
+    } catch (err) {
+      res.status(400).json({ error: "ERROR!" });
+    }
+  }
+  async chitietdonhang(req, res) {
+    try {
+      let thongtin = await Orders.findById(req.body.id).populate(
+        "userid",
+        "username diachi hoten sdt"
+      );
+      res.json({ thongtin });
     } catch (err) {
       res.status(400).json({ error: "ERROR!" });
     }
@@ -91,6 +109,17 @@ class AdminController {
     try {
       await Orders.delete({ _id: req.params.id });
       res.cookie("message", "Xoá sản phẩm thành công!", { maxAge: 1500 });
+      res.redirect("/admin/quanlydonhang");
+    } catch (err) {
+      res.send("ERROR");
+    }
+  }
+  async xacnhandonhang(req, res) {
+    try {
+      await Orders.findByIdAndUpdate(req.params.id, {
+        trangthai: "Đã xác nhận",
+      });
+      res.cookie("message", "Xác nhận đơn hàng thành công!", { maxAge: 1500 });
       res.redirect("/admin/quanlydonhang");
     } catch (err) {
       res.send("ERROR");
@@ -149,7 +178,7 @@ class AdminController {
   async deletedonhang(req, res) {
     try {
       await Orders.deleteOne({ _id: req.params.id });
-      res.cookie("message", "Xoá sản phẩm thành công!", { maxAge: 1500 });
+      res.cookie("message", "Xoá đơn hàng thành công!", { maxAge: 1500 });
       res.redirect("/admin/trashdonhang");
     } catch (err) {
       res.send("ERROR");

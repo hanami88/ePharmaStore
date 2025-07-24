@@ -53,7 +53,7 @@
                   <div>
                     <div class="chuama--donhang">{{this._id}}</div>
                   </div>
-                  <div class="trangthaidonhang">
+                  <div class="trangthaidonhangxacnhan">
                     {{this.trangthai}}
                   </div>
                 </div>
@@ -110,6 +110,6 @@
   const chuadonhang = document.querySelectorAll(".chuadonhang");
   chuadonhang.forEach((i) => { i.addEventListener("click", function () { let ma
   = i.querySelector(".chuama--donhang").textContent; window.location.href =
-  `/user/chitietlichsudonhang/${ma}`; }); });
+  `/user/chitietlichsudonhangdaxacnhan/${ma}`; }); });
 
 </script>

@@ -33,28 +33,49 @@ class HomePageController {
       res.status(400).json({ error: "ERROR!" });
     }
   }
+
   async login(req, res) {
     try {
-      let user = await Users.findOne({
-        username: req.body.username,
-        password: req.body.password,
-      }).lean();
-      if (user) {
-        var token = jwt.sign({ id: user._id, role: user.role }, "1");
-        res.cookie("token", token, {
-          httpOnly: true,
-          maxAge: 24 * 60 * 60 * 1000,
-        });
-        if (user.role === "user") {
-          res.redirect("/");
-        } else {
-          res.redirect("admin/add");
-        }
-      } else {
-        res.send("con cac tao ne");
+      const { username, password } = req.body;
+      const user = await Users.findOne({ username }).lean();
+
+      if (!user) {
+        return res.status(401).json({ error: "Tài khoản không tồn tại" });
       }
+
+      if (user.password !== password) {
+        return res.status(401).json({ error: "Mật khẩu sai" });
+      }
+
+      const token = jwt.sign({ id: user._id, role: user.role }, "1");
+      res.cookie("token", token, {
+        httpOnly: true,
+        maxAge: 24 * 60 * 60 * 1000,
+      });
+      res.json({ success: true, role: user.role });
     } catch (err) {
-      res.status(400).json({ error: "ERROR!" });
+      res.status(500).json({ error: "Lỗi server. Vui lòng thử lại sau." });
+    }
+  }
+  async dangky(req, res) {
+    try {
+      const { username, password, repassword } = req.body;
+      const user = await Users.findOne({ username }).lean();
+      if (user) {
+        return res.status(401).json({ error: "Tài khoản đã tồn tại" });
+      }
+      if (password !== repassword) {
+        return res.status(401).json({ error: "Mật khẩu không khớp" });
+      }
+      const newuser = new Users({
+        username: username,
+        password: password,
+        role: "user",
+      });
+      newuser.save();
+      res.json({ success: true });
+    } catch (err) {
+      res.status(500).json({ error: "Lỗi server. Vui lòng thử lại sau." });
     }
   }
 }

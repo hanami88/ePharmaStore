@@ -5,11 +5,14 @@ const congmuahang = document.querySelector(".congmuahang");
 const soluongmuahang = document.querySelector(".soluongmuahang");
 const themvaogio = document.querySelector(".themvaogio");
 const muahang = document.querySelector(".muahang");
-const tamtinh = document.querySelector(".giohang-tongtien__tamtinh-tt");
-const giamgiatong = document.querySelector(".giamgiatong");
 const hienthiso = document.querySelector(".hienthiso");
+const hienthiso_so = document.querySelector(".hienthiso-so");
+if (Number(hienthiso_so.textContent) > 0) {
+  hienthiso.classList.add("active");
+} else {
+  hienthiso.classList.remove("active");
+}
 const sanphamall = document.querySelector(".sanpham-all");
-const tongtientt = document.querySelector(".giohang-tongtien__tongtien-tt");
 trumuahang.addEventListener("click", () => {
   if (soluongmuahang.textContent > 1) {
     soluongmuahang.textContent = Number(soluongmuahang.textContent) - 1;
@@ -42,173 +45,10 @@ themsanpham.forEach((i) => {
       buyboxtmp.querySelector("input").value;
   });
 });
-const tongthanhtien = document.querySelector(".giohang-tongtien__tongtien-tt");
-function convertToNumber(str) {
-  return Number(str.replace(/\./g, ""));
-}
-function ReverseconvertToNumber(str) {
-  return Number(str.replace("", /\./g));
-}
-const minus = document.querySelectorAll(".fa-minus");
-const plus = document.querySelectorAll(".fa-plus");
-const trash = document.querySelectorAll(".fa-trash");
-const xoasp = document.querySelector(".xoasp");
-const quaylai = document.querySelector(".thongbao-quaylai");
-const tieptuc = document.querySelector(".thongbao-tieptuc");
-function thaotac(dau) {
-  thanhtien.textContent =
-    (
-      convertToNumber(thanhtien.textContent.slice(0, -2)) +
-      dau * convertToNumber(dongia.textContent.slice(0, -2))
-    ).toLocaleString("vi-VN") + " ₫";
-  tamtinh.textContent =
-    (
-      convertToNumber(tamtinh.textContent.slice(0, -2)) +
-      dau * convertToNumber(giamgiadiv.innerHTML.slice(3, -6))
-    ).toLocaleString("vi-VN") + " ₫";
-  tongtientt.textContent =
-    (
-      convertToNumber(tongtientt.textContent.slice(0, -2)) +
-      dau * convertToNumber(dongia.textContent.slice(0, -2))
-    ).toLocaleString("vi-VN") + " ₫";
-  giamgiatong.textContent =
-    (
-      convertToNumber(tamtinh.textContent.slice(0, -2)) -
-      convertToNumber(tongtientt.textContent.slice(0, -2))
-    ).toLocaleString("vi-VN") + " ₫";
-}
-document.addEventListener("DOMContentLoaded", function () {});
-plus.forEach(function (i, ind) {
-  i.addEventListener("click", function (e) {
-    let closest = e.target.closest(".box-sanphamthem");
-    let soluong = Number(closest.querySelector(".slgiohang").textContent);
-    closest.querySelector(".slgiohang").textContent = soluong + 1;
-    let thanhtien = closest.querySelector(".thanhtien").children[0];
-    let dongia = closest.querySelector(".dg");
-    let giamgiadiv = closest.querySelector(".dongia").children[0];
-    thanhtien.textContent =
-      (
-        convertToNumber(thanhtien.textContent.slice(0, -2)) +
-        convertToNumber(dongia.textContent.slice(0, -2))
-      ).toLocaleString("vi-VN") + " ₫";
-    tamtinh.textContent =
-      (
-        convertToNumber(tamtinh.textContent.slice(0, -2)) +
-        convertToNumber(giamgiadiv.innerHTML.slice(3, -6))
-      ).toLocaleString("vi-VN") + " ₫";
-    tongtientt.textContent =
-      (
-        convertToNumber(tongtientt.textContent.slice(0, -2)) +
-        convertToNumber(dongia.textContent.slice(0, -2))
-      ).toLocaleString("vi-VN") + " ₫";
-    giamgiatong.textContent =
-      (
-        convertToNumber(tamtinh.textContent.slice(0, -2)) -
-        convertToNumber(tongtientt.textContent.slice(0, -2))
-      ).toLocaleString("vi-VN") + " ₫";
-    fetch("/user/congdonhang", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ index: ind }),
-    });
-  });
-});
-minus.forEach(function (i, ind) {
-  i.addEventListener("click", function (e) {
-    let closest = e.target.closest(".box-sanphamthem");
-    let soluong = Number(closest.querySelector(".slgiohang").textContent);
-    if (soluong > 1) {
-      closest.querySelector(".slgiohang").textContent = soluong - 1;
-      let thanhtien = closest.querySelector(".thanhtien").children[0];
-      let dongia = closest.querySelector(".dg");
-      let giamgiadiv = closest.querySelector(".dongia").children[0];
-      thanhtien.textContent =
-        (
-          convertToNumber(thanhtien.textContent.slice(0, -2)) -
-          convertToNumber(dongia.textContent.slice(0, -2))
-        ).toLocaleString("vi-VN") + " ₫";
-      tamtinh.textContent =
-        (
-          convertToNumber(tamtinh.textContent.slice(0, -2)) -
-          convertToNumber(giamgiadiv.innerHTML.slice(3, -6))
-        ).toLocaleString("vi-VN") + " ₫";
-      tongtientt.textContent =
-        (
-          convertToNumber(tongtientt.textContent.slice(0, -2)) -
-          convertToNumber(dongia.textContent.slice(0, -2))
-        ).toLocaleString("vi-VN") + " ₫";
-      giamgiatong.textContent =
-        (
-          convertToNumber(tamtinh.textContent.slice(0, -2)) -
-          convertToNumber(tongtientt.textContent.slice(0, -2))
-        ).toLocaleString("vi-VN") + " ₫";
-      fetch("/user/trudonhang", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ index: ind }),
-      });
-    }
-  });
-});
-trash.forEach(function (i, ind) {
-  i.addEventListener("click", function (e) {
-    let box = e.target.closest(".sanpham-all-box");
-    let closest = e.target.closest(".box-sanphamthem");
-    let soluong = Number(closest.querySelector(".slgiohang").textContent);
-    let dongia = closest.querySelector(".dg");
-    let giamgiadiv = closest.querySelector(".dongia").children[0];
-    xoasp.classList.add("active");
-    quaylai.addEventListener(
-      "click",
-      () => {
-        xoasp.classList.remove("active");
-      },
-      { once: true }
-    );
-    tieptuc.addEventListener(
-      "click",
-      function () {
-        tamtinh.textContent =
-          (
-            convertToNumber(tamtinh.textContent.slice(0, -2)) -
-            convertToNumber(giamgiadiv.innerHTML.slice(3, -6)) * soluong
-          ).toLocaleString("vi-VN") + " ₫";
-        console.log("tam tinh : ", tamtinh.textContent);
-        console.log("so luong : ", soluong);
-        console.log("giamgia : ", tamtinh.textContent);
-        tongtientt.textContent =
-          (
-            convertToNumber(tongtientt.textContent.slice(0, -2)) -
-            convertToNumber(dongia.textContent.slice(0, -2)) * soluong
-          ).toLocaleString("vi-VN") + " ₫";
-        giamgiatong.textContent =
-          (
-            convertToNumber(tamtinh.textContent.slice(0, -2)) -
-            convertToNumber(tongtientt.textContent.slice(0, -2))
-          ).toLocaleString("vi-VN") + " ₫";
-        box.remove();
-        fetch("/user/xoadonhang", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ index: ind }),
-        });
-        xoasp.classList.remove("active");
-      },
-      { once: true }
-    );
-  });
-});
-
+//---------
 const datthanhcong = document.querySelector(".datthanhcong");
 themvaogio.addEventListener("click", (e) => {
   let soluong = document.querySelector(".soluongmuahang").textContent;
-  console.log(soluong);
   muahang.classList.remove("active");
   html.style.overflow = "scroll";
   datthanhcong.classList.add("active");
@@ -223,29 +63,8 @@ themvaogio.addEventListener("click", (e) => {
     },
     body: JSON.stringify({ id: boxlayid1.value, soluong: soluong }),
   });
-});
-const datdonhangthanhcong = document.querySelector(".datdonhangthanhcong");
-const xacnhandathang = document.querySelector(".xacnhandathang");
-const quaylaidathang = document.querySelector(".thongbao-quaylaidathang");
-const tieptucdathang = document.querySelector(".thongbao-tieptucdathang");
-const dathang = document.querySelector(".giohang-tongtien__btn");
-dathang.addEventListener("click", function () {
-  xacnhandathang.classList.add("active");
-  tieptucdathang.addEventListener("click", function () {
-    fetch("/user/dathang", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
-    tranggiohang.classList.remove("active");
-    xacnhandathang.classList.remove("active");
-    datdonhangthanhcong.classList.add("active");
-    setTimeout(() => {
-      datdonhangthanhcong.classList.remove("active");
-    }, 1500);
-  });
-  quaylaidathang.addEventListener("click", function () {
-    xacnhandathang.classList.remove("active");
-  });
+  if (Number(hienthiso_so.textContent) == 0) {
+    hienthiso.classList.add("active");
+  }
+  hienthiso_so.textContent = Number(hienthiso_so.textContent) + 1;
 });

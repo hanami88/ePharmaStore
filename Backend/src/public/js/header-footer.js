@@ -1,6 +1,7 @@
 const header_login = document.querySelector(".header-line2__login");
 const trangdn = document.querySelector(".trangdangnhap");
 const tatdn = document.querySelector(".x");
+const tatdky = document.querySelector(".x1");
 const html = document.documentElement;
 header_login.addEventListener("click", () => {
   if (!odangnhap.classList.contains("active")) {
@@ -9,6 +10,10 @@ header_login.addEventListener("click", () => {
   }
 });
 tatdn.addEventListener("click", () => {
+  trangdn.classList.remove("active");
+  html.style.overflow = "visible";
+});
+tatdky.addEventListener("click", () => {
   trangdn.classList.remove("active");
   html.style.overflow = "visible";
 });
@@ -53,17 +58,11 @@ choice.addEventListener("click", () => {
     mt.style.transform = "rotate(90deg)";
   }
 });
-const tranggiohang = document.querySelector(".giohang");
 const giohang = document.querySelector(".fa-cart-plus");
-const nuttatgiohang = document.querySelector(".fa-rectangle-xmark");
 giohang.addEventListener("click", () => {
-  tranggiohang.classList.add("active");
-  html.style.overflow = "hidden";
+  window.location.href = "/user/giohang";
 });
-nuttatgiohang.addEventListener("click", () => {
-  tranggiohang.classList.remove("active");
-  html.style.overflow = "visible";
-});
+
 const bangchon = document.querySelector(".bangchon");
 const bangchonkhoantrang = document.querySelector(".bangchon-khoangtrang");
 var odangnhap = document.querySelector(".bocline2");
@@ -89,5 +88,71 @@ btn_dangxuat.addEventListener("click", async function () {
   });
   if (res.redirected) {
     window.location.href = res.url;
+  }
+});
+
+const btn_dangnhap = document.querySelector(".btn-dangnhap");
+const btn_dangky = document.querySelector(".btn-dangky");
+const tranglogin = document.querySelector(".trang-login");
+const trangdangky = document.querySelector(".trang-login.dky");
+btn_dangnhap.addEventListener("click", function () {
+  trangdangky.style.display = "none";
+  tranglogin.style.display = "flex";
+});
+btn_dangky.addEventListener("click", function () {
+  trangdangky.style.display = "flex";
+  tranglogin.style.display = "none";
+});
+const form = document.querySelector(".trang-login-form");
+const errorMsg = document.querySelector(".trang-login-error");
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const username = document.getElementById("username").value;
+  const password = document.getElementById("password").value;
+  const res = await fetch("/", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ username, password }),
+  });
+  const data = await res.json();
+  if (res.ok && data.success) {
+    // Đăng nhập thành công → chuyển hướng
+    if (data.role === "user") {
+      window.location.href = "/";
+    } else {
+      window.location.href = "/admin/add";
+    }
+  } else {
+    // Lỗi → hiện thông báo
+    errorMsg.textContent = data.error || "Đăng nhập thất bại";
+  }
+});
+const form_dky = document.querySelector(".trang-dky-form");
+const errordky = document.querySelector(".trang-dky-error");
+const tbdky = document.querySelector(".dangkythanhcong");
+form_dky.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const username = document.getElementById("username1").value;
+  const password = document.getElementById("password1").value;
+  const repassword = document.getElementById("repassword").value;
+  const res = await fetch("/dangky", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ username, password, repassword }),
+  });
+  const data = await res.json();
+  if (res.ok && data.success) {
+    trangdangky.style.display = "none";
+    tranglogin.style.display = "flex";
+    tbdky.classList.add("active");
+    setTimeout(() => {
+      tbdky.classList.remove("active");
+    }, 1000);
+  } else {
+    errordky.textContent = data.error || "Đăng nhập thất bại";
   }
 });

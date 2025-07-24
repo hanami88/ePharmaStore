@@ -1,0 +1,154 @@
+<div class="container-user">
+  <div class="hienthi-lichsu">
+    <div class="bangchon-user">
+      <div class="bangchon-user-top">
+        <div class="bangchon-user-ten">
+          <img src="/img/{{user.hinhanh}}" alt="" />
+          <h1>{{user.hoten}}</h1>
+        </div>
+        <img src="/img/thevang.png" alt="" />
+      </div>
+      <div class="bangchon-user-bot">
+        <a href="/user/thongtin" class="thanhchon-user">
+          <i class="fa-solid fa-user"></i>
+          <div>Thông tin cá nhân</div>
+        </a>
+        <a href="/user/diachinhanhang" class="thanhchon-user">
+          <i class="fa-solid fa-location-dot"></i>
+          <div>Địa chỉ nhận hàng</div>
+        </a>
+        <a href="/user/lichsudonhang" class="thanhchon-user">
+          <i class="fa-solid fa-notes-medical"></i>
+          <div>Lịch sử đơn hàng</div>
+        </a>
+      </div>
+    </div>
+    <div class="ctnthongtin-user">
+      <div class="doimkcc">
+        <a href="/user/lichsudonhang"><i class="fa-solid fa-arrow-left"></i></a>
+        <h1 class="title-doimk">Chi tiết đơn hàng</h1>
+      </div>
+      <div class="thongtin-lichsu">
+        <div class="container-lichsu">
+          <div class="hienthilichsu-trangthai">
+            <div>
+              <div>Đã huỷ đơn hàng</div>
+              <div>Đơn hàng đã được BẠN huỷ</div>
+            </div>
+            <i class="fa-solid fa-xmark" style="color: #000000;"></i>
+          </div>
+          <div class="hienthilichsu-chitiet">
+            <div>
+              <div class="hienthilichsu-giaohang">
+                <i class="fa-solid fa-truck-fast"></i>
+                <div>Giao hàng tận nơi</div>
+              </div>
+              <div class="huydonhang">Khôi phục đơn hàng</div>
+            </div>
+            <div class="hienthilichsu-thongtin">
+              <div>
+                <div class="indamthongtin">Thông tin người nhận</div>
+                <div>
+                  <span class="indamthongtin gach">{{user.hoten}}</span>
+                  {{user.sdt}}
+                </div>
+                <div class="botthongtin">{{user.diachi.0.sonha}},
+                  {{user.diachi.0.phuongxa}},
+                  {{user.diachi.0.quanhuyen}},
+                  {{user.diachi.0.tinhthanh}}</div>
+              </div>
+              <div>
+                <div class="indamthongtin">Mã đơn hàng</div>
+                <div class="madonhang">{{donhang._id}}</div>
+                <div class="botthongtin">
+                  <div>Thời gian đặt hàng</div>
+                  <div>{{formatDate donhang.createdAt}}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="hienthilichsu-thanhtoan">
+            <div>Sản phẩm đã mua</div>
+            <div class="lichsu-hienthidonhang">
+              {{#each donhang.giohang}}
+                <div class="sanpham-all-box">
+                  <div class="gachchan-to1"></div>
+                  <div class="box-sanphamthem">
+                    <img
+                      class="box-sanphamthem-img"
+                      src="/img/{{this.hinhanh}}"
+                    />
+                    <div class="box-sanphamthem-mota">
+                      {{this.mota}}
+                    </div>
+                    <div class="dongia">
+                      <div><s>{{formatNumber this.giagoc}} ₫</s></div>
+                      <div class="dg">{{formatNumber this.giaban}} ₫</div>
+                    </div>
+                    <div class="soluong">
+                      <div class="slgiohang">x{{this.soluong}}</div>
+                    </div>
+                    <div class="thanhtien">
+                      <div>{{formatNumber (nhan this.giaban this.soluong)}}
+                        ₫</div>
+                    </div>
+                  </div>
+                </div>
+              {{/each}}
+            </div>
+            <div class="gachchan-to1"></div>
+            <div class="lichsu-hienthitongtien">
+              <div>Chi tiết thanh toán</div>
+              <div class="hienthitongtien">
+                <div>Tiền hàng</div>
+                <div class="tongtienindam">{{formatNumber
+                    (totalGiagoc donhang.giohang)
+                  }}
+                  ₫</div>
+              </div>
+              <div class="hienthitongtien">
+                <div>Phí vận chuyển</div>
+                <div class="tongtienindam">0 ₫</div>
+              </div>
+              <div class="hienthitongtien">
+                <div>Giảm giá sản phẩm</div>
+                <div class="tongtienindam">-{{formatNumber
+                    (minus
+                      (totalGiagoc donhang.giohang)
+                      (totalGiaban donhang.giohang)
+                    )
+                  }}
+                  ₫</div>
+              </div>
+              <div class="gachchan-to2"></div>
+              <div class="hienthitongtien boxtt1">
+                <div>
+                  <span class="tongtienindam">Tổng tiền </span><span
+                    class="spnho"
+                  >(1 sản phẩm)</span>
+                </div>
+                <div class="tongtienindamdb">{{formatNumber donhang.tongtien}}
+                  ₫</div>
+              </div>
+              <div class="hienthitongtien boxtt2">
+                <div class="tongtienindam">Phương thức thanh toán</div>
+                <div>
+                  <div class="COD">COD</div>
+                  <div class="tongtienindam">Tiền mặt</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="mauxanhtieuchuan"></div>
+<script>const huydonhang = document.querySelector(".huydonhang"); const
+  madonhang = document.querySelector(".madonhang").textContent;
+  huydonhang.addEventListener("click", function () {
+  fetch("/user/khoiphucdonhang", { method: "POST", headers: { "Content-Type":
+  "application/json" }, body: JSON.stringify({ madonhang: madonhang }), });
+  window.location.href = "/user/lichsudonhangdahuy"; });
+</script>
