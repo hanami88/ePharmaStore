@@ -1,0 +1,38 @@
+<main class="main" style="background-color: rgb(245, 245, 245)">
+  <div class="header" style="margin-bottom: 0rem; width: 27rem ; height:4rem;">
+    <a style="color: black;" href="/admin/quanlykhachhang">
+      <i
+        class="fa-solid fa-arrow-left"
+        style="font-size: 3.5rem; cursor: pointer"
+      ></i>
+    </a>
+    <h2 style="margin-top: 2rem;">Chi tiết khách hàng</h2>
+  </div>
+  <div class="hienthi-user">
+    <div class="ctnthongtin-doimk">
+      <div class="doimk">
+        <div class="doimkcc" style="height:5rem">
+          <a href="/admin/chitietkhachhang"><i
+              class="fa-solid fa-arrow-left"
+            ></i></a>
+          <h1 class="title-doimk">Cập nhật email</h1>
+        </div>
+      </div>
+      <div class="thongtin-doimk">
+        <form
+          action="/admin/{{id}}/doiemail"
+          method="post"
+          class="container-doimk"
+        >
+          <div>
+            Mã xác thực (OTP) sẽ được gửi đến email này để xác minh email là của
+            bạn
+          </div>
+          <label for="email">Email mới</label>
+          <input type="email" name="email" id="" placeholder="Email mới" />
+          <button>Tiếp tục</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</main>

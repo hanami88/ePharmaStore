@@ -107,14 +107,14 @@ const form = document.querySelector(".trang-login-form");
 const errorMsg = document.querySelector(".trang-login-error");
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
-  const username = document.getElementById("username").value;
+  const sdt = document.getElementById("username").value;
   const password = document.getElementById("password").value;
   const res = await fetch("/", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({ username, password }),
+    body: JSON.stringify({ sdt, password }),
   });
   const data = await res.json();
   if (res.ok && data.success) {
@@ -134,7 +134,7 @@ const errordky = document.querySelector(".trang-dky-error");
 const tbdky = document.querySelector(".dangkythanhcong");
 form_dky.addEventListener("submit", async (e) => {
   e.preventDefault();
-  const username = document.getElementById("username1").value;
+  const sdt = document.getElementById("username1").value;
   const password = document.getElementById("password1").value;
   const repassword = document.getElementById("repassword").value;
   const res = await fetch("/dangky", {
@@ -142,7 +142,7 @@ form_dky.addEventListener("submit", async (e) => {
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({ username, password, repassword }),
+    body: JSON.stringify({ sdt, password, repassword }),
   });
   const data = await res.json();
   if (res.ok && data.success) {

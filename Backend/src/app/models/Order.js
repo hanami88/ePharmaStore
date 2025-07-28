@@ -6,7 +6,6 @@ const Good = new Schema({
   giamgia: Number,
   soluong: Number,
   nhacungcap: String,
-  banchay: Boolean,
   donvi: String,
   mota: String,
   hinhanh: String,
@@ -15,7 +14,7 @@ const Good = new Schema({
   giagoc: Number,
 });
 const User = new Schema({
-  username: { type: String },
+  sdt: { type: String },
   password: { type: String },
   role: { type: String },
   diachi: { type: String },
@@ -24,7 +23,6 @@ const User = new Schema({
   hinhanh: { type: String },
   hoten: { type: String },
   ngaysinh: { type: String },
-  sdt: { type: String },
   giohang: [Good],
 });
 const AddressSchema = new Schema(

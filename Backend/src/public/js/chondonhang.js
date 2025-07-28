@@ -29,7 +29,14 @@ tatmuahang.addEventListener("click", () => {
 const khungmuahang = document.querySelector(".muahang-container");
 themsanpham.forEach((i) => {
   i.addEventListener("click", (e) => {
+    const id = e.target.nextElementSibling.value;
+    const btnmuahang = document.querySelector(".btnmuahang");
     muahang.classList.add("active");
+    const soluong = document.querySelector(".soluongmuahang");
+    btnmuahang.addEventListener("click", function () {
+      const url = `/user/muahangtrangdathang?id=${id}&soluong=${soluong.textContent}`;
+      window.location.href = url;
+    });
     html.style.overflow = "hidden";
     let buyboxtmp = e.target.closest(".buy-box");
     khungmuahang.children[0].src = buyboxtmp.querySelector("img").src;

@@ -119,7 +119,7 @@
                 <div class="buy-box">
                     <img src="/img/{{this.hinhanh}}" alt="Ảnh sản phẩm" />
                     <span class="sandeal-box-tieude">{{this.tensp}}</span>
-                    {{#if (equal this.giagoc thisgiaban)}}
+                    {{#if (equal this.giamgia 0)}}
                     <span class="sandeal-box-giamgia"><s></s></span>
                     {{else}}
                     <span class="sandeal-box-giamgia"><s>{{formatNumber this.giagoc}} ₫</s></span>
@@ -128,9 +128,9 @@
                     <div class="sandeal-box-like">
                     <i class="fa-solid fa-heart"></i>
                     <span class="sandeal-box-like-like">15.9k |</span>
-                    <span class="sandeal-box-like-bought">Đã Bán 9.2k</span>
+                    <span class="sandeal-box-like-bought">Đã Bán {{this.soluongdaban}}</span>
                     </div>
-                    {{#if this.banchay}}
+                    {{#if (lonhon this.soluongdaban 500)}}
                     <div class="banchay">Đang bán chạy</div>
                     {{else}}
                     <div class="banchay banchaytrang"></div>
@@ -165,7 +165,7 @@
              <i class="fa-solid fa-plus congmuahang"></i>
             </div>
             <div>
-              <button>Mua hàng</button>
+              <button class="btnmuahang">Mua hàng</button>
               <button class="themvaogio">Thêm vào giỏ hàng</button>
               <input type="hidden" class="boxlayid1">
             </div>
@@ -180,7 +180,7 @@
                 <div class="buy-box">
                     <img src="/img/{{this.hinhanh}}" alt="Ảnh sản phẩm" />
                     <span class="sandeal-box-tieude">{{this.tensp}}</span>
-                    {{#if (equal this.giagoc thisgiaban)}}
+                    {{#if (equal this.giamgia 0)}}
                     <span class="sandeal-box-giamgia"><s></s></span>
                     {{else}}
                     <span class="sandeal-box-giamgia"><s>{{formatNumber this.giagoc}} ₫</s></span>
@@ -189,20 +189,20 @@
                     <div class="sandeal-box-like">
                     <i class="fa-solid fa-heart"></i>
                     <span class="sandeal-box-like-like">15.9k |</span>
-                    <span class="sandeal-box-like-bought">Đã Bán 9.2k</span>
+                    <span class="sandeal-box-like-bought">Đã Bán {{this.soluongdaban}}</span>
                     </div>
-                    {{#if this.banchay}}
+                    {{#if (lonhon this.soluongdaban 500)}}
                     <div class="banchay">Đang bán chạy</div>
                     {{else}}
-                    <div class="banchay banchaytrang"></div>
+                    <div class=" banchaytrang"></div>
                     {{/if}}
                     <button class="sandeal-box-buy">Chọn sản phẩm</button>
                     <input type="hidden" class="boxlayid" value="{{this._id}}">
                 </div>
             {{/each}}
-          </div>
-        <i class="fa-solid fa-chevron-up hotdeal-left"></i>
-        <i class="fa-solid fa-chevron-up hotdeal-right"></i>
+        </div>
+          <i class="fa-solid fa-chevron-up hotdeal-left"></i>
+          <i class="fa-solid fa-chevron-up hotdeal-right"></i>
         </div>
       </div>
       <div class="hotdeal" data-aos="fade-right">
@@ -213,7 +213,7 @@
                 <div class="buy-box">
                     <img src="/img/{{this.hinhanh}}" alt="Ảnh sản phẩm" />
                     <span class="sandeal-box-tieude">{{this.tensp}}</span>
-                    {{#if (equal this.giagoc thisgiaban)}}
+                    {{#if (equal this.giamgia 0)}}
                     <span class="sandeal-box-giamgia"><s></s></span>
                     {{else}}
                     <span class="sandeal-box-giamgia"><s>{{formatNumber this.giagoc}} ₫</s></span>
@@ -222,9 +222,9 @@
                     <div class="sandeal-box-like">
                     <i class="fa-solid fa-heart"></i>
                     <span class="sandeal-box-like-like">15.9k |</span>
-                    <span class="sandeal-box-like-bought">Đã Bán 9.2k</span>
+                    <span class="sandeal-box-like-bought">Đã Bán {{this.soluongdaban}}</span>
                     </div>
-                    {{#if this.banchay}}
+                    {{#if (lonhon this.soluongdaban 500)}}
                     <div class="banchay">Đang bán chạy</div>
                     {{else}}
                     <div class="banchay banchaytrang"></div>
@@ -247,7 +247,7 @@
                 <div class="buy-box">
                     <img src="/img/{{this.hinhanh}}" alt="Ảnh sản phẩm" />
                     <span class="sandeal-box-tieude">{{this.tensp}}</span>
-                    {{#if (equal this.giagoc thisgiaban)}}
+                    {{#if (equal this.giamgia 0)}}
                     <span class="sandeal-box-giamgia"><s></s></span>
                     {{else}}
                     <span class="sandeal-box-giamgia"><s>{{formatNumber this.giagoc}} ₫</s></span>
@@ -256,9 +256,9 @@
                     <div class="sandeal-box-like">
                     <i class="fa-solid fa-heart"></i>
                     <span class="sandeal-box-like-like">15.9k |</span>
-                    <span class="sandeal-box-like-bought">Đã Bán 9.2k</span>
+                    <span class="sandeal-box-like-bought">Đã Bán {{this.soluongdaban}}</span>
                     </div>
-                    {{#if this.banchay}}
+                    {{#if (lonhon this.soluongdaban 500)}}
                     <div class="banchay">Đang bán chạy</div>
                     {{else}}
                     <div class="banchay banchaytrang"></div>
@@ -267,11 +267,10 @@
                     <input type="hidden" class="boxlayid" value="{{this._id}}">
                 </div>
             {{/each}}
-          </div>
-          <i class="fa-solid fa-chevron-up hotdeal-left"></i>
-        <i class="fa-solid fa-chevron-up hotdeal-right"></i>
+             </div>
+            <i class="fa-solid fa-chevron-up hotdeal-left"></i>
+             <i class="fa-solid fa-chevron-up hotdeal-right"></i>
         </div>
-        
       </div>
       <section class="thuonghieu">
         <h1>Thương Hiệu Nổi Bật</h1>

@@ -17,22 +17,27 @@
     </div>
     <a href="/admin/add" class="btn btn-green">+ Thêm sản phẩm mới</a>
   </div>
-  <form method="GET" action="/admin/products" class="filter-form">
-    <input type="text" name="keyword" placeholder="Tìm theo tên sản phẩm..." />
+  <form method="POST" action="/admin/timkiemsanpham" class="filter-form" >
+    <input
+      type="text"
+      name="keyword"
+      placeholder="Nhập tên sản phẩm..."
+      value="{{filters.keyword}}"
+    />
     <select name="danhmuc" class="danhmuc">
       <option value="">-- Tất cả danh mục --</option>
-      <option value="1">Săn Deal</option>
-      <option value="2">Ngàn Deal Hot Tặng Nàng</option>
-      <option value="3">Top bán chạy toàn quốc</option>
-      <option value="4">Mẹ khỏe bé vui</option>
-      <option value="5">Kho Hàng</option>
+      <option value="Săn Deal" {{#if (equal filters.danhmuc 'Săn Deal')}}selected{{/if}}>Săn Deal</option>
+      <option value="Ngàn Deal Hot Tặng Nàng" {{#if (equal filters.danhmuc 'Ngàn Deal Hot Tặng Nàng')}}selected{{/if}}>Ngàn Deal Hot Tặng Nàng</option>
+      <option value="Top bán chạy toàn quốc" {{#if (equal filters.danhmuc 'Top bán chạy toàn quốc')}}selected{{/if}}>Top bán chạy toàn quốc</option>
+      <option value="Mẹ khỏe bé vui" {{#if (equal filters.danhmuc 'Mẹ khỏe bé vui')}}selected{{/if}}>Mẹ khỏe bé vui</option>
+      <option value="Kho Hàng" {{#if (equal filters.danhmuc 'Kho Hàng')}}selected{{/if}}>Kho Hàng</option>
     </select>
     <select name="banchay">
       <option value="">-- Bán chạy --</option>
-      <option value="true">Đang bán chạy</option>
-      <option value="false">Không bán chạy</option>
+      <option value="true" {{#if ( equal filters.banchay  'true')}}selected{{/if}}>Đang bán chạy</option>
+      <option value="false" {{#if ( equal filters.banchay  'false')}}selected{{/if}}>Không bán chạy</option>
     </select>
-    <button type="submit" class="btn btn-blue">Lọc</button>
+    <button type="submit" class="btn btn-blue" style="cursor: pointer;">Lọc</button>
   </form>
   <div class="table-wrapper">
     <table class="product-table">
@@ -65,7 +70,7 @@
             <td style="width: 7vw;">{{formatNumber this.giaban}} ₫</td>
             <td style="width: 6vw;">{{this.giamgia}}</td>
             <td>{{this.soluong}}</td>
-            <td style="width: 1vw;">{{#if this.banchay}}<i
+            <td style="width: 1vw;">{{#if (lonhon this.soluongdaban 500)}}<i
                   class="fa-solid fa-square-check"
                 ></i>{{else}}<i
                   class="fa-solid fa-square-xmark"

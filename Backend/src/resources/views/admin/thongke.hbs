@@ -1,0 +1,160 @@
+<main class="main">
+  <div class="header" style="margin-bottom: 1rem; width:28vw;">
+    <h2>Thống kê</h2>
+    <form action="/admin/thongke" method="POST" class="formthongke">
+      <input
+        type="month"
+        id="thangnam"
+        name="thangnam"
+        class="thongkenam"
+        value="{{thongke.nam}}-{{thongke.thang}}"
+      />
+      <button type="submit" class="btn-thongke">Xem thống kê</button>
+    </form>
+  </div>
+  <div class="hienthi4cot">
+    <div class="box-tongquan">
+      <div>
+        <i style="color: #2196f3" class="fa-solid fa-sack-dollar"></i>
+        <div class="box-tongquan__chuaso">
+          <div>Doanh thu (triệu VND)</div>
+          <div>{{thongke.doanhthu}}</div>
+        </div>
+      </div>
+      {{#if doanhthu}}
+        <div class="tang-doanhthu">
+          <i class="fas fa-arrow-up"></i>
+          <div>so với tháng trước</div>
+        </div>
+      {{else}}
+        <div class="giam-doanhthu">
+          <i class="fas fa-arrow-down"></i>
+          <div>so với tháng trước</div>
+        </div>
+      {{/if}}
+    </div>
+    <div class="box-tongquan">
+      <div>
+        <i style="color: #ab47bc" class="fa-solid fa-users"></i>
+        <div class="box-tongquan__chuaso">
+          <div>Khách mua hàng</div>
+          <div>{{thongke.khachmuahang}}</div>
+        </div>
+      </div>
+      {{#if khachmuahang}}
+        <div class="tang-doanhthu">
+          <i class="fas fa-arrow-up"></i>
+          <div>so với tháng trước</div>
+        </div>
+      {{else}}
+        <div class="giam-doanhthu">
+          <i class="fas fa-arrow-down"></i>
+          <div>so với tháng trước</div>
+        </div>
+      {{/if}}
+    </div>
+    <div class="box-tongquan">
+      <div>
+        <i
+          style="color: #fbc02d"
+          class="fas fa-clipboard-list icon-donhang"
+        ></i>
+        <div class="box-tongquan__chuaso">
+          <div>Đơn hàng</div>
+          <div>{{thongke.donhang}}</div>
+        </div>
+      </div>
+      {{#if donhang}}
+        <div class="tang-doanhthu">
+          <i class="fas fa-arrow-up"></i>
+          <div>so với tháng trước</div>
+        </div>
+      {{else}}
+        <div class="giam-doanhthu">
+          <i class="fas fa-arrow-down"></i>
+          <div>so với tháng trước</div>
+        </div>
+      {{/if}}
+    </div>
+    <div class="box-tongquan">
+      <div>
+        <i style="color: #4caf50" class="fas fa-box icon-sanpham"></i>
+        <div class="box-tongquan__chuaso">
+          <div>Sản phẩm bán ra</div>
+          <div>{{thongke.sanphambanra}}</div>
+        </div>
+      </div>
+      {{#if spbanra}}
+        <div class="tang-doanhthu">
+          <i class="fas fa-arrow-up"></i>
+          <div>so với tháng trước</div>
+        </div>
+      {{else}}
+        <div class="giam-doanhthu">
+          <i class="fas fa-arrow-down"></i>
+          <div>so với tháng trước</div>
+        </div>
+      {{/if}}
+    </div>
+  </div>
+  <div class="bangxep-hangsp">
+    <div>TOP sản phẩm bán chạy</div>
+    <div class="table-wrapper" style="max-height: 61vh">
+      <table class="product-table">
+        <thead>
+          <tr>
+            <th>STT</th>
+            <th>Ảnh</th>
+            <th>Tên sản phẩm</th>
+            <th>Danh mục</th>
+            <th>Số lượng đã bán</th>
+            <th>Doanh thu</th>
+            <th>Đánh giá</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each topGoods}}
+            <tr>
+              <td style="width: 4vw">{{sum @index 1}}</td>
+              <td style="width: 5vw">
+                <img
+                  src="/img/{{this.hinhanh}}"
+                  alt="Ảnh sản phẩm"
+                  class="thumb"
+                />
+              </td>
+              <td>
+                {{this.tensp}}
+              </td>
+              <td style="width: 11vw">{{this.danhmuc}}</td>
+              <td style="width: 11vw">{{this.soluongdaban}}</td>
+              <td style="width: 11vw">{{formatNumber
+                  (nhan this.soluongdaban this.giaban)
+                }}
+                ₫</td>
+              {{#if (lonhon this.soluongdaban 1000)}}
+                <td style="width: 11vw"><i
+                    class="fa-solid fa-fire"
+                    style="color: #ff5900; font-size:3rem;"
+                  ></i></td>
+              {{else}}
+                {{#if (lonhon this.soluongdaban 500)}}
+                  <td style="width: 11vw"><i
+                      class="fa-solid fa-square-check"
+                      style="color: #63E6BE; font-size:3rem;"
+                    ></i></td>
+                {{else}}
+                  <td style="width: 11vw"><i
+                      class="fa-solid fa-triangle-exclamation"
+                      style="color: #FFD43B; font-size:3rem;"
+                    ></i>
+                  </td>
+                {{/if}}
+              {{/if}}
+            </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</main>

@@ -11,26 +11,26 @@
       <div class="trang-login-container">
         <h1 class="trang-login__hello">XIN CHÀO</h1>
         <h1 class="x"><i class="fa-solid fa-xmark"></i></h1>
-        <div class="trang-login__huongdan">Vui lòng nhập tài khoản để tiếp tục</div><br
+        <div class="trang-login__huongdan">Vui lòng nhập số điện thoại để tiếp tục</div><br
         />
         <div class="trang-login-title">
           <div>Nếu chưa có thì bạn có thể đăng ký tại : </div>
           <div class="btn-dangky">Đăng ký</div>
         </div>
         <form action="/" class="trang-login-form" method="post">
-          <label for="username" class="trang-login__tenname">Tên đăng nhập</label><br />
+          <label for="sdt" class="trang-login__tenname">Số điện thoại</label><br />
           <input
             type="text"
-            name="username"
+            name="sdt"
             id="username"
             class="trang-login__name"
-            placeholder="Nhập số tên đăng nhập"
+            placeholder="Nhập số điện thoại"
           />
           <br />
           <label for="password" class="trang-login__tenname">Mật khẩu</label><br
           />
           <input
-            type="text"
+            type="password"
             name="password"
             id="password"
             class="trang-login__name"
@@ -52,19 +52,19 @@
                 <div class="btn-dangnhap">Đăng nhập</div>
               </div>
               <form action="/" class="trang-dky-form" method="post">
-                <label for="username" class="trang-login__tenname">Tên đăng nhập</label><br />
+                <label for="username1" class="trang-login__tenname">Số điện thoại</label><br />
                 <input
                   type="text"
-                  name="username"
+                  name="sdt"
                   id="username1"
                   class="trang-login__name"
                   placeholder="Nhập tên đăng nhập"
                 />
                 <br />
-                <label for="password" class="trang-login__tenname">Mật khẩu</label><br
+                <label for="password1" class="trang-login__tenname">Mật khẩu</label><br
                 />
                 <input
-                  type="text"
+                  type="password"
                   name="password"
                   id="password1"
                   class="trang-login__name"
@@ -73,7 +73,7 @@
                 <label for="repassword" class="trang-login__tenname">Xác nhận mật khẩu</label><br
                 />
                 <input
-                  type="text"
+                  type="password"
                   name="repassword"
                   id="repassword"
                   class="trang-login__name"
@@ -145,15 +145,16 @@
     </div>
     <div class="header-line-right">
       <div class="right1">
-        <div class="chua__search">
+        <form method="POST" action="/timkiemsanpham" class="chua__search">
           <input
             type="text"
-            name="thuoc"
+            name="keyword"
             class="header-line2__search"
             placeholder="Tên thuốc, triệu chứng, vitamin và thực phẩm chức năng"
+            value="{{filters.keyword}}"
           />
           <i class="fa-solid fa-magnifying-glass"></i>
-        </div>
+        </form>
         <i class="fa-solid fa-bell">
         </i>
         <i class="fa-solid fa-cart-plus">

@@ -21,6 +21,8 @@ thaydoi.addEventListener("click", function () {
   });
 });
 const btndathang = document.querySelector(".thanhtoan-tongtien__btn");
+const ghichu = document.querySelector("#ghichu");
+const isGioHang = btndathang.dataset.giohang === "true";
 const checkdk = document.querySelector(".checkdieukiendathang");
 checkdk.addEventListener("change", function () {
   btndathang.classList.toggle("active");
@@ -28,14 +30,28 @@ checkdk.addEventListener("change", function () {
 apuru.addEventListener("click", function () {
   formthaydoi.submit();
 });
-let ghichu = document.querySelector("#ghichu");
-btndathang.addEventListener("click", function () {
-  fetch("/user/dathang", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({ ghichu: ghichu.value }),
-  });
+btndathang.addEventListener("click", async function () {
+  const ghichuText = ghichu ? ghichu.value : "";
+  if (isGioHang) {
+    await fetch("/user/dathang", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ ghichu: ghichuText }),
+    });
+  } else {
+    const id = document.querySelector(".boxlayid")?.value;
+    const soluong =
+      Number(
+        document
+          .querySelector(".soluong-thanhtoan")
+          ?.textContent.replace("x", "")
+      ) || 1;
+    await fetch("/user/muahangdathang", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ id, soluong, ghichu: ghichuText }),
+    });
+  }
+
   window.location.href = "/user/lichsudonhang";
 });

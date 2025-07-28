@@ -32,6 +32,24 @@ router.post("/:id/deletesanpham", AdminController.deletesanpham);
 router.post("/:id/deletedonhang", AdminController.deletedonhang);
 router.post("/:id/xacnhandonhang", AdminController.xacnhandonhang);
 router.get("/:id/restoredonhang", AdminController.restoredonhang);
+router.get("/thongke", AdminController.thongke);
+router.get("/thongke", AdminController.quanlykhachhang);
+router.post("/thongke", AdminController.thongketheothoigian);
+router.get("/quanlykhachhang", AdminController.quanlykhachhang);
+router.get("/:id/chitietkhachhang", AdminController.chitietkhachhang);
 router.get("/:id/restoresanpham", AdminController.restoresanpham);
 router.post("/chitietdonhang", AdminController.chitietdonhang);
+router.post("/timkiemsanpham", AdminController.timkiemsanpham);
+router.post("/timkiemkhachhang", AdminController.timkiemkhachhang);
+router.post("/timkiemdonhang", AdminController.timkiemdonhang);
+router.get("/:id/trangdoiemail", AdminController.trangdoiemail);
+router.get("/:id/trangmatkhau", AdminController.trangmatkhau);
+router.post("/:id/doiemail", AdminController.doiemail);
+router.post("/:id/doimatkhau", AdminController.doimatkhau);
+router.post(
+  "/:id/capnhatthongtin",
+  upload.single("hinhanh"),
+  AdminController.capnhatthongtin
+);
+
 module.exports = router;

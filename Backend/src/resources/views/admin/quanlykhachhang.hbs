@@ -1,0 +1,73 @@
+<main class="main">
+  <div class="header" style="margin-bottom: 0rem;">
+    <h1 class="ql">Quản lý khách hàng</h1>
+  </div>
+  <form method="POST" action="/admin/timkiemkhachhang" class="filter-form">
+    <input type="text" name="keyword" placeholder="Nhập tên khách hàng..." value="{{filters.keyword}}"/>
+    <select name="top" style="width: 10rem;">
+      <option value="">-- Xếp hạng theo --</option>
+      <option value="true" {{#if ( equal filters.top  'true')}}selected{{/if}}>Tổng tiền đã dùng</option>
+    </select>
+    <button type="submit" class="btn btn-blue" style="cursor: pointer;">Lọc</button>
+  </form>
+  <div class="table-wrapper">
+    <table class="product-table">
+      <thead>
+        <tr>
+          <th>STT</th>
+          <th>Ảnh</th>
+          <th>Số điện thoại</th>
+          <th>Họ tên</th>
+          <th>Email</th>
+          <th>Giới tính</th>
+          <th>Ngày sinh</th>
+          <th>Tổng tiền đã dùng</th>
+          <th>Hành động</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each user}}
+          {{#if (equal this.role "user")}}
+            <tr>
+              <td style="width: 1vw">{{@index}}</td>
+              <td style="width: 2vw"><img
+                  src="/img/{{this.hinhanh}}"
+                  alt="Ảnh sản phẩm"
+                  class="thumb"
+                /></td>
+              <td style="width: 6vw">{{this.sdt}}</td>
+              <td style="width: 9vw">{{this.hoten}}</td>
+              <td style="width: 10vw;">{{this.email}}</td>
+              <td style="width: 5vw;">{{this.gioitinh}}</td>
+              <td style="width: 6vw;">{{this.ngaysinh}}</td>
+              <td style="width: 7vw;">{{formatNumber this.tongtiendadung}}
+                ₫</td>
+              <td style="width: 3vw;">
+                <div class="hanhdong1">
+                  <a
+                    href="/admin/{{this._id}}/chitietkhachhang"
+                    class="btn btn-blue"
+                  >Chi tiết</a>
+                </div>
+              </td>
+            </tr>
+          {{/if}}
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+</main>
+<form method="POST" style="display:inline" class="formxoa">
+</form>
+<div class="xoasp">
+  <div class="thongbaochacchan tbcc">
+    <h1>Xoá sản phẩm
+    </h1>
+    <div>Bạn có chắc chắn muốn xóa sản phẩm này?
+    </div>
+    <button class="thongbao-quaylai qlai">Quay lại</button>
+    <button class="thongbao-tieptuc tt">Đồng ý</button>
+  </div>
+</div>
+
+<script src="/js/xoasanpham-qlsp.js"></script>

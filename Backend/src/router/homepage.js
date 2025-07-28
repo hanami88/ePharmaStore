@@ -29,4 +29,5 @@ router.get("/", HomePageController.home);
 router.post("/", HomePageController.login);
 router.post("/dangky", HomePageController.dangky);
 router.get("/khohang", HomePageController.khohang);
+router.post("/timkiemsanpham", HomePageController.timkiemsanpham);
 module.exports = router;

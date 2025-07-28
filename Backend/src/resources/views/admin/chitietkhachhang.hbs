@@ -1,0 +1,110 @@
+<main class="main" style="background-color: rgb(245, 245, 245)">
+  <div class="header" style="margin-bottom: 0rem; width: 27rem ; height:6rem;">
+    <a style="color: black;" href="/admin/quanlykhachhang">
+      <i
+        class="fa-solid fa-arrow-left"
+        style="font-size: 3.5rem; cursor: pointer"
+      ></i>
+    </a>
+    <h2 style="margin-top: 2rem;">Chi tiết khách hàng</h2>
+  </div>
+  <div class="hienthi-user">
+    <div class="ctnthongtin-user">
+      <div class="user-admin">
+        <a href="/admin/chitietkhachhang" class="title-thongtincanhan">Thông tin
+          cá nhân</a>
+        <a href="/admin/diachinhanhang" class="title-thongtincanhan">Địa chỉ
+          nhận hàng</a>
+        <a href="/admin/lichsudonhang" class="title-thongtincanhan">Lịch sử đơn
+          hàng</a>
+      </div>
+      <div class="thongtin-user">
+        <form
+          method="post"
+          action="/admin/{{user._id}}/capnhatthongtin"
+          class="container-thongtinuser"
+          enctype="multipart/form-data"
+        >
+          <div class="anhdaidien">Ảnh đại diện</div>
+          <div class="anhdaidien-cc">
+            <img
+              class="anhdaidienmoi"
+              id="preview"
+              src="/img/{{user.hinhanh}}"
+            />
+            <input
+              class="file"
+              id="hinhanh"
+              accept="image/*"
+              type="file"
+              name="hinhanh"
+              style="display: none"
+            />
+            <div class="daidienoi">
+              <label for="hinhanh" class="btn-capnhatanhmoi">Cập nhật ảnh mới</label>
+              <div>Dung lượng file tối đa 5 MB.</div>
+              <div>Định dạng: .JPEG, .PNG</div>
+            </div>
+          </div>
+          <div class="dienthongtin">
+            <div class="container-dienthongtin">
+              <label for="hoten" style="font-size: 1.6rem">Họ và tên</label>
+              <input
+                type="text"
+                name="hoten"
+                id="hoten"
+                placeholder="Họ và tên"
+                value="{{user.hoten}}"
+              />
+              <label for="ngaysinh" style="font-size: 1.6rem">Ngày sinh</label>
+              <input
+                type="date"
+                name="ngaysinh"
+                id="ngaysinh"
+                value="{{user.ngaysinh}}"
+              />
+              <label for="gioitinh" style="font-size: 1.6rem">Giới tính</label>
+              <select
+                class="gioitinhchon"
+                name="gioitinh"
+                id="gioitinh"
+                style="width: 93.5%; font-weight: 600; border: 0.1rem solid #9e9e9e; font-size: 1.6rem; padding-left: 1.5rem;"
+              >
+                <option value="" disabled {{#unless user.gioitinh}}selected{{/unless}}>Chọn giới tính</option>
+                <option value="nam" {{#if (equal user.gioitinh "nam")}}selected{{/if}}>Nam</option>
+                <option value="nu" {{#if (equal user.gioitinh "nu")}}selected{{/if}}>Nữ</option>
+                <option value="khac" {{#if (equal user.gioitinh "khac")}}selected{{/if}}>Khác</option>
+              </select>
+            </div>
+            <div class="thongtinphu">
+              <div>Số điện thoại</div>
+              <div>{{user.sdt}}</div>
+              <div>
+                <div>
+                  <div>Email</div>
+                  <div>{{user.email}}</div>
+                </div>
+                <a href="/admin/{{user._id}}/trangdoiemail">Cập nhật</a>
+              </div>
+              <div>
+                <div>Mật khẩu</div>
+                <a href="/admin/{{user._id}}/trangmatkhau">Đổi mật khẩu</a>
+              </div>
+            </div>
+          </div>
+          <div class="chuabtnthaydoi">
+            <button type="submit" class="btn-thaydoi">Lưu thay đổi</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</main>
+<script>const fileInput = document.querySelector(".file");
+  document.getElementById("hinhanh").addEventListener("change", function (event)
+  { const file = event.target.files[0]; const preview =
+  document.getElementById("preview"); if (file) { const reader = new
+  FileReader(); reader.onload = function (e) { preview.src = e.target.result;
+  preview.style.display = "block"; }; reader.readAsDataURL(file); } else {
+  preview.src = "#"; preview.style.display = "none"; } });
+</script>

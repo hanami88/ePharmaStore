@@ -51,10 +51,12 @@ router.get("/capnhatemail", UserController.capnhatemail);
 router.post("/trangdathang", UserController.trangdathang);
 router.post("/capnhatemail", UserController.doiemail);
 router.post("/dathang", UserController.dathang);
+router.post("/muahangdathang", UserController.muahangdathang);
 router.get("/giohang", UserController.giohang);
 router.post("/huydonhang", UserController.huydonhang);
 router.post("/khoiphucdonhang", UserController.khoiphucdonhang);
 router.post("/doidiachinhanhang", UserController.doidiachinhanhang);
+router.get("/muahangtrangdathang", UserController.muahangtrangdathang);
 router.post(
   "/capnhatthongtin",
   upload.single("hinhanh"),

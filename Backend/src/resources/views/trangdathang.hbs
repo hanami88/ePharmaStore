@@ -4,21 +4,40 @@
       <div class="thanhtoan-sanpham">
         <div>Thanh toán</div>
         <div class="thanhtoan-all">
-          {{#each user.giohang}}
+          {{#if giohang}}
+            {{#each user.giohang}}
+              <div class="sanpham-all-box">
+                <div class="box-sanphamthem-thanhtoan">
+                  <img
+                    class="box-sanphamthem-img"
+                    src="/img/{{this.hinhanh}}"
+                  />
+                  <div class="box-sanphamthem-motathanhtoan">
+                    {{this.tensp}}
+                  </div>
+                  <div class="soluong-thanhtoan">x{{this.soluong}}</div>
+                  <div class="thanhtien-thanhtoan">
+                    {{formatNumber this.giaban}}
+                    ₫</div>
+                </div>
+                <div class="gachchan-to"></div>
+              </div>
+            {{/each}}
+          {{else}}
             <div class="sanpham-all-box">
               <div class="box-sanphamthem-thanhtoan">
-                <img class="box-sanphamthem-img" src="/img/{{this.hinhanh}}" />
+                <img class="box-sanphamthem-img" src="/img/{{good.hinhanh}}" />
                 <div class="box-sanphamthem-motathanhtoan">
-                  {{this.tensp}}
+                  {{good.tensp}}
                 </div>
-                <div class="soluong-thanhtoan">x{{this.soluong}}</div>
+                <div class="soluong-thanhtoan">x{{soluong}}</div>
                 <div class="thanhtien-thanhtoan">
-                  {{formatNumber this.giaban}}
+                  {{formatNumber good.giaban}}
                   ₫</div>
               </div>
               <div class="gachchan-to"></div>
             </div>
-          {{/each}}
+          {{/if}}
         </div>
         <form class="thanhtoan-ghichu">
           <label for="ghichu">Ghi chú</label>
@@ -129,7 +148,11 @@
         <div class="cttt">Chi tiết thanh toán</div>
         <div class="thanhtoan-tt">
           <div>Tạm tính</div>
-          <div>{{formatNumber (totalGiaban user.giohang)}} ₫</div>
+          {{#if giohang}}
+            <div>{{formatNumber (totalGiagoc user.giohang)}} ₫</div>
+          {{else}}
+            <div>{{formatNumber (nhan good.giagoc soluong)}} ₫</div>
+          {{/if}}
         </div>
         <div class="thanhtoan-tt">
           <div>Phí vận chuyển</div>
@@ -143,21 +166,42 @@
           <div class="giohang-tongtien__tamtinh-mota">
             Giảm giá sản phẩm
           </div>
-          <div class="giamgiatong">-{{formatNumber
-              (minus (totalGiagoc user.giohang) (totalGiaban user.giohang))
-            }}
-            ₫</div>
+          <div class="giamgiatong">
+            {{#if giohang}}
+              -{{formatNumber
+                (minus (totalGiagoc user.giohang) (totalGiaban user.giohang))
+              }}
+              ₫
+            {{else}}
+              -{{formatNumber
+                (minus (nhan good.giagoc soluong) (nhan good.giaban soluong))
+              }}
+              ₫
+            {{/if}}
+          </div>
         </div>
+        {{#unless giohang}}
+          <input type="hidden" class="boxlayid" value="{{good._id}}" />
+        {{/unless}}
         <div class="gachchan-tt"></div>
         <div class="thanhtoan-tongtien__tongtien">
           <div class="thanhtoan-tongtien__tongtien-mota">
             <div>Tổng tiền</div>
-            <div>{{user.giohang.length}} sản phẩm</div>
+            {{#if (equal giohang true)}}
+              <div>{{user.giohang.length}} sản phẩm</div>
+            {{else}}
+              <div>1 sản phẩm</div>
+            {{/if}}
           </div>
-          <div class="thanhtoan-tongtien__tongtien-tt">{{formatNumber
-              (totalGiaban user.giohang)
-            }}
-            ₫</div>
+          <div class="thanhtoan-tongtien__tongtien-tt">
+            {{#if (equal giohang true)}}
+              {{formatNumber (totalGiaban user.giohang)}}
+              ₫
+            {{else}}
+              {{formatNumber (nhan good.giaban soluong)}}
+              ₫
+            {{/if}}
+          </div>
         </div>
         <form class="thanhtoan-dieukhoan">
           <input
@@ -169,7 +213,7 @@
           <label for="dieukhoan">Bằng cách tích vào ô chọn, bạn đã đồng ý với
             <a href="">Điều khoản Pharmacity</a></label>
         </form>
-        <div class="thanhtoan-tongtien__btn">Đặt Hàng</div>
+        <div class="thanhtoan-tongtien__btn" data-giohang="{{giohang}}">Đặt Hàng</div>
       </div>
     </div>
   </div>
@@ -200,8 +244,7 @@
             <div>{{this.sonha}},
               {{this.phuongxa}},
               {{this.quanhuyen}},
-              {{this.tinhthanh}}
-            </div>
+              {{this.tinhthanh}}</div>
             <div>
               <div class="dactrungdiachi">{{this.loai}}</div>
               {{#if this.macdinh}}
@@ -211,6 +254,11 @@
           </label>
         </div>
       {{/each}}
+      {{#unless giohang}}
+        <input type="hidden" name="giohang" value="false" />
+        <input type="hidden" name="good_id" value="{{good._id}}" />
+        <input type="hidden" name="soluong" value="{{soluong}}" />
+      {{/unless}}
     </form>
     <div class="btnthemdiachi">+ Thêm địa chỉ</div>
     <div class="chua2btn">

@@ -1,6 +1,7 @@
 const Goods = require("../models/Good");
 const Users = require("../models/User");
 const Orders = require("../models/Order");
+const Thongkes = require("../models/Thongke");
 const User = require("../models/User");
 
 class UserController {
@@ -202,29 +203,58 @@ class UserController {
     }
   }
   async trangdathang(req, res) {
+    const giohang = true;
+    console.log(giohang);
     try {
-      res.render("trangdathang");
+      res.render("trangdathang", { giohang });
     } catch (err) {
+      res.status(500).send("Lỗi server");
+    }
+  }
+  async muahangtrangdathang(req, res) {
+    try {
+      const good = await Goods.findById(req.query.id).lean();
+      const soluong = req.query.soluong;
+      const giohang = false;
+      console.log(giohang);
+
+      res.render("trangdathang", { good, soluong, giohang });
+    } catch (err) {
+      console.error(err);
       res.status(500).send("Lỗi server");
     }
   }
   async doidiachinhanhang(req, res) {
-    if (!req.body.diachi) {
-      res.render("trangdathang");
-    }
-    let user = await Users.findById(req.user);
-    user.diachi.forEach((i) => {
-      i.duocchon = "false";
-    });
-    user.diachi[req.body.diachi].duocchon = "true";
-    await user.save();
-    let updatedUser = await Users.findById(req.user).lean();
     try {
-      res.render("trangdathang", { user: updatedUser });
+      if (!req.body.diachi) {
+        return res.render("trangdathang");
+      }
+      let user = await Users.findById(req.user);
+      user.diachi.forEach((diachi, index) => {
+        diachi.duocchon = index == req.body.diachi ? "true" : "false";
+      });
+      await user.save();
+      let updatedUser = await Users.findById(req.user).lean();
+      if (req.body.giohang === "true" || !req.body.giohang) {
+        return res.render("trangdathang", {
+          user: updatedUser,
+          giohang: true,
+        });
+      }
+      const good = await Goods.findById(req.body.good_id).lean();
+      const soluong = Number(req.body.soluong) || 1;
+      return res.render("trangdathang", {
+        user: updatedUser,
+        giohang: false,
+        good,
+        soluong,
+      });
     } catch (err) {
+      console.error("Lỗi thay đổi địa chỉ:", err);
       res.status(500).send("Lỗi server");
     }
   }
+
   async dathang(req, res) {
     try {
       let user = await Users.findById(req.user);
@@ -241,15 +271,51 @@ class UserController {
       });
       user.giohang = [];
       user.diachi.forEach((i) => {
-        if (i.macdinh) {
-          i.duocchon = "true";
-        } else {
-          i.duocchon = "false";
-        }
+        i.duocchon = i.macdinh ? "true" : "false";
       });
-      await Promise.all([await user.save(), await order.save()]);
+      await Promise.all([user.save(), order.save()]);
       res.redirect("/user/lichsudonhang");
     } catch (err) {
+      console.error("Lỗi đặt hàng:", err);
+      res.status(500).send("Lỗi server");
+    }
+  }
+  async muahangdathang(req, res) {
+    try {
+      const user = await Users.findById(req.user);
+      const diachi1 = user.diachi.find((i) => i.duocchon);
+      const good = await Goods.findById(req.body.id).lean();
+      const soluong = Number(req.body.soluong) || 1;
+      const sum = good.giaban * soluong;
+      const order = new Orders({
+        userid: req.user,
+        giohang: [
+          {
+            tensp: good.tensp,
+            giamgia: good.giamgia,
+            soluong: soluong,
+            nhacungcap: good.nhacungcap,
+            banchay: good.banchay,
+            donvi: good.donvi,
+            mota: good.mota,
+            hinhanh: good.hinhanh,
+            danhmuc: good.danhmuc,
+            giaban: good.giaban,
+            giagoc: good.giagoc,
+          },
+        ],
+        tongtien: sum,
+        thanhtoan: "COD",
+        ghichu: req.body.ghichu,
+        diachi: diachi1,
+      });
+      user.diachi.forEach((i) => {
+        i.duocchon = i.macdinh ? "true" : "false";
+      });
+      await order.save();
+      res.redirect("/user/lichsudonhang");
+    } catch (err) {
+      console.error("Lỗi đặt hàng:", err);
       res.status(500).send("Lỗi server");
     }
   }

@@ -3,8 +3,8 @@
     <h1>Sản phẩm chính hãng đạt tiêu chuẩn</h1>
     <div class="sapxep">
       <div>Sắp xếp theo:</div>
-      <div class="desc box-ss">Giá tăng dần</div>
-      <div class="asc box-ss">Giá giảm dần</div>
+      <a href="?sort=asc" style="text-decoration: none;" class="box-ss {{#if (equal sortType "asc")}}active-sort{{/if}}">Giá tăng dần</a>
+     <a href="?sort=desc"  style="text-decoration: none;" class="box-ss {{#if (equal sortType "desc")}}active-sort{{/if}}">Giá giảm dần</a>
     </div>
     <div class="chuasanpham">
       {{#each good}}
@@ -21,13 +21,14 @@
             ₫/{{this.donvi}}</span>
           <div class="sandeal-box-like">
             <i class="fa-solid fa-heart"></i>
-            <span class="sandeal-box-like-like">15.9k |</span>
-            <span class="sandeal-box-like-bought">Đã Bán 9.2k</span>
+            <span class="sandeal-box-like-like">10.5k |</span>
+            <span class="sandeal-box-like-bought">Đã Bán
+              {{this.soluongdaban}}</span>
           </div>
-          {{#if this.banchay}}
+          {{#if (lonhon this.soluongdaban 500)}}
             <div class="banchay">Đang bán chạy</div>
           {{else}}
-            <div class="banchay banchaytrang"></div>
+            <div class="banchaytrang"></div>
           {{/if}}
           <button class="sandeal-box-buy">Chọn sản phẩm</button>
           <input type="hidden" class="boxlayid" value="{{this._id}}" />
@@ -56,7 +57,7 @@
           <i class="fa-solid fa-plus congmuahang"></i>
         </div>
         <div>
-          <button>Mua hàng</button>
+          <button class="muahang">Mua hàng</button>
           <button class="themvaogio">Thêm vào giỏ hàng</button>
         </div>
       </div>

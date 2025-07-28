@@ -669,7 +669,7 @@ body {
   background-color: rgb(255, 255, 255);
   box-shadow: rgba(60, 64, 67, 0.3) 0rem 0.1rem 0.2rem 0rem,
     rgba(60, 64, 67, 0.15) 0rem 0.1rem 0.3rem 0.1rem;
-  margin-right: 1.2rem;
+  margin-right: 1.9rem;
 }
 .buy-box.diff {
   margin-top: 2rem;
@@ -724,7 +724,7 @@ body {
   font-weight: 500;
 }
 .sandeal-box-like :nth-child(3) {
-  width: 8.5rem;
+  width: 10rem;
   font-size: 1.4rem;
   font-weight: 500;
 }
@@ -854,9 +854,7 @@ body {
     opacity: 1;
   }
 }
-.hotdeal-thanhchon.version1 .banchay {
-  background-color: white;
-}
+
 .thuonghieu {
   width: 100vw;
   height: 58rem;
@@ -1993,10 +1991,14 @@ body {
 
 .trangchinh {
   width: 100vw;
-  height: 500vh;
   display: flex;
   justify-content: center;
   margin-bottom: 5rem;
+}
+.box-ss.active-sort {
+  font-weight: bold;
+  color: white;
+  opacity: 1;
 }
 
 .trangchinh-container > :nth-child(1) {
@@ -2037,9 +2039,7 @@ body {
   display: flex;
   flex-wrap: wrap;
 }
-.chuasanpham .banchay {
-  background-color: white;
-}
+
 .end {
   margin-top: 10rem;
   height: 55rem;
@@ -2254,6 +2254,16 @@ body {
   line-height: 1.5rem;
 }
 .banchaytrang {
+  width: 17rem;
+  padding-top: 0.27rem;
+  margin: 0 auto;
+  height: 1.8rem;
+  border-radius: 2.5rem;
+  font-size: 1.2rem;
+  color: white;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 1.2rem;
   background-color: white;
 }
 .trang-login-title {
@@ -2763,7 +2773,6 @@ input[type="date"] {
   font-size: 1.2rem;
   border-radius: 0.4rem;
   font-weight: 500;
-  margin-top: -0.5rem;
   margin-right: 1rem;
 }
 .dactrungmacdinh {
@@ -2775,7 +2784,6 @@ input[type="date"] {
   font-size: 1.2rem;
   border-radius: 0.4rem;
   font-weight: 500;
-  margin-top: -0.5rem;
 }
 
 .container-themdiachi.active {
@@ -2970,7 +2978,7 @@ input[type="date"] {
 }
 .ctnthongtin-doimk {
   margin-left: 1.7rem;
-  width: 63.8vw;
+  width: vw;
   height: 85vh;
   color: #2b2b2b;
 }
@@ -3556,6 +3564,7 @@ input[type="date"] {
   max-height: 52.4vh;
   border-radius: 1.5rem;
 }
+
 .thanhtoan-ghichu {
   display: flex;
   align-items: center;
@@ -3823,6 +3832,17 @@ input[type="date"] {
   font-size: 2rem;
   font-weight: 600;
   pointer-events: none;
+}
+.container-thanhtoan > :nth-child(1) {
+  width: 100%;
+  height: 100%;
+}
+.note {
+  background-color: #fef3c7;
+  width: 20rem;
+  height: 3rem;
+  border-radius: 0.8rem;
+  border: 0.1rem solid black;
 }
 .thanhtoan-tongtien__btn.active {
   cursor: pointer;

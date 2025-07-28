@@ -22,6 +22,7 @@ app.engine(
       formatNumber: function (value) {
         return Number(value).toLocaleString("vi-VN");
       },
+      lonhon: (a, b) => a > b,
       equal: (a, b) => a === b,
       nequal: (a, b) => a !== b,
       length: (a) => a.length,

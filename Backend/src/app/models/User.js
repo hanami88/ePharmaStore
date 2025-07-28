@@ -6,13 +6,13 @@ const Good = new Schema({
   giamgia: Number,
   soluong: Number,
   nhacungcap: String,
-  banchay: Boolean,
   donvi: String,
   mota: String,
   hinhanh: String,
   danhmuc: String,
   giaban: Number,
   giagoc: Number,
+  soluongdaban: Number,
 });
 const AddressSchema = new Schema(
   {
@@ -29,7 +29,7 @@ const AddressSchema = new Schema(
   { _id: false }
 );
 const User = new Schema({
-  username: { type: String },
+  sdt: { type: String },
   password: { type: String },
   role: { type: String },
   diachi: [AddressSchema],
@@ -38,8 +38,8 @@ const User = new Schema({
   hinhanh: { type: String },
   hoten: { type: String },
   ngaysinh: { type: String },
-  sdt: { type: String },
   giohang: [Good],
+  tongtiendadung: { type: Number },
 });
 User.plugin(mongooseDelete, { deletedAt: true, overrideMethods: "all" });
 module.exports = mongoose.model("User", User);

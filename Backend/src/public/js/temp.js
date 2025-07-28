@@ -27,17 +27,17 @@ chitiet.forEach((element) => {
           tongtiengoc += i.giagoc * i.soluong;
         });
         document.getElementById("tentk").textContent =
-          "Tên tài khoản : " + info.userid.username;
-        document.getElementById("hoten").textContent = info.userid.hoten;
+          "Số điện thoại (TK đặt) : " + info.userid.sdt;
+        document.getElementById("hoten").textContent = info.diachi.hoten;
         document.getElementById("sdt").textContent = info.userid.sdt;
         document.getElementById("diachi").textContent =
-          info.userid.diachi[0].sonha +
+          info.diachi.sonha +
           ", " +
-          info.userid.diachi[0].phuongxa +
+          info.diachi.phuongxa +
           ", " +
-          info.userid.diachi[0].quanhuyen +
+          info.diachi.quanhuyen +
           ", " +
-          info.userid.diachi[0].tinhthanh;
+          info.diachi.tinhthanh;
         if (info.trangthai == "Đã xác nhận") {
           document.getElementById("trangthaidonhang-xacnhan").style.display =
             "block";
@@ -61,6 +61,7 @@ chitiet.forEach((element) => {
           "time"
         ).textContent = `${gio}:${phut} - ${ngay}/${thang}/${nam}`;
         document.getElementById("madonhang").textContent = info._id;
+        document.getElementById("hienthighichu").textContent = info.ghichu;
         document.getElementById("spnho").textContent =
           "( " + info.giohang.length + " sản phẩm )";
         document.getElementById("tienhang").textContent =

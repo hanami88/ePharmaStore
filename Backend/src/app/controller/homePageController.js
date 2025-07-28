@@ -25,28 +25,52 @@ class HomePageController {
   }
   async khohang(req, res) {
     try {
-      let good = await Goods.find({}).lean();
+      const sortParam = req.query.sort;
+      const sortOption =
+        sortParam === "asc" ? 1 : sortParam === "desc" ? -1 : null;
+
+      let query = Goods.find({});
+
+      if (sortOption !== null) {
+        query = query.sort({ giaban: sortOption });
+      }
+
+      const good = await query.lean();
+
       res.render("khohang", {
         good,
+        sortType: sortParam || "none", // truyền vào để hiển thị trạng thái nút
       });
     } catch (err) {
       res.status(400).json({ error: "ERROR!" });
     }
   }
-
+  async timkiemsanpham(req, res) {
+    try {
+      const { keyword } = req.body;
+      const query = {};
+      if (keyword && keyword.trim() !== "") {
+        query.tensp = { $regex: keyword, $options: "i" };
+      }
+      let [good] = await Promise.all([Goods.find(query).lean()]);
+      res.render("khohang", {
+        good,
+        filters: { keyword },
+      });
+    } catch (err) {
+      res.send("ERROR");
+    }
+  }
   async login(req, res) {
     try {
-      const { username, password } = req.body;
-      const user = await Users.findOne({ username }).lean();
-
+      const { sdt, password } = req.body;
+      const user = await Users.findOne({ sdt }).lean();
       if (!user) {
-        return res.status(401).json({ error: "Tài khoản không tồn tại" });
+        return res.status(401).json({ error: "Số điện thoại không tồn tại" });
       }
-
       if (user.password !== password) {
         return res.status(401).json({ error: "Mật khẩu sai" });
       }
-
       const token = jwt.sign({ id: user._id, role: user.role }, "1");
       res.cookie("token", token, {
         httpOnly: true,
@@ -59,16 +83,16 @@ class HomePageController {
   }
   async dangky(req, res) {
     try {
-      const { username, password, repassword } = req.body;
-      const user = await Users.findOne({ username }).lean();
+      const { sdt, password, repassword } = req.body;
+      const user = await Users.findOne({ sdt }).lean();
       if (user) {
-        return res.status(401).json({ error: "Tài khoản đã tồn tại" });
+        return res.status(401).json({ error: "Số điện thoại đã tồn tại" });
       }
       if (password !== repassword) {
         return res.status(401).json({ error: "Mật khẩu không khớp" });
       }
       const newuser = new Users({
-        username: username,
+        sdt: sdt,
         password: password,
         role: "user",
       });
