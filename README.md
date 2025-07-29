@@ -1,4 +1,4 @@
-# 💊 Online Pharmacy - Pharmacity Clone
+# 💊 ePharmaStore
 
 ## 📌 Project Overview
 
