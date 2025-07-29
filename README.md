@@ -70,25 +70,34 @@ Inventory
 
 - Sort products by price (ascending or descending)
 <img width="1436" height="690" alt="Ảnh màn hình 2025-07-29 lúc 12 44 38" src="https://github.com/user-attachments/assets/775e90bc-cbdb-4e94-a553-f37ef7d848a9" />
-- ascending
+
+> ascending
+> 
 <img width="2874" height="1372" alt="image" src="https://github.com/user-attachments/assets/367760b7-fd21-4bd9-b714-d220d0a93a43" />
-- descending
+
+> descending
+
 <img width="1438" height="688" alt="Ảnh màn hình 2025-07-29 lúc 12 44 57" src="https://github.com/user-attachments/assets/b9dbe5be-a805-4730-b9d7-f33322b34f80" />
 
 ### 🔍 Search Bar
 
 <img width="1437" height="691" alt="Ảnh màn hình 2025-07-29 lúc 14 07 17" src="https://github.com/user-attachments/assets/24bffe32-2ecd-455d-9a71-68dbbbfa01d5" />
 <img width="1435" height="687" alt="Ảnh màn hình 2025-07-29 lúc 14 08 02" src="https://github.com/user-attachments/assets/272987e8-617c-4047-8811-2cb913559424" />
-Categories
+
+> Categories
+
 <img width="1437" height="694" alt="Ảnh màn hình 2025-07-29 lúc 12 44 24" src="https://github.com/user-attachments/assets/39c3fc50-bdd2-4541-9d99-0f1cf99bb461" />
 
 ### 🔐 Login Page
+
 <img width="1440" height="814" alt="Ảnh màn hình 2025-07-29 lúc 10 46 50" src="https://github.com/user-attachments/assets/846461d3-5e5c-4304-8b66-3ab7b6324058" />
 
 ### 📝 Registration Page
+
 <img width="1440" height="812" alt="Ảnh màn hình 2025-07-29 lúc 10 48 00" src="https://github.com/user-attachments/assets/23410c36-cc20-48e9-a8ca-9cf4f93c36c0" />
 
 ### 👤 After Login - Customer View
+
 <img width="1440" height="814" alt="Ảnh màn hình 2025-07-29 lúc 10 49 15" src="https://github.com/user-attachments/assets/6fea5f10-03c2-4337-afc5-4b99d4a8754c" />
 <img width="1440" height="814" alt="Ảnh màn hình 2025-07-29 lúc 10 53 56" src="https://github.com/user-attachments/assets/c54dd594-d125-4974-9dab-0c4b519bea7c" />
 
@@ -102,15 +111,19 @@ After logging in, users can access their profile to update personal information:
 - Save and persist data to MongoDB
 
 Below is the interface for updating user profile:
+
 <img width="1440" height="813" alt="Ảnh màn hình 2025-07-29 lúc 11 54 51" src="https://github.com/user-attachments/assets/8ab0f083-bfee-4081-9f3c-a271c57f53dd" />
 
 ### 🙍‍♂️ Update Profile
+
 <img width="1440" height="900" alt="Ảnh màn hình 2025-07-29 lúc 11 58 33" src="https://github.com/user-attachments/assets/de35d113-e214-478a-ac14-9e125cac3680" />
 
 ### 📧 Change Email Address
+
 <img width="1440" height="693" alt="Ảnh màn hình 2025-07-29 lúc 12 00 25" src="https://github.com/user-attachments/assets/fdb99744-a42b-475e-b549-b518d816b370" />
 
 ### 🔒 Change Password
+
 <img width="1439" height="692" alt="Ảnh màn hình 2025-07-29 lúc 12 00 38" src="https://github.com/user-attachments/assets/9e4aff71-7c6b-4be2-85bc-960fa5cebbd7" />
 
 ## 🏠 Shipping Address Management
