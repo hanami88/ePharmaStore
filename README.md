@@ -116,6 +116,105 @@ After addresses are added, they are listed with options to:
 
 <img width="1440" height="813" alt="Ảnh màn hình 2025-07-29 lúc 12 02 09" src="https://github.com/user-attachments/assets/b6c5391e-1a1e-46f3-81b9-3afd5818a862" />
 
+## 🛍️ Flexible Ordering Options
 
+The system supports two methods for placing orders:
+
+### 🛒 1. Add to Cart
+- Users can browse and add multiple products to their shopping cart.
+- Once ready, they can go to the cart, review their items, select a shipping address, and confirm the order.
+- Best for users buying multiple products in one checkout.
+<img width="1440" height="812" alt="Ảnh màn hình 2025-07-29 lúc 12 11 35" src="https://github.com/user-attachments/assets/898696b8-317b-49aa-89d5-f3a1506c681e" />
+
+- Users can:
+  - Modify product quantity
+  - Remove items from the cart
+  - Proceed to checkout
+
+> This allows users to review their selected items before placing an order.
+<img width="1438" height="693" alt="Ảnh màn hình 2025-07-29 lúc 12 15 36" src="https://github.com/user-attachments/assets/66faf1a6-9e95-4e6d-abcb-26dc281ee454" />
+
+### 🧾 Checkout Page
+
+After clicking the “Place Order” button, users are redirected to the checkout page where they can review and confirm their order before finalizing it.
+
+#### ✅ Key features on the checkout page:
+
+- 🛒 **Order Summary**  
+  Displays all products added to the cart, including:
+  - Product name and quantity
+  - Price per item
+  - Total amount
+
+- 🏠 **Shipping Information**  
+  - Users can select from their saved shipping addresses  
+  - If no address exists, a prompt to add one is shown
+
+- 💳 **Payment Method**  
+  - Currently supports: **Cash on Delivery (COD)** only
+
+- 📃 **Terms and Conditions Confirmation**  
+  - A checkbox is required to agree with terms and conditions  
+  - Users cannot proceed without accepting it
+
+- 📦 **Final Confirmation**  
+  - Once all required fields are completed and terms accepted, the “Place Order” button becomes available.
+
+> This page ensures users can verify all details before placing an order.
+<img width="1440" height="812" alt="Ảnh màn hình 2025-07-29 lúc 12 19 00" src="https://github.com/user-attachments/assets/9dc7b424-2e8e-4e33-80d5-ce498555b80a" />
+<img width="1440" height="813" alt="Ảnh màn hình 2025-07-29 lúc 12 19 14" src="https://github.com/user-attachments/assets/523804f0-631a-48dc-b80c-b52220d750f8" />
+### 🏠 Default Shipping Address & Selection
+
+When placing an order, the system automatically uses the user's **default shipping address**.
+
+- ✅ If the user has multiple saved addresses, the default one is pre-selected
+- 🔄 Users can manually change the delivery address before confirming the order
+- 🆕 If no address exists, users are prompted to add a new one
+
+> This ensures the order is shipped to the correct location, with flexibility for the user to choose.
+<img width="1440" height="694" alt="Ảnh màn hình 2025-07-29 lúc 12 21 10" src="https://github.com/user-attachments/assets/c03cc56b-a1b0-40ee-8bc3-94a02a634b83" />
+> After changing the address, the newly selected address will be used for the current order instead of the previous default.
+<img width="960" height="368" alt="Ảnh màn hình 2025-07-29 lúc 12 21 33" src="https://github.com/user-attachments/assets/7927672c-6de5-4886-bccb-fbef9de822d4" />
+Users can only place an order after agreeing to the terms and conditions.
+<img width="1438" height="692" alt="Ảnh màn hình 2025-07-29 lúc 12 21 52" src="https://github.com/user-attachments/assets/d55d25c7-d9e3-42e1-a788-a58ca82f3ac7" />
+
+
+### ⚡ 2. Buy Now
+When users click the **"Buy Now"** button on a product, they are redirected to the same checkout page used for cart purchases.
+
+- The selected product is displayed directly in the order summary
+- Users can select or change the shipping address
+- Payment method and terms confirmation are required as usual
+
+> The buying process is identical to the cart flow, but for a single product only.
+<img width="1437" height="690" alt="Ảnh màn hình 2025-07-29 lúc 12 27 08" src="https://github.com/user-attachments/assets/891e0fe4-8743-4546-af3d-baf9705e2669" />
+<img width="1438" height="692" alt="Ảnh màn hình 2025-07-29 lúc 12 29 11" src="https://github.com/user-attachments/assets/e9260a25-2d60-44e6-a688-71affe0a1e6b" />
+<img width="1437" height="690" alt="Ảnh màn hình 2025-07-29 lúc 12 29 22" src="https://github.com/user-attachments/assets/4d3f7c45-a22d-433d-9d43-0d5ab7315473" />
+
+## 📦 Order History
+
+Users can view their full order history on a dedicated page.
+
+- 🕓 If no orders have been placed yet, the following message will be shown:
+  > "You have not placed any orders yet."
+
+- ✅ After placing an order (either via **Buy Now** or **Add to Cart**), the order will appear in the list with:
+  - Order ID
+  - Product details
+  - Total amount
+  - Shipping address
+  - Order status: 
+    - Pending
+    - Confirmed
+    - Cancelled
+  - Order time
+
+> All orders, regardless of the purchase method, are tracked and displayed here.
+
+### 🕓 No Orders Yet
+<img width="1440" height="812" alt="Ảnh màn hình 2025-07-29 lúc 12 05 24" src="https://github.com/user-attachments/assets/3f123601-5104-4ef2-ba5a-f5ff74222c67" />
+
+### ✅ Order History (after placing orders)
+<img width="1440" height="812" alt="Ảnh màn hình 2025-07-29 lúc 12 05 24" src="https://github.com/user-attachments/assets/9ab5b0ab-4fb1-4e70-9516-0253e61d18f7" />
 
 
