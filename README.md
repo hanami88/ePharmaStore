@@ -81,10 +81,7 @@ After logging in, users can access their profile to update personal information:
 - Change password
 - Save and persist data to MongoDB
 
-Below is the interface for updating user profile:
-
 <img width="1440" height="813" alt="Ảnh màn hình 2025-07-29 lúc 11 54 51" src="https://github.com/user-attachments/assets/8ab0f083-bfee-4081-9f3c-a271c57f53dd" />
-
 
 ## 🏠 Shipping Address Management
 
@@ -159,12 +156,9 @@ When placing an order, the system automatically uses the user's **default shippi
 - ✅ If the user has multiple saved addresses, the default one is pre-selected
 - 🔄 Users can manually change the delivery address before confirming the order
 - 🆕 If no address exists, users are prompted to add a new one
-
+- Users can only place an order after agreeing to the terms and conditions.
 > This ensures the order is shipped to the correct location, with flexibility for the user to choose.
 <img width="1440" height="694" alt="Ảnh màn hình 2025-07-29 lúc 12 21 10" src="https://github.com/user-attachments/assets/c03cc56b-a1b0-40ee-8bc3-94a02a634b83" />
-Users can only place an order after agreeing to the terms and conditions.
-<img width="1438" height="692" alt="Ảnh màn hình 2025-07-29 lúc 12 21 52" src="https://github.com/user-attachments/assets/d55d25c7-d9e3-42e1-a788-a58ca82f3ac7" />
-
 
 ### ⚡ 2. Buy Now
 When users click the **"Buy Now"** button on a product, they are redirected to the same checkout page used for cart purchases.
@@ -236,9 +230,6 @@ Admin can manage all products in the system with the following features:
 - Edit Product
 - Delete Product
 - Trash Bin : Can restore products back to the main product list and permanently delete products from the system
-- 
-<img width="1439" height="813" alt="Ảnh màn hình 2025-07-29 lúc 14 15 00" src="https://github.com/user-attachments/assets/c5e7c64d-8cb8-4c0c-b095-7219e1f87d79" />
-
 ---
 ### 👥 Customer Management (Admin)
 
@@ -263,7 +254,7 @@ Admins can view detailed information of each customer, including:
 - Change customer's email or password
 - View saved shipping addresses
 - View order history
-- 
+
 ### 📦 Order Management (Admin)
 
 Admins can manage all customer orders with the following features:
@@ -301,20 +292,13 @@ The admin dashboard includes a statistics section with the following features:
 - Compare this month's revenue with the previous month
 - Indicates whether revenue has increased or decreased
 
-<img width="1435" height="692" alt="Ảnh màn hình 2025-07-29 lúc 14 33 30" src="https://github.com/user-attachments/assets/09e6172c-2111-4c48-9f82-83afe22f3168" />
-
----
-
-### 🏆 Top-Selling Products
-
 Displays a ranked list of best-selling products with performance indicators:
 
 - 🔥 **Good**: Sold over 500 units  
 - 👍 **Average**: Sold between 200–500 units  
 - ⚠️ **Poor**: Sold under 100 units
-
-<img width="1440" height="694" alt="Ảnh màn hình 2025-07-29 lúc 14 33 47" src="https://github.com/user-attachments/assets/e5efd664-4a3d-404c-99be-06ca446d73bf" />
 > Icons help quickly identify how well each product is performing.
+<img width="1435" height="692" alt="Ảnh màn hình 2025-07-29 lúc 14 33 30" src="https://github.com/user-attachments/assets/09e6172c-2111-4c48-9f82-83afe22f3168" />
 
 ## 🙏 Thank You
 
