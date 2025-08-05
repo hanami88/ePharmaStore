@@ -4,7 +4,7 @@
 
 This is a self-built online pharmacy project inspired by Pharmacity. The system allows users to browse products, manage their cart, place orders, and track order status. Admins can manage users, products, and view statistics.  
 It was developed individually as a personal project to demonstrate full-stack web development skills.
-
+ 
 - ⏱️ Duration: 1 month (from planning to deployment)
 
 ---
