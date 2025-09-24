@@ -295,7 +295,7 @@ The admin dashboard includes a statistics section with the following features:
 Displays a ranked list of best-selling products with performance indicators:
 
 - 🔥 **Good**: Sold over 500 units  
-- 👍 **Average**: Sold between 200–500 units  
+- 👍 **Average**: Sold between 200–500 units 
 - ⚠️ **Poor**: Sold under 100 units
 > Icons help quickly identify how well each product is performing.
 <img width="1435" height="692" alt="Ảnh màn hình 2025-07-29 lúc 14 33 30" src="https://github.com/user-attachments/assets/09e6172c-2111-4c48-9f82-83afe22f3168" />
@@ -303,7 +303,7 @@ Displays a ranked list of best-selling products with performance indicators:
 ## 🙏 Thank You
 
 Thank you for taking the time to review my project.  
-I appreciate your attention and welcome any feedback or suggestions.
+I appreciate your attention and welcome any feedback or suggestions
 
 
 
