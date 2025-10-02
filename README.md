@@ -73,23 +73,13 @@ This project is an online pharmacy platform inspired by Pharmacity, designed to 
 
 ### 🙍‍♂️ User Profile Management
 
-After logging in, users can access their profile to update personal information:
-
-- View current phone number
-- Add or change name and email
-- Change password
-- Save and persist data to MongoDB
+After logging in, users can access their profile to update personal information.
 
 <img width="1440" height="813" alt="Ảnh màn hình 2025-07-29 lúc 11 54 51" src="https://github.com/user-attachments/assets/8ab0f083-bfee-4081-9f3c-a271c57f53dd" />
 
 ## 🏠 Shipping Address Management
 
 Users can manage their shipping addresses to ensure accurate delivery. Each user can add, update, or select from multiple saved addresses.
-
-- If no address exists, the user is prompted to add one.
-- Users can save multiple addresses (home, office, etc.)
-- One address can be marked as the default or currently selected.
-- The selected address will be used during the checkout process.
 
 ### ➕ Add New Address
 <img width="1440" height="811" alt="Ảnh màn hình 2025-07-29 lúc 12 01 31" src="https://github.com/user-attachments/assets/37e29d70-2abb-4472-a1f7-abd2bfa21378" />
@@ -125,26 +115,6 @@ After clicking the “Place Order” button, users are redirected to the checkou
 
 #### ✅ Key features on the checkout page:
 
-- 🛒 **Order Summary**  
-  Displays all products added to the cart, including:
-  - Product name and quantity
-  - Price per item
-  - Total amount
-
-- 🏠 **Shipping Information**  
-  - Users can select from their saved shipping addresses  
-  - If no address exists, a prompt to add one is shown
-
-- 💳 **Payment Method**  
-  - Currently supports: **Cash on Delivery (COD)** only
-
-- 📃 **Terms and Conditions Confirmation**  
-  - A checkbox is required to agree with terms and conditions  
-  - Users cannot proceed without accepting it
-
-- 📦 **Final Confirmation**  
-  - Once all required fields are completed and terms accepted, the “Place Order” button becomes available.
-
 > This page ensures users can verify all details before placing an order.
 <img width="1440" height="812" alt="Ảnh màn hình 2025-07-29 lúc 12 19 00" src="https://github.com/user-attachments/assets/9dc7b424-2e8e-4e33-80d5-ce498555b80a" />
 
@@ -152,19 +122,11 @@ After clicking the “Place Order” button, users are redirected to the checkou
 
 When placing an order, the system automatically uses the user's **default shipping address**.
 
-- ✅ If the user has multiple saved addresses, the default one is pre-selected
-- 🔄 Users can manually change the delivery address before confirming the order
-- 🆕 If no address exists, users are prompted to add a new one
-- Users can only place an order after agreeing to the terms and conditions.
 > This ensures the order is shipped to the correct location, with flexibility for the user to choose.
 <img width="1440" height="694" alt="Ảnh màn hình 2025-07-29 lúc 12 21 10" src="https://github.com/user-attachments/assets/c03cc56b-a1b0-40ee-8bc3-94a02a634b83" />
 
 ### ⚡ 2. Buy Now
 When users click the **"Buy Now"** button on a product, they are redirected to the same checkout page used for cart purchases.
-
-- The selected product is displayed directly in the order summary
-- Users can select or change the shipping address
-- Payment method and terms confirmation are required as usual
 
 > The buying process is identical to the cart flow, but for a single product only.
 <img width="1437" height="690" alt="Ảnh màn hình 2025-07-29 lúc 12 27 08" src="https://github.com/user-attachments/assets/891e0fe4-8743-4546-af3d-baf9705e2669" />
@@ -174,17 +136,6 @@ Users can view their full order history on a dedicated page.
 
 - 🕓 If no orders have been placed yet, the following message will be shown:
   > "You have not placed any orders yet."
-
-- ✅ After placing an order (either via **Buy Now** or **Add to Cart**), the order will appear in the list with:
-  - Order ID
-  - Product details
-  - Total amount
-  - Shipping address
-  - Order status: 
-    - Pending
-    - Confirmed
-    - Cancelled
-  - Order time
 
 > All orders, regardless of the purchase method, are tracked and displayed here.
 
@@ -210,49 +161,22 @@ Users can cancel an order while it's still in the **Pending** status.
 Canceled orders can be restored and moved back to the "Pending Orders" section, allowing them to be processed again by the admin.
 
 ## 🛠️ Admin 
-The admin can add new products through a form with the following fields:
-
-- Product name
-- Quantity
-- Discount (%) 
-- Selling price
-- Unit (e.g., box, bottle)
-- Category
-- Product image
 
 > All fields are required to ensure complete product information.
 <img width="1439" height="695" alt="Ảnh màn hình 2025-07-29 lúc 14 09 48" src="https://github.com/user-attachments/assets/772ea645-2ea8-4ac2-9ddc-f629089fdde1" />
 
 ### 🛒 Product Management (Admin)
 Admin can manage all products in the system with the following features:
-- Search Products
-- Edit Product
-- Delete Product
 - Trash Bin : Can restore products back to the main product list and permanently delete products from the system
 ---
 ### 👥 Customer Management (Admin)
 
 Admin can manage user accounts with the following features:
-Displays the following customer information:
 
-- Full name  
-- Phone number  
-- Email address  
-- Total spending  
-- Gender  
-- Date of birth
 <img width="1440" height="696" alt="Ảnh màn hình 2025-07-29 lúc 14 23 30" src="https://github.com/user-attachments/assets/d9238e1b-edda-40b6-a922-291fcc224981" />
 ---
 >Can search by Phone or Username
 Quickly search for customers using their phone number or username.
-### 📄 Customer Details
-
-Admins can view detailed information of each customer, including:
-
-- Personal info (name, phone, email, gender, date of birth)
-- Change customer's email or password
-- View saved shipping addresses
-- View order history
 
 ### 📦 Order Management (Admin)
 
@@ -264,18 +188,6 @@ Admins can manage all customer orders with the following features:
 
 ### 📄 Order Details
 
-Admins can view basic information of each order, including:
-
-- Order date and time  
-- List of purchased items  
-- Total amount  
-- Shipping address  
-- Payment method  
-- Customer note (if any)
-Admins can also:
-- ✅ Confirm the order (mark as processed)
-- 🗑️ Delete the order if necessary
-
 > Once confirmed, the order is considered officially placed and ready for processing.
 <img width="1435" height="691" alt="Ảnh màn hình 2025-07-29 lúc 14 29 04" src="https://github.com/user-attachments/assets/4c89f868-2dac-4bf8-b1c6-8d274c9039ca" />
 
@@ -286,10 +198,6 @@ The admin dashboard includes a statistics section with the following features:
 ---
 
 ### 📅 Monthly Revenue Overview
-
-- View total revenue by month
-- Compare this month's revenue with the previous month
-- Indicates whether revenue has increased or decreased
 
 Displays a ranked list of best-selling products with performance indicators:
 
