@@ -35,11 +35,11 @@ const User = new Schema({
   diachi: [AddressSchema],
   email: { type: String },
   gioitinh: { type: String },
-  hinhanh: { type: String },
+  hinhanh: { type: String, default: "anhmacdinh.jpeg" },
   hoten: { type: String },
   ngaysinh: { type: String },
   giohang: [Good],
-  tongtiendadung: { type: Number },
+  tongtiendadung: { type: Number, default: 0 },
 });
 User.plugin(mongooseDelete, { deletedAt: true, overrideMethods: "all" });
 module.exports = mongoose.model("User", User);

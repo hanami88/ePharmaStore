@@ -210,8 +210,8 @@ class AdminController {
       const { keyword, danhmuc, banchay } = req.body;
       const message = req.cookies.message || null;
       const query = {};
-      if (keyword && keyword.trim() !== "") {
-        query.tensp = { $regex: keyword, $options: "i" };
+      if (keyword && typeof keyword === "string" && keyword.trim() !== "") {
+        query.$text = { $search: keyword.trim() };
       }
       if (danhmuc && danhmuc !== "") {
         query.danhmuc = danhmuc;

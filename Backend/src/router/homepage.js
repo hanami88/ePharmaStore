@@ -5,8 +5,8 @@ const Users = require("../app/models/User");
 var jwt = require("jsonwebtoken");
 const check = async (req, res, next) => {
   try {
-    const token = req.cookies.token;
-    const decoded = jwt.verify(token, "1");
+    const accessToken = req.cookies.accessToken;
+    const decoded = jwt.verify(accessToken, "1");
     const user = await Users.findById(decoded.id).lean();
     res.locals.count = user.giohang.length;
     if (decoded.role == "admin") {

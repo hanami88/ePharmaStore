@@ -7,8 +7,26 @@ const { upload } = require("../app/controller/multerController");
 
 const check = async (req, res, next) => {
   try {
-    const token = req.cookies.token;
-    const decoded = jwt.verify(token, "1");
+    const refreshToken = req.cookies.refreshToken;
+    const accessToken = req.cookies.accessToken;
+    let decoded = 0;
+    if (accessToken) {
+      decoded = jwt.verify(accessToken, "1");
+    } else {
+      if (refreshToken) {
+        console.log("refreshToken");
+        decoded = jwt.verify(refreshToken, "2");
+        const accessToken = jwt.sign({ id: user._id, role: user.role }, "1", {
+          expiresIn: 15 * 60 * 1000,
+        });
+        res.cookie("accessToken", accessToken, {
+          httpOnly: true,
+          expiresIn: 15 * 60 * 1000,
+        });
+      } else {
+        res.redirect("/");
+      }
+    }
     const user = await Users.findById(decoded.id).lean();
     res.locals.count = user.giohang.length;
     if (!user) {

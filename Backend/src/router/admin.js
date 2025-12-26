@@ -5,8 +5,8 @@ const { upload } = require("../app/controller/multerController");
 var jwt = require("jsonwebtoken");
 const check = (req, res, next) => {
   try {
-    const token = req.cookies.token;
-    var result = jwt.verify(token, "1");
+    const accessToken = req.cookies.accessToken;
+    var result = jwt.verify(accessToken, "1");
     if (result.role != "admin") {
       res.redirect("/");
     } else {

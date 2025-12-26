@@ -15,5 +15,6 @@ const Good = new Schema({
   giagoc: { type: Number },
   soluongdaban: { type: Number },
 });
+Good.index({ tensp: "text" });
 Good.plugin(mongooseDelete, { deletedAt: true, overrideMethods: "all" });
 module.exports = mongoose.model("Good", Good);

@@ -3,8 +3,8 @@ const adminRouter = require("./admin");
 const userRouter = require("./user");
 function route(app) {
   app.use("/admin", adminRouter);
-  app.use("/", homepageRouter);
   app.use("/user", userRouter);
+  app.use("/", homepageRouter);
 }
 
 module.exports = route;

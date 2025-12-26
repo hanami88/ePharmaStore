@@ -1,158 +1,111 @@
-
 <div class="dangkythanhcong">
-          <div class="datthanhcong-container">
-            <i class="fa-solid fa-check checker"></i>
-            <div >Đăng ký thành công</div>
-          </div>
+  <div class="datthanhcong-container">
+    <i class="fa-solid fa-check checker"></i>
+    <div>登録完了</div>
+  </div>
 </div>
 <header class="headertrang">
   <div class="trangdangnhap">
     <div class="trang-login">
       <div class="trang-login-container">
-        <h1 class="trang-login__hello">XIN CHÀO</h1>
+        <h1 class="trang-login__hello">ようこそ</h1>
         <h1 class="x"><i class="fa-solid fa-xmark"></i></h1>
-        <div class="trang-login__huongdan">Vui lòng nhập số điện thoại để tiếp tục</div><br
-        />
+        <div class="trang-login__huongdan">電話番号を入力して次へ</div><br />
         <div class="trang-login-title">
-          <div>Nếu chưa có thì bạn có thể đăng ký tại : </div>
-          <div class="btn-dangky">Đăng ký</div>
+          <div>アカウントをお持ちでない方はこちら :</div>
+          <div class="btn-dangky">新規登録</div>
         </div>
         <form action="/" class="trang-login-form" method="post">
-          <label for="sdt" class="trang-login__tenname">Số điện thoại</label><br />
-          <input
-            type="text"
-            name="sdt"
-            id="username"
-            class="trang-login__name"
-            placeholder="Nhập số điện thoại"
-          />
+          <label for="sdt" class="trang-login__tenname">電話番号</label><br />
+          <input type="text" name="sdt" id="username" class="trang-login__name" placeholder="電話番号を入力" />
           <br />
-          <label for="password" class="trang-login__tenname">Mật khẩu</label><br
-          />
-          <input
-            type="password"
-            name="password"
-            id="password"
-            class="trang-login__name"
-            placeholder="Nhập mật khẩu"
-          /><br />
-           <div class="trang-login-error">{{error}}</div>
+          <label for="password" class="trang-login__tenname">パスワード</label><br />
+          <input type="password" name="password" id="password" class="trang-login__name" placeholder="パスワードを入力" /><br />
+          <div class="trang-login-error">{{error}}</div>
           <button type="submit" class="trang-login__enter">
-            Đăng nhập
+            ログイン
           </button>
         </form>
       </div>
     </div>
     <div class="trang-login dky">
-            <div class="trang-login-container">
-              <h1 class="trang-login__hello">ĐĂNG KÝ</h1>
-              <h1 class="x x1"><i class="fa-solid fa-xmark"></i></h1>
-              <div class="trang-login-title">
-                <div >Nếu đã có tài khoản đăng nhập tại : </div>
-                <div class="btn-dangnhap">Đăng nhập</div>
-              </div>
-              <form action="/" class="trang-dky-form" method="post">
-                <label for="username1" class="trang-login__tenname">Số điện thoại</label><br />
-                <input
-                  type="text"
-                  name="sdt"
-                  id="username1"
-                  class="trang-login__name"
-                  placeholder="Nhập tên đăng nhập"
-                />
-                <br />
-                <label for="password1" class="trang-login__tenname">Mật khẩu</label><br
-                />
-                <input
-                  type="password"
-                  name="password"
-                  id="password1"
-                  class="trang-login__name"
-                  placeholder="Nhập mật khẩu"
-                /><br />
-                <label for="repassword" class="trang-login__tenname">Xác nhận mật khẩu</label><br
-                />
-                <input
-                  type="password"
-                  name="repassword"
-                  id="repassword"
-                  class="trang-login__name"
-                  placeholder="Nhập lại mật khẩu"
-                /><br />
-                <div class="trang-dky-error">{{error}}</div>
-                <button type="submit" class="trang-login__enter">
-                  Đăng ký
-                </button>
-              </form>
-            </div>
-     </div>
+      <div class="trang-login-container">
+        <h1 class="trang-login__hello">新規登録</h1>
+        <h1 class="x x1"><i class="fa-solid fa-xmark"></i></h1>
+        <div class="trang-login-title">
+          <div>すでにアカウントをお持ちの方 : </div>
+          <div class="btn-dangnhap">ログイン</div>
+        </div>
+        <form action="/" class="trang-dky-form" method="post">
+          <label for="username1" class="trang-login__tenname">電話番号</label><br />
+          <input type="text" name="sdt" id="username1" class="trang-login__name" placeholder="電話番号を入力" />
+          <br />
+          <label for="password1" class="trang-login__tenname">パスワード</label><br />
+          <input type="password" name="password" id="password1" class="trang-login__name" placeholder="パスワードを入力" /><br />
+          <label for="repassword" class="trang-login__tenname">パスワード（確認用）</label><br />
+          <input type="password" name="repassword" id="repassword" class="trang-login__name" placeholder="パスワード（再入力）" /><br />
+          <div class="trang-dky-error">{{error}}</div>
+          <button type="submit" class="trang-login__enter">
+            新規登録
+          </button>
+        </form>
+      </div>
+    </div>
   </div>
   <div class="boc">
     <img src="/img/header.png" alt="" class="pcheader" />
   </div>
   <div class="header-line">
-    <div class="QR">
+    <div class="QR ">
       <i class="fa-solid fa-qrcode">
-      </i>Tải ứng dụng
+      </i>アプリをダウンロード
       <div class="thongtintaiud">
-        <div>Tải ứng dụng ngay để tiết kiệm hơn</div>
+        <div>アプリならもっとお得に</div>
         <div>
-          <img src="/img/QRHIEU.png" alt="" />
+          <img src="/img/QR.png" alt="" />
           <ul>
-            <li>Ưu đãi độc quyền</li>
-            <li>Giao hàng nhanh miễn phí từ 300k</li>
-            <li>Tư vấn sức khỏe trực tuyến</li>
-            <li>Lưu trữ theo dõi đơn thuốc</li>
-            <li>Kiểm tra và sử dụng P-Xu Vàng thành viên</li>
+            <li>限定特典</li>
+            <li>300k以上で送料無料</li>
+            <li>オンライン健康相談</li>
+            <li>お薬手帳 / 処方箋管理</li>
+            <li>ポイント確認・利用</li>
           </ul>
         </div>
         <div>
-          <a
-            href="https://play.google.com/store/apps/details?id=com.pharmacity_extracare"
-            target="_blank"
-          ><img src="/img/CHPlay.png" alt="" /></a>
-          <a
-            href="itms-apps://itunes.apple.com/app/apple-store/id1414835869?mt=8"
-            target="_blank"
-          ><img src="/img/APPLe.png" alt="" /></a>
+          <a href="https://play.google.com/store/apps/details?id=com.pharmacity_extracare" target="_blank"><img src="/img/CHPlay.png" alt="" /></a>
+          <a href="itms-apps://itunes.apple.com/app/apple-store/id1414835869?mt=8" target="_blank"><img src="/img/IOS.png" alt="" /></a>
         </div>
       </div>
     </div>
     <div class="chua">
-      <img src="/img/VietNam.png" alt="" class="vietnam" />Tiếng Việt
+      <img src="/img/VietNam.png" alt="" class="vietnam" />ベトナム語
     </div>
-    <div>Hotline</div>
+    <div>お問い合わせ窓口</div>
     <div>1800 9920</div>
     <div class="container__new">
-      Doanh nghiệp
+      法人のお客様
       <img src="/img/new.png" alt="" class="new" />
     </div>
-    <div>Deal hot tháng 12</div>
+    <div>12月の限定セール</div>
     <div class="container__new">
-      Tra cứu đơn hàng
+      配送状況確認
       <img src="/img/new.png" alt="" class="new" />
     </div>
-    <div>Gói sức khoẻ</div>
+    <div>健康セット</div>
   </div>
   <div class="header-line1">
     <div class="header-line-left">
-      <img src="/img/Logonhathuoc.png" alt="" />
+      <a href="/"><img src="/img/Logo.png" alt="" /></a>
       <div class="choice">
         <i class="fa-solid fa-bars"></i>
-        <p>Danh Mục</p>
+        <p>カテゴリ</p>
         <i class="fa-solid fa-chevron-right"></i>
       </div>
     </div>
     <div class="header-line-right">
       <div class="right1">
         <form method="POST" action="/timkiemsanpham" class="chua__search">
-          <input
-            type="text"
-            name="keyword"
-            class="header-line2__search"
-            placeholder="Tên thuốc, triệu chứng, vitamin và thực phẩm chức năng"
-            value="{{filters.keyword}}"
-          />
+          <input type="text" name="keyword" class="header-line2__search" placeholder="薬品名、症状、ビタミン・サプリ" value="{{filters.keyword}}" />
           <i class="fa-solid fa-magnifying-glass"></i>
         </form>
         <i class="fa-solid fa-bell">
@@ -162,62 +115,62 @@
             <div class="hienthiso-so">{{count}}</div>
           </div>
         </i>
-        <div class="bocline2 {{#if user}} active{{/if}}" >
+        <div class="bocline2 {{#if user}} active{{/if}}">
           {{#if user}}
-            <a href="/user/thongtin" class="header-line2__login">
-              <i class="fa-solid fa-user-tie"></i>
-              <div>Chào, Khách Hàng</div>
-            </a>
+          <a href="/user/thongtin" class="header-line2__login">
+            <i class="fa-solid fa-user-tie"></i>
+            <div>こんにちは、会員様</div>
+          </a>
           {{else}}
-            <div class="header-line2__login">
-              <i class="fa-solid fa-circle-user"></i>
-              <div>Đăng nhập/ Đăng ký</div>
-            </div>
+          <div class="header-line2__login">
+            <i class="fa-solid fa-circle-user"></i>
+            <div>ログイン / 新規登録</div>
+          </div>
           {{/if}}
           <div class="bangchon-khoangtrang"></div>
           <div class="bangchon">
             <a href="/user/thongtin" class="bangchon-thanhphan">
               <i class="fa-solid fa-user"></i>
-              <div>Thông tin cá nhân</div>
+              <div>マイページ</div>
             </a>
             <a href="/user/lichsudonhang" class="bangchon-thanhphan">
               <i class="fa-solid fa-notes-medical"></i>
-              <div>Lịch sử đơn hàng</div>
+              <div>注文履歴</div>
             </a>
             <a href="/user/diachinhanhang" class="bangchon-thanhphan">
               <i class="fa-solid fa-location-dot"></i>
-              <div>Địa chỉ nhận hàng</div>
+              <div>お届け先住所</div>
             </a>
             <div class="bangchon-thanhphan btn-dangxuat">
               <i class="fa-solid fa-right-from-bracket"></i>
-              <div>Đăng xuất</div>
+              <div>ログアウト</div>
             </div>
           </div>
         </div>
       </div>
       <div class="right2">
-        <a href="/khohang" target="_self">Khẩu trang</a>
-        <a href="/khohang" target="_self">Giảm cân</a>
-        <a href="/khohang" target="_self">Giảm ho đau họng</a>
-        <a href="/khohang" target="_self">Collagen</a>
-        <a href="/khohang" target="_self">Sale</a>
-        <a href="/khohang" target="_self">Kem chống nắng</a>
-        <a href="/khohang" target="_self">Nước giải rượu</a>
+        <a href="/khohang" target="_self">マスク</a>
+        <a href="/khohang" target="_self">ダイエット</a>
+        <a href="/khohang" target="_self">咳・のどの痛み</a>
+        <a href="/khohang" target="_self">コラーゲン</a>
+        <a href="/khohang" target="_self">セール</a>
+        <a href="/khohang" target="_self">日焼け止め</a>
+        <a href="/khohang" target="_self">二日酔い対策</a>
       </div>
       <div class="right3">
-        <p>Thuốc</p>
-        <p>Hỏi đáp</p>
-        <p>Thực phẩm chức năng</p>
-        <p>Mẹ và bé</p>
+        <p>医薬品</p>
+        <p>Q&A / 相談</p>
+        <p>サプリメント</p>
+        <p>ママ＆ベビー</p>
         <p class="container__new">
-          Doanh nghiệp
+          法人窓口
           <img src="/img/new.png" alt="" class="new" />
         </p>
         <p class="container__new">
-          Nhãn Hàng
+          ブランド
           <img src="/img/hot.png" alt="" class="new" />
         </p>
-        <p>Chăm Sóc</p>
+        <p>ヘルスケア</p>
       </div>
     </div>
     <div class="danhmucdathang">
@@ -225,114 +178,114 @@
         <div>
           <div class="danhmuc-box">
             <img src="/img/danhmuc1.avif" alt="" />
-            <div>Thuốc</div>
+            <div>医薬品</div>
           </div>
           <div class="danhmuc-box">
             <img src="/img/danhmuc2.avif" alt="" />
-            <div> Tra cứu bệnh</div>
+            <div>症状から探す</div>
           </div>
           <div class="danhmuc-box">
             <img src="/img/danhmuc3.avif" alt="" />
-            <div>Thực phẩm chức năng</div>
+            <div>サプリメント</div>
           </div>
           <div class="danhmuc-box">
             <img src="/img/danhmuc4.avif" alt="" />
-            <div>Chăm sóc cá nhân</div>
+            <div>パーソナルケア</div>
           </div>
           <div class="danhmuc-box">
             <img src="/img/danhmuc5.avif" alt="" />
-            <div>Thiết bị y tế</div>
+            <div>医療機器</div>
           </div>
         </div>
         <div>
           <div class="boxdanhmuc">
             <div class="boxdanhmuc-box">
               <img src="/img/kolmar.webp" alt="" />
-              <div>Thuốc không kê đơn</div>
+              <div>市販薬 (OTC)</div>
             </div>
             <div class="boxdanhmuc-box">
               <img src="/img/solgar.webp" alt="" />
-              <div>Thuốc kê đơn</div>
+              <div>処方薬</div>
             </div>
             <div class="boxdanhmuc-box">
               <img src="/img/rohto.avif" alt="" />
-              <div>Thuốc khác</div>
+              <div>その他医薬品</div>
             </div>
             <div class="boxdanhmuc-box">
               <img src="/img/siro.webp" alt="" />
-              <div>Vitamin & Thực phẩm</div>
+              <div>ビタミン・食品</div>
             </div>
           </div>
           <div class="boxdanhmuc">
             <div class="boxdanhmuc-box">
               <img src="/img/durex.webp" alt="" />
-              <div>Thuốc không kê đơn</div>
+              <div>市販薬 (OTC)</div>
             </div>
             <div class="boxdanhmuc-box">
               <img src="/img/solgar.webp" alt="" />
-              <div>Thuốc kê đơn</div>
+              <div>処方薬</div>
             </div>
             <div class="boxdanhmuc-box">
               <img src="/img/rohto.avif" alt="" />
-              <div>Thuốc khác</div>
+              <div>その他医薬品</div>
             </div>
             <div class="boxdanhmuc-box">
               <img src="/img/siro.webp" alt="" />
-              <div>Vitamin & Thực phẩm</div>
+              <div>ビタミン・食品</div>
             </div>
           </div>
           <div class="boxdanhmuc">
             <div class="boxdanhmuc-box">
               <img src="/img/rohto.avif" alt="" />
-              <div>Thuốc không kê đơn</div>
+              <div>市販薬 (OTC)</div>
             </div>
             <div class="boxdanhmuc-box">
               <img src="/img/solgar.webp" alt="" />
-              <div>Thuốc kê đơn</div>
+              <div>処方薬</div>
             </div>
             <div class="boxdanhmuc-box">
               <img src="/img/rohto.avif" alt="" />
-              <div>Thuốc khác</div>
+              <div>その他医薬品</div>
             </div>
             <div class="boxdanhmuc-box">
               <img src="/img/siro.webp" alt="" />
-              <div>Vitamin & Thực phẩm</div>
+              <div>ビタミン・食品</div>
             </div>
           </div>
           <div class="boxdanhmuc">
             <div class="boxdanhmuc-box">
               <img src="/img/anlene.avif" alt="" />
-              <div>Thuốc không kê đơn</div>
+              <div>市販薬 (OTC)</div>
             </div>
             <div class="boxdanhmuc-box">
               <img src="/img/solgar.webp" alt="" />
-              <div>Thuốc kê đơn</div>
+              <div>処方薬</div>
             </div>
             <div class="boxdanhmuc-box">
               <img src="/img/rohto.avif" alt="" />
-              <div>Thuốc khác</div>
+              <div>その他医薬品</div>
             </div>
             <div class="boxdanhmuc-box">
               <img src="/img/siro.webp" alt="" />
-              <div>Vitamin & Thực phẩm</div>
+              <div>ビタミン・食品</div>
             </div>
           </div>
           <div class="boxdanhmuc">
             <div class="boxdanhmuc-box">
               <img src="/img/alcofee.avif" alt="" />
-              <div>Thuốc không kê đơn</div>
+              <div>市販薬 (OTC)</div>
             </div>
             <div class="boxdanhmuc-box">
               <img src="/img/solgar.webp" alt="" />
-              <div>Thuốc kê đơn</div>
+              <div>処方薬</div>
             </div>
             <div class="boxdanhmuc-box">
               <img src="/img/rohto.avif" alt="" />
-              <div>Thuốc khác</div>
+              <div>その他医薬品</div>
             </div>
             <div class="boxdanhmuc-box">
               <img src="/img/siro.webp" alt="" />
-              <div>Vitamin & Thực phẩm</div>
+              <div>ビタミン・食品</div>
             </div>
           </div>
         </div>

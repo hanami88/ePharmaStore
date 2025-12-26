@@ -155,7 +155,8 @@ class UserController {
   }
 
   logout(req, res, next) {
-    res.clearCookie("token", { httpOnly: true });
+    res.clearCookie("accessToken", { httpOnly: true });
+    res.clearCookie("refreshToken", { httpOnly: true });
     res.redirect("/");
   }
 
@@ -204,7 +205,6 @@ class UserController {
   }
   async trangdathang(req, res) {
     const giohang = true;
-    console.log(giohang);
     try {
       res.render("trangdathang", { giohang });
     } catch (err) {
@@ -216,8 +216,6 @@ class UserController {
       const good = await Goods.findById(req.query.id).lean();
       const soluong = req.query.soluong;
       const giohang = false;
-      console.log(giohang);
-
       res.render("trangdathang", { good, soluong, giohang });
     } catch (err) {
       console.error(err);

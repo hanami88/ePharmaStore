@@ -49,16 +49,17 @@ class HomePageController {
     try {
       const { keyword } = req.body;
       const query = {};
-      if (keyword && keyword.trim() !== "") {
-        query.tensp = { $regex: keyword, $options: "i" };
+      if (keyword && typeof keyword === "string" && keyword.trim() !== "") {
+        query.$text = { $search: keyword.trim() };
       }
-      let [good] = await Promise.all([Goods.find(query).lean()]);
+      let goods = await Goods.find(query).lean();
       res.render("khohang", {
-        good,
+        good: goods, // Đổi tên biến cho rõ ràng hơn
         filters: { keyword },
       });
     } catch (err) {
-      res.send("ERROR");
+      console.error("Lỗi tìm kiếm sản phẩm:", err);
+      res.status(500).send("ERROR");
     }
   }
   async login(req, res) {
@@ -71,10 +72,19 @@ class HomePageController {
       if (user.password !== password) {
         return res.status(401).json({ error: "Mật khẩu sai" });
       }
-      const token = jwt.sign({ id: user._id, role: user.role }, "1");
-      res.cookie("token", token, {
+      const accessToken = jwt.sign({ id: user._id, role: user.role }, "1", {
+        expiresIn: 15 * 60 * 1000,
+      });
+      const refreshToken = jwt.sign({ id: user._id, role: user.role }, "2", {
+        expiresIn: 15 * 60 * 60 * 1000,
+      });
+      res.cookie("accessToken", accessToken, {
         httpOnly: true,
-        maxAge: 24 * 60 * 60 * 1000,
+        maxAge: 15 * 60 * 1000,
+      });
+      res.cookie("refreshToken", refreshToken, {
+        httpOnly: true,
+        maxAge: 15 * 60 * 60 * 1000,
       });
       res.json({ success: true, role: user.role });
     } catch (err) {
@@ -91,12 +101,12 @@ class HomePageController {
       if (password !== repassword) {
         return res.status(401).json({ error: "Mật khẩu không khớp" });
       }
-      const newuser = new Users({
+      const newUser = new Users({
         sdt: sdt,
         password: password,
         role: "user",
       });
-      newuser.save();
+      newUser.save();
       res.json({ success: true });
     } catch (err) {
       res.status(500).json({ error: "Lỗi server. Vui lòng thử lại sau." });
