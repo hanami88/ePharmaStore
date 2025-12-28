@@ -11,29 +11,29 @@
       <div class="bangchon-user-bot">
         <a href="/user/thongtin" class="thanhchon-user">
           <i class="fa-solid fa-user"></i>
-          <div>Thông tin cá nhân</div>
+          <div>個人情報</div>
         </a>
         <a href="/user/diachinhanhang" class="thanhchon-user">
           <i class="fa-solid fa-location-dot"></i>
-          <div>Địa chỉ nhận hàng</div>
+          <div>配送先住所</div>
         </a>
         <a href="/user/lichsudonhang" class="thanhchon-user">
           <i class="fa-solid fa-notes-medical"></i>
-          <div>Lịch sử đơn hàng</div>
+          <div>注文履歴</div>
         </a>
       </div>
     </div>
     <div class="ctnthongtin-user">
       <div class="doimkcc">
         <a href="/user/lichsudonhang"><i class="fa-solid fa-arrow-left"></i></a>
-        <h1 class="title-doimk">Chi tiết đơn hàng</h1>
+        <h1 class="title-doimk">注文詳細</h1>
       </div>
       <div class="thongtin-lichsu">
         <div class="container-lichsu">
           <div class="hienthilichsu-trangthai">
             <div>
-              <div>Đã xác nhận</div>
-              <div>Đơn hàng đã được Phamarcity kiểm tra xử lý</div>
+              <div>確認済み</div>
+              <div>ご注文はPhamarcityで確認・処理されました</div>
             </div>
             <i class="fa-regular fa-circle-check" style="color: #000000;"></i>
           </div>
@@ -41,12 +41,12 @@
             <div>
               <div class="hienthilichsu-giaohang">
                 <i class="fa-solid fa-truck-fast"></i>
-                <div>Giao hàng tận nơi</div>
+                <div>宅配</div>
               </div>
             </div>
             <div class="hienthilichsu-thongtin">
               <div>
-                <div class="indamthongtin">Thông tin người nhận</div>
+                <div class="indamthongtin">受取人情報</div>
                 <div>
                   <span class="indamthongtin gach">{{user.hoten}}</span>
                   {{user.sdt}}
@@ -57,17 +57,17 @@
                   {{user.diachi.0.tinhthanh}}</div>
               </div>
               <div>
-                <div class="indamthongtin">Mã đơn hàng</div>
+                <div class="indamthongtin">注文番号</div>
                 <div>{{donhang._id}}</div>
                 <div class="botthongtin">
-                  <div>Thời gian đặt hàng</div>
+                  <div>注文日時</div>
                   <div>{{formatDate donhang.createdAt}}</div>
                 </div>
               </div>
             </div>
           </div>
           <div class="hienthilichsu-thanhtoan">
-            <div>Sản phẩm đã mua</div>
+            <div>購入商品</div>
             <div class="lichsu-hienthidonhang">
               {{#each donhang.giohang}}
                 <div class="sanpham-all-box">
@@ -97,20 +97,20 @@
             </div>
             <div class="gachchan-to1"></div>
             <div class="lichsu-hienthitongtien">
-              <div>Chi tiết thanh toán</div>
+              <div>お支払い詳細</div>
               <div class="hienthitongtien">
-                <div>Tiền hàng</div>
+                <div>商品代金</div>
                 <div class="tongtienindam">{{formatNumber
                     (totalGiagoc donhang.giohang)
                   }}
                   ₫</div>
               </div>
               <div class="hienthitongtien">
-                <div>Phí vận chuyển</div>
+                <div>配送料</div>
                 <div class="tongtienindam">0 ₫</div>
               </div>
               <div class="hienthitongtien">
-                <div>Giảm giá sản phẩm</div>
+                <div>商品割引</div>
                 <div class="tongtienindam">-{{formatNumber
                     (minus
                       (totalGiagoc donhang.giohang)
@@ -122,18 +122,18 @@
               <div class="gachchan-to2"></div>
               <div class="hienthitongtien boxtt1">
                 <div>
-                  <span class="tongtienindam">Tổng tiền </span><span
+                  <span class="tongtienindam">合計金額 </span><span
                     class="spnho"
-                  >(1 sản phẩm)</span>
+                  >(1商品)</span>
                 </div>
                 <div class="tongtienindamdb">{{formatNumber donhang.tongtien}}
                   ₫</div>
               </div>
               <div class="hienthitongtien boxtt2">
-                <div class="tongtienindam">Phương thức thanh toán</div>
+                <div class="tongtienindam">お支払い方法</div>
                 <div>
-                  <div class="COD">COD</div>
-                  <div class="tongtienindam">Tiền mặt</div>
+                  <div class="COD">代引き</div>
+                  <div class="tongtienindam">現金</div>
                 </div>
               </div>
             </div>
