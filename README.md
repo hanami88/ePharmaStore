@@ -66,7 +66,7 @@ This project is an online pharmacy platform inspired by Pharmacity, designed to 
 <img width="1426" height="813" alt="image" src="https://github.com/user-attachments/assets/2a15b9c0-a9e1-43db-8854-22e65412afc0" />
 <img width="1425" height="378" alt="image" src="https://github.com/user-attachments/assets/292a8705-a64e-4f68-bd60-4b7cfda3c58a" />
 <img width="1426" height="684" alt="image" src="https://github.com/user-attachments/assets/f16835f7-a206-470f-ac27-352c44d26c72" />
-<img width="1426" height="559" alt="image" src="https://github.com/user-attachments/assets/fe81c9e4-8abb-4218-9154-0ead21561c3e" />
+<img width="1426" height="551" alt="image" src="https://github.com/user-attachments/assets/0c48f0b9-78f0-4a9d-bdc6-853653fe984f" />
 
 ### 🔐 Login Page
 
