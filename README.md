@@ -64,8 +64,9 @@ This project is an online pharmacy platform inspired by Pharmacity, designed to 
 <img width="1424" height="734" alt="image" src="https://github.com/user-attachments/assets/2343f7b5-243c-47b8-8d40-159a3a44a70a" />
 <img width="1424" height="812" alt="image" src="https://github.com/user-attachments/assets/5013b95f-e775-49f6-a030-40fb6265245b" />
 <img width="1426" height="813" alt="image" src="https://github.com/user-attachments/assets/2a15b9c0-a9e1-43db-8854-22e65412afc0" />
-<img width="1440" height="900" alt="Ảnh màn hình 2025-07-29 lúc 10 41 04" src="https://github.com/user-attachments/assets/9a3710a9-f380-459a-bc8d-512411d9fb09" />
-<img width="1440" height="814" alt="Ảnh màn hình 2025-07-29 lúc 10 41 34" src="https://github.com/user-attachments/assets/5904f9a9-33ce-441c-ab43-b5cc660b59ba" />
+<img width="1425" height="378" alt="image" src="https://github.com/user-attachments/assets/292a8705-a64e-4f68-bd60-4b7cfda3c58a" />
+<img width="1426" height="684" alt="image" src="https://github.com/user-attachments/assets/f16835f7-a206-470f-ac27-352c44d26c72" />
+<img width="1426" height="559" alt="image" src="https://github.com/user-attachments/assets/fe81c9e4-8abb-4218-9154-0ead21561c3e" />
 
 ### 🔐 Login Page
 
