@@ -59,9 +59,9 @@ This project is an online pharmacy platform inspired by Pharmacity, designed to 
 ## 🖼️ User Interface Preview
 
 ### 🏠 Home Page
-<img width="1440" height="812" alt="Ảnh màn hình 2025-07-29 lúc 10 39 33" src="https://github.com/user-attachments/assets/6c974d8c-786f-4f7e-afae-9580611a1a1f" />
-<img width="1440" height="813" alt="Ảnh màn hình 2025-07-29 lúc 10 39 48" src="https://github.com/user-attachments/assets/ea2c58e0-42b3-45b1-8bbb-8b39a4877856" />
-<img width="1440" height="813" alt="Ảnh màn hình 2025-07-29 lúc 10 39 58" src="https://github.com/user-attachments/assets/73cd6fec-4d27-4bd2-9a19-aa6f3f398b59" />
+<img width="1426" height="813" alt="image" src="https://github.com/user-attachments/assets/1be0fe32-0d01-40ff-91ea-2def55e13cd8" />
+<img width="1425" height="812" alt="image" src="https://github.com/user-attachments/assets/9bbfb470-b014-417b-8a0d-aac44e1562a6" />
+<img width="1424" height="734" alt="image" src="https://github.com/user-attachments/assets/2343f7b5-243c-47b8-8d40-159a3a44a70a" />
 <img width="1440" height="814" alt="Ảnh màn hình 2025-07-29 lúc 10 40 32" src="https://github.com/user-attachments/assets/71f62fba-ed4f-47eb-96fa-0a252149b4ab" />
 <img width="1440" height="812" alt="Ảnh màn hình 2025-07-29 lúc 10 40 56" src="https://github.com/user-attachments/assets/56f633dd-4e1c-4158-b867-20f4bdb94450" />
 <img width="1440" height="900" alt="Ảnh màn hình 2025-07-29 lúc 10 41 04" src="https://github.com/user-attachments/assets/9a3710a9-f380-459a-bc8d-512411d9fb09" />
