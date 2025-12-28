@@ -11,15 +11,15 @@
       <div class="bangchon-user-bot">
         <a href="/user/thongtin" class="thanhchon-user">
           <i class="fa-solid fa-user"></i>
-          <div>Thông tin cá nhân</div>
+          <div>個人情報</div>
         </a>
         <a href="/user/diachinhanhang" class="thanhchon-user">
           <i class="fa-solid fa-location-dot"></i>
-          <div>Địa chỉ nhận hàng</div>
+          <div>配送先住所</div>
         </a>
         <a href="/user/lichsudonhang" class="thanhchon-user">
           <i class="fa-solid fa-notes-medical"></i>
-          <div>Lịch sử đơn hàng</div>
+          <div>注文履歴</div>
         </a>
       </div>
     </div>
@@ -27,41 +27,40 @@
           <div class="doimk">
             <div class="doimkcc">
               <a href="/user/thongtin"><i class="fa-solid fa-arrow-left"></i></a>
-              <h1 class="title-doimk">Đổi mật khẩu</h1>
+              <h1 class="title-doimk">パスワード変更</h1>
             </div>
           </div>
           <div class="thongtin-doimk">
             <form action="/user/doimatkhau" method="post" class="container-doimk">
               <div>
-                Để bảo mật tài khoản, vui lòng không chia sẻ mật khẩu cho người
-                khác.Bạn có thể tạo mật khẩu từ 8 - 16 kí tự
+                アカウントのセキュリティのため、パスワードを他人と共有しないでください。8〜16文字のパスワードを作成できます
               </div>
-              <label for="mkht">Mật khẩu hiện tại</label>
+              <label for="mkht">現在のパスワード</label>
               <input
                 type="password"
                 name="mkht"
                 id="mkht"
                 class="mkht"
-                placeholder="Mật khẩu hiện tại"
+                placeholder="現在のパスワード"
               />
-              <label for="mkm">Mật khẩu mới</label>
+              <label for="mkm">新しいパスワード</label>
               <input
                 type="password"
                 name="mkm"
                 id="mkm"
                 class="mkm"
-                placeholder="Mật khẩu mới"
+                placeholder="新しいパスワード"
               />
-              <label for="nlmkm">Nhập lại mật khẩu mới</label>
+              <label for="nlmkm">新しいパスワード（確認）</label>
               <input
                 type="password"
                 name="nlmkm"
                 id="nlmkm"
                 class="nlmkm"
-                placeholder="Nhập lại mật khẩu mới "
+                placeholder="新しいパスワード（確認）"
               />
               <div id="error-message"></div>
-              <button>Hoàn thành</button>
+              <button>完了</button>
             </form>
           </div>
         </div>
@@ -82,7 +81,7 @@
 
   // Kiểm tra mật khẩu mới có trùng nhau không
   if (newPassword !== confirmPassword) {
-    errorBox.textContent = "Mật khẩu mới không khớp";
+    errorBox.textContent = "新しいパスワードが一致しません";
     errorBox.style="color:red";
     return;
   }
@@ -99,7 +98,7 @@
   const result = await response.json();
 
   if (!result.valid) {
-    errorBox.textContent = "Mật khẩu hiện tại không đúng";
+    errorBox.textContent = "現在のパスワードが正しくありません";
     errorBox.style="color:red";
     return;
   }

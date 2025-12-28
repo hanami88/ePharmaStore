@@ -2,7 +2,7 @@
   <div class="thanhtoangiohang-container">
     <div>
       <div class="thanhtoan-sanpham">
-        <div>Thanh toán</div>
+        <div>お支払い</div>
         <div class="thanhtoan-all">
           {{#if giohang}}
             {{#each user.giohang}}
@@ -40,16 +40,16 @@
           {{/if}}
         </div>
         <form class="thanhtoan-ghichu">
-          <label for="ghichu">Ghi chú</label>
-          <input type="text" id="ghichu" placeholder="Nhập ghi chú ở đây" />
+          <label for="ghichu">備考</label>
+          <input type="text" id="ghichu" placeholder="備考を入力してください" />
         </form>
       </div>
       <div class="hinhthucnhanhang-thanhtoan">
-        <h1 class="hinhthucnhanhang">Hình thức nhận hàng</h1>
-        <div>Giao hàng tận nơi</div>
+        <h1 class="hinhthucnhanhang">受取方法</h1>
+        <div>宅配</div>
         <div>
-          <div>Thông tin người nhận</div>
-          <div class="thaydoi">Thay đổi</div>
+          <div>受取人情報</div>
+          <div class="thaydoi">変更</div>
         </div>
         <div>
           <div class="chuadiachi thanhtoan-diachi">
@@ -70,7 +70,7 @@
                   <div>
                     <div class="dactrungdiachi-thanhtoan">{{this.loai}}</div>
                     {{#if this.macdinh}}
-                      <div class="dactrungmacdinh-thanhtoan">Mặc định</div>
+                      <div class="dactrungmacdinh-thanhtoan">デフォルト</div>
                     {{/if}}
                   </div>
                 </div>
@@ -84,17 +84,17 @@
         <div class="gach-thanhtoan">.</div>
         <div class="donvivanchuyen-thanhtoan">
           <div>
-            <div class="indamthongtin">Đơn vị vận chuyển</div>
+            <div class="indamthongtin">配送業者</div>
             <div class="indamthongtin">19.000 ₫</div>
           </div>
           <div class="indamthongtin">Viettel Post</div>
           <div>
-            Dự kiến giao hàng: 4-7 ngày không bao gồm thứ 7, chủ nhật
+            配送予定：4〜7日（土日を除く）
           </div>
         </div>
       </div>
       <div class="phuongthucthanhtoan">
-        <div>Phương thức thanh toán</div>
+        <div>お支払い方法</div>
         <form action="" class="formphuongthuc">
           <div class="boxpt">
             <input type="radio" name="PT" value="COD" id="COD" />
@@ -103,7 +103,7 @@
                 alt=""
                 class="ppttimg"
               />
-              <div>Tiền mặt</div></label>
+              <div>現金</div></label>
           </div>
           <div class="boxpt">
             <input type="radio" name="PT" value="MOMO" id="MOMO" />
@@ -124,14 +124,14 @@
                 alt=""
                 class="ppttimg"
               />
-              <div>Thẻ tín dụng</div></label>
+              <div>クレジットカード</div></label>
           </div>
           <div class="boxpt">
             <input type="radio" name="PT" value="ATM" id="ATM" />
 
             <label for="ATM">
               <img src="/img/ATM.png" alt="" class="ppttimg" />
-              <div>Thẻ ATM</div></label>
+              <div>デビットカード</div></label>
           </div>
           <div class="boxpt">
             <input type="radio" name="PT" value="APPLEPAY" id="APPLEPAY" />
@@ -145,9 +145,9 @@
     </div>
     <div class="thanhtoan-dungcot">
       <div class="thanhtoan-tongtien">
-        <div class="cttt">Chi tiết thanh toán</div>
+        <div class="cttt">お支払い詳細</div>
         <div class="thanhtoan-tt">
-          <div>Tạm tính</div>
+          <div>小計</div>
           {{#if giohang}}
             <div>{{formatNumber (totalGiagoc user.giohang)}} ₫</div>
           {{else}}
@@ -155,16 +155,16 @@
           {{/if}}
         </div>
         <div class="thanhtoan-tt">
-          <div>Phí vận chuyển</div>
+          <div>配送料</div>
           <div>19.000 ₫</div>
         </div>
         <div class="thanhtoan-tt">
-          <div>Giảm giá vận chuyển</div>
+          <div>配送料割引</div>
           <div>-19.000 ₫</div>
         </div>
         <div class="thanhtoan-tt">
           <div class="giohang-tongtien__tamtinh-mota">
-            Giảm giá sản phẩm
+            商品割引
           </div>
           <div class="giamgiatong">
             {{#if giohang}}
@@ -186,11 +186,11 @@
         <div class="gachchan-tt"></div>
         <div class="thanhtoan-tongtien__tongtien">
           <div class="thanhtoan-tongtien__tongtien-mota">
-            <div>Tổng tiền</div>
+            <div>合計金額</div>
             {{#if (equal giohang true)}}
-              <div>{{user.giohang.length}} sản phẩm</div>
+              <div>{{user.giohang.length}} 商品</div>
             {{else}}
-              <div>1 sản phẩm</div>
+              <div>1 商品</div>
             {{/if}}
           </div>
           <div class="thanhtoan-tongtien__tongtien-tt">
@@ -210,17 +210,20 @@
             id="dieukhoan"
             class="checkdieukiendathang"
           />
-          <label for="dieukhoan">Bằng cách tích vào ô chọn, bạn đã đồng ý với
-            <a href="">Điều khoản Pharmacity</a></label>
+          <label for="dieukhoan">チェックボックスをオンにすることで、
+            <a href="">Pharmacityの利用規約</a>に同意したことになります</label>
         </form>
-        <div class="thanhtoan-tongtien__btn" data-giohang="{{giohang}}">Đặt Hàng</div>
+        <div
+          class="thanhtoan-tongtien__btn"
+          data-giohang="{{giohang}}"
+        >注文する</div>
       </div>
     </div>
   </div>
 </section>
 <div class="doidiachi">
   <div class="container-doidiachi">
-    <div>Địa chỉ giao hàng</div>
+    <div>配送先住所</div>
     <form
       class="chuadiachi-hienthi"
       action="/user/doidiachinhanhang"
@@ -248,7 +251,7 @@
             <div>
               <div class="dactrungdiachi">{{this.loai}}</div>
               {{#if this.macdinh}}
-                <div class="dactrungmacdinh-thanhtoan">Mặc định</div>
+                <div class="dactrungmacdinh-thanhtoan">デフォルト</div>
               {{/if}}
             </div>
           </label>
@@ -260,74 +263,64 @@
         <input type="hidden" name="soluong" value="{{soluong}}" />
       {{/unless}}
     </form>
-    <div class="btnthemdiachi">+ Thêm địa chỉ</div>
+    <div class="btnthemdiachi">+ 住所追加</div>
     <div class="chua2btn">
-      <div class="modori">Quay lại</div>
-      <div class="apuru">Áp dụng</div>
+      <div class="modori">戻る</div>
+      <div class="apuru">適用</div>
     </div>
   </div>
 </div>
 <div class="container-themdiachi">
   <div class="themdiachi">
-    <div class="text-themdiachi">Địa chỉ mới</div>
+    <div class="text-themdiachi">新しい住所</div>
     <div class="themdiachi-box-container">
       <div class="themdiachi-box">
         <form action="/user/themdiachi" method="post" class="formdiachi">
-          <label for="hoten">Họ và tên</label>
-          <input
-            type="text"
-            name="hoten"
-            placeholder="Nhập họ và tên"
-            id="hoten"
-          />
-          <label for="sdt">Số điện thoại</label>
-          <input
-            type="text"
-            name="sdt"
-            placeholder="Nhập số điện thoại"
-            id="sdt"
-          />
-          <label for="tinhthanh">Địa chỉ</label>
+          <label for="hoten">氏名</label>
+          <input type="text" name="hoten" placeholder="氏名を入力" id="hoten" />
+          <label for="sdt">電話番号</label>
+          <input type="text" name="sdt" placeholder="電話番号を入力" id="sdt" />
+          <label for="tinhthanh">住所</label>
           <select name="tinhthanh" id="tinhthanh">
-            <option value="" class="maubac">--Chọn Tỉnh/Thành phố--</option>
-            <option value="Quảng Trị">Quảng Trị</option>
-            <option value="Đà Nẵng">Đà Nẵng</option>
-            <option value="Huế">Huế</option>
+            <option value="" class="maubac">--都道府県を選択--</option>
+            <option value="Quảng Trị">クアンチ</option>
+            <option value="Đà Nẵng">ダナン</option>
+            <option value="Huế">フエ</option>
           </select>
-          <input type="text" name="quanhuyen" placeholder="Nhập Quận/Huyện" />
+          <input type="text" name="quanhuyen" placeholder="市区町村を入力" />
           <input
             type="text"
             id="secon"
             name="phuongxa"
-            placeholder="Nhập Phường/Xã"
+            placeholder="町名を入力"
           />
           <input
             type="text"
             id="ll"
             name="sonha"
-            placeholder="Nhập số nhà,tên đường"
+            placeholder="番地・建物名を入力"
           />
-          <div class="loaidiachi">Loại địa chỉ</div>
+          <div class="loaidiachi">住所タイプ</div>
           <div class="tuychondiachi">
             <label class="option">
               <input type="radio" name="loai" value="Nhà riêng" required />
-              <span>Nhà riêng</span>
+              <span>自宅</span>
             </label>
             <label class="option">
               <input type="radio" name="loai" value="Công ty" />
-              <span>Công ty</span>
+              <span>会社</span>
             </label>
           </div>
           <div class="diachimacdinh">
             <input type="checkbox" name="macdinh" id="" />
-            <div>Đặt làm địa chỉ mặc định</div>
+            <div>デフォルト住所に設定</div>
           </div>
         </form>
       </div>
     </div>
     <div class="thaotac-diachi">
-      <button class="btn-diachi-quaylai">Quay lại</button>
-      <button class="luudiachi">Lưu lại</button>
+      <button class="btn-diachi-quaylai">戻る</button>
+      <button class="luudiachi">保存</button>
     </div>
   </div>
 </div>

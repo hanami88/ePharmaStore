@@ -11,25 +11,25 @@
       <div class="bangchon-user-bot">
         <a href="/user/thongtin" class="thanhchon-user">
           <i class="fa-solid fa-user"></i>
-          <div>Thông tin cá nhân</div>
+          <div>個人情報</div>
         </a>
         <a href="/user/diachinhanhang" class="thanhchon-user">
           <i class="fa-solid fa-location-dot"></i>
-          <div>Địa chỉ nhận hàng</div>
+          <div>配送先住所</div>
         </a>
         <a href="/user/lichsudonhang" class="thanhchon-user">
           <i class="fa-solid fa-notes-medical"></i>
-          <div>Lịch sử đơn hàng</div>
+          <div>注文履歴</div>
         </a>
       </div>
     </div>
     <div class="ctnthongtin-diachi">
       <div class="lichsucc">
-        <h1 class="title-lichsu">Lịch sử đơn hàng</h1>
+        <h1 class="title-lichsu">注文履歴</h1>
         <div id="thanhchontrang">
-          <a href="/user/lichsudonhang">Chờ xác nhận</a>
-          <a href="/user/lichsudonhangdaxacnhan">Đã xác nhận</a>
-          <a href="/user/lichsudonhangdahuy">Đã huỷ </a>
+          <a href="/user/lichsudonhang">確認待ち</a>
+          <a href="/user/lichsudonhangdaxacnhan">確認済み</a>
+          <a href="/user/lichsudonhangdahuy">キャンセル済み</a>
         </div>
       </div>
       <div class="thongtin-donhang">
@@ -40,10 +40,10 @@
                 src="https://prod-cdn.pharmacity.io/e-com/images/static-website/20240706155228-0-empty-order-history.svg"
                 alt=""
               />
-              <div>Chưa có đơn hàng nào
+              <div>ご注文はまだありません
               </div>
               <div>
-                Hãy khám phá để mua sắm thêm
+                ショッピングを始めましょう
               </div>
             </div>
           {{else}}
@@ -89,10 +89,10 @@
                   <div class="gomsp"><span style="color :red">{{length
                         this.giohang
                       }}</span>
-                    Sản phẩm
+                    商品
                   </div>
                   <div class="tongtiendonhang">
-                    <div>Thành tiền : </div>
+                    <div>合計金額：</div>
                     <div>{{formatNumber this.tongtien}} ₫</div>
                   </div>
                 </div>

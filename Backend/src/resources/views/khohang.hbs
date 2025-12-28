@@ -1,15 +1,15 @@
 <div class="trangchinh">
   <div class="trangchinh-container">
-    <h1>Sản phẩm chính hãng đạt tiêu chuẩn</h1>
+    <h1>正規品・基準達成商品</h1>
     <div class="sapxep">
-      <div>Sắp xếp theo:</div>
-      <a href="?sort=asc" style="text-decoration: none;" class="box-ss {{#if (equal sortType "asc")}}active-sort{{/if}}">Giá tăng dần</a>
-     <a href="?sort=desc"  style="text-decoration: none;" class="box-ss {{#if (equal sortType "desc")}}active-sort{{/if}}">Giá giảm dần</a>
+      <div>並び替え：</div>
+      <a href="?sort=asc" style="text-decoration: none;" class="box-ss {{#if (equal sortType "asc")}}active-sort{{/if}}">価格が安い順</a>
+     <a href="?sort=desc"  style="text-decoration: none;" class="box-ss {{#if (equal sortType "desc")}}active-sort{{/if}}">価格が高い順</a>
     </div>
     <div class="chuasanpham">
       {{#each good}}
         <div class="buy-box diff">
-          <img src="/img/{{this.hinhanh}}" alt="Ảnh sản phẩm" />
+          <img src="/img/{{this.hinhanh}}" alt="商品画像" />
           <span class="sandeal-box-tieude">{{this.tensp}}</span>
           {{#if (equal this.giagoc thisgiaban)}}
             <span class="sandeal-box-giamgia"><s></s></span>
@@ -22,15 +22,15 @@
           <div class="sandeal-box-like">
             <i class="fa-solid fa-heart"></i>
             <span class="sandeal-box-like-like">10.5k |</span>
-            <span class="sandeal-box-like-bought">Đã Bán
+            <span class="sandeal-box-like-bought">販売数
               {{this.soluongdaban}}</span>
           </div>
           {{#if (lonhon this.soluongdaban 500)}}
-            <div class="banchay">Đang bán chạy</div>
+            <div class="banchay">人気商品</div>
           {{else}}
             <div class="banchaytrang"></div>
           {{/if}}
-          <button class="sandeal-box-buy">Chọn sản phẩm</button>
+          <button class="sandeal-box-buy">商品を選択</button>
           <input type="hidden" class="boxlayid" value="{{this._id}}" />
         </div>
       {{/each}}
@@ -38,27 +38,27 @@
   </div>
   <div class="muahang">
     <div class="muahang-nth1">
-      <h1>Chọn sản phẩm</h1>
+      <h1>商品を選択</h1>
       <i class="fa-solid fa-circle-xmark"></i>
     </div>
     <div class="muahang-container">
       <img src="/img/siro.webp" alt="" />
       <div class="muahang-right">
-        <h1>Miễn phí vận chuyển cho mọi đơn hàng 0đ</h1>
+        <h1>全ての注文で送料無料 0đ</h1>
         <div class="muahang-tieude"></div>
         <div class="muahang-giamgia"></div>
         <div class="muahang-gia"></div>
-        <div>Tích lũy từ 1.200 P-Xu vàng</div>
+        <div>1,200 P-Xuゴールドポイント獲得</div>
         <div></div>
-        <div>Số lượng</div>
+        <div>数量</div>
         <div>
           <i class="fa-solid fa-minus trumuahang"></i>
           <div class="soluongmuahang">1</div>
           <i class="fa-solid fa-plus congmuahang"></i>
         </div>
         <div>
-          <button class="muahang">Mua hàng</button>
-          <button class="themvaogio">Thêm vào giỏ hàng</button>
+          <button class="muahang">購入する</button>
+          <button class="themvaogio">カートに追加</button>
         </div>
       </div>
     </div>

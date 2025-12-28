@@ -23,23 +23,23 @@
       <div class="bangchon-user-bot">
         <a href="/user/thongtin" class="thanhchon-user">
           <i class="fa-solid fa-user"></i>
-          <div>Thông tin cá nhân</div>
+          <div>個人情報</div>
         </a>
         <a href="/user/diachinhanhang" class="thanhchon-user">
           <i class="fa-solid fa-location-dot"></i>
-          <div>Địa chỉ nhận hàng</div>
+          <div>配送先住所</div>
         </a>
         <a href="/user/lichsudonhang" class="thanhchon-user">
           <i class="fa-solid fa-notes-medical"></i>
-          <div>Lịch sử đơn hàng</div>
+          <div>注文履歴</div>
         </a>
       </div>
     </div>
     <div class="ctnthongtin-user">
-      <h1 class="title-thongtincanhan">Thông tin cá nhân</h1>
+      <h1 class="title-thongtincanhan">個人情報</h1>
       <div class="thongtin-user">
         <form method="post" action="/user/capnhatthongtin" class="container-thongtinuser" enctype="multipart/form-data">
-          <div class="anhdaidien">Ảnh đại diện</div>
+          <div class="anhdaidien">プロフィール画像</div>
           <div class="anhdaidien-cc">
             <img class="anhdaidienmoi" id="preview" src="/img/{{user.hinhanh}}"/>
             <input
@@ -51,56 +51,56 @@
              style="display: none;"
             />
             <div class="daidienoi">
-             <label for="hinhanh" class="btn-capnhatanhmoi">Cập nhật ảnh mới</label>
-              <div>Dung lượng file tối đa 5 MB.</div>
-              <div>Định dạng: .JPEG, .PNG</div>
+             <label for="hinhanh" class="btn-capnhatanhmoi">新しい画像を更新</label>
+              <div>最大ファイルサイズ：5 MB</div>
+              <div>形式：.JPEG、.PNG</div>
             </div>
           </div>
           <div class="dienthongtin">
             <div class="container-dienthongtin">
-              <label for="hoten">Họ và tên</label>
+              <label for="hoten">氏名</label>
               <input
                 type="text"
                 name="hoten"
                 id="hoten"
-                placeholder="Họ và tên"
+                placeholder="氏名"
                 value="{{user.hoten}}"
               />
-              <label for="ngaysinh">Ngày sinh</label>
+              <label for="ngaysinh">生年月日</label>
               <input
                 type="date"
                 name="ngaysinh"
                 id="ngaysinh"
                 value="{{user.ngaysinh}}"
               />
-              <label for="gioitinh">Giới tính</label>
+              <label for="gioitinh">性別</label>
               <select class="gioitinhchon" name="gioitinh" id="gioitinh">
                 <option value="" disabled selected>
-                  -- Chọn giới tính --
+                  -- 性別を選択 --
                 </option>
-                <option value="nam" {{#if (equal user.gioitinh "nam")}}selected{{/if}}>Nam</option>
-                 <option value="nu" {{#if (equal user.gioitinh "nu")}}selected{{/if}}>Nữ</option>
-                <option value="khac" {{#if (equal user.gioitinh "khac")}}selected{{/if}}>Khác</option>
+                <option value="nam" {{#if (equal user.gioitinh "nam")}}selected{{/if}}>男性</option>
+                 <option value="nu" {{#if (equal user.gioitinh "nu")}}selected{{/if}}>女性</option>
+                <option value="khac" {{#if (equal user.gioitinh "khac")}}selected{{/if}}>その他</option>
               </select>
             </div>
             <div class="thongtinphu">
-              <div>Số điện thoại</div>
+              <div>電話番号</div>
               <div>{{user.sdt}}</div>
               <div>
                 <div>
-                  <div>Email</div>
+                  <div>メールアドレス</div>
                   <div>{{user.email}}</div>
                 </div>
-                <a href="/user/capnhatemail">Cập nhật</a>
+                <a href="/user/capnhatemail">更新</a>
               </div>
               <div>
-                <div>Mật khẩu</div>
-                <a href="/user/doimatkhau">Đổi mật khẩu</a>
+                <div>パスワード</div>
+                <a href="/user/doimatkhau">パスワード変更</a>
               </div>
             </div>
           </div>
           <div class="chuabtnthaydoi">
-            <button type="submit" class="btn-thaydoi">Lưu thay đổi</button>
+            <button type="submit" class="btn-thaydoi">変更を保存</button>
           </div>
         </form>
       </div>

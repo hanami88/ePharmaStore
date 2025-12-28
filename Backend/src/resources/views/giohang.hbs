@@ -1,7 +1,7 @@
 <div class="datdonhangthanhcong">
   <div class="datthanhcong-container">
     <i class="fa-solid fa-check checker"></i>
-    <div>Đặt đơn hàng thành công</div>
+    <div>ご注文が完了しました</div>
   </div>
 </div>
 <section class="giohang">
@@ -11,30 +11,30 @@
         src="https://prod-cdn.pharmacity.io/e-com/images/static-website/20240706155228-0-empty-order-history.svg"
         alt=""
       />
-      <div>Chưa có sản phẩm nào
+      <div>商品がありません
       </div>
       <div>
-        Hãy khám phá để mua sắm thêm
+        ショッピングを始めましょう
       </div>
-      <a href="/">Khám phá ngay</a>
+      <a href="/">今すぐ探す</a>
     </div>
   {{else}}
     <div class="giohang-container">
       <div class="xoasp">
         <div class="thongbaochacchan">
-          <h1>Xoá sản phẩm</h1>
-          <div>Bạn có chắc chắn muốn xóa sản phẩm này?</div>
-          <button class="thongbao-quaylai">Quay lại</button>
-          <button class="thongbao-tieptuc">Đồng ý</button>
+          <h1>商品削除</h1>
+          <div>この商品を削除してもよろしいですか？</div>
+          <button class="thongbao-quaylai">戻る</button>
+          <button class="thongbao-tieptuc">確認</button>
         </div>
       </div>
       <div class="giohang-sanpham">
-        <h1>Giỏ hàng</h1>
+        <h1>カート</h1>
         <div class="giohang-mota">
-          <div>Sản phẩm</div>
-          <div>Đơn giá</div>
-          <div>Số lượng</div>
-          <div>Thành tiền</div>
+          <div>商品</div>
+          <div>単価</div>
+          <div>数量</div>
+          <div>小計</div>
         </div>
         <div class="sanpham-all">
           {{#each user.giohang}}
@@ -60,12 +60,12 @@
       </div>
       <div class="xacnhandathang">
         <div class="thongbaochacchan">
-          <h1>Đặt hàng
+          <h1>注文確認
           </h1>
-          <div>Bạn có xác nhận muốn đặt hàng?
+          <div>ご注文を確定してもよろしいですか？
           </div>
-          <button class="thongbao-quaylaidathang">Quay lại</button>
-          <button class="thongbao-tieptucdathang">Đồng ý</button>
+          <button class="thongbao-quaylaidathang">戻る</button>
+          <button class="thongbao-tieptucdathang">確認</button>
         </div>
       </div>
       <form
@@ -75,18 +75,18 @@
       ></form>
       <div class="giohang-tongtien">
         <div class="giohang-tongtien__tamtinh">
-          <div class="giohang-tongtien__tamtinh-mota">Tạm tính</div>
+          <div class="giohang-tongtien__tamtinh-mota">小計</div>
           <div class="giohang-tongtien__tamtinh-tt">{{formatNumber
               (totalGiagoc user.giohang)
             }}
             ₫</div>
         </div>
         <div class="giohang-tongtien__tamtinh">
-          <div class="giohang-tongtien__tamtinh-mota">Giảm giá ưu đãi</div>
+          <div class="giohang-tongtien__tamtinh-mota">特典割引</div>
           <div class="giohang-tongtien__tamtinh-tt">-</div>
         </div>
         <div class="giohang-tongtien__tamtinh">
-          <div class="giohang-tongtien__tamtinh-mota">Giảm giá sản phẩm</div>
+          <div class="giohang-tongtien__tamtinh-mota">商品割引</div>
           <div class="giamgiatong">{{formatNumber
               (minus (totalGiagoc user.giohang) (totalGiaban user.giohang))
             }}
@@ -94,13 +94,13 @@
         </div>
         <div class="gachchan"></div>
         <div class="giohang-tongtien__tongtien">
-          <div class="giohang-tongtien__tongtien-mota">Tổng tiền</div>
+          <div class="giohang-tongtien__tongtien-mota">合計金額</div>
           <div class="giohang-tongtien__tongtien-tt">{{formatNumber
               (totalGiaban user.giohang)
             }}
             ₫</div>
         </div>
-        <div class="giohang-tongtien__btn">Mua Hàng</div>
+        <div class="giohang-tongtien__btn">購入する</div>
       </div>
     </div>
   {{/if}}

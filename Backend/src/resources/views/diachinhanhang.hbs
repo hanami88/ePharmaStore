@@ -12,65 +12,65 @@
 {{/if}}
 <div class="xoadc">
   <div class="thongbaochacchan tbcc">
-    <h1>Xoá địa chỉ
+    <h1>住所削除
     </h1>
-    <div>Bạn có chắc chắn muốn xóa địa chỉ này?
+    <div>この住所を削除してもよろしいですか？
     </div>
-    <button class="thongbao-quaylai qlai">Quay lại</button>
-    <button class="thongbao-tieptuc tt">Đồng ý</button>
+    <button class="thongbao-quaylai qlai">戻る</button>
+    <button class="thongbao-tieptuc tt">確認</button>
   </div>
 </div>
 <div class="container-themdiachi">
   <div class="themdiachi">
-    <div class="text-themdiachi">Địa chỉ mới</div>
+    <div class="text-themdiachi">新しい住所</div>
     <div class="themdiachi-box-container">
       <div class="themdiachi-box">
         <form action="/user/themdiachi" method="post" class="formdiachi">
-          <label for="hoten">Họ và tên</label>
-          <input type="text" name="hoten" placeholder="Nhập họ và tên" />
-          <label for="sdt">Số điện thoại</label>
-          <input type="text" name="sdt" placeholder="Nhập số điện thoại" />
-          <label for="tinhthanh">Địa chỉ</label>
+          <label for="hoten">氏名</label>
+          <input type="text" name="hoten" placeholder="氏名を入力" />
+          <label for="sdt">電話番号</label>
+          <input type="text" name="sdt" placeholder="電話番号を入力" />
+          <label for="tinhthanh">住所</label>
           <select name="tinhthanh" id="">
-            <option value="" class="maubac">--Chọn Tỉnh/Thành phố--</option>
-            <option value="Quảng Trị">Quảng Trị</option>
-            <option value="Đà Nẵng">Đà Nẵng</option>
-            <option value="Huế">Huế</option>
+            <option value="" class="maubac">--都道府県を選択--</option>
+            <option value="Quảng Trị">クアンチ</option>
+            <option value="Đà Nẵng">ダナン</option>
+            <option value="Huế">フエ</option>
           </select>
-          <input type="text" name="quanhuyen" placeholder="Nhập Quận/Huyện" />
+          <input type="text" name="quanhuyen" placeholder="市区町村を入力" />
           <input
             type="text"
             id="secon"
             name="phuongxa"
-            placeholder="Nhập Phường/Xã"
+            placeholder="町名を入力"
           />
           <input
             type="text"
             id="secon"
             name="sonha"
-            placeholder="Nhập số nhà,tên đường"
+            placeholder="番地・建物名を入力"
           />
-          <div class="loaidiachi">Loại địa chỉ</div>
+          <div class="loaidiachi">住所タイプ</div>
           <div class="tuychondiachi">
             <label class="option">
               <input type="radio" name="loai" value="Nhà riêng" required />
-              <span>Nhà riêng</span>
+              <span>自宅</span>
             </label>
             <label class="option">
               <input type="radio" name="loai" value="Công ty" />
-              <span>Công ty</span>
+              <span>会社</span>
             </label>
           </div>
           <div class="diachimacdinh">
             <input type="checkbox" name="macdinh" id="" />
-            <div>Đặt làm địa chỉ mặc định</div>
+            <div>デフォルト住所に設定</div>
           </div>
         </form>
       </div>
     </div>
     <div class="thaotac-diachi">
-      <button class="btn-diachi-quaylai">Quay lại</button>
-      <button class="luudiachi">Lưu lại</button>
+      <button class="btn-diachi-quaylai">戻る</button>
+      <button class="luudiachi">保存</button>
     </div>
   </div>
 </div>
@@ -88,22 +88,22 @@
       <div class="bangchon-user-bot">
         <a href="/user/thongtin" class="thanhchon-user">
           <i class="fa-solid fa-user"></i>
-          <div>Thông tin cá nhân</div>
+          <div>個人情報</div>
         </a>
         <a href="/user/diachinhanhang" class="thanhchon-user">
           <i class="fa-solid fa-location-dot"></i>
-          <div>Địa chỉ nhận hàng</div>
+          <div>配送先住所</div>
         </a>
         <a href="/user/lichsudonhang" class="thanhchon-user">
           <i class="fa-solid fa-notes-medical"></i>
-          <div>Lịch sử đơn hàng</div>
+          <div>注文履歴</div>
         </a>
       </div>
     </div>
     <div class="ctnthongtin-diachi">
       <div class="diachicc">
-        <h1 class="title-diachi">Địa chỉ nhận hàng</h1>
-        <div class="btnthemdiachi">+ Thêm địa chỉ</div>
+        <h1 class="title-diachi">配送先住所</h1>
+        <div class="btnthemdiachi">+ 住所追加</div>
       </div>
       <div class="thongtin-diachi">
         <div class="container-diachi">
@@ -113,11 +113,11 @@
                 src="https://prod-cdn.pharmacity.io/e-com/images/static-website/20240706155228-0-empty-order-history.svg"
                 alt=""
               />
-              <div>Không có địa chỉ nào</div>
+              <div>登録された住所がありません</div>
               <div>
-                Hãy thêm địa chỉ và tạo đơn hàng của bạn ngay hôm nay!
+                住所を追加して、今すぐご注文を始めましょう！
               </div>
-              <button class="themdiachiphu">Thêm địa chỉ</button>
+              <button class="themdiachiphu">住所追加</button>
             </div>
           {{/unless}}
           {{#each user.diachi}}
@@ -137,7 +137,7 @@
                 <div>
                   <div class="dactrungdiachi">{{this.loai}}</div>
                   {{#if this.macdinh}}
-                    <div class="dactrungmacdinh">Mặc định</div>
+                    <div class="dactrungmacdinh">デフォルト</div>
                   {{/if}}
                 </div>
               </div>
