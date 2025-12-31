@@ -12,47 +12,47 @@
 <main class="main">
   <div class="header">
     <div>
-      <h1 class="ql">Quản lý sản phẩm</h1>
-      <a href="/admin/trashsanpham" class="btn btn-green thungrac">Thùng rác ({{count}})</a>
+      <h1 class="ql">商品管理</h1>
+      <a href="/admin/trashsanpham" class="btn btn-green thungrac">ゴミ箱 ({{count}})</a>
     </div>
-    <a href="/admin/add" class="btn btn-green">+ Thêm sản phẩm mới</a>
+    <a href="/admin/add" class="btn btn-green">+ 新規商品追加</a>
   </div>
   <form method="POST" action="/admin/timkiemsanpham" class="filter-form" >
     <input
       type="text"
       name="keyword"
-      placeholder="Nhập tên sản phẩm..."
+      placeholder="商品名を入力..."
       value="{{filters.keyword}}"
     />
     <select name="danhmuc" class="danhmuc">
-      <option value="">-- Tất cả danh mục --</option>
-      <option value="Săn Deal" {{#if (equal filters.danhmuc 'Săn Deal')}}selected{{/if}}>Săn Deal</option>
-      <option value="Ngàn Deal Hot Tặng Nàng" {{#if (equal filters.danhmuc 'Ngàn Deal Hot Tặng Nàng')}}selected{{/if}}>Ngàn Deal Hot Tặng Nàng</option>
-      <option value="Top bán chạy toàn quốc" {{#if (equal filters.danhmuc 'Top bán chạy toàn quốc')}}selected{{/if}}>Top bán chạy toàn quốc</option>
-      <option value="Mẹ khỏe bé vui" {{#if (equal filters.danhmuc 'Mẹ khỏe bé vui')}}selected{{/if}}>Mẹ khỏe bé vui</option>
-      <option value="Kho Hàng" {{#if (equal filters.danhmuc 'Kho Hàng')}}selected{{/if}}>Kho Hàng</option>
+      <option value="">-- 全てのカテゴリ --</option>
+      <option value="Săn Deal" {{#if (equal filters.danhmuc 'Săn Deal')}}selected{{/if}}>タイムセール</option>
+      <option value="Ngàn Deal Hot Tặng Nàng" {{#if (equal filters.danhmuc 'Ngàn Deal Hot Tặng Nàng')}}selected{{/if}}>レディース・特集</option>
+      <option value="Top bán chạy toàn quốc" {{#if (equal filters.danhmuc 'Top bán chạy toàn quốc')}}selected{{/if}}>全国ベストセラー</option>
+      <option value="Mẹ khỏe bé vui" {{#if (equal filters.danhmuc 'Mẹ khỏe bé vui')}}selected{{/if}}>ママ＆ベビー</option>
+      <option value="Kho Hàng" {{#if (equal filters.danhmuc 'Kho Hàng')}}selected{{/if}}>在庫処分</option>
     </select>
     <select name="banchay">
-      <option value="">-- Bán chạy --</option>
-      <option value="true" {{#if ( equal filters.banchay  'true')}}selected{{/if}}>Đang bán chạy</option>
-      <option value="false" {{#if ( equal filters.banchay  'false')}}selected{{/if}}>Không bán chạy</option>
+      <option value="">-- 販売状況 --</option>
+      <option value="true" {{#if ( equal filters.banchay  'true')}}selected{{/if}}>売れ筋商品</option>
+      <option value="false" {{#if ( equal filters.banchay  'false')}}selected{{/if}}>通常商品</option>
     </select>
-    <button type="submit" class="btn btn-blue" style="cursor: pointer;">Lọc</button>
+    <button type="submit" class="btn btn-blue" style="cursor: pointer;">検索</button>
   </form>
   <div class="table-wrapper">
     <table class="product-table">
       <thead>
         <tr>
-          <th>STT</th>
-          <th>Ảnh</th>
-          <th>Tên sản phẩm</th>
-          <th>Danh mục</th>
-          <th>Giá gốc</th>
-          <th>Giá bán</th>
-          <th>Giảm giá(%)</th>
-          <th>SL</th>
-          <th>BC</th>
-          <th>Hành động</th>
+          <th>No.</th>
+          <th>画像</th>
+          <th>商品名</th>
+          <th>カテゴリ</th>
+          <th>通常価格</th>
+          <th>販売価格</th>
+          <th>割引率(%)</th>
+          <th>在庫数</th>
+          <th>人気</th>
+          <th>操作</th>
         </tr>
       </thead>
       <tbody>
@@ -66,8 +66,8 @@
               /></td>
             <td>{{this.tensp}}</td>
             <td style="width: 8vw">{{this.danhmuc}}</td>
-            <td style="width: 7vw;">{{formatNumber this.giagoc}} ₫</td>
-            <td style="width: 7vw;">{{formatNumber this.giaban}} ₫</td>
+            <td style="width: 7vw;">{{formatNumber this.giagoc}} 円</td>
+            <td style="width: 7vw;">{{formatNumber this.giaban}} 円</td>
             <td style="width: 6vw;">{{this.giamgia}}</td>
             <td>{{this.soluong}}</td>
             <td style="width: 1vw;">{{#if (lonhon this.soluongdaban 500)}}<i
@@ -80,12 +80,12 @@
                 <a
                   href="/admin/{{this._id}}/suasanpham"
                   class="btn btn-blue"
-                >Sửa</a>
+                >編集</a>
                 <div
                   class="btn btn-red btn-sm"
                   id="btn-do"
                   data-id="{{this._id}}"
-                >Xoá</div>
+                >削除</div>
               </div>
             </td>
           </tr>
@@ -98,12 +98,10 @@
 </form>
 <div class="xoasp">
   <div class="thongbaochacchan tbcc">
-    <h1>Xoá sản phẩm
-    </h1>
-    <div>Bạn có chắc chắn muốn xóa sản phẩm này?
-    </div>
-    <button class="thongbao-quaylai qlai">Quay lại</button>
-    <button class="thongbao-tieptuc tt">Đồng ý</button>
+    <h1>商品削除</h1>
+    <div>この商品を削除してもよろしいですか？</div>
+    <button class="thongbao-quaylai qlai">キャンセル</button>
+    <button class="thongbao-tieptuc tt">削除</button>
   </div>
 </div>
 
