@@ -1,86 +1,76 @@
 <main class="main" style="background-color: rgb(245, 245, 245)">
-      <div class="header" style="margin-bottom: 0rem; width: 27rem ; height:6rem;">
-        <a style="color: black;" href="/admin//quanlykhachhhang">
-            <i
+  <div class="header" style="margin-bottom: 0rem; width: 27rem ; height:6rem;">
+    <a style="color: black;" href="/admin//quanlykhachhhang">
+      <i
+        class="fa-solid fa-arrow-left"
+        style="font-size: 3.5rem; cursor: pointer"
+      ></i>
+    </a>
+    <h2 style="margin-top: 2rem;">顧客詳細</h2>
+  </div>
+  <div class="hienthi-user">
+    <div class="ctnthongtin-doimk">
+      <div class="doimk">
+        <div class="doimkcc" style="height:5rem">
+          <a href="/admin/{{id}}/chitietkhachhang"><i
               class="fa-solid fa-arrow-left"
-              style="font-size: 3.5rem; cursor: pointer"
-            ></i>
-        </a>
-        <h2  style="margin-top: 2rem;">Chi tiết khách hàng</h2>
-      </div>
-      <div class="hienthi-user">
-       <div class="ctnthongtin-doimk">
-          <div class="doimk">
-            <div class="doimkcc" style="height:5rem">
-              <a href="/admin/{{id}}/chitietkhachhang"><i class="fa-solid fa-arrow-left"></i></a>
-              <h1 class="title-doimk">Đổi mật khẩu</h1>
-            </div>
-          </div>
-          <div class="thongtin-doimk">
-            <form action="/admin/{{id}}/doimatkhau" method="post" class="container-doimk" data-user-id="{{id}}">
-              <div>
-                Để bảo mật tài khoản, vui lòng không chia sẻ mật khẩu cho người
-                khác.Bạn có thể tạo mật khẩu từ 8 - 16 kí tự
-              </div>
-              <label for="mkm">Mật khẩu mới</label>
-              <input
-                type="password"
-                name="mkm"
-                id="mkm"
-                class="mkm"
-                placeholder="Mật khẩu mới"
-              />
-              <label for="nlmkm">Nhập lại mật khẩu mới</label>
-              <input
-                type="password"
-                name="nlmkm"
-                id="nlmkm"
-                class="nlmkm"
-                placeholder="Nhập lại mật khẩu mới "
-              />
-              <div id="error-message"></div>
-              <button>Hoàn thành</button>
-            </form>
-          </div>
+            ></i></a>
+          <h1 class="title-doimk">パスワード変更</h1>
         </div>
       </div>
+      <div class="thongtin-doimk">
+        <form
+          action="/admin/{{id}}/doimatkhau"
+          method="post"
+          class="container-doimk"
+          data-user-id="{{id}}"
+        >
+          <div>
+            アカウントのセキュリティ保護のため、パスワードは他人に共有しないでください。8〜16文字で設定してください。
+          </div>
+
+          <label for="mkm">新しいパスワード</label>
+          <input
+            type="password"
+            name="mkm"
+            id="mkm"
+            class="mkm"
+            placeholder="新しいパスワード"
+          />
+
+          <label for="nlmkm">新しいパスワード（確認用）</label>
+          <input
+            type="password"
+            name="nlmkm"
+            id="nlmkm"
+            class="nlmkm"
+            placeholder="新しいパスワード（確認用）"
+          />
+
+          <div id="error-message"></div>
+          <button>変更する</button>
+        </form>
       </div>
-    </main>
-    <script>
-  const form = document.querySelector(".container-doimk");
-const userId = form.dataset.userId;
+    </div>
+  </div>
+</main>
 
-form.addEventListener("submit", async function (e) {
-  e.preventDefault();
-
-  const newPassword = document.querySelector(".mkm").value.trim();
-  const confirmPassword = document.querySelector(".nlmkm").value.trim();
-  const errorBox = document.getElementById("error-message");
-  errorBox.textContent = "";
-  errorBox.style.color = "red";
-
-  if (newPassword.length < 8) {
-    errorBox.textContent = "Mật khẩu phải có ít nhất 8 ký tự.";
-    return;
-  }
-
-  if (newPassword !== confirmPassword) {
-    errorBox.textContent = "Mật khẩu mới không khớp.";
-    return;
-  }
-
-  const res = await fetch(`/admin/${userId}/doimatkhau`, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ newPassword })
-  });
-
-  const result = await res.json();
-  if (result.success) {
-    window.location.href = `/admin/${userId}/chitietkhachhang`;
-  } else {
-    errorBox.textContent = "Đã xảy ra lỗi. Vui lòng thử lại.";
-  }
-});
-
+<script>
+  const form = document.querySelector(".container-doimk"); const userId =
+  form.dataset.userId; form.addEventListener("submit", async function (e) {
+  e.preventDefault(); const newPassword =
+  document.querySelector(".mkm").value.trim(); const confirmPassword =
+  document.querySelector(".nlmkm").value.trim(); const errorBox =
+  document.getElementById("error-message"); errorBox.textContent = "";
+  errorBox.style.color = "red"; if (newPassword.length < 8) { // Mật khẩu phải
+  có ít nhất 8 ký tự errorBox.textContent =
+  "パスワードは8文字以上で入力してください。"; return; } if (newPassword !==
+  confirmPassword) { // Mật khẩu mới không khớp errorBox.textContent =
+  "パスワードが一致しません。"; return; } const res = await
+  fetch(`/admin/${userId}/doimatkhau`, { method: "POST", headers: {
+  "Content-Type": "application/json" }, body: JSON.stringify({ newPassword })
+  }); const result = await res.json(); if (result.success) {
+  window.location.href = `/admin/${userId}/chitietkhachhang`; } else { // Đã xảy
+  ra lỗi. Vui lòng thử lại. errorBox.textContent =
+  "エラーが発生しました。もう一度お試しください。"; } });
 </script>

@@ -1,28 +1,28 @@
 <main class="main">
   <div class="header" style="margin-bottom: 0rem;">
-    <h1 class="ql">Quản lý khách hàng</h1>
+    <h1 class="ql">顧客管理</h1>
   </div>
   <form method="POST" action="/admin/timkiemkhachhang" class="filter-form">
-    <input type="text" name="keyword" placeholder="Nhập tên khách hàng..." value="{{filters.keyword}}"/>
+    <input type="text" name="keyword" placeholder="顧客名を入力..." value="{{filters.keyword}}"/>
     <select name="top" style="width: 10rem;">
-      <option value="">-- Xếp hạng theo --</option>
-      <option value="true" {{#if ( equal filters.top  'true')}}selected{{/if}}>Tổng tiền đã dùng</option>
+      <option value="">-- 並び替え --</option>
+      <option value="true" {{#if ( equal filters.top  'true')}}selected{{/if}}>利用総額</option>
     </select>
-    <button type="submit" class="btn btn-blue" style="cursor: pointer;">Lọc</button>
+    <button type="submit" class="btn btn-blue" style="cursor: pointer;">検索</button>
   </form>
   <div class="table-wrapper">
     <table class="product-table">
       <thead>
         <tr>
-          <th>STT</th>
-          <th>Ảnh</th>
-          <th>Số điện thoại</th>
-          <th>Họ tên</th>
-          <th>Email</th>
-          <th>Giới tính</th>
-          <th>Ngày sinh</th>
-          <th>Tổng tiền đã dùng</th>
-          <th>Hành động</th>
+          <th>No.</th>
+          <th>画像</th>
+          <th>電話番号</th>
+          <th>氏名</th>
+          <th>メール</th>
+          <th>性別</th>
+          <th>生年月日</th>
+          <th>利用総額</th>
+          <th>操作</th>
         </tr>
       </thead>
       <tbody>
@@ -40,14 +40,13 @@
               <td style="width: 10vw;">{{this.email}}</td>
               <td style="width: 5vw;">{{this.gioitinh}}</td>
               <td style="width: 6vw;">{{this.ngaysinh}}</td>
-              <td style="width: 7vw;">{{formatNumber this.tongtiendadung}}
-                ₫</td>
+              <td style="width: 7vw;">{{formatNumber this.tongtiendadung}} 円</td>
               <td style="width: 3vw;">
                 <div class="hanhdong1">
                   <a
                     href="/admin/{{this._id}}/chitietkhachhang"
                     class="btn btn-blue"
-                  >Chi tiết</a>
+                  >詳細</a>
                 </div>
               </td>
             </tr>
@@ -61,12 +60,10 @@
 </form>
 <div class="xoasp">
   <div class="thongbaochacchan tbcc">
-    <h1>Xoá sản phẩm
-    </h1>
-    <div>Bạn có chắc chắn muốn xóa sản phẩm này?
-    </div>
-    <button class="thongbao-quaylai qlai">Quay lại</button>
-    <button class="thongbao-tieptuc tt">Đồng ý</button>
+    <h1>顧客削除</h1>
+    <div>この顧客を削除してもよろしいですか？</div>
+    <button class="thongbao-quaylai qlai">キャンセル</button>
+    <button class="thongbao-tieptuc tt">削除</button>
   </div>
 </div>
 

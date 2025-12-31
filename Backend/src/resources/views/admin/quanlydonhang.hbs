@@ -12,8 +12,8 @@
 <main class="main">
   <div class="header">
     <div>
-      <h1 class="ql">Quản lý đơn hàng</h1>
-      <a href="/admin/trashdonhang" class="btn btn-green thungrac">Thùng rác ({{count}})</a>
+      <h1 class="ql">注文管理</h1>
+      <a href="/admin/trashdonhang" class="btn btn-green thungrac">ゴミ箱 ({{count}})</a>
     </div>
   </div>
   <form method="POST" action="/admin/timkiemdonhang" class="filter-form">
@@ -21,7 +21,7 @@
       type="text"
       name="keyword"
       class="lookingfor"
-      placeholder="Nhập số điện thoại..."
+      placeholder="電話番号を入力..."
       value="{{filters.keyword}}"
     />
     <input
@@ -35,21 +35,21 @@
       type="submit"
       class="btn btn-blue"
       style="cursor: pointer;"
-    >Lọc</button>
+    >検索</button>
   </form>
   <div class="table-wrapper">
     <table class="product-table">
       <thead>
         <tr>
-          <th>STT</th>
-          <th>Mã đơn</th>
-          <th>Số điện thoại</th>
-          <th>Khách hàng</th>
-          <th>Ngày đặt</th>
-          <th>Tổng tiền</th>
-          <th>Trạng thái</th>
-          <th>Thanh Toán</th>
-          <th>Hành động</th>
+          <th>No.</th>
+          <th>注文ID</th>
+          <th>電話番号</th>
+          <th>顧客名</th>
+          <th>注文日</th>
+          <th>合計金額</th>
+          <th>ステータス</th>
+          <th>支払状況</th>
+          <th>操作</th>
         </tr>
       </thead>
       <tbody>
@@ -60,12 +60,15 @@
             <td style="width: 6vw">{{this.userid.sdt}}</td>
             <td style="width: 7vw">{{this.userid.hoten}}</td>
             <td style="width: 7vw;">{{formatDate this.createdAt}}</td>
-            <td style="width: 6vw;">{{formatNumber this.tongtien}} ₫</td>
+            <td style="width: 6vw;">{{formatNumber this.tongtien}} 円</td>
             <td style="width: 5vw;">{{this.trangthai}}</td>
             <td style="width: 5vw;">{{this.thanhtoan}}</td>
             <td style="width: 1vw;">
               <div class="hanhdong">
-                <div class="btn btn-red btn-sc" data-id="{{this._id}}">Chi tiết</div>
+                <div
+                  class="btn btn-red btn-sc"
+                  data-id="{{this._id}}"
+                >詳細</div>
               </div>
             </td>
           </tr>
@@ -78,12 +81,10 @@
 </form>
 <div class="xoasp">
   <div class="thongbaochacchan tbcc">
-    <h1>Xoá đơn hàng
-    </h1>
-    <div>Bạn có chắc chắn muốn xóa đơn hàng này?
-    </div>
-    <button class="thongbao-quaylai qlai">Quay lại</button>
-    <button class="thongbao-tieptuc tt">Đồng ý</button>
+    <h1>注文削除</h1>
+    <div>この注文を削除してもよろしいですか？</div>
+    <button class="thongbao-quaylai qlai">キャンセル</button>
+    <button class="thongbao-tieptuc tt">削除</button>
   </div>
 </div>
 <div class="container-chitietdonhang">
@@ -91,7 +92,7 @@
     <i class="fa-solid fa-circle-xmark"></i>
     <div class="hienthilichsu-thongtin1">
       <div>
-        <div class="indamthongtin">Thông tin người nhận</div>
+        <div class="indamthongtin">受取人情報</div>
         <div id="tentk"></div>
         <div>
           <span class="indamthongtin gach" id="hoten"></span>
@@ -100,7 +101,7 @@
         <div class="botthongtin" id="diachi"></div>
       </div>
       <div>
-        <div class="indamthongtin">Mã đơn hàng</div>
+        <div class="indamthongtin">注文ID</div>
         <div id="madonhang"></div>
         <div class="trangthaidonhang1" id="trangthaidonhang1"></div>
         <div
@@ -108,44 +109,44 @@
           id="trangthaidonhang-xacnhan"
         ></div>
         <div class="botthongtin">
-          <div class="indamthongtin">Thời gian đặt hàng</div>
+          <div class="indamthongtin">注文日時</div>
           <div id="time"></div>
         </div>
       </div>
     </div>
-    <div class="sanphamdamua">Sản phẩm </div>
+    <div class="sanphamdamua">注文商品</div>
     <div class="lichsu-hienthidonhang1">
     </div>
     <div class="gachchan-to1"></div>
     <div class="container-thanhtoan">
       <div>
         <div class="thanhtoan-ghichu1">
-          <div class="indamthongtin">Ghi chú : </div>
+          <div class="indamthongtin">備考 : </div>
           <div id="hienthighichu"></div>
         </div>
         <div class="btnflex">
-          <div class="btn btn-red btn-sk" data-id="{{this._id}}">Xác nhận </div>
-          <div class="btn btn-red btn-sm" data-id="{{this._id}}">Xoá đơn hàng</div>
+          <div class="btn btn-red btn-sk" data-id="{{this._id}}">確定</div>
+          <div class="btn btn-red btn-sm" data-id="{{this._id}}">注文削除</div>
         </div>
       </div>
       <div class="lichsu-hienthitongtien1">
-        <div>Chi tiết thanh toán</div>
+        <div>決済詳細</div>
         <div class="hienthitongtien">
-          <div>Tiền hàng</div>
+          <div>商品小計</div>
           <div class="tongtienindam" id="tienhang"></div>
         </div>
         <div class="hienthitongtien">
-          <div>Phí vận chuyển</div>
+          <div>送料</div>
           <div class="tongtienindam"></div>
         </div>
         <div class="hienthitongtien">
-          <div>Giảm giá sản phẩm</div>
+          <div>割引</div>
           <div class="tongtienindam" id="giamgia"></div>
         </div>
         <div class="gachchan-to3"></div>
         <div class="hienthitongtien boxtt1">
           <div>
-            <span class="tongtienindam">Tổng tiền </span><span
+            <span class="tongtienindam">合計金額 </span><span
               class="spnho"
               id="spnho"
             ></span>
@@ -153,10 +154,10 @@
           <div class="tongtienindamdb" id="tongtien"></div>
         </div>
         <div class="hienthitongtien boxtt2">
-          <div class="tongtienindam">Phương thức thanh toán</div>
+          <div class="tongtienindam">支払方法</div>
           <div>
-            <div class="COD">COD</div>
-            <div class="tongtienindam">Tiền mặt</div>
+            <div class="COD">代引き (COD)</div>
+            <div class="tongtienindam">現金</div>
           </div>
         </div>
       </div>
