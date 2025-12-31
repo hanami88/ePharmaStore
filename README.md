@@ -70,13 +70,13 @@ This project is an online pharmacy platform inspired by Pharmacity, designed to 
 
 ### 🔐 Login Page
 
-<img width="1440" height="814" alt="Ảnh màn hình 2025-07-29 lúc 10 46 50" src="https://github.com/user-attachments/assets/846461d3-5e5c-4304-8b66-3ab7b6324058" />
+<img width="1440" height="813" alt="image" src="https://github.com/user-attachments/assets/1f326865-f5a4-4e89-812c-ac6b688be4a2" />
 
 ### 🙍‍♂️ User Profile Management
 
 After logging in, users can access their profile to update personal information.
 
-<img width="1440" height="813" alt="Ảnh màn hình 2025-07-29 lúc 11 54 51" src="https://github.com/user-attachments/assets/8ab0f083-bfee-4081-9f3c-a271c57f53dd" />
+<img width="1440" height="627" alt="image" src="https://github.com/user-attachments/assets/6f8edbce-f7af-4c16-b82f-f7dde4dc8fe0" />
 
 ## 🏠 Shipping Address Management
 
