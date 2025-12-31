@@ -6,17 +6,14 @@
         style="font-size: 3.5rem; cursor: pointer"
       ></i>
     </a>
-    <h2 style="margin-top: 2rem;">Chi tiết khách hàng</h2>
+    <h2 style="margin-top: 2rem;">顧客詳細</h2>
   </div>
   <div class="hienthi-user">
     <div class="ctnthongtin-user">
       <div class="user-admin">
-        <a href="/admin/chitietkhachhang" class="title-thongtincanhan">Thông tin
-          cá nhân</a>
-        <a href="/admin/diachinhanhang" class="title-thongtincanhan">Địa chỉ
-          nhận hàng</a>
-        <a href="/admin/lichsudonhang" class="title-thongtincanhan">Lịch sử đơn
-          hàng</a>
+        <a href="/admin/chitietkhachhang" class="title-thongtincanhan">個人情報</a>
+        <a href="/admin/diachinhanhang" class="title-thongtincanhan">配送先住所</a>
+        <a href="/admin/lichsudonhang" class="title-thongtincanhan">注文履歴</a>
       </div>
       <div class="thongtin-user">
         <form
@@ -25,7 +22,7 @@
           class="container-thongtinuser"
           enctype="multipart/form-data"
         >
-          <div class="anhdaidien">Ảnh đại diện</div>
+          <div class="anhdaidien">プロフィール画像</div>
           <div class="anhdaidien-cc">
             <img
               class="anhdaidienmoi"
@@ -41,59 +38,59 @@
               style="display: none"
             />
             <div class="daidienoi">
-              <label for="hinhanh" class="btn-capnhatanhmoi">Cập nhật ảnh mới</label>
-              <div>Dung lượng file tối đa 5 MB.</div>
-              <div>Định dạng: .JPEG, .PNG</div>
+              <label for="hinhanh" class="btn-capnhatanhmoi">新しい画像を更新</label>
+              <div>最大ファイルサイズ：5 MB</div>
+              <div>形式：.JPEG、.PNG</div>
             </div>
           </div>
           <div class="dienthongtin">
             <div class="container-dienthongtin">
-              <label for="hoten" style="font-size: 1.6rem">Họ và tên</label>
+              <label for="hoten" style="font-size: 1.6rem">氏名</label>
               <input
                 type="text"
                 name="hoten"
                 id="hoten"
-                placeholder="Họ và tên"
+                placeholder="氏名"
                 value="{{user.hoten}}"
               />
-              <label for="ngaysinh" style="font-size: 1.6rem">Ngày sinh</label>
+              <label for="ngaysinh" style="font-size: 1.6rem">生年月日</label>
               <input
                 type="date"
                 name="ngaysinh"
                 id="ngaysinh"
                 value="{{user.ngaysinh}}"
               />
-              <label for="gioitinh" style="font-size: 1.6rem">Giới tính</label>
+              <label for="gioitinh" style="font-size: 1.6rem">性別</label>
               <select
                 class="gioitinhchon"
                 name="gioitinh"
                 id="gioitinh"
                 style="width: 93.5%; font-weight: 600; border: 0.1rem solid #9e9e9e; font-size: 1.6rem; padding-left: 1.5rem;"
               >
-                <option value="" disabled {{#unless user.gioitinh}}selected{{/unless}}>Chọn giới tính</option>
-                <option value="nam" {{#if (equal user.gioitinh "nam")}}selected{{/if}}>Nam</option>
-                <option value="nu" {{#if (equal user.gioitinh "nu")}}selected{{/if}}>Nữ</option>
-                <option value="khac" {{#if (equal user.gioitinh "khac")}}selected{{/if}}>Khác</option>
+                <option value="" disabled {{#unless user.gioitinh}}selected{{/unless}}>性別を選択</option>
+                <option value="nam" {{#if (equal user.gioitinh "nam")}}selected{{/if}}>男性</option>
+                <option value="nu" {{#if (equal user.gioitinh "nu")}}selected{{/if}}>女性</option>
+                <option value="khac" {{#if (equal user.gioitinh "khac")}}selected{{/if}}>その他</option>
               </select>
             </div>
             <div class="thongtinphu">
-              <div>Số điện thoại</div>
+              <div>電話番号</div>
               <div>{{user.sdt}}</div>
               <div>
                 <div>
-                  <div>Email</div>
+                  <div>メールアドレス</div>
                   <div>{{user.email}}</div>
                 </div>
-                <a href="/admin/{{user._id}}/trangdoiemail">Cập nhật</a>
+                <a href="/admin/{{user._id}}/trangdoiemail">更新</a>
               </div>
               <div>
-                <div>Mật khẩu</div>
-                <a href="/admin/{{user._id}}/trangmatkhau">Đổi mật khẩu</a>
+                <div>パスワード</div>
+                <a href="/admin/{{user._id}}/trangmatkhau">パスワード変更</a>
               </div>
             </div>
           </div>
           <div class="chuabtnthaydoi">
-            <button type="submit" class="btn-thaydoi">Lưu thay đổi</button>
+            <button type="submit" class="btn-thaydoi">変更を保存</button>
           </div>
         </form>
       </div>

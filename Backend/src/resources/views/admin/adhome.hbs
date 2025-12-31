@@ -1,76 +1,68 @@
 <div class="datthanhcong">
   <div class="datthanhcong-container">
     <i class="fa-solid fa-check checker"></i>
-    <div>Thêm sản phẩm thành công</div>
+    <div>商品を追加しました</div>
   </div>
 </div>
 <main class="main">
   <div class="header headeradd">
-    <h2 class="ql">Tạo mới sản phẩm</h2>
+    <h2 class="ql">新規商品作成</h2>
     <div class="header-actions">
-      <button class="btn">+ Thêm nhà cung cấp</button>
-      <button class="btn">+ Thêm danh mục</button>
-      <button class="btn">+ Thêm tình trạng</button>
+      <button class="btn">+ サプライヤー追加</button>
+      <button class="btn">+ カテゴリー追加</button>
+      <button class="btn">+ ステータス追加</button>
     </div>
   </div>
   <form class="form" enctype="multipart/form-data">
     <div class="form-row">
-      <input
-        type="text"
-        class="btn-edit"
-        placeholder="Tên sản phẩm"
-        name="tensp"
-      />
-      <input
-        type="number"
-        class="btn-edit"
-        placeholder="Số lượng"
-        name="soluong"
-      />
+      <input type="text" class="btn-edit" placeholder="商品名" name="tensp" />
+      <input type="number" class="btn-edit" placeholder="数量" name="soluong" />
       <input
         type="number"
         name="giamgia"
         class="btn-edit"
-        placeholder="Giảm giá (%)"
+        placeholder="割引率（%）"
       />
 
     </div>
     <div class="form-row">
       <select name="danhmuc">
-        <option value="">-- Chọn danh mục --</option>
-        <option value="Kho Hàng">Kho Hàng</option>
-        <option value="Săn Deal">Săn Deal</option>
-        <option value="Ngàn Deal Hot Tặng Nàng">Ngàn Deal Hot Tặng Nàng</option>
-        <option value="Top bán chạy toàn quốc">Top bán chạy toàn quốc</option>
-        <option value="Thương hiệu Nhật Bản">Thương hiệu Nhật Bản</option>
+        <option value="">-- カテゴリーを選択 --</option>
+        <option value="Kho Hàng">在庫</option>
+        <option value="Săn Deal">特価品</option>
+        <option value="Ngàn Deal Hot Tặng Nàng">女性向けお得な商品</option>
+        <option value="Top bán chạy toàn quốc">全国ベストセラー</option>
+        <option value="Thương hiệu Nhật Bản">日本ブランド</option>
       </select>
       <select name="nhacungcap">
-        <option value="">-- Chọn nhà cung cấp --</option>
-        <option value="Công ty CP Dược Hậu Giang">Công ty CP Dược Hậu Giang</option>
-        <option value="Công ty Dược phẩm Traphaco">Công ty Dược phẩm Traphaco</option>
-        <option value="Công ty Dược phẩm Sanofi">Công ty Dược phẩm Sanofi</option>
-        <option value="Công ty cổ phần Dược Pymepharco">Công ty cổ phần Dược
-          Pymepharco</option>
-        <option value="Công ty Cổ phần Dược phẩm TV.Pharm">Công ty Cổ phần Dược
-          phẩm TV.Pharm</option>
+        <option value="">-- サプライヤーを選択 --</option>
+        <option value="Công ty CP Dược Hậu Giang">Hau Giang製薬株式会社</option>
+        <option value="Công ty Dược phẩm Traphaco">Traphaco製薬会社</option>
+        <option value="Công ty Dược phẩm Sanofi">Sanofi製薬会社</option>
+        <option
+          value="Công ty cổ phần Dược Pymepharco"
+        >Pymepharco製薬株式会社</option>
+        <option
+          value="Công ty Cổ phần Dược phẩm TV.Pharm"
+        >TV.Pharm製薬株式会社</option>
       </select>
       <input
         type="number"
         class="btn-edit"
-        placeholder="Giá gốc (VND)"
+        placeholder="定価（VND）"
         name="giagoc"
       />
       <select name="donvi">
-        <option value="">-- Chọn đơn vị --</option>
-        <option value="Hộp">Hộp</option>
-        <option value="Cái">Cái</option>
-        <option value="Tuýt">Tuýt</option>
-        <option value="Thùng">Thùng</option>
-        <option value="Chai">Chai</option>
+        <option value="">-- 単位を選択 --</option>
+        <option value="Hộp">箱</option>
+        <option value="Cái">個</option>
+        <option value="Tuýt">チューブ</option>
+        <option value="Thùng">ケース</option>
+        <option value="Chai">本</option>
       </select>
     </div>
     <div class="form-row">
-      <label>Ảnh sản phẩm: </label>
+      <label>商品画像：</label>
       <div class="upload-wrapper">
         <img class="anhhientai" id="preview" src="" style="display:none;" />
         <i class="fa-solid fa-cloud-arrow-up"></i>
@@ -84,10 +76,10 @@
       </div>
     </div>
     <div class="form-row">
-      <label>Mô tả sản phẩm:</label>
+      <label>商品説明：</label>
       <textarea rows="8" name="mota"></textarea>
     </div>
-    <button class="btn primary" type="submit">Thêm sản phẩm</button>
+    <button class="btn primary" type="submit">商品を追加</button>
   </form>
 </main>
 <script src="/js/admin.js"></script>
