@@ -83,7 +83,7 @@ After logging in, users can access their profile to update personal information.
 Users can manage their shipping addresses to ensure accurate delivery. Each user can add, update, or select from multiple saved addresses.
 
 ### ➕ Add New Address
-<img width="1440" height="811" alt="Ảnh màn hình 2025-07-29 lúc 12 01 31" src="https://github.com/user-attachments/assets/37e29d70-2abb-4472-a1f7-abd2bfa21378" />
+<img width="1425" height="685" alt="image" src="https://github.com/user-attachments/assets/cf6c5512-2e8f-4e32-9a2f-92e029547435" />
 
 ### 📭 No Address Available
 If the user has no address yet, a message is shown:
@@ -100,7 +100,7 @@ The system supports two methods for placing orders:
 - Users can browse and add multiple products to their shopping cart.
 - Once ready, they can go to the cart, review their items, select a shipping address, and confirm the order.
 - Best for users buying multiple products in one checkout.
-<img width="1440" height="812" alt="Ảnh màn hình 2025-07-29 lúc 12 11 35" src="https://github.com/user-attachments/assets/898696b8-317b-49aa-89d5-f3a1506c681e" />
+![Uploading image.png…]()
 
 - Users can:
   - Modify product quantity
