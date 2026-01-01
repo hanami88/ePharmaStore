@@ -46,7 +46,7 @@
       </div>
       <div class="hinhthucnhanhang-thanhtoan">
         <h1 class="hinhthucnhanhang">受取方法</h1>
-        <div>宅配</div>
+        <div style="width: 7rem;">宅配</div>
         <div>
           <div>受取人情報</div>
           <div class="thaydoi">変更</div>
@@ -70,7 +70,10 @@
                   <div>
                     <div class="dactrungdiachi-thanhtoan">{{this.loai}}</div>
                     {{#if this.macdinh}}
-                      <div class="dactrungmacdinh-thanhtoan">デフォルト</div>
+                      <div
+                        class="dactrungmacdinh-thanhtoan"
+                        style="width: 7.6rem;"
+                      >デフォルト</div>
                     {{/if}}
                   </div>
                 </div>
@@ -128,7 +131,6 @@
           </div>
           <div class="boxpt">
             <input type="radio" name="PT" value="ATM" id="ATM" />
-
             <label for="ATM">
               <img src="/img/ATM.png" alt="" class="ppttimg" />
               <div>デビットカード</div></label>
@@ -251,7 +253,10 @@
             <div>
               <div class="dactrungdiachi">{{this.loai}}</div>
               {{#if this.macdinh}}
-                <div class="dactrungmacdinh-thanhtoan">デフォルト</div>
+                <div
+                  class="dactrungmacdinh-thanhtoan"
+                  style="width: 7.6rem;"
+                >デフォルト</div>
               {{/if}}
             </div>
           </label>

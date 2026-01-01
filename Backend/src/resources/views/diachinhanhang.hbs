@@ -53,11 +53,11 @@
           <div class="loaidiachi">住所タイプ</div>
           <div class="tuychondiachi">
             <label class="option">
-              <input type="radio" name="loai" value="Nhà riêng" required />
+              <input type="radio" name="loai" value="自宅" required />
               <span>自宅</span>
             </label>
             <label class="option">
-              <input type="radio" name="loai" value="Công ty" />
+              <input type="radio" name="loai" value="会社" />
               <span>会社</span>
             </label>
           </div>
@@ -137,7 +137,10 @@
                 <div>
                   <div class="dactrungdiachi">{{this.loai}}</div>
                   {{#if this.macdinh}}
-                    <div class="dactrungmacdinh">デフォルト</div>
+                    <div
+                      class="dactrungmacdinh"
+                      style="width: 7.6rem;"
+                    >デフォルト</div>
                   {{/if}}
                 </div>
               </div>
