@@ -100,7 +100,7 @@ The system supports two methods for placing orders:
 - Users can browse and add multiple products to their shopping cart.
 - Once ready, they can go to the cart, review their items, select a shipping address, and confirm the order.
 - Best for users buying multiple products in one checkout.
-![Uploading image.png…]()
+<img width="1440" height="686" alt="Ảnh màn hình 2026-01-01 lúc 21 37 14" src="https://github.com/user-attachments/assets/a60fc906-dc69-421f-b328-9e4e35be0c11" />
 
 - Users can:
   - Modify product quantity
@@ -108,7 +108,7 @@ The system supports two methods for placing orders:
   - Proceed to checkout
 
 > This allows users to review their selected items before placing an order.
-<img width="1438" height="693" alt="Ảnh màn hình 2025-07-29 lúc 12 15 36" src="https://github.com/user-attachments/assets/66faf1a6-9e95-4e6d-abcb-26dc281ee454" />
+<img width="1424" height="660" alt="image" src="https://github.com/user-attachments/assets/14b47261-7bd0-4afa-9d27-323f4855f595" />
 
 ### 🧾 Checkout Page
 
@@ -117,7 +117,7 @@ After clicking the “Place Order” button, users are redirected to the checkou
 #### ✅ Key features on the checkout page:
 
 > This page ensures users can verify all details before placing an order.
-<img width="1440" height="812" alt="Ảnh màn hình 2025-07-29 lúc 12 19 00" src="https://github.com/user-attachments/assets/9dc7b424-2e8e-4e33-80d5-ce498555b80a" />
+<img width="1440" height="687" alt="image" src="https://github.com/user-attachments/assets/5b6acfd5-8b81-4dc3-83da-424c3fe81877" />
 
 ### 🏠 Default Shipping Address & Selection
 
