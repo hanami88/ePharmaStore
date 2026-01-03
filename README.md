@@ -197,6 +197,7 @@ Admins can manage all customer orders with the following features:
 The admin dashboard includes a statistics section with the following features:
 
 ---
+
 ### 📅 Monthly Revenue Overview
 
 Displays a ranked list of best-selling products with performance indicators:
