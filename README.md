@@ -144,11 +144,11 @@ Users can view their full order history on a dedicated page.
 <img width="1438" height="687" alt="image" src="https://github.com/user-attachments/assets/c76a3411-bad0-4ce1-b596-bfc85fd9ceb9" />
 
 ### ✅ Order History (after placing orders)
-<img width="1437" height="690" alt="Ảnh màn hình 2025-07-29 lúc 12 38 20" src="https://github.com/user-attachments/assets/7080ed68-6d30-4d19-bfcd-33db48910b43" />
+<img width="1440" height="667" alt="image" src="https://github.com/user-attachments/assets/33719802-6adc-4a82-b083-0e3993bf22a9" />
 
 When clicking on an order, detailed information is displayed, including total amount, delivery method, and order status. Users can also cancel the order if it's still pending.
-<img width="1437" height="689" alt="Ảnh màn hình 2025-07-29 lúc 12 38 46" src="https://github.com/user-attachments/assets/066c7f30-985a-483d-bac3-fa1a17ce7bdf" />
-<img width="1436" height="694" alt="Ảnh màn hình 2025-07-29 lúc 12 38 57" src="https://github.com/user-attachments/assets/00e9ae8e-b4b2-4e61-b28a-1536a8c11dd3" />
+<img width="1438" height="690" alt="image" src="https://github.com/user-attachments/assets/63a2bd09-ec1a-4654-bd27-de4537a9793a" />
+<img width="1440" height="398" alt="image" src="https://github.com/user-attachments/assets/255bc2ac-470a-47cc-bcb3-8fe1f5fd78db" />
 
 ### 🔴 Canceling Orders
 
