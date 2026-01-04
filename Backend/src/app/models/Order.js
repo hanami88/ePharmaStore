@@ -47,7 +47,7 @@ const Order = new Schema(
     },
     giohang: [Good], // Dữ liệu giỏ hàng đã "chốt"
     tongtien: Number, // Tổng tiền đơn
-    trangthai: { type: String, default: "Chờ xác nhận" }, // Trạng thái đơn
+    trangthai: { type: Number, default: 1 }, // Trạng thái đơn
     thanhtoan: String,
     ghichu: String,
     diachi: AddressSchema,

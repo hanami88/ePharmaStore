@@ -85,7 +85,7 @@ class UserController {
   async lichsudonhang(req, res, next) {
     let donhangcuatoi = await Orders.find({
       userid: req.user._id,
-      trangthai: "Chờ xác nhận",
+      trangthai: 1,
     }).lean();
     res.render("lichsudonhang", {
       donhangcuatoi: donhangcuatoi,
@@ -93,20 +93,20 @@ class UserController {
   }
   async huydonhang(req, res) {
     await Orders.findByIdAndUpdate(req.body.madonhang, {
-      trangthai: "Đã huỷ",
+      trangthai: 3,
     });
     res.redirect("/user/lichsudonhang");
   }
   async khoiphucdonhang(req, res) {
     await Orders.findByIdAndUpdate(req.body.madonhang, {
-      trangthai: "Chờ xác nhận",
+      trangthai: 1,
     });
     res.redirect("/user/lichsudonhangdahuy");
   }
   async lichsudonhangdahuy(req, res, next) {
     let donhangcuatoi = await Orders.find({
       userid: req.user._id,
-      trangthai: "Đã huỷ",
+      trangthai: 3,
     }).lean();
     res.render("lichsudonhangdahuy", {
       donhangcuatoi: donhangcuatoi,
@@ -115,7 +115,7 @@ class UserController {
   async lichsudonhangdaxacnhan(req, res, next) {
     let donhangcuatoi = await Orders.find({
       userid: req.user._id,
-      trangthai: "Đã xác nhận",
+      trangthai: 2,
     }).lean();
     res.render("lichsudonhangdaxacnhan", {
       donhangcuatoi: donhangcuatoi,
