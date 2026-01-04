@@ -130,7 +130,7 @@ When placing an order, the system automatically uses the user's **default shippi
 When users click the **"Buy Now"** button on a product, they are redirected to the same checkout page used for cart purchases.
 
 > The buying process is identical to the cart flow, but for a single product only.
-<img width="2880" height="1622" alt="image" src="https://github.com/user-attachments/assets/f6b401e6-1dd3-4e85-b3b7-8ea34c0c8b42" />
+<img width="1440" height="811" alt="Ảnh màn hình 2026-01-04 lúc 23 37 18" src="https://github.com/user-attachments/assets/3b2343d1-0cdb-4ac2-b315-60b9afad8161" />
 ## 📦 Order History
 
 Users can view their full order history on a dedicated page.
