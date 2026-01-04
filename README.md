@@ -83,13 +83,13 @@ After logging in, users can access their profile to update personal information.
 Users can manage their shipping addresses to ensure accurate delivery. Each user can add, update, or select from multiple saved addresses.
 
 ### ➕ Add New Address
-<img width="1425" height="685" alt="image" src="https://github.com/user-attachments/assets/cf6c5512-2e8f-4e32-9a2f-92e029547435" />
+<img width="1440" height="811" alt="image" src="https://github.com/user-attachments/assets/fc514c96-b734-4b5d-b75c-3c7461d4c918" />
 
 ### 📭 No Address Available
 If the user has no address yet, a message is shown:
 > "You have not added any shipping address yet."
 
-<img width="1437" height="691" alt="Ảnh màn hình 2025-07-29 lúc 12 01 20" src="https://github.com/user-attachments/assets/c88f7959-82f9-4627-a6d1-30c9f6184b00" />
+<img width="1425" height="685" alt="image" src="https://github.com/user-attachments/assets/cf6c5512-2e8f-4e32-9a2f-92e029547435" />
 
 
 ## 🛍️ Flexible Ordering Options
@@ -117,20 +117,20 @@ After clicking the “Place Order” button, users are redirected to the checkou
 #### ✅ Key features on the checkout page:
 
 > This page ensures users can verify all details before placing an order.
-<img width="1440" height="687" alt="image" src="https://github.com/user-attachments/assets/5b6acfd5-8b81-4dc3-83da-424c3fe81877" />
+<img width="1440" height="812" alt="image" src="https://github.com/user-attachments/assets/9eccd646-72cb-4f5c-9783-4ca0f4af002f" />
 
 ### 🏠 Default Shipping Address & Selection
 
 When placing an order, the system automatically uses the user's **default shipping address**.
 
 > This ensures the order is shipped to the correct location, with flexibility for the user to choose.
-<img width="1440" height="694" alt="Ảnh màn hình 2025-07-29 lúc 12 21 10" src="https://github.com/user-attachments/assets/c03cc56b-a1b0-40ee-8bc3-94a02a634b83" />
+<img width="1440" height="687" alt="image" src="https://github.com/user-attachments/assets/5b6acfd5-8b81-4dc3-83da-424c3fe81877" />
 
 ### ⚡ 2. Buy Now
 When users click the **"Buy Now"** button on a product, they are redirected to the same checkout page used for cart purchases.
 
 > The buying process is identical to the cart flow, but for a single product only.
-<img width="1437" height="690" alt="Ảnh màn hình 2025-07-29 lúc 12 27 08" src="https://github.com/user-attachments/assets/891e0fe4-8743-4546-af3d-baf9705e2669" />
+<img width="2880" height="1622" alt="image" src="https://github.com/user-attachments/assets/f6b401e6-1dd3-4e85-b3b7-8ea34c0c8b42" />
 ## 📦 Order History
 
 Users can view their full order history on a dedicated page.
@@ -141,7 +141,7 @@ Users can view their full order history on a dedicated page.
 > All orders, regardless of the purchase method, are tracked and displayed here.
 
 ### 🕓 No Orders Yet
-<img width="1440" height="812" alt="Ảnh màn hình 2025-07-29 lúc 12 05 24" src="https://github.com/user-attachments/assets/3f123601-5104-4ef2-ba5a-f5ff74222c67" />
+<img width="1438" height="687" alt="image" src="https://github.com/user-attachments/assets/c76a3411-bad0-4ce1-b596-bfc85fd9ceb9" />
 
 ### ✅ Order History (after placing orders)
 <img width="1437" height="690" alt="Ảnh màn hình 2025-07-29 lúc 12 38 20" src="https://github.com/user-attachments/assets/7080ed68-6d30-4d19-bfcd-33db48910b43" />
