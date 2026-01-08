@@ -186,12 +186,12 @@ Admins can manage all customer orders with the following features:
 
 - 🔍 Search by username or phone number  
 - 📅 Filter orders by date
-<img width="1437" height="693" alt="Ảnh màn hình 2025-07-29 lúc 14 27 25" src="https://github.com/user-attachments/assets/0eaedc14-4e77-4895-949f-f42f77938ba7" />
+<img width="1440" height="685" alt="image" src="https://github.com/user-attachments/assets/14c9c8d1-6684-4ced-90fd-ef6b2d96292b" />
 
 ### 📄 Order Details
 
 > Once confirmed, the order is considered officially placed and ready for processing.
-<img width="1435" height="691" alt="Ảnh màn hình 2025-07-29 lúc 14 29 04" src="https://github.com/user-attachments/assets/4c89f868-2dac-4bf8-b1c6-8d274c9039ca" />
+<img width="1439" height="686" alt="image" src="https://github.com/user-attachments/assets/7688e3c9-7d5e-4e5e-b698-c6a3e34445dc" />
 
 ## 📊 Statistics
 
