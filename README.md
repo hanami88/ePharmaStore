@@ -164,7 +164,7 @@ Canceled orders can be restored and moved back to the "Pending Orders" section, 
 ## 🛠️ Admin 
 
 > All fields are required to ensure complete product information.
-<img width="1439" height="695" alt="Ảnh màn hình 2025-07-29 lúc 14 09 48" src="https://github.com/user-attachments/assets/772ea645-2ea8-4ac2-9ddc-f629089fdde1" />
+<img width="1439" height="684" alt="image" src="https://github.com/user-attachments/assets/5df31ab8-d70b-4dbd-8788-12f0d0936183" />
 
 ### 🛒 Product Management (Admin)
 Admin can manage all products in the system with the following features:
@@ -174,7 +174,8 @@ Admin can manage all products in the system with the following features:
 
 Admin can manage user accounts with the following features:
 
-<img width="1440" height="696" alt="Ảnh màn hình 2025-07-29 lúc 14 23 30" src="https://github.com/user-attachments/assets/d9238e1b-edda-40b6-a922-291fcc224981" />
+<img width="1439" height="685" alt="image" src="https://github.com/user-attachments/assets/3f193389-2c61-4999-968f-c15b5fcf3a4d" />
+
 ---
 >Can search by Phone or Username
 Quickly search for customers using their phone number or username.
