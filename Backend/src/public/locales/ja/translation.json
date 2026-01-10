@@ -1,5 +1,114 @@
 {
-  "welcome": "Chào mừng đến với cac",
-  "about": "Giới thiệu",
-  "contact": "Liên hệ"
+  "auth": {
+    "register_success": "登録完了",
+    "welcome": "ようこそ",
+    "enter_phone": "電話番号を入力して次へ",
+    "no_account": "アカウントをお持ちでない方はこちら :",
+    "register_now": "新規登録",
+    "phone_label": "電話番号",
+    "phone_placeholder": "電話番号を入力",
+    "password_label": "パスワード",
+    "password_placeholder": "パスワードを入力",
+    "login_btn": "ログイン",
+    "register_title": "新規登録",
+    "have_account": "すでにアカウントをお持ちの方 :",
+    "login_link": "ログイン",
+    "repassword_label": "パスワード（確認用）",
+    "repassword_placeholder": "パスワード（再入力）"
+  },
+  "header": {
+    "download_app": "アプリをダウンロード",
+    "app_benefit": "アプリならもっとお得に",
+    "welcome_promo": "ファーマシティへようこそ",
+    "free_ship": "300k以上で送料無料",
+    "consultation": "オンライン健康相談",
+    "prescription": "お薬手帳 / 処方箋管理",
+    "points": "ポイント確認・利用",
+    "contact": "お問い合わせ窓口",
+    "corporate": "法人のお客様",
+    "december_sale": "12月の限定セール",
+    "order_status": "配送状況確認",
+    "health_set": "健康セット"
+  },
+  "nav": {
+    "category": "カテゴリ",
+    "search_placeholder": "薬品名、症状、ビタミン・サプリ",
+    "hello_member": "こんにちは、会員様",
+    "login_register": "ログイン / 新規登録",
+    "my_page": "マイページ",
+    "order_history": "注文履歴",
+    "address": "お届け先住所",
+    "logout": "ログアウト"
+  },
+  "quick_links": {
+    "mask": "マスク",
+    "diet": "ダイエット",
+    "cough": "咳・のどの痛み",
+    "collagen": "コラーゲン",
+    "sale": "セール",
+    "sunscreen": "日焼け止め",
+    "hangover": "二日酔い対策"
+  },
+  "menu": {
+    "medicine": "医薬品",
+    "qa": "Q&A / 相談",
+    "supplement": "サプリメント",
+    "mom_baby": "ママ＆ベビー",
+    "corporate_contact": "法人窓口",
+    "brand": "ブランド",
+    "healthcare": "ヘルスケア",
+    "symptom_search": "症状から探す",
+    "personal_care": "パーソナルケア",
+    "medical_device": "医療機器"
+  },
+  "subcategory": {
+    "otc": "市販薬 (OTC)",
+    "prescription": "処方薬",
+    "other": "その他医薬品",
+    "vitamin_food": "ビタミン・食品"
+  },
+  "footer": {
+    "about_title": "Pharmacityについて",
+    "intro": "会社紹介",
+    "store_list": "店舗一覧",
+    "license": "営業許可証",
+    "terms": "運営規約",
+    "return_policy": "返品・保証ポリシー",
+    "delivery_policy": "配送ポリシー",
+    "privacy_policy": "プライバシーポリシー",
+    "data_policy": "個人データ保護ポリシー",
+    "payment_policy": "お支払いポリシー",
+    "member_terms": "会員カードプログラム規約",
+    "faq": "よくある質問",
+    "sitemap": "サイトマップ",
+    "hospitals": "病院",
+    "hotline_title": "フリーダイヤル",
+    "order_support": "注文サポート",
+    "pharmacy_info": "薬局情報・キャンペーン",
+    "complaint": "苦情・ご意見",
+    "ext_1": "（内線1）",
+    "ext_2": "（内線2）",
+    "language": "言語",
+    "follow_us": "フォローする",
+    "cert": "認証",
+    "payment_method": "お支払い方法",
+    "download_title": "Pharmacityアプリをダウンロード"
+  },
+  "legal": {
+    "company_name": "Pharmacity医薬品株式会社",
+    "address": "本社：248A Nơ Trang Long, P.12, Q.Bình Thạnh, TP.Hồ Chí Minh",
+    "contact": "電話：1800 6821 - メール：cskh@pharmacity.vn",
+    "reg_info_1": "事業登録証明書：0311770883（2012年5月5日にホーチミン市計画投資局より初回発行）",
+    "reg_info_2": "医薬品販売登録証明書：6782/DDKKDDD-ĐNai（2022年4月26日にドンナイ省保健局より発行）"
+  },
+  "menu_extra": {
+    "disease": "病気検索",
+    "beauty": "ビューティーケア",
+    "general": "日用品",
+    "corporate": "法人向け",
+    "hot_campaign": "HOTキャンペーン",
+    "health_corner": "健康コーナー",
+    "health_mgmt": "健康管理"
+  },
+  "language": "日本語"
 }

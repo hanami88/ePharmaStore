@@ -1,6 +1,114 @@
 {
-  "welcome": "Chào mừng đến với website",
-  "about": "Giới thiệu",
-  "contact": "Liên hệ",
-  "dowload": "Tải ứng dụng"
+  "auth": {
+    "register_success": "Đăng ký thành công",
+    "welcome": "Chào mừng",
+    "enter_phone": "Nhập số điện thoại để tiếp tục",
+    "no_account": "Bạn chưa có tài khoản?",
+    "register_now": "Đăng ký ngay",
+    "phone_label": "Số điện thoại",
+    "phone_placeholder": "Nhập số điện thoại",
+    "password_label": "Mật khẩu",
+    "password_placeholder": "Nhập mật khẩu",
+    "login_btn": "Đăng nhập",
+    "register_title": "Đăng ký mới",
+    "have_account": "Đã có tài khoản?",
+    "login_link": "Đăng nhập",
+    "repassword_label": "Nhập lại mật khẩu",
+    "repassword_placeholder": "Nhập lại mật khẩu"
+  },
+  "header": {
+    "download_app": "Tải ứng dụng",
+    "app_benefit": "Dùng App nhiều ưu đãi hơn",
+    "welcome_promo": "Chào mừng bạn đến với Pharmacity",
+    "free_ship": "Freeship đơn trên 300k",
+    "consultation": "Tư vấn sức khỏe trực tuyến",
+    "prescription": "Sổ tay thuốc/Quản lý đơn thuốc",
+    "points": "Tích điểm & Sử dụng",
+    "contact": "Trung tâm CSKH",
+    "corporate": "Doanh nghiệp",
+    "december_sale": "Sale  tháng 12",
+    "order_status": "Kiểm tra đơn hàng",
+    "health_set": "Sức khỏe"
+  },
+  "nav": {
+    "category": "Danh mục",
+    "search_placeholder": "Tên thuốc, triệu chứng, vitamin...",
+    "hello_member": "Xin chào, thành viên",
+    "login_register": "Đăng nhập/Đăng ký",
+    "my_page": "Trang cá nhân",
+    "order_history": "Lịch sử đơn hàng",
+    "address": "Sổ địa chỉ",
+    "logout": "Đăng xuất"
+  },
+  "quick_links": {
+    "mask": "Khẩu trang",
+    "diet": "Giảm cân",
+    "cough": "Ho - Đau họng",
+    "collagen": "Collagen",
+    "sale": "Khuyến mãi",
+    "sunscreen": "Kem chống nắng",
+    "hangover": "Giải rượu"
+  },
+  "menu": {
+    "medicine": "Thuốc",
+    "qa": "Tra cứu bệnh",
+    "supplement": "Thực phẩm chức năng",
+    "mom_baby": "Mẹ & Bé",
+    "corporate_contact": "Doanh nghiệp",
+    "brand": "Thương hiệu",
+    "healthcare": "Chăm sóc sức khỏe",
+    "symptom_search": "Tìm theo triệu chứng",
+    "personal_care": "Cá nhân",
+    "medical_device": "Thiết bị y tế"
+  },
+  "subcategory": {
+    "otc": "Thuốc không kê đơn (OTC)",
+    "prescription": "Thuốc kê đơn",
+    "other": "Thuốc khác",
+    "vitamin_food": "Vitamin - Thực phẩm"
+  },
+  "footer": {
+    "about_title": "Về Pharmacity",
+    "intro": "Giới thiệu công ty",
+    "store_list": "Hệ thống cửa hàng",
+    "license": "Giấy phép kinh doanh",
+    "terms": "Quy chế hoạt động",
+    "return_policy": "Chính sách đổi trả",
+    "delivery_policy": "Chính sách giao hàng",
+    "privacy_policy": "Chính sách bảo mật",
+    "data_policy": "Bảo vệ dữ liệu cá nhân",
+    "payment_policy": "Chính sách thanh toán",
+    "member_terms": "Quy định thẻ thành viên",
+    "faq": "Câu hỏi thường gặp",
+    "sitemap": "Sơ đồ trang web",
+    "hospitals": "Danh sách bệnh viện",
+    "hotline_title": "Tổng đài CSKH",
+    "order_support": "Hỗ trợ đặt hàng",
+    "pharmacy_info": "Tư vấn thuốc",
+    "complaint": "Góp ý - Khiếu nại",
+    "ext_1": "(Phím 1)",
+    "ext_2": "(Phím 2)",
+    "language": "Ngôn ngữ",
+    "follow_us": "Kết nối với chúng tôi",
+    "cert": "Chứng nhận",
+    "payment_method": "Phương thức thanh toán",
+    "download_title": "Tải ứng dụng ngay"
+  },
+  "legal": {
+    "company_name": "Công ty Cổ phần Dược phẩm Pharmacity",
+    "address": "Trụ sở: 248A Nơ Trang Long, P.12, Q.Bình Thạnh, TP.HCM",
+    "contact": "Điện thoại: 1800 6821 - Email: cskh@pharmacity.vn",
+    "reg_info_1": "GCN ĐKDN: 0311770883 (Cấp ngày 05/05/2012 bởi Sở KHĐT TP.HCM)",
+    "reg_info_2": "GCN Đủ ĐKKD Dược: 6782/ĐKKDD-ĐNai (Cấp ngày 26/04/2022)"
+  },
+  "menu_extra": {
+    "disease": "Tra cứu bệnh",
+    "beauty": "Làm đẹp",
+    "general": "Bách hóa",
+    "corporate": "Khách hàng doanh nghiệp",
+    "hot_campaign": "Khuyến mãi HOT",
+    "health_corner": "Góc sức khỏe",
+    "health_mgmt": "Quản lý sức khỏe"
+  },
+  "language": "Tiếng Việt"
 }

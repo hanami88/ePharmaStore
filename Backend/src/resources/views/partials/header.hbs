@@ -1,28 +1,28 @@
 <div class="dangkythanhcong">
   <div class="datthanhcong-container">
     <i class="fa-solid fa-check checker"></i>
-    <div>登録完了</div>
+    <div data-i18n="auth.register_success">登録完了</div>
   </div>
 </div>
 <header class="headertrang">
   <div class="trangdangnhap">
     <div class="trang-login">
       <div class="trang-login-container">
-        <h1 class="trang-login__hello">ようこそ</h1>
+        <h1 class="trang-login__hello" data-i18n="auth.welcome">ようこそ</h1>
         <h1 class="x"><i class="fa-solid fa-xmark"></i></h1>
-        <div class="trang-login__huongdan">電話番号を入力して次へ</div><br />
+        <div class="trang-login__huongdan" data-i18n="auth.enter_phone">電話番号を入力して次へ</div><br />
         <div class="trang-login-title">
-          <div>アカウントをお持ちでない方はこちら :</div>
-          <div class="btn-dangky">新規登録</div>
+          <div data-i18n="auth.no_account">アカウントをお持ちでない方はこちら :</div>
+          <div class="btn-dangky" data-i18n="auth.register_now">新規登録</div>
         </div>
         <form action="/" class="trang-login-form" method="post">
-          <label for="sdt" class="trang-login__tenname">電話番号</label><br />
-          <input type="text" name="sdt" id="username" class="trang-login__name" placeholder="電話番号を入力" />
+          <label for="sdt" class="trang-login__tenname" data-i18n="auth.phone_label">電話番号</label><br />
+          <input type="text" name="sdt" id="username" class="trang-login__name" data-i18n-placeholder="auth.phone_placeholder" placeholder="電話番号を入力" />
           <br />
-          <label for="password" class="trang-login__tenname">パスワード</label><br />
-          <input type="password" name="password" id="password" class="trang-login__name" placeholder="パスワードを入力" /><br />
+          <label for="password" class="trang-login__tenname" data-i18n="auth.password_label">パスワード</label><br />
+          <input type="password" name="password" id="password" class="trang-login__name" data-i18n-placeholder="auth.password_placeholder" placeholder="パスワードを入力" /><br />
           <div class="trang-login-error">{{error}}</div>
-          <button type="submit" class="trang-login__enter">
+          <button type="submit" class="trang-login__enter" data-i18n="auth.login_btn">
             ログイン
           </button>
         </form>
@@ -30,56 +30,59 @@
     </div>
     <div class="trang-login dky">
       <div class="trang-login-container">
-        <h1 class="trang-login__hello">新規登録</h1>
+        <h1 class="trang-login__hello" data-i18n="auth.register_title">新規登録</h1>
         <h1 class="x x1"><i class="fa-solid fa-xmark"></i></h1>
         <div class="trang-login-title">
-          <div>すでにアカウントをお持ちの方 : </div>
-          <div class="btn-dangnhap">ログイン</div>
+          <div data-i18n="auth.have_account">すでにアカウントをお持ちの方 : </div>
+          <div class="btn-dangnhap" data-i18n="auth.login_link">ログイン</div>
         </div>
         <form action="/" class="trang-dky-form" method="post">
-          <label for="username1" class="trang-login__tenname">電話番号</label><br />
-          <input type="text" name="sdt" id="username1" class="trang-login__name" placeholder="電話番号を入力" />
+          <label for="username1" class="trang-login__tenname" data-i18n="auth.phone_label">電話番号</label><br />
+          <input type="text" name="sdt" id="username1" class="trang-login__name" data-i18n-placeholder="auth.phone_placeholder" placeholder="電話番号を入力" />
           <br />
-          <label for="password1" class="trang-login__tenname">パスワード</label><br />
-          <input type="password" name="password" id="password1" class="trang-login__name" placeholder="パスワードを入力" /><br />
-          <label for="repassword" class="trang-login__tenname">パスワード（確認用）</label><br />
-          <input type="password" name="repassword" id="repassword" class="trang-login__name" placeholder="パスワード（再入力）" /><br />
+          <label for="password1" class="trang-login__tenname" data-i18n="auth.password_label">パスワード</label><br />
+          <input type="password" name="password" id="password1" class="trang-login__name" data-i18n-placeholder="auth.password_placeholder" placeholder="パスワードを入力" /><br />
+          <label for="repassword" class="trang-login__tenname" data-i18n="auth.repassword_label">パスワード（確認用）</label><br />
+          <input type="password" name="repassword" id="repassword" class="trang-login__name" data-i18n-placeholder="auth.repassword_placeholder" placeholder="パスワード（再入力）" /><br />
           <div class="trang-dky-error">{{error}}</div>
-          <button type="submit" class="trang-login__enter">
+          <button type="submit" class="trang-login__enter" data-i18n="auth.register_title">
             新規登録
           </button>
         </form>
       </div>
     </div>
   </div>
+  
   <div class="boc">
     <img src="/img/header.png" alt="" class="pcheader" />
   </div>
+  
   <div class="header-line">
     <div class="QR ">
-      <i class="fa-solid fa-qrcode">
-      </i>アプリをダウンロード
+      <i class="fa-solid fa-qrcode"></i>
+      <span data-i18n="header.download_app">アプリをダウンロード</span>
       <div class="thongtintaiud">
-        <div>アプリならもっとお得に</div>
+        <div data-i18n="header.app_benefit">アプリならもっとお得に</div>
         <div>
           <img src="/img/QR.png" alt="" />
           <ul>
-            <li data-i18n="welcome"></li>
-            <li>300k以上で送料無料</li>
-            <li>オンライン健康相談</li>
-            <li>お薬手帳 / 処方箋管理</li>
-            <li>ポイント確認・利用</li>
+            <li data-i18n="header.welcome_promo"></li>
+            <li data-i18n="header.free_ship">300k以上で送料無料</li>
+            <li data-i18n="header.consultation">オンライン健康相談</li>
+            <li data-i18n="header.prescription">お薬手帳 / 処方箋管理</li>
+            <li data-i18n="header.points">ポイント確認・利用</li>
           </ul>
         </div>
         <div>
-          <a href="https://play.google.com/store/apps/details?id=com.pharmacity_extracare" target="_blank"><img src="/img/CHPlay.png" alt="" /></a>
-          <a href="itms-apps://itunes.apple.com/app/apple-store/id1414835869?mt=8" target="_blank"><img src="/img/IOS.png" alt="" /></a>
+          <a href="#" target="_blank"><img src="/img/CHPlay.png" alt="" /></a>
+          <a href="#" target="_blank"><img src="/img/IOS.png" alt="" /></a>
         </div>
       </div>
     </div>
+    
     <div class="chua" style="user-select: none;">
       <img src="/img/covietnam.webp" alt="" class="co" />
-      ベトナム語
+       <span>ベトナム語</span> 
       <div class="hienthituychonngonngu">
           <div class="inchua" onclick="changeLanguage('ja')">
             <img src="/img/NhatBan.webp" alt="" class="co" />
@@ -87,40 +90,45 @@
           </div>
           <div class="inchua" onclick="changeLanguage('vi')">
             <img src="/img/covietnam.webp" alt="" class="co" />
-            <div>ベトナム語</div>
+            <div>Tiếng Việt</div>
+          </div>
+          <div class="inchua" onclick="changeLanguage('en')">
+            <img src="/img/covietnam.webp" alt="" class="co" />
+            <div>English</div>
           </div>
       </div>
     </div>
-    <div>お問い合わせ窓口</div>
+
+    <div data-i18n="header.contact">お問い合わせ窓口</div>
     <div>1800 9920</div>
     <div class="container__new">
-      法人のお客様
+      <span data-i18n="header.corporate">法人のお客様</span>
       <img src="/img/new.png" alt="" class="new" />
     </div>
-    <div>12月の限定セール</div>
+    <div data-i18n="header.december_sale">12月の限定セール</div>
     <div class="container__new">
-      配送状況確認
+      <span data-i18n="header.order_status">配送状況確認</span>
       <img src="/img/new.png" alt="" class="new" />
     </div>
-    <div>健康セット</div>
+    <div data-i18n="header.health_set">健康セット</div>
   </div>
+
   <div class="header-line1">
     <div class="header-line-left">
       <a href="/"><img src="/img/Logo.png" alt="" /></a>
       <div class="choice">
         <i class="fa-solid fa-bars"></i>
-        <p>カテゴリ</p>
+        <p data-i18n="nav.category">カテゴリ</p>
         <i class="fa-solid fa-chevron-right"></i>
       </div>
     </div>
     <div class="header-line-right">
       <div class="right1">
         <form method="POST" action="/timkiemsanpham" class="chua__search">
-          <input type="text" name="keyword" class="header-line2__search" placeholder="薬品名、症状、ビタミン・サプリ" value="{{filters.keyword}}" />
+          <input type="text" name="keyword" class="header-line2__search" data-i18n-placeholder="nav.search_placeholder" placeholder="薬品名、症状、ビタミン・サプリ" value="{{filters.keyword}}" />
           <i class="fa-solid fa-magnifying-glass"></i>
         </form>
-        <i class="fa-solid fa-bell">
-        </i>
+        <i class="fa-solid fa-bell"></i>
         <i class="fa-solid fa-cart-plus">
           <div class="hienthiso active">
             <div class="hienthiso-so">{{count}}</div>
@@ -130,179 +138,89 @@
           {{#if user}}
           <a href="/user/thongtin" class="header-line2__login">
             <i class="fa-solid fa-user-tie"></i>
-            <div>こんにちは、会員様</div>
+            <div data-i18n="nav.hello_member">こんにちは、会員様</div>
           </a>
           {{else}}
           <div class="header-line2__login">
             <i class="fa-solid fa-circle-user"></i>
-            <div>ログイン / 新規登録</div>
+            <div data-i18n="nav.login_register">ログイン / 新規登録</div>
           </div>
           {{/if}}
           <div class="bangchon-khoangtrang"></div>
           <div class="bangchon">
             <a href="/user/thongtin" class="bangchon-thanhphan">
               <i class="fa-solid fa-user"></i>
-              <div>マイページ</div>
+              <div data-i18n="nav.my_page">マイページ</div>
             </a>
             <a href="/user/lichsudonhang" class="bangchon-thanhphan">
               <i class="fa-solid fa-notes-medical"></i>
-              <div>注文履歴</div>
+              <div data-i18n="nav.order_history">注文履歴</div>
             </a>
             <a href="/user/diachinhanhang" class="bangchon-thanhphan">
               <i class="fa-solid fa-location-dot"></i>
-              <div>お届け先住所</div>
+              <div data-i18n="nav.address">お届け先住所</div>
             </a>
             <div class="bangchon-thanhphan btn-dangxuat">
               <i class="fa-solid fa-right-from-bracket"></i>
-              <div>ログアウト</div>
+              <div data-i18n="nav.logout">ログアウト</div>
             </div>
           </div>
         </div>
       </div>
       <div class="right2">
-        <a href="/khohang" target="_self">マスク</a>
-        <a href="/khohang" target="_self">ダイエット</a>
-        <a href="/khohang" target="_self">咳・のどの痛み</a>
-        <a href="/khohang" target="_self">コラーゲン</a>
-        <a href="/khohang" target="_self">セール</a>
-        <a href="/khohang" target="_self">日焼け止め</a>
-        <a href="/khohang" target="_self">二日酔い対策</a>
+        <a href="/khohang" target="_self" data-i18n="quick_links.mask">マスク</a>
+        <a href="/khohang" target="_self" data-i18n="quick_links.diet">ダイエット</a>
+        <a href="/khohang" target="_self" data-i18n="quick_links.cough">咳・のどの痛み</a>
+        <a href="/khohang" target="_self" data-i18n="quick_links.collagen">コラーゲン</a>
+        <a href="/khohang" target="_self" data-i18n="quick_links.sale">セール</a>
+        <a href="/khohang" target="_self" data-i18n="quick_links.sunscreen">日焼け止め</a>
+        <a href="/khohang" target="_self" data-i18n="quick_links.hangover">二日酔い対策</a>
       </div>
       <div class="right3">
-        <p>医薬品</p>
-        <p>Q&A / 相談</p>
-        <p>サプリメント</p>
-        <p>ママ＆ベビー</p>
+        <p data-i18n="menu.medicine">医薬品</p>
+        <p data-i18n="menu.qa">Q&A / 相談</p>
+        <p data-i18n="menu.supplement">サプリメント</p>
+        <p data-i18n="menu.mom_baby">ママ＆ベビー</p>
         <p class="container__new">
-          法人窓口
+          <span data-i18n="menu.corporate_contact">法人窓口</span>
           <img src="/img/new.png" alt="" class="new" />
         </p>
         <p class="container__new">
-          ブランド
+          <span data-i18n="menu.brand">ブランド</span>
           <img src="/img/hot.png" alt="" class="new" />
         </p>
-        <p>ヘルスケア</p>
+        <p data-i18n="menu.healthcare">ヘルスケア</p>
       </div>
     </div>
+    
     <div class="danhmucdathang">
       <div class="danhmucdathang-container">
         <div>
           <div class="danhmuc-box">
             <img src="/img/danhmuc1.avif" alt="" />
-            <div>医薬品</div>
+            <div data-i18n="menu.medicine">医薬品</div>
           </div>
           <div class="danhmuc-box">
             <img src="/img/danhmuc2.avif" alt="" />
-            <div>症状から探す</div>
+            <div data-i18n="menu.symptom_search">症状から探す</div>
           </div>
           <div class="danhmuc-box">
-            <img src="/img/danhmuc3.avif" alt="" />
-            <div>サプリメント</div>
+             <img src="/img/danhmuc3.avif" alt="" />
+             <div data-i18n="menu.supplement">サプリメント</div>
           </div>
-          <div class="danhmuc-box">
-            <img src="/img/danhmuc4.avif" alt="" />
-            <div>パーソナルケア</div>
-          </div>
-          <div class="danhmuc-box">
-            <img src="/img/danhmuc5.avif" alt="" />
-            <div>医療機器</div>
-          </div>
-        </div>
+           </div>
         <div>
           <div class="boxdanhmuc">
             <div class="boxdanhmuc-box">
               <img src="/img/kolmar.webp" alt="" />
-              <div>市販薬 (OTC)</div>
+              <div data-i18n="subcategory.otc">市販薬 (OTC)</div>
             </div>
             <div class="boxdanhmuc-box">
               <img src="/img/solgar.webp" alt="" />
-              <div>処方薬</div>
+              <div data-i18n="subcategory.prescription">処方薬</div>
             </div>
-            <div class="boxdanhmuc-box">
-              <img src="/img/rohto.avif" alt="" />
-              <div>その他医薬品</div>
-            </div>
-            <div class="boxdanhmuc-box">
-              <img src="/img/siro.webp" alt="" />
-              <div>ビタミン・食品</div>
             </div>
           </div>
-          <div class="boxdanhmuc">
-            <div class="boxdanhmuc-box">
-              <img src="/img/durex.webp" alt="" />
-              <div>市販薬 (OTC)</div>
-            </div>
-            <div class="boxdanhmuc-box">
-              <img src="/img/solgar.webp" alt="" />
-              <div>処方薬</div>
-            </div>
-            <div class="boxdanhmuc-box">
-              <img src="/img/rohto.avif" alt="" />
-              <div>その他医薬品</div>
-            </div>
-            <div class="boxdanhmuc-box">
-              <img src="/img/siro.webp" alt="" />
-              <div>ビタミン・食品</div>
-            </div>
-          </div>
-          <div class="boxdanhmuc">
-            <div class="boxdanhmuc-box">
-              <img src="/img/rohto.avif" alt="" />
-              <div>市販薬 (OTC)</div>
-            </div>
-            <div class="boxdanhmuc-box">
-              <img src="/img/solgar.webp" alt="" />
-              <div>処方薬</div>
-            </div>
-            <div class="boxdanhmuc-box">
-              <img src="/img/rohto.avif" alt="" />
-              <div>その他医薬品</div>
-            </div>
-            <div class="boxdanhmuc-box">
-              <img src="/img/siro.webp" alt="" />
-              <div>ビタミン・食品</div>
-            </div>
-          </div>
-          <div class="boxdanhmuc">
-            <div class="boxdanhmuc-box">
-              <img src="/img/anlene.avif" alt="" />
-              <div>市販薬 (OTC)</div>
-            </div>
-            <div class="boxdanhmuc-box">
-              <img src="/img/solgar.webp" alt="" />
-              <div>処方薬</div>
-            </div>
-            <div class="boxdanhmuc-box">
-              <img src="/img/rohto.avif" alt="" />
-              <div>その他医薬品</div>
-            </div>
-            <div class="boxdanhmuc-box">
-              <img src="/img/siro.webp" alt="" />
-              <div>ビタミン・食品</div>
-            </div>
-          </div>
-          <div class="boxdanhmuc">
-            <div class="boxdanhmuc-box">
-              <img src="/img/alcofee.avif" alt="" />
-              <div>市販薬 (OTC)</div>
-            </div>
-            <div class="boxdanhmuc-box">
-              <img src="/img/solgar.webp" alt="" />
-              <div>処方薬</div>
-            </div>
-            <div class="boxdanhmuc-box">
-              <img src="/img/rohto.avif" alt="" />
-              <div>その他医薬品</div>
-            </div>
-            <div class="boxdanhmuc-box">
-              <img src="/img/siro.webp" alt="" />
-              <div>ビタミン・食品</div>
-            </div>
-          </div>
-        </div>
-        <div>
-          <img src="/img/quangcao.webp" alt="" />
-        </div>
       </div>
     </div>
   </div>
