@@ -239,7 +239,7 @@ class AdminController {
   async quanlydonhang(req, res) {
     try {
       let [order, count] = await Promise.all([
-        Orders.find({ trangthai: { $ne: "Đã huỷ" } })
+        Orders.find({ trangthai: { $ne: 3 } })
           .populate("userid", "sdt hoten")
           .lean(),
         Orders.countDocumentsWithDeleted({ deleted: true }),

@@ -156,3 +156,8 @@ form_dky.addEventListener("submit", async (e) => {
     errordky.textContent = data.error || "Đăng nhập thất bại";
   }
 });
+const chua = document.querySelector(".chua");
+const hienthituychonngonngu = document.querySelector(".hienthituychonngonngu");
+chua.addEventListener("click", () => {
+  hienthituychonngonngu.classList.toggle("active");
+});

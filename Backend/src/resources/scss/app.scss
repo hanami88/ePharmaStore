@@ -92,23 +92,23 @@ body {
 .header-line * {
   cursor: pointer;
 }
-.header-line div:nth-child(1) {
+.header-line > div:nth-child(1) {
   margin-left: 15rem;
   margin-right: 5rem;
 }
-.header-line div:nth-child(2) {
+.header-line > div:nth-child(2) {
   margin-right: 28rem;
 }
-.header-line div:nth-child(3) {
+.header-line > div:nth-child(3) {
   margin-right: 0.7rem;
 }
-.header-line div:nth-child(5) {
+.header-line > div:nth-child(5) {
   margin-right: 4rem;
 }
-.header-line div:nth-child(6) {
+.header-line > div:nth-child(6) {
   margin-right: 4rem;
 }
-.header-line div:nth-child(7) {
+.header-line > div:nth-child(7) {
   margin-right: 4rem;
 }
 
@@ -293,15 +293,18 @@ body {
   }
   font-weight: 500;
 }
-.vietnam {
-  width: 2.5rem;
-  height: 2.5rem;
+.co {
+  width: 2.4rem;
+  height: 1.5rem;
   margin-right: 0.5rem;
+  border-radius: 0.3rem;
 }
+
 .chua {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
 .fa-solid.fa-qrcode {
@@ -3979,4 +3982,36 @@ input[type="date"] {
   width: 18rem;
   margin-top: 1.5rem;
   margin-left: 27rem;
+}
+.hienthituychonngonngu {
+  display: none;
+  position: absolute;
+  width: 10.5rem;
+  top: 2.3rem;
+  left: 0rem;
+  z-index: 1000;
+  background-color: #eaeaea;
+  border-radius: 0rem 0rem 0.5rem 0.5rem;
+}
+.hienthituychonngonngu.active {
+  display: block;
+  position: absolute;
+  width: 10.5rem;
+  top: 2.3rem;
+  left: 0rem;
+  z-index: 1000;
+  background-color: #eaeaea;
+  border-radius: 0rem 0rem 0.5rem 0.5rem;
+}
+.inchua {
+  width: 9.5rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  border-bottom: 1px rgb(196, 196, 196) solid;
+  margin-left: 0.5rem;
+  &:hover {
+    opacity: 0.8;
+  }
 }

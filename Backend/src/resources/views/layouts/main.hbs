@@ -30,9 +30,45 @@
 <body>
   {{>header}}
   {{{body}}}
-  {{>footer}}
+  {{>footer}} 
 </body>
 <script src="/js/header-footer.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/i18next@23.7.6/i18next.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/i18next-http-backend@2.4.2/i18nextHttpBackend.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/i18next-browser-languagedetector@7.2.0/i18nextBrowserLanguageDetector.min.js"></script>
+  <script>
+    i18next
+      .use(i18nextHttpBackend)
+      .use(i18nextBrowserLanguageDetector)
+      .init({
+        fallbackLng: "vi",
+        debug: true,
+        backend: {
+          loadPath: "/locales/\{{lng}}/translation.json"
+        },
+        detection: {
+          order: ["localStorage", "navigator"],
+          caches: ["localStorage"]
+        },
+      }, (err, t) => {
+        if (err) return console.error(err);
+        updateContent();
+      });
+
+    function updateContent() {
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        el.textContent = i18next.t(key);
+      });
+    }
+
+    function changeLanguage(lang) {
+      i18next.changeLanguage(lang, () => {
+        document.documentElement.lang = lang;
+        updateContent();
+      });
+    }
+  </script>
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script>
     AOS.init();
