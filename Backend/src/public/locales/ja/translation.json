@@ -110,5 +110,94 @@
     "health_corner": "健康コーナー",
     "health_mgmt": "健康管理"
   },
-  "language": "日本語"
+  "language": "日本語",
+  "home": {
+    "toast_cart_success": "カートに商品を追加しました。",
+    "shortcuts": {
+      "consult": "お薬相談",
+      "prescription": "処方箋受付",
+      "doctor": "医師に相談",
+      "expense": "医療費管理",
+      "dec_sale": "12月の特選セール",
+      "point_history": "ポイント履歴",
+      "booking": "来店予約",
+      "use_point": "ポイント利用",
+      "flu": "インフルエンザ対策",
+      "health_record": "健康カルテ",
+      "checkup": "健康診断",
+      "coupon": "限定クーポン",
+      "store_finder": "店舗検索",
+      "corporate": "法人サービス",
+      "family": "家族情報"
+    },
+    "product_card": {
+      "sold": "販売数",
+      "best_seller": "大人気",
+      "select_item": "商品を選択"
+    },
+    "modal": {
+      "title": "商品オプション",
+      "free_ship_note": "全品送料無料（0đ〜）",
+      "point_earn": "ポイント獲得: 1,200ポイント〜",
+      "quantity": "数量",
+      "buy_now": "購入手続き",
+      "add_to_cart": "カートに入れる"
+    },
+    "sections": {
+      "hot_deal_women": "女性に人気のお得商品",
+      "ranking": "全国ランキング",
+      "japan_brand": "日本ブランド",
+      "featured_brand": "注目ブランド",
+      "best_seller_brand": "ベストセラーブランド"
+    },
+    "blog": {
+      "title": "健康コラム",
+      "tabs": {
+        "popular": "人気記事",
+        "cancer": "がん情報",
+        "child": "小児の健康",
+        "postpartum": "産後ケア",
+        "pregnancy": "妊娠中のケア",
+        "fertility": "妊活",
+        "hospital": "病院検索"
+      },
+      "label_healthcare": "ヘルスケア",
+      "articles": {
+        "tamiflu_title": "インフルエンザ治療薬タミフルの自宅療法について",
+        "tamiflu_desc": "インフルエンザA型は冬に流行する感染症です。多くの人がタミフルを購入すべきか悩んでいますが...",
+        "risk_title": "日本におけるインフルエンザの致死リスクについて",
+        "risk_desc": "近年、インフルエンザウイルスの感染者数は増加傾向にあり..."
+      }
+    },
+    "about": {
+      "title": "ベトナムトップクラスの信頼できる薬局チェーン",
+      "p1": "12年以上の実績を持ち、Pharmacityはベトナムの何百万人もの人々の健康向上に貢献する信頼できるパートナーです。全国40省に広がる約1000店舗。",
+      "t2": "正規品保証・適正価格",
+      "p2": "糖尿病、高血圧などの治療薬から、Abbott, Sanofi, Pfizer などのブランド正規品を提供することをお約束します。",
+      "t3": "専門薬剤師による丁寧な相談",
+      "p3": "高度な専門知識と豊富な経験を持つ薬剤師が、常にお客様の利益を最優先し、安全な製品使用の指導を行います。",
+      "t4": "便利なショッピング・迅速な配送",
+      "p4": "店舗またはアプリで購入可能。主要都市では2時間以内の迅速な配送（Grab, Shopee連携）。",
+      "t5": "会員様限定の特典",
+      "p5": "魅力的な「P-Member」プログラム。お買い物ごとにポイントが貯まり、次回の購入時に現金として使用できます。",
+      "t6": "Pharmacityを選ぶことは、安心を選ぶことです！"
+    },
+    "features": {
+      "express": "お急ぎ便",
+      "express_sub": "ご自宅配送 / 店舗受取",
+      "variety": "豊富な品揃え",
+      "variety_sub": "品質保証・丁寧な対応",
+      "freeship": "全品送料無料",
+      "freeship_sub": "全国どこでも配送",
+      "nearby": "お近くの店舗",
+      "nearby_sub": "店舗を検索する"
+    }
+  },
+  "shop": {
+    "title": "正規品・基準達成商品",
+    "sort_label": "並び替え：",
+    "sort_asc": "価格が安い順",
+    "sort_desc": "価格が高い順",
+    "img_alt": "商品画像"
+  }
 }

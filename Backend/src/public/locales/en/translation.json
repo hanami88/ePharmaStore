@@ -110,5 +110,94 @@
     "health_corner": "Health Corner",
     "health_mgmt": "Health Mgmt"
   },
-  "language": "English"
+  "language": "English",
+  "home": {
+    "toast_cart_success": "Added to cart successfully",
+    "shortcuts": {
+      "consult": "Drug Consult",
+      "prescription": "Prescriptions",
+      "doctor": "Ask Doctor",
+      "expense": "Expenses",
+      "dec_sale": "Dec Sale",
+      "point_history": "Point History",
+      "booking": "Booking",
+      "use_point": "Use Points",
+      "flu": "Flu Care",
+      "health_record": "Health Record",
+      "checkup": "Check-up",
+      "coupon": "Coupons",
+      "store_finder": "Find Store",
+      "corporate": "B2B Service",
+      "family": "Family Info"
+    },
+    "product_card": {
+      "sold": "Sold",
+      "best_seller": "Best Seller",
+      "select_item": "Select Item"
+    },
+    "modal": {
+      "title": "Product Options",
+      "free_ship_note": "Free ship all orders (0đ+)",
+      "point_earn": "Earn points: 1,200+",
+      "quantity": "Quantity",
+      "buy_now": "Buy Now",
+      "add_to_cart": "Add to Cart"
+    },
+    "sections": {
+      "hot_deal_women": "Hot Deals for Her",
+      "ranking": "Top Rankings",
+      "japan_brand": "Japan Brands",
+      "featured_brand": "Featured Brands",
+      "best_seller_brand": "Best Seller Brands"
+    },
+    "blog": {
+      "title": "Health Corner",
+      "tabs": {
+        "popular": "Popular",
+        "cancer": "Cancer Info",
+        "child": "Pediatrics",
+        "postpartum": "Postpartum",
+        "pregnancy": "Pregnancy",
+        "fertility": "Fertility",
+        "hospital": "Hospitals"
+      },
+      "label_healthcare": "Healthcare",
+      "articles": {
+        "tamiflu_title": "Home treatment for Flu using Tamiflu",
+        "tamiflu_desc": "Influenza A is a winter infectious disease. Many people wonder if they should buy Tamiflu...",
+        "risk_title": "Influenza mortality risk in Japan",
+        "risk_desc": "Recently, the number of influenza virus infections has been on the rise..."
+      }
+    },
+    "about": {
+      "title": "Top Trusted Pharmacy Chain in Vietnam",
+      "p1": "With over 12 years of experience, Pharmacity is a trusted partner for millions. 1000 GPP-certified pharmacies across 40 provinces.",
+      "t2": "Genuine Products - Good Price",
+      "p2": "We guarantee genuine medicines for diabetes, blood pressure, etc., from top brands like Abbott, Sanofi, Pfizer.",
+      "t3": "Dedicated Pharmacists",
+      "p3": "Highly qualified pharmacists, always prioritizing customer benefits and ready to advise on safe product use.",
+      "t4": "Convenient Shopping - Fast Delivery",
+      "p4": "Shop in-store or online via App/Web. 2-hour express delivery in major cities via Grab, Shopee...",
+      "t5": "Member Privileges",
+      "p5": "Attractive 'P-Member' program. Earn points on every purchase and use them as cash for next orders.",
+      "t6": "Choose Pharmacity - Choose Peace of Mind!"
+    },
+    "features": {
+      "express": "Express Delivery",
+      "express_sub": "Home Delivery / Pickup",
+      "variety": "Wide Variety",
+      "variety_sub": "Quality Guaranteed",
+      "freeship": "Free Shipping",
+      "freeship_sub": "Nationwide Delivery",
+      "nearby": "Nearby Stores",
+      "nearby_sub": "Find Now"
+    }
+  },
+  "shop": {
+    "title": "Genuine Products",
+    "sort_label": "Sort by:",
+    "sort_asc": "Price: Low to High",
+    "sort_desc": "Price: High to Low",
+    "img_alt": "Product Image"
+  }
 }

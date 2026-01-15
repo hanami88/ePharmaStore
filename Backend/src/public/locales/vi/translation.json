@@ -110,5 +110,94 @@
     "health_corner": "Góc sức khỏe",
     "health_mgmt": "Quản lý sức khỏe"
   },
-  "language": "Tiếng Việt"
+  "language": "Tiếng Việt",
+  "home": {
+    "toast_cart_success": "Đã thêm vào giỏ hàng",
+    "shortcuts": {
+      "consult": "Tư vấn thuốc",
+      "prescription": "Nộp đơn thuốc",
+      "doctor": "Hỏi bác sĩ",
+      "expense": "Quản lý chi phí",
+      "dec_sale": "Sale tháng 12",
+      "point_history": "Lịch sử điểm",
+      "booking": "Đặt lịch hẹn",
+      "use_point": "Dùng điểm",
+      "flu": "Phòng cúm",
+      "health_record": "Hồ sơ sức khỏe",
+      "checkup": "Khám sức khỏe",
+      "coupon": "Coupon",
+      "store_finder": "Tìm nhà thuốc",
+      "corporate": "Khách doanh nghiệp",
+      "family": "Hồ sơ gia đình"
+    },
+    "product_card": {
+      "sold": "Đã bán",
+      "best_seller": "Bán chạy",
+      "select_item": "Chọn mua"
+    },
+    "modal": {
+      "title": "Tùy chọn sản phẩm",
+      "free_ship_note": "Freeship mọi đơn (từ 0đ)",
+      "point_earn": "Tích lũy: từ 1,200 điểm",
+      "quantity": "Số lượng",
+      "buy_now": "Mua ngay",
+      "add_to_cart": "Thêm vào giỏ"
+    },
+    "sections": {
+      "hot_deal_women": "Deal hot cho phái đẹp",
+      "ranking": "Bảng xếp hạng",
+      "japan_brand": "Thương hiệu Nhật Bản",
+      "featured_brand": "Thương hiệu nổi bật",
+      "best_seller_brand": "Thương hiệu bán chạy"
+    },
+    "blog": {
+      "title": "Góc sức khỏe",
+      "tabs": {
+        "popular": "Phổ biến",
+        "cancer": "Ung thư",
+        "child": "Nhi khoa",
+        "postpartum": "Mẹ sau sinh",
+        "pregnancy": "Thai kỳ",
+        "fertility": "Sức khỏe sinh sản",
+        "hospital": "Tìm bệnh viện"
+      },
+      "label_healthcare": "Sống khỏe",
+      "articles": {
+        "tamiflu_title": "Điều trị cúm bằng Tamiflu tại nhà",
+        "tamiflu_desc": "Cúm A là bệnh truyền nhiễm mùa đông. Nhiều người băn khoăn có nên dùng Tamiflu...",
+        "risk_title": "Nguy cơ tử vong do cúm tại Nhật",
+        "risk_desc": "Gần đây số lượng ca nhiễm cúm virus đang có xu hướng gia tăng..."
+      }
+    },
+    "about": {
+      "title": "Chuỗi nhà thuốc uy tín hàng đầu",
+      "p1": "Với hơn 12 năm kinh nghiệm, Pharmacity tự hào là đối tác tin cậy chăm sóc sức khỏe cho hàng triệu người Việt. Hệ thống 1000 nhà thuốc chuẩn GPP tại 40 tỉnh thành.",
+      "t2": "Hàng chính hãng - Giá tốt",
+      "p2": "Cam kết thuốc chính hãng trị tiểu đường, huyết áp, tim mạch... từ các thương hiệu lớn Abbott, Sanofi, Pfizer và Dược Hậu Giang.",
+      "t3": "Dược sĩ tư vấn tận tâm",
+      "p3": "Đội ngũ dược sĩ chuyên môn cao, luôn đặt lợi ích khách hàng lên đầu, sẵn sàng tư vấn sử dụng thuốc an toàn.",
+      "t4": "Mua sắm tiện lợi - Giao nhanh",
+      "p4": "Mua tại cửa hàng hoặc online qua App/Website. Giao hàng siêu tốc 2H tại các thành phố lớn qua Grab, Shopee...",
+      "t5": "Đặc quyền thành viên",
+      "p5": "Chương trình P-Member tích điểm tiêu tiền. Luôn có khuyến mãi độc quyền cho thành viên.",
+      "t6": "Chọn Pharmacity - Chọn an tâm sức khỏe!"
+    },
+    "features": {
+      "express": "Giao siêu tốc",
+      "express_sub": "Giao tận nhà / Nhận tại tiệm",
+      "variety": "Thuốc đa dạng",
+      "variety_sub": "Cam kết chất lượng",
+      "freeship": "Freeship toàn quốc",
+      "freeship_sub": "Không giới hạn giá trị",
+      "nearby": "Nhà thuốc gần bạn",
+      "nearby_sub": "Tìm kiếm ngay"
+    }
+  },
+  "shop": {
+    "title": "Sản phẩm chính hãng",
+    "sort_label": "Sắp xếp:",
+    "sort_asc": "Giá thấp đến cao",
+    "sort_desc": "Giá cao đến thấp",
+    "img_alt": "Ảnh sản phẩm"
+  }
 }
