@@ -1,4 +1,6 @@
 {
+  "ngonnguhientai": "Tiếng Việt",
+  "cohientai": "/img/covietnam.webp",
   "auth": {
     "register_success": "Đăng ký thành công",
     "welcome": "Chào mừng",

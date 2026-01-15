@@ -1,4 +1,6 @@
 {
+  "ngonnguhientai": "日本語",
+  "cohientai": "/img/NhatBan.webp",
   "auth": {
     "register_success": "登録完了",
     "welcome": "ようこそ",

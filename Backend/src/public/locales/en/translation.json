@@ -1,4 +1,6 @@
 {
+  "ngonnguhientai": "English",
+  "cohientai": "/img/coanh.jpg",
   "auth": {
     "register_success": "Success",
     "welcome": "Welcome",
