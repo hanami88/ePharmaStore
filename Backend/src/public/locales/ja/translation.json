@@ -201,5 +201,53 @@
     "sort_asc": "価格が安い順",
     "sort_desc": "価格が高い順",
     "img_alt": "商品画像"
+  },
+  "common": {
+    "edit": "変更",
+    "back": "戻る",
+    "apply": "適用",
+    "save": "保存",
+    "default": "デフォルト",
+    "item_unit": "商品"
+  },
+  "payment": {
+    "page_title": "お支払い",
+    "note_label": "備考",
+    "note_placeholder": "備考を入力してください",
+    "receive_method": "受取方法",
+    "delivery_home": "宅配",
+    "receiver_info": "受取人情報",
+    "carrier": "配送業者",
+    "delivery_time": "配送予定：4〜7日（土日を除く）",
+    "method_title": "お支払い方法",
+    "methods": {
+      "cod": "現金",
+      "credit_card": "クレジットカード",
+      "debit_card": "デビットカード"
+    },
+    "summary_title": "お支払い詳細",
+    "subtotal": "小計",
+    "shipping_fee": "配送料",
+    "shipping_discount": "配送料割引",
+    "product_discount": "商品割引",
+    "total": "合計金額",
+    "terms_html": "チェックボックスをオンにすることで、<a href=''>Pharmacityの利用規約</a>に同意したことになります",
+    "place_order_btn": "注文する",
+    "select_address_title": "配送先住所",
+    "add_address_btn": "+ 住所追加"
+  },
+  "address_form": {
+    "title": "新しい住所",
+    "name": "氏名",
+    "name_ph": "氏名を入力",
+    "city_label": "住所",
+    "select_city": "--都道府県を選択--",
+    "district_ph": "市区町村を入力",
+    "ward_ph": "町名を入力",
+    "street_ph": "番地・建物名を入力",
+    "type_label": "住所タイプ",
+    "type_home": "自宅",
+    "type_company": "会社",
+    "set_default": "デフォルト住所に設定"
   }
 }

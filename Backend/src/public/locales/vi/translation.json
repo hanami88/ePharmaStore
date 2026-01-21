@@ -201,5 +201,53 @@
     "sort_asc": "Giá thấp đến cao",
     "sort_desc": "Giá cao đến thấp",
     "img_alt": "Ảnh sản phẩm"
+  },
+  "common": {
+    "edit": "Thay đổi",
+    "back": "Quay lại",
+    "apply": "Áp dụng",
+    "save": "Lưu",
+    "default": "Mặc định",
+    "item_unit": "sản phẩm"
+  },
+  "payment": {
+    "page_title": "Thanh toán",
+    "note_label": "Ghi chú",
+    "note_placeholder": "Nhập ghi chú cho đơn hàng",
+    "receive_method": "Hình thức nhận hàng",
+    "delivery_home": "Giao tận nơi",
+    "receiver_info": "Thông tin người nhận",
+    "carrier": "Đơn vị vận chuyển",
+    "delivery_time": "Dự kiến giao: 4-7 ngày (trừ T7, CN)",
+    "method_title": "Phương thức thanh toán",
+    "methods": {
+      "cod": "Tiền mặt (COD)",
+      "credit_card": "Thẻ tín dụng",
+      "debit_card": "Thẻ ghi nợ (ATM)"
+    },
+    "summary_title": "Chi tiết thanh toán",
+    "subtotal": "Tạm tính",
+    "shipping_fee": "Phí vận chuyển",
+    "shipping_discount": "Giảm giá vận chuyển",
+    "product_discount": "Giảm giá sản phẩm",
+    "total": "Tổng tiền",
+    "terms_html": "Bằng việc tích chọn, bạn đồng ý với <a href=''>Điều khoản sử dụng</a> của Pharmacity",
+    "place_order_btn": "Đặt hàng",
+    "select_address_title": "Địa chỉ nhận hàng",
+    "add_address_btn": "+ Thêm địa chỉ mới"
+  },
+  "address_form": {
+    "title": "Địa chỉ mới",
+    "name": "Họ tên",
+    "name_ph": "Nhập họ tên",
+    "city_label": "Tỉnh/Thành phố",
+    "select_city": "--Chọn Tỉnh/Thành--",
+    "district_ph": "Nhập Quận/Huyện",
+    "ward_ph": "Nhập Phường/Xã",
+    "street_ph": "Nhập Số nhà/Tên đường",
+    "type_label": "Loại địa chỉ",
+    "type_home": "Nhà riêng",
+    "type_company": "Công ty",
+    "set_default": "Đặt làm địa chỉ mặc định"
   }
 }

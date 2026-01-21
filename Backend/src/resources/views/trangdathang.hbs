@@ -2,7 +2,7 @@
   <div class="thanhtoangiohang-container">
     <div>
       <div class="thanhtoan-sanpham">
-        <div>お支払い</div>
+        <div data-i18n="payment.page_title">お支払い</div>
         <div class="thanhtoan-all">
           {{#if giohang}}
             {{#each user.giohang}}
@@ -40,16 +40,24 @@
           {{/if}}
         </div>
         <form class="thanhtoan-ghichu">
-          <label for="ghichu">備考</label>
-          <input type="text" id="ghichu" placeholder="備考を入力してください" />
+          <label for="ghichu" data-i18n="payment.note_label">備考</label>
+          <input
+            type="text"
+            id="ghichu"
+            data-i18n-placeholder="payment.note_placeholder"
+            placeholder="備考を入力してください"
+          />
         </form>
       </div>
       <div class="hinhthucnhanhang-thanhtoan">
-        <h1 class="hinhthucnhanhang">受取方法</h1>
-        <div style="width: 7rem;">宅配</div>
+        <h1
+          class="hinhthucnhanhang"
+          data-i18n="payment.receive_method"
+        >受取方法</h1>
+        <div style="width: 7rem;" data-i18n="payment.delivery_home">宅配</div>
         <div>
-          <div>受取人情報</div>
-          <div class="thaydoi">変更</div>
+          <div data-i18n="payment.receiver_info">受取人情報</div>
+          <div class="thaydoi" data-i18n="common.edit">変更</div>
         </div>
         <div>
           <div class="chuadiachi thanhtoan-diachi">
@@ -73,6 +81,7 @@
                       <div
                         class="dactrungmacdinh-thanhtoan"
                         style="width: 7.6rem;"
+                        data-i18n="common.default"
                       >デフォルト</div>
                     {{/if}}
                   </div>
@@ -87,17 +96,20 @@
         <div class="gach-thanhtoan">.</div>
         <div class="donvivanchuyen-thanhtoan">
           <div>
-            <div class="indamthongtin">配送業者</div>
+            <div
+              class="indamthongtin"
+              data-i18n="payment.carrier"
+            >配送業者</div>
             <div class="indamthongtin">19.000 ₫</div>
           </div>
           <div class="indamthongtin">Viettel Post</div>
-          <div>
+          <div data-i18n="payment.delivery_time">
             配送予定：4〜7日（土日を除く）
           </div>
         </div>
       </div>
       <div class="phuongthucthanhtoan">
-        <div>お支払い方法</div>
+        <div data-i18n="payment.method_title">お支払い方法</div>
         <form action="" class="formphuongthuc">
           <div class="boxpt">
             <input type="radio" name="PT" value="COD" id="COD" />
@@ -106,7 +118,7 @@
                 alt=""
                 class="ppttimg"
               />
-              <div>現金</div></label>
+              <div data-i18n="payment.methods.cod">現金</div></label>
           </div>
           <div class="boxpt">
             <input type="radio" name="PT" value="MOMO" id="MOMO" />
@@ -127,13 +139,17 @@
                 alt=""
                 class="ppttimg"
               />
-              <div>クレジットカード</div></label>
+              <div
+                data-i18n="payment.methods.credit_card"
+              >クレジットカード</div></label>
           </div>
           <div class="boxpt">
             <input type="radio" name="PT" value="ATM" id="ATM" />
             <label for="ATM">
               <img src="/img/ATM.png" alt="" class="ppttimg" />
-              <div>デビットカード</div></label>
+              <div
+                data-i18n="payment.methods.debit_card"
+              >デビットカード</div></label>
           </div>
           <div class="boxpt">
             <input type="radio" name="PT" value="APPLEPAY" id="APPLEPAY" />
@@ -147,9 +163,9 @@
     </div>
     <div class="thanhtoan-dungcot">
       <div class="thanhtoan-tongtien">
-        <div class="cttt">お支払い詳細</div>
+        <div class="cttt" data-i18n="payment.summary_title">お支払い詳細</div>
         <div class="thanhtoan-tt">
-          <div>小計</div>
+          <div data-i18n="payment.subtotal">小計</div>
           {{#if giohang}}
             <div>{{formatNumber (totalGiagoc user.giohang)}} ₫</div>
           {{else}}
@@ -157,15 +173,18 @@
           {{/if}}
         </div>
         <div class="thanhtoan-tt">
-          <div>配送料</div>
+          <div data-i18n="payment.shipping_fee">配送料</div>
           <div>19.000 ₫</div>
         </div>
         <div class="thanhtoan-tt">
-          <div>配送料割引</div>
+          <div data-i18n="payment.shipping_discount">配送料割引</div>
           <div>-19.000 ₫</div>
         </div>
         <div class="thanhtoan-tt">
-          <div class="giohang-tongtien__tamtinh-mota">
+          <div
+            class="giohang-tongtien__tamtinh-mota"
+            data-i18n="payment.product_discount"
+          >
             商品割引
           </div>
           <div class="giamgiatong">
@@ -188,11 +207,12 @@
         <div class="gachchan-tt"></div>
         <div class="thanhtoan-tongtien__tongtien">
           <div class="thanhtoan-tongtien__tongtien-mota">
-            <div>合計金額</div>
+            <div data-i18n="payment.total">合計金額</div>
             {{#if (equal giohang true)}}
-              <div>{{user.giohang.length}} 商品</div>
+              <div>{{user.giohang.length}}
+                <span data-i18n="common.item_unit">商品</span></div>
             {{else}}
-              <div>1 商品</div>
+              <div>1 <span data-i18n="common.item_unit">商品</span></div>
             {{/if}}
           </div>
           <div class="thanhtoan-tongtien__tongtien-tt">
@@ -212,20 +232,25 @@
             id="dieukhoan"
             class="checkdieukiendathang"
           />
-          <label for="dieukhoan">チェックボックスをオンにすることで、
+          <label
+            for="dieukhoan"
+            data-i18n-html="payment.terms_html"
+          >チェックボックスをオンにすることで、
             <a href="">Pharmacityの利用規約</a>に同意したことになります</label>
         </form>
         <div
           class="thanhtoan-tongtien__btn"
           data-giohang="{{giohang}}"
+          data-i18n="payment.place_order_btn"
         >注文する</div>
       </div>
     </div>
   </div>
 </section>
+
 <div class="doidiachi">
   <div class="container-doidiachi">
-    <div>配送先住所</div>
+    <div data-i18n="payment.select_address_title">配送先住所</div>
     <form
       class="chuadiachi-hienthi"
       action="/user/doidiachinhanhang"
@@ -256,6 +281,7 @@
                 <div
                   class="dactrungmacdinh-thanhtoan"
                   style="width: 7.6rem;"
+                  data-i18n="common.default"
                 >デフォルト</div>
               {{/if}}
             </div>
@@ -268,64 +294,96 @@
         <input type="hidden" name="soluong" value="{{soluong}}" />
       {{/unless}}
     </form>
-    <div class="btnthemdiachi">+ 住所追加</div>
+    <div class="btnthemdiachi" data-i18n="payment.add_address_btn">+ 住所追加</div>
     <div class="chua2btn">
-      <div class="modori">戻る</div>
-      <div class="apuru">適用</div>
+      <div class="modori" data-i18n="common.back">戻る</div>
+      <div class="apuru" data-i18n="common.apply">適用</div>
     </div>
   </div>
 </div>
+
 <div class="container-themdiachi">
   <div class="themdiachi">
-    <div class="text-themdiachi">新しい住所</div>
+    <div class="text-themdiachi" data-i18n="address_form.title">新しい住所</div>
     <div class="themdiachi-box-container">
       <div class="themdiachi-box">
         <form action="/user/themdiachi" method="post" class="formdiachi">
-          <label for="hoten">氏名</label>
-          <input type="text" name="hoten" placeholder="氏名を入力" id="hoten" />
-          <label for="sdt">電話番号</label>
-          <input type="text" name="sdt" placeholder="電話番号を入力" id="sdt" />
-          <label for="tinhthanh">住所</label>
+          <label for="hoten" data-i18n="address_form.name">氏名</label>
+          <input
+            type="text"
+            name="hoten"
+            data-i18n-placeholder="address_form.name_ph"
+            placeholder="氏名を入力"
+            id="hoten"
+          />
+
+          <label for="sdt" data-i18n="auth.phone_label">電話番号</label>
+          <input
+            type="text"
+            name="sdt"
+            data-i18n-placeholder="auth.phone_placeholder"
+            placeholder="電話番号を入力"
+            id="sdt"
+          />
+
+          <label
+            for="tinhthanh"
+            data-i18n="address_form.city_label"
+          >住所</label>
           <select name="tinhthanh" id="tinhthanh">
-            <option value="" class="maubac">--都道府県を選択--</option>
+            <option
+              value=""
+              class="maubac"
+              data-i18n="address_form.select_city"
+            >--都道府県を選択--</option>
             <option value="Quảng Trị">クアンチ</option>
             <option value="Đà Nẵng">ダナン</option>
             <option value="Huế">フエ</option>
           </select>
-          <input type="text" name="quanhuyen" placeholder="市区町村を入力" />
+          <input
+            type="text"
+            name="quanhuyen"
+            data-i18n-placeholder="address_form.district_ph"
+            placeholder="市区町村を入力"
+          />
           <input
             type="text"
             id="secon"
             name="phuongxa"
+            data-i18n-placeholder="address_form.ward_ph"
             placeholder="町名を入力"
           />
           <input
             type="text"
             id="ll"
             name="sonha"
+            data-i18n-placeholder="address_form.street_ph"
             placeholder="番地・建物名を入力"
           />
-          <div class="loaidiachi">住所タイプ</div>
+          <div
+            class="loaidiachi"
+            data-i18n="address_form.type_label"
+          >住所タイプ</div>
           <div class="tuychondiachi">
             <label class="option">
               <input type="radio" name="loai" value="Nhà riêng" required />
-              <span>自宅</span>
+              <span data-i18n="address_form.type_home">自宅</span>
             </label>
             <label class="option">
               <input type="radio" name="loai" value="Công ty" />
-              <span>会社</span>
+              <span data-i18n="address_form.type_company">会社</span>
             </label>
           </div>
           <div class="diachimacdinh">
             <input type="checkbox" name="macdinh" id="" />
-            <div>デフォルト住所に設定</div>
+            <div data-i18n="address_form.set_default">デフォルト住所に設定</div>
           </div>
         </form>
       </div>
     </div>
     <div class="thaotac-diachi">
-      <button class="btn-diachi-quaylai">戻る</button>
-      <button class="luudiachi">保存</button>
+      <button class="btn-diachi-quaylai" data-i18n="common.back">戻る</button>
+      <button class="luudiachi" data-i18n="common.save">保存</button>
     </div>
   </div>
 </div>

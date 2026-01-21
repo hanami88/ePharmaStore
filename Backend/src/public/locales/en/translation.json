@@ -201,5 +201,53 @@
     "sort_asc": "Price: Low to High",
     "sort_desc": "Price: High to Low",
     "img_alt": "Product Image"
+  },
+  "common": {
+    "edit": "Change",
+    "back": "Back",
+    "apply": "Apply",
+    "save": "Save",
+    "default": "Default",
+    "item_unit": "items"
+  },
+  "payment": {
+    "page_title": "Checkout",
+    "note_label": "Note",
+    "note_placeholder": "Enter order note",
+    "receive_method": "Delivery Method",
+    "delivery_home": "Home Delivery",
+    "receiver_info": "Receiver Info",
+    "carrier": "Carrier",
+    "delivery_time": "Est: 4-7 days (excl. weekends)",
+    "method_title": "Payment Method",
+    "methods": {
+      "cod": "Cash (COD)",
+      "credit_card": "Credit Card",
+      "debit_card": "Debit Card (ATM)"
+    },
+    "summary_title": "Payment Details",
+    "subtotal": "Subtotal",
+    "shipping_fee": "Shipping Fee",
+    "shipping_discount": "Shipping Discount",
+    "product_discount": "Product Discount",
+    "total": "Total",
+    "terms_html": "By checking, you agree to Pharmacity's <a href=''>Terms of Service</a>",
+    "place_order_btn": "Place Order",
+    "select_address_title": "Delivery Address",
+    "add_address_btn": "+ Add New Address"
+  },
+  "address_form": {
+    "title": "New Address",
+    "name": "Full Name",
+    "name_ph": "Enter full name",
+    "city_label": "City/Province",
+    "select_city": "--Select City--",
+    "district_ph": "Enter District",
+    "ward_ph": "Enter Ward",
+    "street_ph": "Enter Street/Building",
+    "type_label": "Address Type",
+    "type_home": "Home",
+    "type_company": "Company",
+    "set_default": "Set as default address"
   }
 }

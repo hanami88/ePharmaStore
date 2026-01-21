@@ -25,7 +25,10 @@ app.engine(
       lonhon: (a, b) => a > b,
       equal: (a, b) => a === b,
       nequal: (a, b) => a !== b,
-      length: (a) => a.length,
+      length: (arr) => {
+        if (!arr) return 0;
+        return arr.length;
+      },
       sum: (a, b) => a + b,
       nhan: (a, b) => a * b,
       chia: (a, b) => a / b,
@@ -42,8 +45,12 @@ app.engine(
         const dayjs = require("dayjs");
         return dayjs(datetime).format("HH:mm DD/MM/YYYY");
       },
+      formatDateNhat: (datetime) => {
+        const date = new Date(dateString);
+        return date.toLocaleDateString("ja-JP");
+      },
     },
-  })
+  }),
 );
 
 app.use(express.json());
