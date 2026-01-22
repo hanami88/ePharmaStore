@@ -11,29 +11,29 @@
       <div class="bangchon-user-bot">
         <a href="/user/thongtin" class="thanhchon-user">
           <i class="fa-solid fa-user"></i>
-          <div>個人情報</div>
+          <div data-i18n="profile.menu.info">個人情報</div>
         </a>
         <a href="/user/diachinhanhang" class="thanhchon-user">
           <i class="fa-solid fa-location-dot"></i>
-          <div>配送先住所</div>
+          <div data-i18n="profile.menu.address">配送先住所</div>
         </a>
         <a href="/user/lichsudonhang" class="thanhchon-user">
           <i class="fa-solid fa-notes-medical"></i>
-          <div>注文履歴</div>
+          <div data-i18n="nav.order_history">注文履歴</div>
         </a>
       </div>
     </div>
     <div class="ctnthongtin-user">
       <div class="doimkcc">
         <a href="/user/lichsudonhang"><i class="fa-solid fa-arrow-left"></i></a>
-        <h1 class="title-doimk">注文詳細</h1>
+        <h1 class="title-doimk" data-i18n="order_detail.title">注文詳細</h1>
       </div>
       <div class="thongtin-lichsu">
         <div class="container-lichsu">
           <div class="hienthilichsu-trangthai">
             <div>
-              <div>注文キャンセル済み</div>
-              <div>ご注文はお客様によってキャンセルされました</div>
+              <div data-i18n="order_detail.status.cancelled">注文キャンセル済み</div>
+              <div data-i18n="order_detail.status.cancelled_msg">ご注文はお客様によってキャンセルされました</div>
             </div>
             <i class="fa-solid fa-xmark" style="color: #000000;"></i>
           </div>
@@ -41,13 +41,13 @@
             <div>
               <div class="hienthilichsu-giaohang">
                 <i class="fa-solid fa-truck-fast"></i>
-                <div>宅配</div>
+                <div data-i18n="payment.delivery_home">宅配</div>
               </div>
-              <div class="huydonhang">注文を復元</div>
+              <div class="huydonhang" data-i18n="order_detail.restore_btn">注文を復元</div>
             </div>
             <div class="hienthilichsu-thongtin">
               <div>
-                <div class="indamthongtin">受取人情報</div>
+                <div class="indamthongtin" data-i18n="payment.receiver_info">受取人情報</div>
                 <div>
                   <span class="indamthongtin gach">{{user.hoten}}</span>
                   {{user.sdt}}
@@ -58,29 +58,24 @@
                   {{user.diachi.0.tinhthanh}}</div>
               </div>
               <div>
-                <div class="indamthongtin">注文番号</div>
+                <div class="indamthongtin" data-i18n="order_detail.order_id">注文番号</div>
                 <div class="madonhang">{{donhang._id}}</div>
                 <div class="botthongtin">
-                  <div>注文日時</div>
+                  <div data-i18n="order_detail.order_date">注文日時</div>
                   <div>{{formatDate donhang.createdAt}}</div>
                 </div>
               </div>
             </div>
           </div>
           <div class="hienthilichsu-thanhtoan">
-            <div>購入商品</div>
+            <div data-i18n="order_detail.product_list">購入商品</div>
             <div class="lichsu-hienthidonhang">
               {{#each donhang.giohang}}
                 <div class="sanpham-all-box">
                   <div class="gachchan-to1"></div>
                   <div class="box-sanphamthem">
-                    <img
-                      class="box-sanphamthem-img"
-                      src="/img/{{this.hinhanh}}"
-                    />
-                    <div class="box-sanphamthem-mota">
-                      {{this.tensp}}
-                    </div>
+                    <img class="box-sanphamthem-img" src="/img/{{this.hinhanh}}"/>
+                    <div class="box-sanphamthem-mota">{{this.tensp}}</div>
                     <div class="dongia">
                       <div><s>{{formatNumber this.giagoc}} ₫</s></div>
                       <div class="dg">{{formatNumber this.giaban}} ₫</div>
@@ -89,8 +84,7 @@
                       <div class="slgiohang">x{{this.soluong}}</div>
                     </div>
                     <div class="thanhtien">
-                      <div>{{formatNumber (nhan this.giaban this.soluong)}}
-                        ₫</div>
+                      <div>{{formatNumber (nhan this.giaban this.soluong)}} ₫</div>
                     </div>
                   </div>
                 </div>
@@ -98,43 +92,32 @@
             </div>
             <div class="gachchan-to1"></div>
             <div class="lichsu-hienthitongtien">
-              <div>お支払い詳細</div>
+              <div data-i18n="order_detail.payment_details">お支払い詳細</div>
               <div class="hienthitongtien">
-                <div>商品代金</div>
-                <div class="tongtienindam">{{formatNumber
-                    (totalGiagoc donhang.giohang)
-                  }}
-                  ₫</div>
+                <div data-i18n="payment.subtotal">商品代金</div>
+                <div class="tongtienindam">{{formatNumber (totalGiagoc donhang.giohang)}} ₫</div>
               </div>
               <div class="hienthitongtien">
-                <div>配送料</div>
+                <div data-i18n="payment.shipping_fee">配送料</div>
                 <div class="tongtienindam">0 ₫</div>
               </div>
               <div class="hienthitongtien">
-                <div>商品割引</div>
-                <div class="tongtienindam">-{{formatNumber
-                    (minus
-                      (totalGiagoc donhang.giohang)
-                      (totalGiaban donhang.giohang)
-                    )
-                  }}
-                  ₫</div>
+                <div data-i18n="payment.product_discount">商品割引</div>
+                <div class="tongtienindam">-{{formatNumber (minus (totalGiagoc donhang.giohang) (totalGiaban donhang.giohang))}} ₫</div>
               </div>
               <div class="gachchan-to2"></div>
               <div class="hienthitongtien boxtt1">
                 <div>
-                  <span class="tongtienindam">合計金額 </span><span
-                    class="spnho"
-                  >(1商品)</span>
+                  <span class="tongtienindam" data-i18n="payment.total">合計金額 </span>
+                  <span class="spnho">(1商品)</span>
                 </div>
-                <div class="tongtienindamdb">{{formatNumber donhang.tongtien}}
-                  ₫</div>
+                <div class="tongtienindamdb">{{formatNumber donhang.tongtien}} ₫</div>
               </div>
               <div class="hienthitongtien boxtt2">
-                <div class="tongtienindam">お支払い方法</div>
+                <div class="tongtienindam" data-i18n="payment.method_title">お支払い方法</div>
                 <div>
-                  <div class="COD">代引き</div>
-                  <div class="tongtienindam">現金</div>
+                  <div class="COD" data-i18n="payment.methods.cod">代引き</div>
+                  <div class="tongtienindam" data-i18n="payment.methods.cash_label">現金</div>
                 </div>
               </div>
             </div>
@@ -145,7 +128,8 @@
   </div>
 </div>
 <div class="mauxanhtieuchuan"></div>
-<script>const huydonhang = document.querySelector(".huydonhang"); const
+<script>
+  const huydonhang = document.querySelector(".huydonhang"); const
   madonhang = document.querySelector(".madonhang").textContent;
   huydonhang.addEventListener("click", function () {
   fetch("/user/khoiphucdonhang", { method: "POST", headers: { "Content-Type":

@@ -226,7 +226,8 @@
     "methods": {
       "cod": "Tiền mặt (COD)",
       "credit_card": "Thẻ tín dụng",
-      "debit_card": "Thẻ ghi nợ (ATM)"
+      "debit_card": "Thẻ ghi nợ (ATM)",
+      "cash_label": "Tiền mặt"
     },
     "summary_title": "Chi tiết thanh toán",
     "subtotal": "Tạm tính",
@@ -314,9 +315,27 @@
     },
     "status": {
       "pending": "Chờ xác nhận",
-      "cancelled": "Đã hủy"
+      "cancelled": "Đã hủy",
+      "confirmed": "Đã xác nhận"
     },
     "empty_title": "Chưa có đơn hàng nào",
     "empty_msg": "Hãy bắt đầu mua sắm ngay"
+  },
+  "order_detail": {
+    "title": "Chi tiết đơn hàng",
+    "status": {
+      "processing": "Đang xử lý",
+      "processing_msg": "Đơn hàng đang được Pharmacity kiểm tra và xử lý",
+      "cancelled": "Đơn hàng đã hủy",
+      "cancelled_msg": "Đơn hàng đã được hủy bởi khách hàng",
+      "confirmed": "Đã xác nhận",
+      "confirmed_msg": "Đơn hàng đã được Pharmacity xác nhận và xử lý"
+    },
+    "cancel_btn": "Hủy đơn hàng",
+    "restore_btn": "Mua lại đơn hàng",
+    "order_id": "Mã đơn hàng",
+    "order_date": "Ngày đặt hàng",
+    "product_list": "Sản phẩm đã mua",
+    "payment_details": "Chi tiết thanh toán"
   }
 }

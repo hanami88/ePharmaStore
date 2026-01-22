@@ -226,7 +226,8 @@
     "methods": {
       "cod": "現金",
       "credit_card": "クレジットカード",
-      "debit_card": "デビットカード"
+      "debit_card": "デビットカード",
+      "cash_label": "現金"
     },
     "summary_title": "お支払い詳細",
     "subtotal": "小計",
@@ -314,9 +315,27 @@
     },
     "status": {
       "pending": "確認待ち",
-      "cancelled": "キャンセル済み"
+      "cancelled": "キャンセル済み",
+      "confirmed": "確認済み"
     },
     "empty_title": "ご注文はまだありません",
     "empty_msg": "ショッピングを始めましょう"
+  },
+  "order_detail": {
+    "title": "注文詳細",
+    "status": {
+      "processing": "処理中",
+      "processing_msg": "ご注文はPhamarcityで確認・処理中です",
+      "cancelled": "注文キャンセル済み",
+      "cancelled_msg": "ご注文はお客様によってキャンセルされました",
+      "confirmed": "確認済み",
+      "confirmed_msg": "ご注文はPhamarcityで確認・処理されました"
+    },
+    "cancel_btn": "注文キャンセル",
+    "restore_btn": "注文を復元",
+    "order_id": "注文番号",
+    "order_date": "注文日時",
+    "product_list": "購入商品",
+    "payment_details": "お支払い詳細"
   }
 }

@@ -226,7 +226,8 @@
     "methods": {
       "cod": "Cash (COD)",
       "credit_card": "Credit Card",
-      "debit_card": "Debit Card (ATM)"
+      "debit_card": "Debit Card (ATM)",
+      "cash_label": "Cash"
     },
     "summary_title": "Payment Details",
     "subtotal": "Subtotal",
@@ -314,9 +315,27 @@
     },
     "status": {
       "pending": "Pending",
-      "cancelled": "Cancelled"
+      "cancelled": "Cancelled",
+      "confirmed": "Confirmed"
     },
     "empty_title": "No orders yet",
     "empty_msg": "Let's start shopping"
+  },
+  "order_detail": {
+    "title": "Order Details",
+    "status": {
+      "processing": "Processing",
+      "processing_msg": "Your order is being processed by Pharmacity",
+      "cancelled": "Order Cancelled",
+      "cancelled_msg": "This order was cancelled by you",
+      "confirmed": "Confirmed",
+      "confirmed_msg": "Your order has been confirmed and processed"
+    },
+    "cancel_btn": "Cancel Order",
+    "restore_btn": "Re-order",
+    "order_id": "Order ID",
+    "order_date": "Order Date",
+    "product_list": "Purchased Products",
+    "payment_details": "Payment Details"
   }
 }
