@@ -10,70 +10,104 @@
     => { datthanhcong.classList.remove("active"); }, 1500);
   </script>
 {{/if}}
+
 <div class="xoadc">
   <div class="thongbaochacchan tbcc">
-    <h1>住所削除
-    </h1>
-    <div>この住所を削除してもよろしいですか？
-    </div>
-    <button class="thongbao-quaylai qlai">戻る</button>
-    <button class="thongbao-tieptuc tt">確認</button>
+    <h1 data-i18n="address_book.delete_title">住所削除</h1>
+    <div
+      data-i18n="address_book.delete_confirm"
+    >この住所を削除してもよろしいですか？</div>
+    <button class="thongbao-quaylai qlai" data-i18n="common.back">戻る</button>
+    <button class="thongbao-tieptuc tt" data-i18n="common.confirm">確認</button>
   </div>
 </div>
+
 <div class="container-themdiachi">
   <div class="themdiachi">
-    <div class="text-themdiachi">新しい住所</div>
+    <div class="text-themdiachi" data-i18n="address_form.title">新しい住所</div>
     <div class="themdiachi-box-container">
       <div class="themdiachi-box">
         <form action="/user/themdiachi" method="post" class="formdiachi">
-          <label for="hoten">氏名</label>
-          <input type="text" name="hoten" placeholder="氏名を入力" />
-          <label for="sdt">電話番号</label>
-          <input type="text" name="sdt" placeholder="電話番号を入力" />
-          <label for="tinhthanh">住所</label>
+          <label for="hoten" data-i18n="address_form.name">氏名</label>
+          <input
+            type="text"
+            name="hoten"
+            placeholder="氏名を入力"
+            data-i18n="[placeholder]address_form.name_ph"
+          />
+
+          <label for="sdt" data-i18n="auth.phone_label">電話番号</label>
+          <input
+            type="text"
+            name="sdt"
+            placeholder="電話番号を入力"
+            data-i18n="[placeholder]auth.phone_placeholder"
+          />
+
+          <label
+            for="tinhthanh"
+            data-i18n="address_form.city_label"
+          >住所</label>
           <select name="tinhthanh" id="">
-            <option value="" class="maubac">--都道府県を選択--</option>
-            <option value="Quảng Trị">クアンチ</option>
-            <option value="Đà Nẵng">ダナン</option>
-            <option value="Huế">フエ</option>
+            <option
+              value=""
+              class="maubac"
+              data-i18n="address_form.select_city"
+            >--都道府県を選択--</option>
+            <option value="Quảng Trị">Quảng Trị</option>
+            <option value="Đà Nẵng">Đà Nẵng</option>
+            <option value="Huế">Huế</option>
           </select>
-          <input type="text" name="quanhuyen" placeholder="市区町村を入力" />
+
+          <input
+            type="text"
+            name="quanhuyen"
+            placeholder="市区町村を入力"
+            data-i18n="[placeholder]address_form.district_ph"
+          />
           <input
             type="text"
             id="secon"
             name="phuongxa"
             placeholder="町名を入力"
+            data-i18n="[placeholder]address_form.ward_ph"
           />
           <input
             type="text"
             id="secon"
             name="sonha"
             placeholder="番地・建物名を入力"
+            data-i18n="[placeholder]address_form.street_ph"
           />
-          <div class="loaidiachi">住所タイプ</div>
+
+          <div
+            class="loaidiachi"
+            data-i18n="address_form.type_label"
+          >住所タイプ</div>
           <div class="tuychondiachi">
             <label class="option">
               <input type="radio" name="loai" value="自宅" required />
-              <span>自宅</span>
+              <span data-i18n="address_form.type_home">自宅</span>
             </label>
             <label class="option">
               <input type="radio" name="loai" value="会社" />
-              <span>会社</span>
+              <span data-i18n="address_form.type_company">会社</span>
             </label>
           </div>
           <div class="diachimacdinh">
             <input type="checkbox" name="macdinh" id="" />
-            <div>デフォルト住所に設定</div>
+            <div data-i18n="address_form.set_default">デフォルト住所に設定</div>
           </div>
         </form>
       </div>
     </div>
     <div class="thaotac-diachi">
-      <button class="btn-diachi-quaylai">戻る</button>
-      <button class="luudiachi">保存</button>
+      <button class="btn-diachi-quaylai" data-i18n="common.back">戻る</button>
+      <button class="luudiachi" data-i18n="common.save">保存</button>
     </div>
   </div>
 </div>
+
 <div class="container-user">
   <div class="hienthi-user">
     <div class="bangchon-user">
@@ -88,22 +122,26 @@
       <div class="bangchon-user-bot">
         <a href="/user/thongtin" class="thanhchon-user">
           <i class="fa-solid fa-user"></i>
-          <div>個人情報</div>
+          <div data-i18n="profile.menu.info">個人情報</div>
         </a>
         <a href="/user/diachinhanhang" class="thanhchon-user">
           <i class="fa-solid fa-location-dot"></i>
-          <div>配送先住所</div>
+          <div data-i18n="profile.menu.address">配送先住所</div>
         </a>
         <a href="/user/lichsudonhang" class="thanhchon-user">
           <i class="fa-solid fa-notes-medical"></i>
-          <div>注文履歴</div>
+          <div data-i18n="nav.order_history">注文履歴</div>
         </a>
       </div>
     </div>
     <div class="ctnthongtin-diachi">
       <div class="diachicc">
-        <h1 class="title-diachi">配送先住所</h1>
-        <div class="btnthemdiachi">+ 住所追加</div>
+        <h1
+          class="title-diachi"
+          data-i18n="payment.select_address_title"
+        >配送先住所</h1>
+        <div class="btnthemdiachi" data-i18n="payment.add_address_btn">+
+          住所追加</div>
       </div>
       <div class="thongtin-diachi">
         <div class="container-diachi">
@@ -113,11 +151,16 @@
                 src="https://prod-cdn.pharmacity.io/e-com/images/static-website/20240706155228-0-empty-order-history.svg"
                 alt=""
               />
-              <div>登録された住所がありません</div>
-              <div>
+              <div
+                data-i18n="address_book.empty_title"
+              >登録された住所がありません</div>
+              <div data-i18n="address_book.empty_msg">
                 住所を追加して、今すぐご注文を始めましょう！
               </div>
-              <button class="themdiachiphu">住所追加</button>
+              <button
+                class="themdiachiphu"
+                data-i18n="payment.add_address_btn"
+              >住所追加</button>
             </div>
           {{/unless}}
           {{#each user.diachi}}
@@ -140,6 +183,7 @@
                     <div
                       class="dactrungmacdinh"
                       style="width: 7.6rem;"
+                      data-i18n="common.default"
                     >デフォルト</div>
                   {{/if}}
                 </div>
@@ -156,6 +200,4 @@
   </div>
 </div>
 <div class="mauxanhtieuchuan"></div>
-
-<script src="/js/diachinhanhang.js">
-</script>
+<script src="/js/diachinhanhang.js"></script>

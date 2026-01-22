@@ -208,7 +208,10 @@
     "apply": "適用",
     "save": "保存",
     "default": "デフォルト",
-    "item_unit": "商品"
+    "item_unit": "商品",
+    "confirm": "確認",
+    "update": "更新",
+    "save_changes": "変更を保存"
   },
   "payment": {
     "page_title": "お支払い",
@@ -249,5 +252,71 @@
     "type_home": "自宅",
     "type_company": "会社",
     "set_default": "デフォルト住所に設定"
+  },
+  "cart": {
+    "title": "カート",
+    "order_success": "ご注文が完了しました",
+    "empty_title": "商品がありません",
+    "empty_subtitle": "ショッピングを始めましょう",
+    "shop_now": "今すぐ探す",
+    "delete_title": "商品削除",
+    "delete_msg": "この商品を削除してもよろしいですか？",
+    "unit_price": "単価",
+    "order_confirm_title": "注文確認",
+    "order_confirm_msg": "ご注文を確定してもよろしいですか？",
+    "promo_discount": "特典割引",
+    "checkout_btn": "購入する"
+  },
+  "profile": {
+    "title": "個人情報",
+    "menu": {
+      "info": "個人情報",
+      "address": "配送先住所"
+    },
+    "avatar_label": "プロフィール画像",
+    "upload_btn": "新しい画像を更新",
+    "max_size": "最大ファイルサイズ：5 MB",
+    "format": "形式：.JPEG、.PNG",
+    "dob": "生年月日",
+    "gender": "性別",
+    "select_gender": "-- 性別を選択 --",
+    "gender_male": "男性",
+    "gender_female": "女性",
+    "gender_other": "その他",
+    "email": "メールアドレス",
+    "change_password": "パスワード変更"
+  },
+  "address_book": {
+    "delete_title": "住所削除",
+    "delete_confirm": "この住所を削除してもよろしいですか？",
+    "empty_title": "登録された住所がありません",
+    "empty_msg": "住所を追加して、今すぐご注文を始めましょう！"
+  },
+  "address_form": {
+    "title": "新しい住所",
+    "name": "氏名",
+    "name_ph": "氏名を入力",
+    "city_label": "住所",
+    "select_city": "--都道府県を選択--",
+    "district_ph": "市区町村を入力",
+    "ward_ph": "町名を入力",
+    "street_ph": "番地・建物名を入力",
+    "type_label": "住所タイプ",
+    "type_home": "自宅",
+    "type_company": "会社",
+    "set_default": "デフォルト住所に設定"
+  },
+  "history": {
+    "tabs": {
+      "pending": "確認待ち",
+      "confirmed": "確認済み",
+      "cancelled": "キャンセル済み"
+    },
+    "status": {
+      "pending": "確認待ち",
+      "cancelled": "キャンセル済み"
+    },
+    "empty_title": "ご注文はまだありません",
+    "empty_msg": "ショッピングを始めましょう"
   }
 }

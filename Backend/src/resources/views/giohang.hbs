@@ -1,7 +1,7 @@
 <div class="datdonhangthanhcong">
   <div class="datthanhcong-container">
     <i class="fa-solid fa-check checker"></i>
-    <div>ご注文が完了しました</div>
+    <div data-i18n="cart.order_success">ご注文が完了しました</div>
   </div>
 </div>
 <section class="giohang">
@@ -11,61 +11,78 @@
         src="https://prod-cdn.pharmacity.io/e-com/images/static-website/20240706155228-0-empty-order-history.svg"
         alt=""
       />
-      <div>商品がありません
-      </div>
-      <div>
+      <div data-i18n="cart.empty_title">商品がありません</div>
+      <div data-i18n="cart.empty_subtitle">
         ショッピングを始めましょう
       </div>
-      <a href="/">今すぐ探す</a>
+      <a href="/" data-i18n="cart.shop_now">今すぐ探す</a>
     </div>
   {{else}}
     <div class="giohang-container">
       <div class="xoasp">
         <div class="thongbaochacchan">
-          <h1>商品削除</h1>
-          <div>この商品を削除してもよろしいですか？</div>
-          <button class="thongbao-quaylai">戻る</button>
-          <button class="thongbao-tieptuc">確認</button>
+          <h1 data-i18n="cart.delete_title">商品削除</h1>
+          <div
+            data-i18n="cart.delete_msg"
+          >この商品を削除してもよろしいですか？</div>
+          <button class="thongbao-quaylai" data-i18n="common.back">戻る</button>
+          <button
+            class="thongbao-tieptuc"
+            data-i18n="common.confirm"
+          >確認</button>
         </div>
       </div>
       <div class="giohang-sanpham">
-        <h1>カート</h1>
+        <h1 data-i18n="cart.title">カート</h1>
         <div class="giohang-mota">
-          <div>商品</div>
-          <div>単価</div>
-          <div>数量</div>
-          <div>小計</div>
+          <div data-i18n="common.item_unit">商品</div>
+          <div data-i18n="cart.unit_price">単価</div>
+          <div data-i18n="home.modal.quantity">数量</div>
+          <div data-i18n="payment.subtotal">小計</div>
         </div>
         <div class="sanpham-all">
           {{#each user.giohang}}
-            <div class="sanpham-all-box"><div class="gachchan-to"></div><div
-                class="box-sanphamthem"
-              ><img
+            <div class="sanpham-all-box">
+              <div class="gachchan-to"></div>
+              <div class="box-sanphamthem">
+                <img
                   class="box-sanphamthem-img"
                   src="/img/{{this.hinhanh}}"
-                /><div class="box-sanphamthem-mota">{{this.tensp}}</div><div
-                  class="dongia"
-                ><div><s>{{formatNumber this.giagoc}}
-                      ₫</s></div><div class="dg">{{formatNumber this.giaban}}
-                    ₫</div></div><div class="soluong"><i
-                    class="fa-solid fa-minus"
-                  ></i><div class="slgiohang">{{this.soluong}}</div><i
-                    class="fa-solid fa-plus"
-                  ></i></div><div class="thanhtien"><div>{{formatNumber
-                      (nhan this.giaban this.soluong)
-                    }}
-                    ₫</div><i class="fa-solid fa-trash"></i></div></div></div>
+                  alt="product-img"
+                />
+                <div class="box-sanphamthem-mota">{{this.tensp}}</div>
+                <div class="dongia">
+                  <div><s>{{formatNumber this.giagoc}} ₫</s></div>
+                  <div class="dg">{{formatNumber this.giaban}} ₫</div>
+                </div>
+                <div class="soluong">
+                  <i class="fa-solid fa-minus"></i>
+                  <div class="slgiohang">{{this.soluong}}</div>
+                  <i class="fa-solid fa-plus"></i>
+                </div>
+                <div class="thanhtien">
+                  <div>{{formatNumber (nhan this.giaban this.soluong)}} ₫</div>
+                  <i class="fa-solid fa-trash"></i>
+                </div>
+              </div>
+            </div>
           {{/each}}
         </div>
       </div>
       <div class="xacnhandathang">
         <div class="thongbaochacchan">
-          <h1>注文確認
-          </h1>
-          <div>ご注文を確定してもよろしいですか？
-          </div>
-          <button class="thongbao-quaylaidathang">戻る</button>
-          <button class="thongbao-tieptucdathang">確認</button>
+          <h1 data-i18n="cart.order_confirm_title">注文確認</h1>
+          <div
+            data-i18n="cart.order_confirm_msg"
+          >ご注文を確定してもよろしいですか？</div>
+          <button
+            class="thongbao-quaylaidathang"
+            data-i18n="common.back"
+          >戻る</button>
+          <button
+            class="thongbao-tieptucdathang"
+            data-i18n="common.confirm"
+          >確認</button>
         </div>
       </div>
       <form
@@ -75,18 +92,27 @@
       ></form>
       <div class="giohang-tongtien">
         <div class="giohang-tongtien__tamtinh">
-          <div class="giohang-tongtien__tamtinh-mota">小計</div>
+          <div
+            class="giohang-tongtien__tamtinh-mota"
+            data-i18n="payment.subtotal"
+          >小計</div>
           <div class="giohang-tongtien__tamtinh-tt">{{formatNumber
               (totalGiagoc user.giohang)
             }}
             ₫</div>
         </div>
         <div class="giohang-tongtien__tamtinh">
-          <div class="giohang-tongtien__tamtinh-mota">特典割引</div>
+          <div
+            class="giohang-tongtien__tamtinh-mota"
+            data-i18n="cart.promo_discount"
+          >特典割引</div>
           <div class="giohang-tongtien__tamtinh-tt">-</div>
         </div>
         <div class="giohang-tongtien__tamtinh">
-          <div class="giohang-tongtien__tamtinh-mota">商品割引</div>
+          <div
+            class="giohang-tongtien__tamtinh-mota"
+            data-i18n="payment.product_discount"
+          >商品割引</div>
           <div class="giamgiatong">{{formatNumber
               (minus (totalGiagoc user.giohang) (totalGiaban user.giohang))
             }}
@@ -94,13 +120,19 @@
         </div>
         <div class="gachchan"></div>
         <div class="giohang-tongtien__tongtien">
-          <div class="giohang-tongtien__tongtien-mota">合計金額</div>
+          <div
+            class="giohang-tongtien__tongtien-mota"
+            data-i18n="payment.total"
+          >合計金額</div>
           <div class="giohang-tongtien__tongtien-tt">{{formatNumber
               (totalGiaban user.giohang)
             }}
             ₫</div>
         </div>
-        <div class="giohang-tongtien__btn">購入する</div>
+        <div
+          class="giohang-tongtien__btn"
+          data-i18n="cart.checkout_btn"
+        >購入する</div>
       </div>
     </div>
   {{/if}}

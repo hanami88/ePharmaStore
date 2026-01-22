@@ -208,7 +208,10 @@
     "apply": "Áp dụng",
     "save": "Lưu",
     "default": "Mặc định",
-    "item_unit": "sản phẩm"
+    "item_unit": "sản phẩm",
+    "confirm": "Xác nhận",
+    "update": "Cập nhật",
+    "save_changes": "Lưu thay đổi"
   },
   "payment": {
     "page_title": "Thanh toán",
@@ -249,5 +252,71 @@
     "type_home": "Nhà riêng",
     "type_company": "Công ty",
     "set_default": "Đặt làm địa chỉ mặc định"
+  },
+  "cart": {
+    "title": "Giỏ hàng",
+    "order_success": "Đặt hàng thành công",
+    "empty_title": "Chưa có sản phẩm",
+    "empty_subtitle": "Hãy bắt đầu mua sắm ngay",
+    "shop_now": "Tìm kiếm ngay",
+    "delete_title": "Xóa sản phẩm",
+    "delete_msg": "Bạn có chắc chắn muốn xóa sản phẩm này không?",
+    "unit_price": "Đơn giá",
+    "order_confirm_title": "Xác nhận đơn hàng",
+    "order_confirm_msg": "Bạn có chắc chắn muốn chốt đơn hàng này không?",
+    "promo_discount": "Giảm giá ưu đãi",
+    "checkout_btn": "Mua hàng"
+  },
+  "profile": {
+    "title": "Thông tin cá nhân",
+    "menu": {
+      "info": "Thông tin cá nhân",
+      "address": "Địa chỉ nhận hàng"
+    },
+    "avatar_label": "Ảnh đại diện",
+    "upload_btn": "Cập nhật ảnh mới",
+    "max_size": "Dung lượng tối đa: 5 MB",
+    "format": "Định dạng: .JPEG, .PNG",
+    "dob": "Ngày sinh",
+    "gender": "Giới tính",
+    "select_gender": "-- Chọn giới tính --",
+    "gender_male": "Nam",
+    "gender_female": "Nữ",
+    "gender_other": "Khác",
+    "email": "Email",
+    "change_password": "Đổi mật khẩu"
+  },
+  "address_book": {
+    "delete_title": "Xóa địa chỉ",
+    "delete_confirm": "Bạn có chắc chắn muốn xóa địa chỉ này không?",
+    "empty_title": "Chưa có địa chỉ nào",
+    "empty_msg": "Thêm địa chỉ để bắt đầu đặt hàng ngay!"
+  },
+  "address_form": {
+    "title": "Địa chỉ mới",
+    "name": "Họ tên",
+    "name_ph": "Nhập họ tên",
+    "city_label": "Tỉnh/Thành phố",
+    "select_city": "-- Chọn Tỉnh/Thành --",
+    "district_ph": "Nhập Quận/Huyện",
+    "ward_ph": "Nhập Phường/Xã",
+    "street_ph": "Nhập số nhà, tên đường",
+    "type_label": "Loại địa chỉ",
+    "type_home": "Nhà riêng",
+    "type_company": "Công ty",
+    "set_default": "Đặt làm địa chỉ mặc định"
+  },
+  "history": {
+    "tabs": {
+      "pending": "Chờ xác nhận",
+      "confirmed": "Đã xác nhận",
+      "cancelled": "Đã hủy"
+    },
+    "status": {
+      "pending": "Chờ xác nhận",
+      "cancelled": "Đã hủy"
+    },
+    "empty_title": "Chưa có đơn hàng nào",
+    "empty_msg": "Hãy bắt đầu mua sắm ngay"
   }
 }

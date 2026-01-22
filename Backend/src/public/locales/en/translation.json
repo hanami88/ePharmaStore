@@ -208,7 +208,10 @@
     "apply": "Apply",
     "save": "Save",
     "default": "Default",
-    "item_unit": "items"
+    "item_unit": "items",
+    "confirm": "Confirm",
+    "update": "Update",
+    "save_changes": "Save Changes"
   },
   "payment": {
     "page_title": "Checkout",
@@ -249,5 +252,71 @@
     "type_home": "Home",
     "type_company": "Company",
     "set_default": "Set as default address"
+  },
+  "cart": {
+    "title": "Cart",
+    "order_success": "Order placed successfully",
+    "empty_title": "Your cart is empty",
+    "empty_subtitle": "Let's start shopping",
+    "shop_now": "Shop now",
+    "delete_title": "Remove Item",
+    "delete_msg": "Are you sure you want to remove this item?",
+    "unit_price": "Unit Price",
+    "order_confirm_title": "Order Confirmation",
+    "order_confirm_msg": "Are you sure you want to place this order?",
+    "promo_discount": "Promo Discount",
+    "checkout_btn": "Checkout"
+  },
+  "profile": {
+    "title": "Personal Information",
+    "menu": {
+      "info": "Personal Info",
+      "address": "Shipping Address"
+    },
+    "avatar_label": "Profile Picture",
+    "upload_btn": "Upload new photo",
+    "max_size": "Max size: 5 MB",
+    "format": "Format: .JPEG, .PNG",
+    "dob": "Date of Birth",
+    "gender": "Gender",
+    "select_gender": "-- Select Gender --",
+    "gender_male": "Male",
+    "gender_female": "Female",
+    "gender_other": "Other",
+    "email": "Email",
+    "change_password": "Change Password"
+  },
+  "address_book": {
+    "delete_title": "Delete Address",
+    "delete_confirm": "Are you sure you want to delete this address?",
+    "empty_title": "No address saved",
+    "empty_msg": "Add an address to start shopping now!"
+  },
+  "address_form": {
+    "title": "New Address",
+    "name": "Full Name",
+    "name_ph": "Enter full name",
+    "city_label": "City/Province",
+    "select_city": "-- Select City/Province --",
+    "district_ph": "Enter District",
+    "ward_ph": "Enter Ward/Commune",
+    "street_ph": "Enter house number, street",
+    "type_label": "Address Type",
+    "type_home": "Home",
+    "type_company": "Office",
+    "set_default": "Set as default address"
+  },
+  "history": {
+    "tabs": {
+      "pending": "Pending",
+      "confirmed": "Confirmed",
+      "cancelled": "Cancelled"
+    },
+    "status": {
+      "pending": "Pending",
+      "cancelled": "Cancelled"
+    },
+    "empty_title": "No orders yet",
+    "empty_msg": "Let's start shopping"
   }
 }

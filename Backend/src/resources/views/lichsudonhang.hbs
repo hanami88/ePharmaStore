@@ -11,25 +11,34 @@
       <div class="bangchon-user-bot">
         <a href="/user/thongtin" class="thanhchon-user">
           <i class="fa-solid fa-user"></i>
-          <div>個人情報</div>
+          <div data-i18n="profile.menu.info">個人情報</div>
         </a>
         <a href="/user/diachinhanhang" class="thanhchon-user">
           <i class="fa-solid fa-location-dot"></i>
-          <div>配送先住所</div>
+          <div data-i18n="profile.menu.address">配送先住所</div>
         </a>
         <a href="/user/lichsudonhang" class="thanhchon-user">
           <i class="fa-solid fa-notes-medical"></i>
-          <div>注文履歴</div>
+          <div data-i18n="nav.order_history">注文履歴</div>
         </a>
       </div>
     </div>
     <div class="ctnthongtin-diachi">
       <div class="lichsucc">
-        <h1 class="title-lichsu">注文履歴</h1>
+        <h1 class="title-lichsu" data-i18n="nav.order_history">注文履歴</h1>
         <div id="thanhchontrang">
-          <a href="/user/lichsudonhang">確認待ち</a>
-          <a href="/user/lichsudonhangdaxacnhan">確認済み</a>
-          <a href="/user/lichsudonhangdahuy">キャンセル済み</a>
+          <a
+            href="/user/lichsudonhang"
+            data-i18n="history.tabs.pending"
+          >確認待ち</a>
+          <a
+            href="/user/lichsudonhangdaxacnhan"
+            data-i18n="history.tabs.confirmed"
+          >確認済み</a>
+          <a
+            href="/user/lichsudonhangdahuy"
+            data-i18n="history.tabs.cancelled"
+          >キャンセル済み</a>
         </div>
       </div>
       <div class="thongtin-donhang">
@@ -40,9 +49,8 @@
                 src="https://prod-cdn.pharmacity.io/e-com/images/static-website/20240706155228-0-empty-order-history.svg"
                 alt=""
               />
-              <div>ご注文はまだありません
-              </div>
-              <div>
+              <div data-i18n="history.empty_title">ご注文はまだありません</div>
+              <div data-i18n="history.empty_msg">
                 ショッピングを始めましょう
               </div>
             </div>
@@ -53,7 +61,10 @@
                   <div>
                     <div class="chuama--donhang">{{this._id}}</div>
                   </div>
-                  <div class="trangthaidonhang">
+                  <div
+                    class="trangthaidonhang"
+                    data-i18n="history.status.pending"
+                  >
                     確認待ち
                   </div>
                 </div>
@@ -86,14 +97,13 @@
                 </div>
                 <div class="gachchan-to11"></div>
                 <div class="thongtinduoicung">
-                  <div class="gomsp"><span style="color :red">{{length
-                        this.giohang
-                      }}</span>
-                    商品
+                  <div class="gomsp">
+                    <span style="color :red">{{length this.giohang}}</span>
+                    <span data-i18n="common.item_unit">商品</span>
                   </div>
                   <div class="tongtiendonhang">
-                    <div>合計金額：</div>
-                    <div>{{formatNumber this.tongtien}} ₫</div>
+                    <div data-i18n="payment.total">合計金額</div>
+                    <div>: {{formatNumber this.tongtien}} ₫</div>
                   </div>
                 </div>
               </div>
@@ -111,5 +121,4 @@
   chuadonhang.forEach((i) => { i.addEventListener("click", function () { let ma
   = i.querySelector(".chuama--donhang").textContent; window.location.href =
   `/user/chitietlichsudonhang/${ma}`; }); });
-
 </script>

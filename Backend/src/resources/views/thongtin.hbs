@@ -23,23 +23,23 @@
       <div class="bangchon-user-bot">
         <a href="/user/thongtin" class="thanhchon-user">
           <i class="fa-solid fa-user"></i>
-          <div>個人情報</div>
+          <div data-i18n="profile.menu.info">個人情報</div>
         </a>
         <a href="/user/diachinhanhang" class="thanhchon-user">
           <i class="fa-solid fa-location-dot"></i>
-          <div>配送先住所</div>
+          <div data-i18n="profile.menu.address">配送先住所</div>
         </a>
         <a href="/user/lichsudonhang" class="thanhchon-user">
           <i class="fa-solid fa-notes-medical"></i>
-          <div>注文履歴</div>
+          <div data-i18n="nav.order_history">注文履歴</div>
         </a>
       </div>
     </div>
     <div class="ctnthongtin-user">
-      <h1 class="title-thongtincanhan">個人情報</h1>
+      <h1 class="title-thongtincanhan" data-i18n="profile.title">個人情報</h1>
       <div class="thongtin-user">
         <form method="post" action="/user/capnhatthongtin" class="container-thongtinuser" enctype="multipart/form-data">
-          <div class="anhdaidien">プロフィール画像</div>
+          <div class="anhdaidien" data-i18n="profile.avatar_label">プロフィール画像</div>
           <div class="anhdaidien-cc">
             <img class="anhdaidienmoi" id="preview" src="/img/{{user.hinhanh}}"/>
             <input
@@ -51,56 +51,57 @@
              style="display: none;"
             />
             <div class="daidienoi">
-             <label for="hinhanh" class="btn-capnhatanhmoi">新しい画像を更新</label>
-              <div>最大ファイルサイズ：5 MB</div>
-              <div>形式：.JPEG、.PNG</div>
+             <label for="hinhanh" class="btn-capnhatanhmoi" data-i18n="profile.upload_btn">新しい画像を更新</label>
+              <div data-i18n="profile.max_size">最大ファイルサイズ：5 MB</div>
+              <div data-i18n="profile.format">形式：.JPEG、.PNG</div>
             </div>
           </div>
           <div class="dienthongtin">
             <div class="container-dienthongtin">
-              <label for="hoten">氏名</label>
+              <label for="hoten" data-i18n="address_form.name">氏名</label>
               <input
                 type="text"
                 name="hoten"
                 id="hoten"
                 placeholder="氏名"
+                data-i18n="[placeholder]address_form.name_ph"
                 value="{{user.hoten}}"
               />
-              <label for="ngaysinh">生年月日</label>
+              <label for="ngaysinh" data-i18n="profile.dob">生年月日</label>
               <input
                 type="date"
                 name="ngaysinh"
                 id="ngaysinh"
                 value="{{user.ngaysinh}}"
               />
-              <label for="gioitinh">性別</label>
+              <label for="gioitinh" data-i18n="profile.gender">性別</label>
               <select class="gioitinhchon" name="gioitinh" id="gioitinh">
-                <option value="" disabled selected>
+                <option value="" disabled selected data-i18n="profile.select_gender">
                   -- 性別を選択 --
                 </option>
-                <option value="nam" {{#if (equal user.gioitinh "nam")}}selected{{/if}}>男性</option>
-                 <option value="nu" {{#if (equal user.gioitinh "nu")}}selected{{/if}}>女性</option>
-                <option value="khac" {{#if (equal user.gioitinh "khac")}}selected{{/if}}>その他</option>
+                <option value="nam" {{#if (equal user.gioitinh "nam")}}selected{{/if}} data-i18n="profile.gender_male">男性</option>
+                 <option value="nu" {{#if (equal user.gioitinh "nu")}}selected{{/if}} data-i18n="profile.gender_female">女性</option>
+                <option value="khac" {{#if (equal user.gioitinh "khac")}}selected{{/if}} data-i18n="profile.gender_other">その他</option>
               </select>
             </div>
             <div class="thongtinphu">
-              <div>電話番号</div>
+              <div data-i18n="auth.phone_label">電話番号</div>
               <div>{{user.sdt}}</div>
               <div>
                 <div>
-                  <div>メールアドレス</div>
+                  <div data-i18n="profile.email">メールアドレス</div>
                   <div>{{user.email}}</div>
                 </div>
-                <a href="/user/capnhatemail">更新</a>
+                <a href="/user/capnhatemail" data-i18n="common.update">更新</a>
               </div>
               <div>
-                <div>パスワード</div>
-                <a href="/user/doimatkhau">パスワード変更</a>
+                <div><span data-i18n="auth.password_label">パスワード</span></div>
+                <a href="/user/doimatkhau" data-i18n="profile.change_password">パスワード変更</a>
               </div>
             </div>
           </div>
           <div class="chuabtnthaydoi">
-            <button type="submit" class="btn-thaydoi">変更を保存</button>
+            <button type="submit" class="btn-thaydoi" data-i18n="common.save_changes">変更を保存</button>
           </div>
         </form>
       </div>
