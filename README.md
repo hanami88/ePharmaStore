@@ -207,7 +207,7 @@ Displays a ranked list of best-selling products with performance indicators:
 - 👍 **Average**: Sold between 200–500 units 
 - ⚠️ **Poor**: Sold under 100 units
 > Icons help quickly identify how well each product is performing.
-<img width="1435" height="692" alt="Ảnh màn hình 2025-07-29 lúc 14 33 30" src="https://github.com/user-attachments/assets/09e6172c-2111-4c48-9f82-83afe22f3168" />
+<img width="1437" height="694" alt="image" src="https://github.com/user-attachments/assets/49d1614e-81c3-454d-98e2-bc2ba26a13dd" />
 
 ## 🙏 Thank You
 
