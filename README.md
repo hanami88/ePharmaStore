@@ -72,6 +72,12 @@ This project is an online pharmacy platform inspired by Pharmacity, designed to 
 
 <img width="1440" height="813" alt="image" src="https://github.com/user-attachments/assets/1f326865-f5a4-4e89-812c-ac6b688be4a2" />
 
+### 🌐 Multi-language Support
+
+This application is fully internationalized using i18next, allowing for seamless language switching. We currently support English (EN), Japanese (JP), and Vietnamese (VN) to ensure a localized user experience.
+
+<img width="1423" height="221" alt="image" src="https://github.com/user-attachments/assets/b2e5cb72-1a2b-4d96-93b3-2ec1780ca208" />
+
 ### 🙍‍♂️ User Profile Management
 
 After logging in, users can access their profile to update personal information.
