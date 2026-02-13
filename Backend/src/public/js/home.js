@@ -132,3 +132,72 @@ for (let i = 0; i < hotDeal_thanhchon.length; i++) {
     hotDeal(1, i);
   });
 }
+// Chat Widget
+const chatButton = document.getElementById("chatButton");
+const chatBox = document.getElementById("chatBox");
+const chatClose = document.getElementById("chatClose");
+const chatSend = document.getElementById("chatSend");
+const chatInput = document.getElementById("chatInput");
+const chatBody = document.getElementById("chatBody");
+const chatBadge = document.querySelector(".chat-badge");
+
+// Mở/đóng chat
+chatButton.addEventListener("click", () => {
+  chatBox.classList.toggle("active");
+  chatBadge.style.display = "none"; // Ẩn badge khi mở chat
+});
+
+chatClose.addEventListener("click", () => {
+  chatBox.classList.remove("active");
+});
+
+// Gửi tin nhắn
+function sendMessage() {
+  const message = chatInput.value.trim();
+  if (message === "") return;
+  // Thêm tin nhắn của user
+  const userMessage = document.createElement("div");
+  userMessage.className = "chat-message user-message";
+  userMessage.innerHTML = `
+    <div class="message-content">
+      <p>${message}</p>
+    </div>
+    <span class="message-time">${getCurrentTime()}</span>
+  `;
+  chatBody.appendChild(userMessage);
+
+  // Xóa input
+  chatInput.value = "";
+
+  // Scroll xuống cuối
+  chatBody.scrollTop = chatBody.scrollHeight;
+  // Giả lập phản hồi từ bot (sau 1 giây)
+  setTimeout(() => {
+    const botMessage = document.createElement("div");
+    botMessage.className = "chat-message bot-message";
+    botMessage.innerHTML = `
+      <div class="message-content">
+        <p>Cảm ơn bạn đã liên hệ! Nhân viên của chúng tôi sẽ phản hồi trong giây lát.</p>
+      </div>
+      <span class="message-time">${getCurrentTime()}</span>
+    `;
+    chatBody.appendChild(botMessage);
+    chatBody.scrollTop = chatBody.scrollHeight;
+  }, 1000);
+}
+
+// Lấy thời gian hiện tại
+function getCurrentTime() {
+  const now = new Date();
+  return `${now.getHours().toString().padStart(2, "0")}:${now.getMinutes().toString().padStart(2, "0")}`;
+}
+
+// Gửi khi nhấn nút
+chatSend.addEventListener("click", sendMessage);
+
+// Gửi khi nhấn Enter
+chatInput.addEventListener("keypress", (e) => {
+  if (e.key === "Enter") {
+    sendMessage();
+  }
+});
