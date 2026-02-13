@@ -1,6 +1,6 @@
 <main class="main">
   <div class="header" style="margin-bottom: 1rem; width:28vw;">
-    <h2>Thống kê</h2>
+    <h2>統計</h2>
     <form action="/admin/thongke" method="POST" class="formthongke">
       <input
         type="month"
@@ -9,7 +9,7 @@
         class="thongkenam"
         value="{{thongke.nam}}-{{thongke.thang}}"
       />
-      <button type="submit" class="btn-thongke">Xem thống kê</button>
+      <button type="submit" class="btn-thongke">表示する</button>
     </form>
   </div>
   <div class="hienthi4cot">
@@ -17,19 +17,19 @@
       <div>
         <i style="color: #2196f3" class="fa-solid fa-sack-dollar"></i>
         <div class="box-tongquan__chuaso">
-          <div>Doanh thu (triệu VND)</div>
+          <div>売上高 (百万VND)</div>
           <div>{{thongke.doanhthu}}</div>
         </div>
       </div>
       {{#if doanhthu}}
         <div class="tang-doanhthu">
           <i class="fas fa-arrow-up"></i>
-          <div>so với tháng trước</div>
+          <div>前月比</div>
         </div>
       {{else}}
         <div class="giam-doanhthu">
           <i class="fas fa-arrow-down"></i>
-          <div>so với tháng trước</div>
+          <div>前月比</div>
         </div>
       {{/if}}
     </div>
@@ -37,19 +37,19 @@
       <div>
         <i style="color: #ab47bc" class="fa-solid fa-users"></i>
         <div class="box-tongquan__chuaso">
-          <div>Khách mua hàng</div>
+          <div>購入者数</div>
           <div>{{thongke.khachmuahang}}</div>
         </div>
       </div>
       {{#if khachmuahang}}
         <div class="tang-doanhthu">
           <i class="fas fa-arrow-up"></i>
-          <div>so với tháng trước</div>
+          <div>前月比</div>
         </div>
       {{else}}
         <div class="giam-doanhthu">
           <i class="fas fa-arrow-down"></i>
-          <div>so với tháng trước</div>
+          <div>前月比</div>
         </div>
       {{/if}}
     </div>
@@ -60,19 +60,19 @@
           class="fas fa-clipboard-list icon-donhang"
         ></i>
         <div class="box-tongquan__chuaso">
-          <div>Đơn hàng</div>
+          <div>注文数</div>
           <div>{{thongke.donhang}}</div>
         </div>
       </div>
       {{#if donhang}}
         <div class="tang-doanhthu">
           <i class="fas fa-arrow-up"></i>
-          <div>so với tháng trước</div>
+          <div>前月比</div>
         </div>
       {{else}}
         <div class="giam-doanhthu">
           <i class="fas fa-arrow-down"></i>
-          <div>so với tháng trước</div>
+          <div>前月比</div>
         </div>
       {{/if}}
     </div>
@@ -80,36 +80,36 @@
       <div>
         <i style="color: #4caf50" class="fas fa-box icon-sanpham"></i>
         <div class="box-tongquan__chuaso">
-          <div>Sản phẩm bán ra</div>
+          <div>販売点数</div>
           <div>{{thongke.sanphambanra}}</div>
         </div>
       </div>
       {{#if spbanra}}
         <div class="tang-doanhthu">
           <i class="fas fa-arrow-up"></i>
-          <div>so với tháng trước</div>
+          <div>前月比</div>
         </div>
       {{else}}
         <div class="giam-doanhthu">
           <i class="fas fa-arrow-down"></i>
-          <div>so với tháng trước</div>
+          <div>前月比</div>
         </div>
       {{/if}}
     </div>
   </div>
   <div class="bangxep-hangsp">
-    <div>TOP sản phẩm bán chạy</div>
+    <div>売れ筋商品トップ</div>
     <div class="table-wrapper" style="max-height: 61vh">
       <table class="product-table">
         <thead>
           <tr>
-            <th>STT</th>
-            <th>Ảnh</th>
-            <th>Tên sản phẩm</th>
-            <th>Danh mục</th>
-            <th>Số lượng đã bán</th>
-            <th>Doanh thu</th>
-            <th>Đánh giá</th>
+            <th>No.</th>
+            <th>画像</th>
+            <th>商品名</th>
+            <th>カテゴリー</th>
+            <th>販売数</th>
+            <th>売上</th>
+            <th>販売状況</th>
           </tr>
         </thead>
         <tbody>
@@ -117,11 +117,7 @@
             <tr>
               <td style="width: 4vw">{{sum @index 1}}</td>
               <td style="width: 5vw">
-                <img
-                  src="/img/{{this.hinhanh}}"
-                  alt="Ảnh sản phẩm"
-                  class="thumb"
-                />
+                <img src="/img/{{this.hinhanh}}" alt="商品画像" class="thumb" />
               </td>
               <td>
                 {{this.tensp}}

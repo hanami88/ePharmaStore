@@ -11,17 +11,20 @@ const check = async (req, res, next) => {
     const accessToken = req.cookies.accessToken;
     let decoded = 0;
     if (accessToken) {
-      decoded = jwt.verify(accessToken, "1");
+      decoded = jwt.verify(accessToken, process.env.ACCESS_TOKEN_SECRET);
     } else {
       if (refreshToken) {
-        console.log("refreshToken");
-        decoded = jwt.verify(refreshToken, "2");
-        const accessToken = jwt.sign({ id: user._id, role: user.role }, "1", {
-          expiresIn: 15 * 60 * 1000,
-        });
+        decoded = jwt.verify(refreshToken, process.env.REFRESH_TOKEN_SECRET);
+        const accessToken = jwt.sign(
+          { id: user._id, role: user.role },
+          process.env.ACCESS_TOKEN_SECRET,
+          {
+            expiresIn: "15m",
+          },
+        );
         res.cookie("accessToken", accessToken, {
           httpOnly: true,
-          expiresIn: 15 * 60 * 1000,
+          maxAge: 15 * 60 * 1000,
         });
       } else {
         res.redirect("/");
@@ -56,11 +59,11 @@ router.post("/xoadiachi", UserController.xoadiachi);
 router.get("/chitietlichsudonhang/:id", UserController.chitietlichsudonhang);
 router.get(
   "/chitietlichsudonhangdaxacnhan/:id",
-  UserController.chitietlichsudonhangdaxacnhan
+  UserController.chitietlichsudonhangdaxacnhan,
 );
 router.get(
   "/chitietlichsudonhangdahuy/:id",
-  UserController.chitietlichsudonhangdahuy
+  UserController.chitietlichsudonhangdahuy,
 );
 router.get("/lichsudonhang", UserController.lichsudonhang);
 router.get("/lichsudonhangdahuy", UserController.lichsudonhangdahuy);
@@ -78,6 +81,6 @@ router.get("/muahangtrangdathang", UserController.muahangtrangdathang);
 router.post(
   "/capnhatthongtin",
   upload.single("hinhanh"),
-  UserController.capnhatthongtin
+  UserController.capnhatthongtin,
 );
 module.exports = router;

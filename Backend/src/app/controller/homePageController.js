@@ -1,7 +1,7 @@
 const Goods = require("../models/Good");
 const Users = require("../models/User");
 var jwt = require("jsonwebtoken");
-
+require("dotenv").config();
 class HomePageController {
   async home(req, res) {
     try {
@@ -72,25 +72,34 @@ class HomePageController {
       if (user.password !== password) {
         return res.status(401).json({ error: "Mật khẩu sai" });
       }
-      const accessToken = jwt.sign({ id: user._id, role: user.role }, "1", {
-        expiresIn: 15 * 60 * 1000,
-      });
-      const refreshToken = jwt.sign({ id: user._id, role: user.role }, "2", {
-        expiresIn: 15 * 60 * 60 * 1000,
-      });
+      const accessToken = jwt.sign(
+        { id: user._id, role: user.role },
+        process.env.ACCESS_TOKEN_SECRET,
+        {
+          expiresIn: "15m",
+        },
+      );
+      const refreshToken = jwt.sign(
+        { id: user._id, role: user.role },
+        process.env.REFRESH_TOKEN_SECRET,
+        {
+          expiresIn: "3d",
+        },
+      );
       res.cookie("accessToken", accessToken, {
         httpOnly: true,
         maxAge: 15 * 60 * 1000,
       });
       res.cookie("refreshToken", refreshToken, {
         httpOnly: true,
-        maxAge: 15 * 60 * 60 * 1000,
+        maxAge: 3 * 24 * 60 * 60 * 1000,
       });
       res.json({ success: true, role: user.role });
     } catch (err) {
       res.status(500).json({ error: "Lỗi server. Vui lòng thử lại sau." });
     }
   }
+
   async dangky(req, res) {
     try {
       const { sdt, password, repassword } = req.body;
