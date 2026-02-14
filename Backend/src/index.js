@@ -1,16 +1,16 @@
 const express = require("express");
 const path = require("path");
 const app = express();
-const port = 3000;
 const morgan = require("morgan");
 const handlebars = require("express-handlebars");
 const router = require("./router");
 app.use(express.static(path.join(__dirname, "public")));
 const db = require("./config/db");
 const multer = require("multer");
-var cookieParser = require("cookie-parser");
+const cookieParser = require("cookie-parser");
 const dayjs = require("dayjs");
-
+const funcwss = require("./app/Socket/Websocket");
+require("dotenv").config();
 app.use(cookieParser());
 // app.use(morgan("combined"));
 db.connect();
@@ -52,12 +52,14 @@ app.engine(
     },
   }),
 );
+//Socket
+funcwss(app);
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.set("view engine", "hbs");
 app.set("views", path.join(__dirname, "resources/views"));
 router(app);
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`);
+app.listen(process.env.PORT, () => {
+  console.log(`Example app listening on port ${process.env.PORT}`);
 });

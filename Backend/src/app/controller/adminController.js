@@ -285,7 +285,7 @@ class AdminController {
       if (keyword && keyword.trim() !== "") {
         const keywordRegex = new RegExp(keyword.trim(), "i");
         orders = orders.filter((order) =>
-          keywordRegex.test(order.userid?.sdt || "")
+          keywordRegex.test(order.userid?.sdt || ""),
         );
       }
       const count = await Orders.countDocumentsWithDeleted({ deleted: true });
@@ -334,7 +334,7 @@ class AdminController {
     try {
       let thongtin = await Orders.findById(req.body.id).populate(
         "userid",
-        "hoten sdt"
+        "hoten sdt",
       );
       res.json({ thongtin });
     } catch (err) {
@@ -348,7 +348,7 @@ class AdminController {
       form.banchay = form.banchay === "on";
       form.giaban =
         Math.floor(
-          parseInt(form.giagoc * ((100 - form.giamgia) / 100)) / 1000
+          parseInt(form.giagoc * ((100 - form.giamgia) / 100)) / 1000,
         ) * 1000;
       form.hinhanh = req.file ? req.file.filename : req.body.oldImage;
       await Goods.updateOne({ _id: req.params.id }, form);
@@ -437,7 +437,7 @@ class AdminController {
     try {
       let order = await Orders.findWithDeleted({ deleted: true }).populate(
         "userid",
-        "sdt hoten"
+        "sdt hoten",
       );
       const message = req.cookies.message || null;
       res.clearCookie("message");
@@ -480,6 +480,9 @@ class AdminController {
     } catch (err) {
       res.send("ERROR");
     }
+  }
+  async chamsockhachhang(req, res) {
+    res.render("admin/chamsockhachhang", { layout: "admin" });
   }
 }
 

@@ -23,7 +23,7 @@ const check = async (req, res, next) => {
           },
         );
         res.cookie("accessToken", accessToken, {
-          httpOnly: true,
+          httpOnly: false,
           maxAge: 15 * 60 * 1000,
         });
       } else {

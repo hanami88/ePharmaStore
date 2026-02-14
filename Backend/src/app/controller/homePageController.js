@@ -87,11 +87,11 @@ class HomePageController {
         },
       );
       res.cookie("accessToken", accessToken, {
-        httpOnly: true,
+        httpOnly: false,
         maxAge: 15 * 60 * 1000,
       });
       res.cookie("refreshToken", refreshToken, {
-        httpOnly: true,
+        httpOnly: false,
         maxAge: 3 * 24 * 60 * 60 * 1000,
       });
       res.json({ success: true, role: user.role });

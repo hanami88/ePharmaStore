@@ -6,7 +6,7 @@ var jwt = require("jsonwebtoken");
 const check = (req, res, next) => {
   try {
     const accessToken = req.cookies.accessToken;
-    var result = jwt.verify(accessToken, "1");
+    var result = jwt.verify(accessToken, process.env.ACCESS_TOKEN_SECRET);
     if (result.role != "admin") {
       res.redirect("/");
     } else {
@@ -18,6 +18,7 @@ const check = (req, res, next) => {
 };
 router.use(check);
 router.get("/add", AdminController.home);
+router.get("/chamsockhachhang", AdminController.chamsockhachhang);
 router.get("/dangxuat", AdminController.dangxuat);
 router.get("/quanlydonhang", AdminController.quanlydonhang);
 router.post("/add", upload.single("hinhanh"), AdminController.create);
@@ -49,7 +50,7 @@ router.post("/:id/doimatkhau", AdminController.doimatkhau);
 router.post(
   "/:id/capnhatthongtin",
   upload.single("hinhanh"),
-  AdminController.capnhatthongtin
+  AdminController.capnhatthongtin,
 );
 
 module.exports = router;
