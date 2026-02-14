@@ -81,10 +81,11 @@ This application is fully internationalized using i18next, allowing for seamless
 ### 💬 Live Pharmacist Consultation
 
 Users can connect directly with professional pharmacists via our real-time chat interface. This feature enables instant consultation regarding prescriptions, medication usage, and general health advice.
-> Admin
-<img width="2850" height="1372" alt="image" src="https://github.com/user-attachments/assets/0cd275e9-1d98-41bf-83b8-48b43a24bf28" />
 
 > Customer
+<img width="1425" height="686" alt="Ảnh màn hình 2026-02-14 lúc 20 39 35" src="https://github.com/user-attachments/assets/c98f78eb-b378-4d4d-af77-43f67727c17b" />
+
+> Admin
 <img width="1158" height="687" alt="image" src="https://github.com/user-attachments/assets/19229afc-e359-4f19-b2de-b1edd871c764" />
 
 ### 🙍‍♂️ User Profile Management
