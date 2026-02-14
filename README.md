@@ -1,6 +1,6 @@
 # 💊 ePharmaStore
 
-## 📌 Project Overview
+## 📌 Project Overviewß
 
 This project is an online pharmacy platform inspired by Pharmacity, designed to make access to essential medicines and healthcare products easier and more convenient. It enables users to quickly search and order medications, manage prescriptions, and track their orders in real time. For administrators, the system provides tools to ensure product quality, manage inventory, and monitor sales, helping to maintain reliable healthcare distribution.
  
@@ -81,6 +81,11 @@ This application is fully internationalized using i18next, allowing for seamless
 ### 💬 Live Pharmacist Consultation
 
 Users can connect directly with professional pharmacists via our real-time chat interface. This feature enables instant consultation regarding prescriptions, medication usage, and general health advice.
+> Admin
+<img width="2850" height="1372" alt="image" src="https://github.com/user-attachments/assets/0cd275e9-1d98-41bf-83b8-48b43a24bf28" />
+
+> Customer
+<img width="1158" height="687" alt="image" src="https://github.com/user-attachments/assets/19229afc-e359-4f19-b2de-b1edd871c764" />
 
 ### 🙍‍♂️ User Profile Management
 
