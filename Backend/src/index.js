@@ -45,9 +45,17 @@ app.engine(
         const dayjs = require("dayjs");
         return dayjs(datetime).format("HH:mm DD/MM/YYYY");
       },
+      formatTime: (datetime) => {
+        const dayjs = require("dayjs");
+        return dayjs(datetime).format("HH:mm");
+      },
       formatDateNhat: (datetime) => {
         const date = new Date(dateString);
         return date.toLocaleDateString("ja-JP");
+      },
+      equalObjectId: function (a, b) {
+        if (!a || !b) return false;
+        return a.toString() === b.toString();
       },
     },
   }),

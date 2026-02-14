@@ -62,7 +62,6 @@
       showTypingIndicator(data.user);
     }
   }
-
   // ==================== THÊM TIN NHẮN VÀO UI ====================
   function addMyMessage(content) {
     var messageDiv = document.createElement("div");
@@ -83,7 +82,6 @@
   function addOtherMessage(message) {
     var messageDiv = document.createElement("div");
     messageDiv.className = "chat-message bot-message";
-
     messageDiv.innerHTML =
       '<div class="message-content">' +
       "<strong>" +

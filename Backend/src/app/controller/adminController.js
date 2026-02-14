@@ -2,6 +2,8 @@ const Goods = require("../models/Good");
 const Orders = require("../models/Order");
 const Thongkes = require("../models/Thongke");
 const Users = require("../models/User");
+const Messages = require("../models/Message");
+const Rooms = require("../models/Room");
 
 class AdminController {
   home(req, res, next) {
@@ -482,7 +484,24 @@ class AdminController {
     }
   }
   async chamsockhachhang(req, res) {
-    res.render("admin/chamsockhachhang", { layout: "admin" });
+    try {
+      if (req.user) {
+        var userId = req.user._id;
+        const room = await Rooms.findOne({ members: req.user._id });
+        if (room) {
+          var messages = await Messages.find({ roomId: room._id }).lean();
+        }
+      } else {
+        var messages = [];
+      }
+      res.render("admin/chamsockhachhang", {
+        layout: "admin",
+        userId,
+        messages,
+      });
+    } catch (err) {
+      console.log(err);
+    }
   }
 }
 

@@ -457,8 +457,25 @@
         </div>
         <span class="message-time">10:30</span>
       </div>
+      {{#each messages}}
+         {{#if (equalObjectId this.sender ../userId)}}
+        <div class="chat-message user-message">
+          <div class="message-content">
+            <p>{{this.content}}</p>
+          </div> 
+          <span class="message-time">{{formatTime this.createdAt}}</span>
+        </div>
+        {{else}}
+        <div class="chat-message bot-message">
+          <div class="message-content">
+            <p>{{this.content}}</p>
+          </div>
+          <span class="message-time">{{formatTime this.createdAt}}</span>
+        </div>
+        {{/if}}
+      {{/each}}
     </div>
-    
+     
     <div class="chat-footer">
       <input type="text" id="chatInput" placeholder="Nhập tin nhắn..." />
       <button id="chatSend">

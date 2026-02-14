@@ -404,14 +404,14 @@
   line-height: 1.5;
     }
 
-    .message-time {
+.user-message .message-time {
       font-size: 11px;
       color: #65676b;
       padding: 0 8px;
       align-self: flex-end;
     }
 
-    .message-wrapper.me .message-time {
+    .bot-message .message-time {
       align-self: flex-start;
     }
 
@@ -620,7 +620,23 @@
         </div>
         
         <div class="chat-body" id="chatBody">
-
+       {{#each messages}}
+         {{#if (equalObjectId this.sender ../userId)}}
+        <div class="chat-message user-message">
+          <div class="message-content">
+            <p>{{this.content}}</p>
+          </div> 
+          <span class="message-time">{{formatTime this.createdAt}}</span>
+        </div>
+        {{else}}
+        <div class="chat-message bot-message">
+          <div class="message-content">
+            <p>{{this.content}}</p>
+          </div>
+          <span class="message-time">{{formatTime this.createdAt}}</span>
+        </div>
+        {{/if}}
+      {{/each}}
         </div>
         <!-- Typing -  ID: typingIndicator -->
         <div class="typing-indicator" id="typingIndicator">

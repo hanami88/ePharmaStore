@@ -3,13 +3,18 @@ const router = express.Router();
 const AdminController = require("../app/controller/adminController");
 const { upload } = require("../app/controller/multerController");
 var jwt = require("jsonwebtoken");
-const check = (req, res, next) => {
+const Users = require("../app/models/User");
+const check = async (req, res, next) => {
   try {
     const accessToken = req.cookies.accessToken;
     var result = jwt.verify(accessToken, process.env.ACCESS_TOKEN_SECRET);
+    const user = await Users.findById(result.id).lean();
     if (result.role != "admin") {
+      res.locals.user = null;
       res.redirect("/");
     } else {
+      res.locals.user = user;
+      req.user = user;
       next();
     }
   } catch (err) {

@@ -1,10 +1,21 @@
 const Goods = require("../models/Good");
 const Users = require("../models/User");
+const Rooms = require("../models/Room");
+const Messages = require("../models/Message");
 var jwt = require("jsonwebtoken");
 require("dotenv").config();
 class HomePageController {
   async home(req, res) {
     try {
+      if (req.user) {
+        var userId = req.user._id;
+        const room = await Rooms.findOne({ members: req.user._id });
+        if (room) {
+          var messages = await Messages.find({ roomId: room._id }).lean();
+        }
+      } else {
+        var messages = [];
+      }
       let deal1 = await Goods.find({ danhmuc: "Săn Deal" }).lean();
       let deal2 = await Goods.find({
         danhmuc: "Ngàn Deal Hot Tặng Nàng",
@@ -18,9 +29,11 @@ class HomePageController {
         deal2,
         deal3,
         deal4,
+        messages,
+        userId,
       });
     } catch (err) {
-      res.status(400).json({ error: "ERROR!" });
+      res.status(400).json({ error: err });
     }
   }
   async khohang(req, res) {
