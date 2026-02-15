@@ -17,6 +17,11 @@ const message = new Schema(
       ref: "User",
       required: true,
     },
+    receiver: {
+      type: Schema.Types.ObjectId,
+      ref: "User",
+      required: true,
+    },
   },
   {
     timestamps: true, // Tự động thêm createdAt, updatedAt

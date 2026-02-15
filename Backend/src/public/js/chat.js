@@ -1,20 +1,21 @@
 (function () {
   "use strict";
-  // ==================== KHỞI TẠO ====================
   var ws;
   var chatInput = document.getElementById("chatInput");
   var chatSend = document.getElementById("chatSend");
   var chatBody = document.getElementById("chatBody"); // Container chứa tin nhắn
-  // ==================== KẾT NỐI WEBSOCKET ====================
   function connectWebSocket() {
-    ws = new WebSocket("ws://localhost:3000");
+    const token = getCookie("accessToken");
+    if (!token) return;
+    ws = new WebSocket(`ws://localhost:3000?token=${token}`);
     ws.onopen = function () {
       console.log("WebSocket đã kết nối");
     };
     ws.onmessage = function (event) {
       try {
         var data = JSON.parse(event.data);
-        handleMessage(data);
+        console.log(data.message);
+        addOtherMessage(data.message);
       } catch (e) {
         console.error("Lỗi parse JSON:", e);
       }
@@ -52,16 +53,6 @@
       console.log(err);
     }
   }
-  // ==================== XỬ LÝ TIN NHẮN NHẬN ====================
-  function handleMessage(data) {
-    if (data.type === "auth_success") {
-      console.log("Xác thực thành công");
-    } else if (data.type === "new_message") {
-      addOtherMessage(data.data);
-    } else if (data.type === "typing") {
-      showTypingIndicator(data.user);
-    }
-  }
   // ==================== THÊM TIN NHẮN VÀO UI ====================
   function addMyMessage(content) {
     var messageDiv = document.createElement("div");
@@ -84,9 +75,6 @@
     messageDiv.className = "chat-message bot-message";
     messageDiv.innerHTML =
       '<div class="message-content">' +
-      "<strong>" +
-      escapeHtml(message.sender.ten) +
-      "</strong>" +
       "<p>" +
       escapeHtml(message.content) +
       "</p>" +
