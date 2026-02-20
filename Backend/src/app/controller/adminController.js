@@ -485,19 +485,21 @@ class AdminController {
   }
   async chamsockhachhang(req, res) {
     try {
-      if (req.user) {
-        var userId = req.user._id;
-        const room = await Rooms.findOne({ members: req.user._id });
-        if (room) {
-          var messages = await Messages.find({ roomId: room._id }).lean();
-        }
-      } else {
-        var messages = [];
-      }
+      let rooms = await Rooms.find()
+        .populate("lastMessage")
+        .populate("members")
+        .lean();
+      rooms = rooms.map((i) => {
+        return {
+          ...i,
+          members: i.members.find(
+            (id) => id._id.toString() != req.user._id.toString(),
+          ),
+        };
+      });
       res.render("admin/chamsockhachhang", {
         layout: "admin",
-        userId,
-        messages,
+        rooms,
       });
     } catch (err) {
       console.log(err);

@@ -4,7 +4,8 @@ const Schema = mongoose.Schema;
 const room = new Schema(
   {
     lastMessage: {
-      type: String,
+      type: Schema.Types.ObjectId,
+      ref: "Message",
     },
     members: {
       type: [

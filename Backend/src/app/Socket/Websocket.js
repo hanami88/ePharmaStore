@@ -31,26 +31,27 @@ const funcwss = (app) => {
         if (message.type === "chat") {
           try {
             const checkRoom = await Rooms.findOne({ members: userId });
+            var receiverId = checkRoom.members.find((i) => i != userId);
             if (!checkRoom) {
-              var newRoom = await Rooms.create({
-                members: [userId, "68312c8c7209bb2eae1eace1"],
-                lastMessage: message.content,
-              });
-              var receiverId = newRoom.members.find((i) => i != userId);
-              console.log(receiverId);
               var newMessage = await Messages.create({
                 roomId: newRoom._id,
                 sender: userId,
                 content: message.content,
                 receiver: receiverId,
               });
+              var newRoom = await Rooms.create({
+                members: [userId, "68312c8c7209bb2eae1eace1"],
+                lastMessage: newMessage._id,
+              });
             } else {
-              var receiverId = checkRoom.members.find((i) => i != userId);
               var newMessage = await Messages.create({
                 roomId: checkRoom._id,
                 sender: userId,
                 content: message.content,
                 receiver: receiverId,
+              });
+              await Rooms.findByIdAndUpdate(checkRoom._id, {
+                lastMessage: newMessage._id,
               });
             }
             sendToUser(receiverId, { message: newMessage });
@@ -59,7 +60,7 @@ const funcwss = (app) => {
           }
         }
         ws.on("close", () => {
-          clients.delete(userId); // Xóa khi ngắt kết nối
+          clients.delete(userId);
         });
       });
     });

@@ -14,7 +14,6 @@
     ws.onmessage = function (event) {
       try {
         var data = JSON.parse(event.data);
-        console.log(data.message);
         addOtherMessage(data.message);
       } catch (e) {
         console.error("Lỗi parse JSON:", e);
@@ -31,7 +30,6 @@
       }, 3000);
     };
   }
-  // ==================== GỬI TIN NHẮN ====================
   function sendMessage() {
     try {
       var content = chatInput.value.trim();
@@ -42,7 +40,6 @@
       }
       var message = {
         type: "chat",
-        token: getCookie("accessToken"),
         content: content,
         timestamp: new Date().toISOString(),
       };
@@ -86,13 +83,9 @@
     chatBody.appendChild(messageDiv);
     scrollToBottom();
   }
-
-  // ==================== SỰ KIỆN ====================
   chatSend.addEventListener("click", function () {
     sendMessage();
   });
-
-  // Nhấn Enter trong input
   chatInput.addEventListener("keypress", function (e) {
     if (e.key === "Enter") {
       e.preventDefault();

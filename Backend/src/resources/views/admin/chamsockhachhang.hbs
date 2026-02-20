@@ -541,46 +541,35 @@
       transform: scale(0.95);
     }
   </style>
-
   <div class="chat-container">
-    
-    <!-- ==================== SIDEBAR ==================== -->
-    <div class="chat-sidebar">
-      
+        <div class="chat-sidebar">
       <div class="sidebar-header">
         <h2><i class="fa-solid fa-message"></i> Tin nhắn</h2>
         <button class="btn-new-chat" title="Tạo tin nhắn mới">
           <i class="fa-solid fa-pen-to-square"></i>
         </button>
       </div>
-      
       <div class="sidebar-search">
         <i class="fa-solid fa-magnifying-glass"></i>
         <input type="text" placeholder="Tìm kiếm trong tin nhắn...">
       </div>
-      
       <div class="conversations-list" id="conversationsList">
-        
         {{#each rooms}}
         <div class="conversation-item {{#if (equal @index 0)}}active{{/if}}" data-room-id="{{this._id}}">
           <div class="conversation-avatar">
-            <img src="/img/{{this.otherUser.avatar}}" alt="{{this.otherUser.ten}}">
-            {{#if this.otherUser.isOnline}}
+            <img src="/img/{{this.members.hinhanh}}" >
+            {{#if this.isOnline}}
             <span class="online-badge"></span>
             {{/if}}
           </div>
-          
           <div class="conversation-info">
             <div class="conversation-header">
-              <h4 class="conversation-name">{{this.otherUser.ten}}</h4>
-              <span class="conversation-time">{{formatTimeAgo this.lastMessageTime}}</span>
+              <h4 class="conversation-name">{{this.members.sdt}}</h4>
+              <span class="conversation-time">{{formatDate this.lastMessage.createdAt}}</span>
             </div>
             <div class="conversation-preview">
               <p class="last-message">
-                {{#if (equal this.lastSender ../user.id)}}
-                  <span class="you-label">Bạn:</span>
-                {{/if}}
-                {{truncate this.lastMessage 30}}
+                {{this.lastMessage.content}}
               </p>
               {{#if this.unreadCount}}
               <span class="unread-badge">{{this.unreadCount}}</span>
@@ -589,20 +578,15 @@
           </div>
         </div>
         {{/each}}
-        
       </div>
     </div>
-    
-    <!-- ==================== CHAT MAIN ==================== -->
-    <div class="chat-main">
+        <div class="chat-main">
       <div class="chat-box">
-        
-        <!-- Header -->
-        <div class="chat-header">
+                <div class="chat-header">
           <div class="chat-header-info">
-            <img src="/img/avatar1.jpg" alt="Avatar" class="chat-avatar" id="currentChatAvatar">
+            <img src="/img/{{this.members.hinhanh}}" alt="Avatar" class="chat-avatar" id="currentChatAvatar">
             <div>
-              <h4 id="currentChatName">Nguyễn Văn A</h4>
+              <h4 id="currentChatName">{{this.members.sdt}}</h4>
               <span class="chat-status" id="currentChatStatus">Đang hoạt động</span>
             </div>
           </div>
@@ -618,7 +602,6 @@
             </button>
           </div>
         </div>
-        
         <div class="chat-body" id="chatBody">
        {{#each messages}}
          {{#if (equalObjectId this.sender ../userId)}}
@@ -638,7 +621,6 @@
         {{/if}}
       {{/each}}
         </div>
-        <!-- Typing -  ID: typingIndicator -->
         <div class="typing-indicator" id="typingIndicator">
           <img src="/img/avatar1.jpg" alt="Avatar" class="typing-avatar">
           <div class="typing-dots">
@@ -647,7 +629,6 @@
             <span></span>
           </div>
         </div>
-        <!-- Footer - ID: chatInput, chatSend -->
         <div class="chat-footer">
           <button class="btn-attachment" title="Đính kèm">
             <i class="fa-solid fa-paperclip"></i>
