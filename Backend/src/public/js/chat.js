@@ -3,7 +3,10 @@
   var ws;
   var chatInput = document.getElementById("chatInput");
   var chatSend = document.getElementById("chatSend");
-  var chatBody = document.getElementById("chatBody"); // Container chứa tin nhắn
+  var chatBody = document.getElementById("chatBody");
+  var currentChatName = document.getElementById("currentChatName");
+  var currentChatAvatar = document.getElementById("currentChatAvatar");
+  var roomChat = document.querySelectorAll(".conversation-item");
   function connectWebSocket() {
     const token = getCookie("accessToken");
     if (!token) return;
@@ -50,7 +53,6 @@
       console.log(err);
     }
   }
-  // ==================== THÊM TIN NHẮN VÀO UI ====================
   function addMyMessage(content) {
     var messageDiv = document.createElement("div");
     messageDiv.className = "chat-message user-message";
@@ -130,7 +132,6 @@
     }
     return null;
   }
-
   function showTypingIndicator(userName) {
     var indicator = document.getElementById("typingIndicator");
     if (indicator) {
@@ -142,5 +143,37 @@
       }, 3000);
     }
   }
+  function cleanChat() {
+    chatBody.innerHTML = "";
+  }
+  roomChat.forEach((i) => {
+    i.addEventListener("click", async () => {
+      if (i.classList.contains("active")) {
+        return;
+      }
+      roomChat.forEach((chat) => {
+        chat.classList.remove("active");
+      });
+      i.classList.add("active");
+      const roomId = i.dataset.roomId;
+      const res = await axios.get("http://localhost:3000/admin/apiUser", {
+        params: {
+          roomId,
+        },
+      });
+      const ortherMember = res.data.ortherMember;
+      currentChatName.innerHTML = ortherMember.sdt;
+      currentChatAvatar.src = `/img/${ortherMember.hinhanh}`;
+      const messages = res.data.messages;
+      cleanChat();
+      messages.forEach((message) => {
+        if (message.sender == ortherMember._id) {
+          addOtherMessage(message);
+        } else {
+          addMyMessage(message.content);
+        }
+      });
+    });
+  });
   connectWebSocket();
 })();

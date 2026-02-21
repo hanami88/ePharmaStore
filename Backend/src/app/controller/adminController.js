@@ -4,6 +4,7 @@ const Thongkes = require("../models/Thongke");
 const Users = require("../models/User");
 const Messages = require("../models/Message");
 const Rooms = require("../models/Room");
+const Message = require("../models/Message");
 
 class AdminController {
   home(req, res, next) {
@@ -503,6 +504,21 @@ class AdminController {
       });
     } catch (err) {
       console.log(err);
+    }
+  }
+  async apiUser(req, res) {
+    try {
+      const roomId = req.query.roomId;
+      var room = await Rooms.findOne({ _id: roomId })
+        .populate("members")
+        .lean();
+      const messages = await Messages.find({ roomId: room._id });
+      const ortherMember = room.members.find((member) => {
+        return member._id.toString() !== req.user._id.toString();
+      });
+      res.json({ ortherMember, messages });
+    } catch (err) {
+      res.send("ERROR");
     }
   }
 }

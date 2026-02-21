@@ -57,5 +57,5 @@ router.post(
   upload.single("hinhanh"),
   AdminController.capnhatthongtin,
 );
-
+router.get("/apiUser", AdminController.apiUser);
 module.exports = router;

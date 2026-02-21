@@ -9,8 +9,8 @@ const clients = new Map();
 
 function sendToUser(userId, data) {
   const idStr = userId.toString();
-  const clientWs = clients.get(idStr);
-  clientWs.send(JSON.stringify(data));
+  const clientWs = clients?.get(idStr);
+  clientWs?.send(JSON.stringify(data));
 }
 
 const funcwss = (app) => {
@@ -31,24 +31,25 @@ const funcwss = (app) => {
         if (message.type === "chat") {
           try {
             const checkRoom = await Rooms.findOne({ members: userId });
-            var receiverId = checkRoom.members.find((i) => i != userId);
             if (!checkRoom) {
+              var newRoom = await Rooms.create({
+                members: [userId, "68312c8c7209bb2eae1eace1"],
+              });
               var newMessage = await Messages.create({
                 roomId: newRoom._id,
                 sender: userId,
                 content: message.content,
-                receiver: receiverId,
               });
-              var newRoom = await Rooms.create({
-                members: [userId, "68312c8c7209bb2eae1eace1"],
+              await Rooms.findByIdAndUpdate(newRoom._id, {
                 lastMessage: newMessage._id,
               });
+              var receiverId = newRoom.members.find((i) => i != userId);
             } else {
+              var receiverId = checkRoom.members.find((i) => i != userId);
               var newMessage = await Messages.create({
                 roomId: checkRoom._id,
                 sender: userId,
                 content: message.content,
-                receiver: receiverId,
               });
               await Rooms.findByIdAndUpdate(checkRoom._id, {
                 lastMessage: newMessage._id,
